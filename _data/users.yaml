@@ -1,0 +1,18 @@
+# Access contents of a YAML data file using site.data.file-name eg. site.data.users
+
+- name: Luke Hedger
+  github: lukehedger
+- name: Luke Two
+  github: lukehedger2
+
+
+# Rendered like so:
+# <ul>
+# {% for user in site.data.users %}
+#   <li>
+#     <a href="https://github.com/{{ user.github }}">
+#       {{ user.name }}
+#     </a>
+#   </li>
+# {% endfor %}
+# </ul>

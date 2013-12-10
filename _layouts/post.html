@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>{{ page.title }}</title>
+	<link rel="stylesheet" href="css/syntax.css">
+</head>
+<body>
+	
+	<!-- {% include header.html %} -->
+
+	<h1>{{ page.title }}</h1>
+	<h2>{{ page.description }}</h2>
+
+	<span class="date">{{ page.date | date_to_string }}</span> | <span class="read">{{ page.read }} min read</span>
+
+	<i class="category">{{ page.category }}</i>
+	<div class="tags">
+		{% for tag in page.tags %}
+			<span>{{ tag }}</span>
+		{% endfor %}
+	</div>
+
+	{{ content }}
+
+	<!-- Link to next post here -->
+
+	{% include footer.html %}
+
+<body>
+</html>
