@@ -1,30 +1,49 @@
-<!DOCTYPE HTML>
+<!doctype html>
 <html>
 <head>
-	<title>{{ page.title }}</title>
-	<link rel="stylesheet" href="css/syntax.css">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+	<title>Level Out | {{ page.title }}</title>
+	<meta name="title" content="Level Out Web Development by Luke Hedger">
+	<meta name="description" content="Profile of Luke Hedger Web Developer" />
+	<meta name="keywords" content="Luke Hedger,Web Developer,Web Development,Web Design,Level Out" />
+	<meta name="author" content="Luke Hedger" />
+	<meta name="copyright" content="Copyright Luke Hedger 2014. All Rights Reserved.">
+	<link rel="shortcut icon" href="img/favicon.ico">
+	<link rel="stylesheet" href="css/main.css">
+	<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 </head>
 <body>
-	
-	<!-- {% include header.html %} -->
+	<section role="document">
+		<div class="grid">
+			<div class="row">
+				<div class="column twelve">
 
-	<h1>{{ page.title }}</h1>
-	<h2>{{ page.description }}</h2>
+					<!-- {% include header.html %} -->
 
-	<span class="date">{{ page.date | date_to_string }}</span> | <span class="read">{{ page.read }} min read</span>
+					<h1>{{ page.title }}</h1>
+					<h2>{{ page.description }}</h2>
 
-	<i class="category">{{ page.category }}</i>
-	<div class="tags">
-		{% for tag in page.tags %}
-			<span>{{ tag }}</span>
-		{% endfor %}
-	</div>
+					<span class="date">{{ page.date | date_to_string }}</span> | <span class="read">{{ page.read }} min read</span>
 
-	{{ content }}
+					<i class="category">{{ page.category }}</i>
+					<div class="tags">
+						{% for tag in page.tags %}
+							<span>{{ tag }}</span>
+						{% endfor %}
+					</div>
 
-	<!-- Link to next post here -->
+					{{ content }}
 
-	{% include footer.html %}
+					<!-- Link to next post here -->
+
+					<!-- {% include footer.html %} -->
+					
+				</div>
+			</div>
+		</div>
+	</section>
 
 <body>
 </html>
