@@ -6,22 +6,118 @@
 /* ==========================================================================
    LAYOUT
    ========================================================================== */
-section[role="document"]{
-	margin-bottom: 100px;
-	padding:0 5%;
+section[role="main"] {
+	background: #FFFFFF;
+}
+
+section[role="complimentary"] {
+	color: #FFFFFF;
+	background: #333333;
+}
+
+.inner {
+	padding: 0 20px;
+}
+
+.page {
+	display: none;
 }
 
 /* ==========================================================================
    ELEMENTS
    ========================================================================== */
 
+.button {
+	margin: 5px;
+	padding: 10px 20px;
+	border: 1px solid #333333;
+	border-radius: 6px;
+	display: inline-block;
+	text-align: center;
+	text-decoration: none;
+}
+.button:hover {
+	color: white;
+	background-color: #333333;
+}
+.button.github {
+	border-color: white;
+}
 
+.button.github:hover {
+	color: #333333;
+	background-color: white;
+}
+.button.twitter {
+	border-color: #55ACEE;
+}
+.button.twitter:hover {
+	background-color: #55ACEE;
+}
+
+.logo {
+	width: 110px;
+	height: 110px;
+	margin: 0 auto;
+	background: url("../img/logo.png") no-repeat center center;
+}
 
 /* ==========================================================================
    SECTIONS
    ========================================================================== */
 
+.sidebar {
 
+}
+
+.sidebar a {
+	color: inherit;
+}
+
+.sidebar .blurb {
+	height: 100px;
+	margin: 20px 0;
+	padding: 10px;
+	border: 1px dashed #666;
+	border-radius: 4px;
+	font-size: 0.8em;
+	font-family: Consolas;
+	text-align: center;
+	transition: 1s;
+}
+
+.sidebar .blurb:hover {
+	border-color: #999;
+}
+
+nav .nav {
+	margin: 20px auto;
+	padding: 0;
+	text-align: center;
+}
+
+nav .nav li {
+	margin: 10px 0;
+	padding: 0;
+	text-align: center;
+}
+
+nav .nav li a {
+
+}
+
+.sidebar .networks {
+	text-align: center;
+}
+
+.main {
+
+}
+
+footer {
+	margin-top: 20px;
+	border-top: 1px solid #999;
+}
 
 /* ==========================================================================
    RESPONSIVE
@@ -37,7 +133,11 @@ img {
 
 /* Desktop */
 @media only screen and (min-width: 48em) { /* 768px */
-
+	
+	section[role="complimentary"] {
+		height: 100%;
+		position: absolute;
+	}
 }
 
 /* Tablet etc */
@@ -46,6 +146,19 @@ img {
 }
 
 /* Mobile */
-@media only screen and (max-width:20em) { /* 320px */
+@media only screen and (max-width:480px) { /* 320px */
 
+	.sidebar .blurb {
+		display: none;
+	}
+
+	nav .nav li {
+		display: inline;
+	}
+	nav .nav li:after {
+		content: " | ";
+	}
+	nav .nav li:last-of-type:after {
+		content: "";
+	}
 }

@@ -9,4 +9,9 @@ ehthumbs.db
 Thumbs.db
 
 # Source Maps #
-.map
+######################
+*.map
+
+# Project Files #
+######################
+*TODO.md

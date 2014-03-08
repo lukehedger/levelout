@@ -17,25 +17,63 @@
 	<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 </head>
 <body>
-	<section role="document">
-		<div class="grid">
-			<div class="row">
-				<div class="column twelve">
-					<h1>Luke Hedger's GitHub Page</h1>
-					<p>Woo-flipping-hoo!</p>
-					<h3>Posts</h3>
-					<ul>
-					  {% for post in site.posts %}
-					    <li>
-					      <a href="{{ post.url }}">{{ post.title }}</a>
-					      <p>{{ post.excerpt }}</p>
-					    </li>
-					  {% endfor %}
-					</ul>
+	<div class="grid">
+		<section role="document" class="row">
+			<section role="complimentary" class="column three sidebar">
+				<div class="inner">
+					<div class="logo"></div>
+					<div class="blurb">
+						<p>Hello, I'm Luke!</p>
+					</div>
+					<nav>
+						<ul class="nav">
+							<li>
+								<a class="page-nav" data-page="1">Profile</a>
+							</li>
+							<li>
+								<a class="page-nav" data-page="2">Story</a>
+							</li>
+							<li>
+								<a class="page-nav" data-page="3">Currents</a>
+							</li>
+						</ul>
+					</nav>
+					<div class="networks">
+						<a href="https://github.com/lukehedger" class="button github">GitHub</a>
+						<a href="https://twitter.com/level_out" class="button twitter">Twitter</a>
+					</div>
 				</div>
-			</div>
+			</section>
+			<section role="main" class="column nine main">
+				<div class="inner">
+					<div class="page page-1" data-page="1">
+						<h3>Profile</h3>
+						<p>A bit about me</p>
+					</div>
+					<div class="page page-2" data-page="2">
+						<h3>Story</h3>
+						<p>My work history</p>
+					</div>
+					<div class="page page-3" data-page="3">
+						<h3>Currents</h3>
+						<p>Bullets from my blog gun...</p>
+						<h4>Posts</h4>
+						<ul>
+						  {% for post in site.posts %}
+						    <li>
+						      <a href="{{ post.url }}">{{ post.title }}</a>
+						      <p>{{ post.excerpt }}</p>
+						    </li>
+						  {% endfor %}
+						</ul>
+					</div>
+					<footer>
+						<p>Level Out is the guise of Luke Hedger.<br>It's his equivalent of a cape.</p>
+					</footer>
+				</div>
+			</section>
 		</div>
-	</section>
+	</div>
 
 	<!-- GA: change UA-XXXXX-X to be the site's ID. -->
 	<script src="http://www.google-analytics.com/ga.js"></script>

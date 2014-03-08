@@ -8,7 +8,8 @@ article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary
    ========================================================================== */
 @viewport{width:device-width;}
 html,body,button,input,select,textarea{color:#333;}
-body{font:normal 1em/1.4 "Helvetica Neue",Helvetica,Arial,sans-serif;}
+html{height:100%;}
+body{min-height:100%;font:normal 1em/1.4 "Helvetica Neue",Helvetica,Arial,sans-serif;}
 ::-moz-selection{background:#b3d4fc;}
 ::selection{background:#b3d4fc;}
 a{cursor:pointer;-webkit-tap-highlight-color: rgba(0,0,0,0);}
