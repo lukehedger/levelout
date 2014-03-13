@@ -137,6 +137,13 @@ img {
 	section[role="complimentary"] {
 		height: 100%;
 		position: absolute;
+		left: 0;
+	}
+	
+	section[role="main"] {
+		height: 100%;
+		position: absolute;
+		right: 0;
 	}
 }
 
