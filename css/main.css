@@ -1,7 +1,8 @@
-@import "normalize.css";
-@import "grid.css";
-@import "print.css";
-@import "syntax.css";
+@import "lib/normalize.css";
+@import "lib/print.css";
+@import "lib/syntax.css";
+@import "lib/typography.css";
+@import "components/grid.css";
 
 /* ==========================================================================
    LAYOUT
@@ -35,6 +36,7 @@ section[role="complimentary"] {
 	display: inline-block;
 	text-align: center;
 	text-decoration: none;
+	transition: 0.2s;
 }
 .button:hover {
 	color: white;
@@ -58,8 +60,16 @@ section[role="complimentary"] {
 .logo {
 	width: 110px;
 	height: 110px;
-	margin: 0 auto;
-	background: url("../img/logo.png") no-repeat center center;
+	margin: 10px auto;
+	border-radius: 50%;
+	background: #F2385A;
+	opacity: 0.8;
+	transition: all 1s ease-in-out;
+}
+.logo:hover {
+	-webkit-transform: rotate(360deg);
+	opacity: 1;
+	background: #36B1BF;
 }
 
 /* ==========================================================================
@@ -132,7 +142,7 @@ img {
 }
 
 /* Desktop */
-@media only screen and (min-width: 48em) { /* 768px */
+@media only screen and (min-width: 1024px) {
 	
 	section[role="complimentary"] {
 		height: 100%;
@@ -145,15 +155,11 @@ img {
 		position: absolute;
 		right: 0;
 	}
+
 }
 
 /* Tablet etc */
-@media only screen and (max-width:47.99em) { /* 767px */
-
-}
-
-/* Mobile */
-@media only screen and (max-width:480px) { /* 320px */
+@media only screen and (max-width:1023px) {
 
 	.sidebar .blurb {
 		display: none;
@@ -168,4 +174,10 @@ img {
 	nav .nav li:last-of-type:after {
 		content: "";
 	}
+
+}
+
+/* Mobile */
+@media only screen and (max-width:480px) {
+
 }
