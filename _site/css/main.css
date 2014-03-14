@@ -1,27 +1,32 @@
 @import "lib/normalize.css";
+
 @import "lib/print.css";
+
 @import "lib/syntax.css";
+
 @import "lib/typography.css";
+
 @import "components/grid.css";
 
 /* ==========================================================================
    LAYOUT
    ========================================================================== */
+
 section[role="main"] {
-	background: #FFFFFF;
+  background: #FFFFFF;
 }
 
 section[role="complimentary"] {
-	color: #FFFFFF;
-	background: #333333;
+  color: #FFFFFF;
+  background: #333333;
 }
 
 .inner {
-	padding: 0 20px;
+  padding: 0 20px;
 }
 
 .page {
-	display: none;
+  display: none;
 }
 
 /* ==========================================================================
@@ -29,104 +34,108 @@ section[role="complimentary"] {
    ========================================================================== */
 
 .button {
-	margin: 5px;
-	padding: 10px 20px;
-	border: 1px solid #333333;
-	border-radius: 6px;
-	display: inline-block;
-	text-align: center;
-	text-decoration: none;
-	transition: 0.2s;
+  margin: 5px;
+  padding: 10px 20px;
+  border: 1px solid #333333;
+  border-radius: 6px;
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
 }
+
 .button:hover {
-	color: white;
-	background-color: #333333;
+  color: white;
+  background-color: #333333;
 }
+
 .button.github {
-	border-color: white;
+  border-color: white;
 }
 
 .button.github:hover {
-	color: #333333;
-	background-color: white;
+  color: #333333;
+  background-color: white;
 }
+
 .button.twitter {
-	border-color: #55ACEE;
+  border-color: #55ACEE;
 }
+
 .button.twitter:hover {
-	background-color: #55ACEE;
+  background-color: #55ACEE;
 }
 
 .logo {
-	width: 110px;
-	height: 110px;
-	margin: 10px auto;
-	border-radius: 50%;
-	background: #F2385A;
-	opacity: 0.8;
-	transition: all 1s ease-in-out;
+  width: 110px;
+  height: 110px;
+  margin: 10px auto;
+  border-radius: 50%;
+  background: #F2385A;
+  opacity: 0.8;
+  -webkit-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
 }
+
 .logo:hover {
-	-webkit-transform: rotate(360deg);
-	opacity: 1;
-	background: #36B1BF;
+  -webkit-transform: rotate(360deg);
+  -ms-transform: rotate(360deg);
+  transform: rotate(360deg);
+  opacity: 1;
+  background: #36B1BF;
 }
 
 /* ==========================================================================
    SECTIONS
    ========================================================================== */
 
-.sidebar {
 
-}
 
 .sidebar a {
-	color: inherit;
+  color: inherit;
 }
 
 .sidebar .blurb {
-	height: 100px;
-	margin: 20px 0;
-	padding: 10px;
-	border: 1px dashed #666;
-	border-radius: 4px;
-	font-size: 0.8em;
-	font-family: Consolas;
-	text-align: center;
-	transition: 1s;
+  height: 100px;
+  margin: 20px 0;
+  padding: 10px;
+  border: 1px dashed #666;
+  border-radius: 4px;
+  font-size: 0.8em;
+  font-family: Consolas;
+  text-align: center;
+  -webkit-transition: 1s;
+  transition: 1s;
 }
 
 .sidebar .blurb:hover {
-	border-color: #999;
+  border-color: #999;
 }
 
 nav .nav {
-	margin: 20px auto;
-	padding: 0;
-	text-align: center;
+  margin: 20px auto;
+  padding: 0;
+  text-align: center;
 }
 
 nav .nav li {
-	margin: 10px 0;
-	padding: 0;
-	text-align: center;
+  margin: 10px 0;
+  padding: 0;
+  text-align: center;
 }
 
-nav .nav li a {
 
-}
 
 .sidebar .networks {
-	text-align: center;
+  text-align: center;
 }
 
-.main {
 
-}
 
 footer {
-	margin-top: 20px;
-	border-top: 1px solid #999;
+  margin-top: 20px;
+  border-top: 1px solid #999;
 }
 
 /* ==========================================================================
@@ -136,48 +145,49 @@ footer {
 /* Responsive IMAGES */
 
 img {
-	width: 100%;
-	max-width: 100%;
-	margin: 0 auto;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
 }
 
 /* Desktop */
-@media only screen and (min-width: 1024px) {
-	
-	section[role="complimentary"] {
-		height: 100%;
-		position: absolute;
-		left: 0;
-	}
-	
-	section[role="main"] {
-		height: 100%;
-		position: absolute;
-		right: 0;
-	}
 
+@media only screen and (min-width: 1024px) {
+  section[role="complimentary"] {
+    height: 100%;
+    position: absolute;
+    left: 0;
+  }
+
+  section[role="main"] {
+    height: 100%;
+    position: absolute;
+    right: 0;
+  }
 }
 
 /* Tablet etc */
+
 @media only screen and (max-width:1023px) {
+  .sidebar .blurb {
+    display: none;
+  }
 
-	.sidebar .blurb {
-		display: none;
-	}
+  nav .nav li {
+    display: inline;
+  }
 
-	nav .nav li {
-		display: inline;
-	}
-	nav .nav li:after {
-		content: " | ";
-	}
-	nav .nav li:last-of-type:after {
-		content: "";
-	}
+  nav .nav li:after {
+    content: " | ";
+  }
 
+  nav .nav li:last-of-type:after {
+    content: "";
+  }
 }
 
 /* Mobile */
+
 @media only screen and (max-width:480px) {
 
 }

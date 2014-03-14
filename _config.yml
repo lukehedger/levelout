@@ -1,6 +1,6 @@
 source:      .
 destination: ./_site
-exclude:     [coffee, README.md, TODO.md, Gemfile, Gemfile.lock]
+exclude:     [coffee, README.md, TODO.md, Gemfile, Gemfile.lock, package.json, node_modules, gulpfile.js]
 pygments:    true
 host:        0.0.0.0
 port:        4000
