@@ -35,7 +35,7 @@ Use `bundle install` to install all dependencies.
 Runs our tasks - like compiling CoffeeScript and Myth CSS files.
 
 - Install Gulp `sudo npm install -g gulp`
-- Install Gulp dependencies `sudo npm install --save-dev`
+- Install Gulp dependencies locally `npm install gulp --save-dev`
 - Compile and watch `gulp watch`
 - Or just compile once `gulp`
 - Stop watching `ctrl + z`
