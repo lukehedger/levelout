@@ -1,5 +1,3 @@
-// TODO - create build task using concat, clean, uglify etc
-
 var gulp = require('gulp'),
 	coffee = require('gulp-coffee'),
 	myth = require('gulp-myth'),
@@ -23,10 +21,14 @@ gulp.task('coffee', function () {
 });
 
 gulp.task('myth', function () {
-	gulp.src('css/myth/main.css')
+	gulp.src('myth/**/*.css')
 		.pipe(myth())
 		.pipe(gulp.dest('css'))
-		.pipe(minifycss())
+		.pipe(minifycss({
+			keepBreaks: true,
+			root: 'css',
+			processImport: true
+		}))
 		.pipe(gulp.dest('css'))
 		.pipe(livereload(server));
 });
@@ -51,3 +53,8 @@ gulp.task('watch', function() {
 	gulp.watch('css/myth/**/*.css', ['myth']);
 	gulp.watch('coffee/**/*.coffee', ['coffee']);
 });
+
+// TODO 
+// - create build task using concat, clean, uglify etc
+// - should minify js and then dump only main.css/js files in _site when jekyll is built
+// - or maybe ignore css/ subfolders in _config.yaml exclude: [css/**] ??
