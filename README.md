@@ -7,12 +7,23 @@ lukehedger.github.io
 - Myth - A CSS preprocessor [http://www.myth.io/](http://www.myth.io/)
 - Requirejs - A JavaScript file and module loader
 - Gulpjs - A JavaScript task runner
+- Jekyll - A static site generator
 
 ## Structure
 
 TODO
 
 ## Setup
+
+### Gulp
+
+Runs our tasks - like compiling CoffeeScript and Myth CSS files.
+
+- Install Gulp (if you haven't got it already) `sudo npm install -g gulp`
+- Install Gulp dependencies (downloads all the required node modules as specified in `package.json`) `npm install --save-dev`
+- Compile and watch `gulp watch`
+- Or just compile once `gulp`
+- Stop watching `ctrl + z`
 
 ### Jekyll
 
@@ -30,12 +41,7 @@ Use `bundle install` to install all dependencies.
 
 ```$ bundle exec jekyll serve --watch```
 
-### Gulp
+## TODO
 
-Runs our tasks - like compiling CoffeeScript and Myth CSS files.
-
-- Install Gulp `sudo npm install -g gulp`
-- Install Gulp dependencies locally `npm install gulp --save-dev`
-- Compile and watch `gulp watch`
-- Or just compile once `gulp`
-- Stop watching `ctrl + z`
+- Gulp build tasks
+- Build site...
