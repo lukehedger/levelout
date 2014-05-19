@@ -1,0 +1,18 @@
+section[role=main]{background:#FFF}
+section[role=complimentary]{color:#FFF;background:#333}
+.inner{padding:0 20px}
+.page{display:none}
+.sidebar a{color:inherit}
+.sidebar .blurb{height:100px;margin:20px 0;padding:10px;border:1px dashed #666;border-radius:4px;font-size:.8em;font-family:Consolas;text-align:center;-webkit-transition:1s;transition:1s}
+.sidebar .blurb:hover{border-color:#999}
+nav .nav{margin:20px auto;padding:0;text-align:center}
+nav .nav li{margin:10px 0;padding:0;text-align:center}
+.sidebar .networks{text-align:center}
+footer{margin-top:20px;border-top:1px solid #999}
+img{width:100%;max-width:100%;margin:0 auto}
+@media only screen and (min-width:1024px){section[role=complimentary]{height:100%;position:absolute;left:0}
+section[role=main]{height:100%;position:absolute;right:0}}
+@media only screen and (max-width:1023px){.sidebar .blurb{display:none}
+nav .nav li{display:inline}
+nav .nav li:after{content:" | "}
+nav .nav li:last-of-type:after{content:""}}

@@ -44,4 +44,4 @@ Use `bundle install` to install all dependencies.
 ## TODO
 
 - Gulp build tasks
-- Build site...
+- Swipe transitions/structure

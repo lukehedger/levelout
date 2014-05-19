@@ -138,10 +138,21 @@ a:hover{color:#36B1BF}
 .one{width:8.333333333%}
 @media only screen and (max-width:1024px){.column{width:100%}
 .column.bottom,.column.middle{position:relative}}
-section[role=main]{background:#FFF}
-section[role=complimentary]{color:#FFF;background:#333}
-.inner{padding:0 20px}
-.page{display:none}
+.anim-moveFromLeft{-webkit-animation:moveFromLeft .7s ease both;animation:moveFromLeft .7s ease both}
+@-webkit-keyframes moveFromLeft{from{-webkit-transform:translateX(-100%);transform:translateX(-100%)}}
+@keyframes moveFromLeft{from{-webkit-transform:translateX(-100%);-ms-transform:translateX(-100%);transform:translateX(-100%)}}
+.pt-page-rotateSlideOut{-webkit-animation:rotateSlideOut 1s both ease;animation:rotateSlideOut 1s both ease}
+.pt-page-rotateSlideIn{-webkit-animation:rotateSlideIn 1s both ease;animation:rotateSlideIn 1s both ease}
+@-webkit-keyframes rotateSlideOut{25%{opacity:.5;-webkit-transform:translateZ(-500px)}
+100%,75%{opacity:.5;-webkit-transform:translateZ(-500px) translateX(-200%)}}
+@keyframes rotateSlideOut{25%{opacity:.5;-webkit-transform:translateZ(-500px);-ms-transform:translateZ(-500px);transform:translateZ(-500px)}
+100%,75%{opacity:.5;-webkit-transform:translateZ(-500px) translateX(-200%);-ms-transform:translateZ(-500px) translateX(-200%);transform:translateZ(-500px) translateX(-200%)}}
+@-webkit-keyframes rotateSlideIn{0%,25%{opacity:.5;-webkit-transform:translateZ(-500px) translateX(200%)}
+75%{opacity:.5;-webkit-transform:translateZ(-500px)}
+100%{opacity:1;-webkit-transform:translateZ(0) translateX(0)}}
+@keyframes rotateSlideIn{0%,25%{opacity:.5;-webkit-transform:translateZ(-500px) translateX(200%);-ms-transform:translateZ(-500px) translateX(200%);transform:translateZ(-500px) translateX(200%)}
+75%{opacity:.5;-webkit-transform:translateZ(-500px);-ms-transform:translateZ(-500px);transform:translateZ(-500px)}
+100%{opacity:1;-webkit-transform:translateZ(0) translateX(0);-ms-transform:translateZ(0) translateX(0);transform:translateZ(0) translateX(0)}}
 .button{margin:5px;padding:10px 20px;border:1px solid #333;border-radius:6px;display:inline-block;text-align:center;text-decoration:none;-webkit-transition:.2s;transition:.2s}
 .button:hover{color:#fff;background-color:#333}
 .button.github{border-color:#fff}
@@ -150,6 +161,10 @@ section[role=complimentary]{color:#FFF;background:#333}
 .button.twitter:hover{background-color:#55ACEE}
 .logo{width:110px;height:110px;margin:10px auto;border-radius:50%;background:#F2385A;opacity:.8;-webkit-transition:all 1s ease-in-out;transition:all 1s ease-in-out}
 .logo:hover{-webkit-transform:rotate(360deg);-ms-transform:rotate(360deg);transform:rotate(360deg);opacity:1;background:#36B1BF}
+section[role=main]{background:#FFF}
+section[role=complimentary]{color:#FFF;background:#333}
+.inner{padding:0 20px}
+.page{display:none}
 .sidebar a{color:inherit}
 .sidebar .blurb{height:100px;margin:20px 0;padding:10px;border:1px dashed #666;border-radius:4px;font-size:.8em;font-family:Consolas;text-align:center;-webkit-transition:1s;transition:1s}
 .sidebar .blurb:hover{border-color:#999}

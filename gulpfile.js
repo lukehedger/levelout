@@ -50,11 +50,10 @@ gulp.task('default', function () {
 });
 
 gulp.task('watch', function() {
-	gulp.watch('css/myth/**/*.css', ['myth']);
+	gulp.watch('myth/**/*.css', ['myth']);
 	gulp.watch('coffee/**/*.coffee', ['coffee']);
 });
 
 // TODO 
 // - create build task using concat, clean, uglify etc - see http://markgoodyear.com/2014/01/getting-started-with-gulp/
-// - should minify js and then dump only main.css/js files in _site when jekyll is built
-// - or maybe ignore css/ subfolders in _config.yaml exclude: [css/**] ??
+// - should minify js and then dump only main.js files in _site when jekyll is built

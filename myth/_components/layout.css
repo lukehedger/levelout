@@ -1,12 +1,7 @@
-@import "lib/normalize.css";
-@import "lib/print.css";
-@import "lib/syntax.css";
-@import "lib/typography.css";
-@import "components/grid.css";
-
 /* ==========================================================================
    LAYOUT
    ========================================================================== */
+
 section[role="main"] {
 	background: #FFFFFF;
 }
@@ -22,54 +17,6 @@ section[role="complimentary"] {
 
 .page {
 	display: none;
-}
-
-/* ==========================================================================
-   ELEMENTS
-   ========================================================================== */
-
-.button {
-	margin: 5px;
-	padding: 10px 20px;
-	border: 1px solid #333333;
-	border-radius: 6px;
-	display: inline-block;
-	text-align: center;
-	text-decoration: none;
-	transition: 0.2s;
-}
-.button:hover {
-	color: white;
-	background-color: #333333;
-}
-.button.github {
-	border-color: white;
-}
-
-.button.github:hover {
-	color: #333333;
-	background-color: white;
-}
-.button.twitter {
-	border-color: #55ACEE;
-}
-.button.twitter:hover {
-	background-color: #55ACEE;
-}
-
-.logo {
-	width: 110px;
-	height: 110px;
-	margin: 10px auto;
-	border-radius: 50%;
-	background: #F2385A;
-	opacity: 0.8;
-	transition: all 1s ease-in-out;
-}
-.logo:hover {
-	transform: rotate(360deg);
-	opacity: 1;
-	background: #36B1BF;
 }
 
 /* ==========================================================================
