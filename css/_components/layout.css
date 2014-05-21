@@ -1,7 +1,7 @@
 section[role=main]{background:#FFF}
 section[role=complimentary]{color:#FFF;background:#333}
 .inner{padding:0 20px}
-.page{display:none}
+.page{visibility:hidden}
 .sidebar a{color:inherit}
 .sidebar .blurb{height:100px;margin:20px 0;padding:10px;border:1px dashed #666;border-radius:4px;font-size:.8em;font-family:Consolas;text-align:center;-webkit-transition:1s;transition:1s}
 .sidebar .blurb:hover{border-color:#999}

@@ -141,15 +141,15 @@ a:hover{color:#36B1BF}
 .anim-moveFromLeft{-webkit-animation:moveFromLeft .7s ease both;animation:moveFromLeft .7s ease both}
 @-webkit-keyframes moveFromLeft{from{-webkit-transform:translateX(-100%);transform:translateX(-100%)}}
 @keyframes moveFromLeft{from{-webkit-transform:translateX(-100%);-ms-transform:translateX(-100%);transform:translateX(-100%)}}
-.pt-page-rotateSlideOut{-webkit-animation:rotateSlideOut 1s both ease;animation:rotateSlideOut 1s both ease}
-.pt-page-rotateSlideIn{-webkit-animation:rotateSlideIn 1s both ease;animation:rotateSlideIn 1s both ease}
-@-webkit-keyframes rotateSlideOut{25%{opacity:.5;-webkit-transform:translateZ(-500px)}
-100%,75%{opacity:.5;-webkit-transform:translateZ(-500px) translateX(-200%)}}
+.anim-rotateSlideOut{-webkit-animation:rotateSlideOut 1s both ease;animation:rotateSlideOut 1s both ease}
+.anim-rotateSlideIn{-webkit-animation:rotateSlideIn 1s both ease;animation:rotateSlideIn 1s both ease;visibility:visible!important}
+@-webkit-keyframes rotateSlideOut{25%{opacity:.5;-webkit-transform:translateZ(-500px);transform:translateZ(-500px)}
+100%,75%{opacity:.5;-webkit-transform:translateZ(-500px) translateX(-200%);transform:translateZ(-500px) translateX(-200%)}}
 @keyframes rotateSlideOut{25%{opacity:.5;-webkit-transform:translateZ(-500px);-ms-transform:translateZ(-500px);transform:translateZ(-500px)}
 100%,75%{opacity:.5;-webkit-transform:translateZ(-500px) translateX(-200%);-ms-transform:translateZ(-500px) translateX(-200%);transform:translateZ(-500px) translateX(-200%)}}
-@-webkit-keyframes rotateSlideIn{0%,25%{opacity:.5;-webkit-transform:translateZ(-500px) translateX(200%)}
-75%{opacity:.5;-webkit-transform:translateZ(-500px)}
-100%{opacity:1;-webkit-transform:translateZ(0) translateX(0)}}
+@-webkit-keyframes rotateSlideIn{0%,25%{opacity:.5;-webkit-transform:translateZ(-500px) translateX(200%);transform:translateZ(-500px) translateX(200%)}
+75%{opacity:.5;-webkit-transform:translateZ(-500px);transform:translateZ(-500px)}
+100%{opacity:1;-webkit-transform:translateZ(0) translateX(0);transform:translateZ(0) translateX(0)}}
 @keyframes rotateSlideIn{0%,25%{opacity:.5;-webkit-transform:translateZ(-500px) translateX(200%);-ms-transform:translateZ(-500px) translateX(200%);transform:translateZ(-500px) translateX(200%)}
 75%{opacity:.5;-webkit-transform:translateZ(-500px);-ms-transform:translateZ(-500px);transform:translateZ(-500px)}
 100%{opacity:1;-webkit-transform:translateZ(0) translateX(0);-ms-transform:translateZ(0) translateX(0);transform:translateZ(0) translateX(0)}}
@@ -164,7 +164,7 @@ a:hover{color:#36B1BF}
 section[role=main]{background:#FFF}
 section[role=complimentary]{color:#FFF;background:#333}
 .inner{padding:0 20px}
-.page{display:none}
+.page{visibility:hidden}
 .sidebar a{color:inherit}
 .sidebar .blurb{height:100px;margin:20px 0;padding:10px;border:1px dashed #666;border-radius:4px;font-size:.8em;font-family:Consolas;text-align:center;-webkit-transition:1s;transition:1s}
 .sidebar .blurb:hover{border-color:#999}

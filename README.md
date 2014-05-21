@@ -43,6 +43,7 @@ Use `bundle install` to install all dependencies.
 
 ## TODO
 
-- [ ] Gulp build tasks
-    - [ ] Test jekyll-gulp
+- [x] Gulp build tasks
+    - [x] Test jekyll-gulp
 - [ ] Swipe transitions/structure
+- [ ] Typography and general styles
