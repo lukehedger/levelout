@@ -2,7 +2,7 @@
 @-webkit-keyframes moveFromLeft{from{-webkit-transform:translateX(-100%);transform:translateX(-100%)}}
 @keyframes moveFromLeft{from{-webkit-transform:translateX(-100%);-ms-transform:translateX(-100%);transform:translateX(-100%)}}
 .anim-rotateSlideOut{-webkit-animation:rotateSlideOut 1s both ease;animation:rotateSlideOut 1s both ease}
-.anim-rotateSlideIn{-webkit-animation:rotateSlideIn 1s both ease;animation:rotateSlideIn 1s both ease;visibility:visible!important}
+.anim-rotateSlideIn{-webkit-animation:rotateSlideIn 1s both ease;animation:rotateSlideIn 1s both ease}
 @-webkit-keyframes rotateSlideOut{25%{opacity:.5;-webkit-transform:translateZ(-500px);transform:translateZ(-500px)}
 100%,75%{opacity:.5;-webkit-transform:translateZ(-500px) translateX(-200%);transform:translateZ(-500px) translateX(-200%)}}
 @keyframes rotateSlideOut{25%{opacity:.5;-webkit-transform:translateZ(-500px);-ms-transform:translateZ(-500px);transform:translateZ(-500px)}

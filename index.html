@@ -13,49 +13,25 @@
 	<meta name="author" content="Luke Hedger" />
 	<meta name="copyright" content="Copyright Luke Hedger 2013. All Rights Reserved.">
 	<link rel="shortcut icon" href="img/favicon.ico">
-	<link href='http://fonts.googleapis.com/css?family=Esteban|Damion|Iceland|Rosario' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Esteban|Damion|Rosario' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="css/main.css">
 	<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 </head>
 <body>
 	<div class="grid">
 		<section role="document" class="row">
-			<section role="complimentary" class="column three sidebar">
-				<div class="inner">
-					<div class="logo">
-						<h1>lo</h1>
-					</div>
-					<div class="blurb">
-						<p>Hello, I'm Luke!</p>
-					</div>
-					<nav>
-						<ul class="nav">
-							<li>
-								<a class="page-nav" data-page="1">Profile</a>
-							</li>
-							<li>
-								<a class="page-nav" data-page="2">Story</a>
-							</li>
-							<li>
-								<a class="page-nav" data-page="3">Currents</a>
-							</li>
-						</ul>
-					</nav>
-					<div class="networks">
-						<a href="https://github.com/lukehedger" class="button github">GitHub</a>
-						<a href="https://twitter.com/level_out" class="button twitter">Twitter</a>
-					</div>
-				</div>
-			</section>
+
+			{% include sidebar.html %}
+
 			<section role="main" class="column nine main">
 				<div class="inner">
 					<div class="page page-1" data-page="1">
-						<h3>Profile</h3>
-						<p>A bit about me</p>
+						<h3>Hello</h3>
+						<p>Intro myself -- He goes by the name Luke Hedger. He's a front-to-back-end web developer who makes robust web apps that people want to use again &amp; again. He delivers expert HTML, CSS, JavaScript and only the freshest ideas straight to the Internet. He prides himself in carefully designing and hand-crafting every website he builds. This here is his portfolio-of-sorts. If you've got an idea you want to discuss please get in touch!</p>
 					</div>
 					<div class="page page-2" data-page="2">
 						<h3>Story</h3>
-						<p>My work history</p>
+						<p>Sell myself -- Where/how I started. Where I am now. What I've worked on. Recent/sample projects.</p>
 					</div>
 					<div class="page page-3" data-page="3">
 						<h3>Currents</h3>
@@ -65,17 +41,17 @@
 						  {% for post in site.posts %}
 						    <li>
 						      <a href="{{ post.url }}">{{ post.title }}</a>
-						      <p>{{ post.excerpt }}</p>
+						      {{ post.excerpt }}
 						    </li>
 						  {% endfor %}
 						</ul>
 					</div>
-					<footer>
-						<p>Level Out is the guise of Luke Hedger.<br>It's his equivalent of a cape.</p>
-					</footer>
+
+					{% include footer.html %}
+
 				</div>
 			</section>
-		</div>
+		</section>
 	</div>
 
 	<script src="http://www.google-analytics.com/ga.js"></script>

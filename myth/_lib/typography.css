@@ -13,11 +13,17 @@ h2 {
 }
 
 h3 {
-	
+	font: bold 3em/1em "Esteban", Helvetica, Arial, sans-serif;
+	letter-spacing: -2px;
+	text-align: center;
 }
 
 h4 {
-	
+	margin: 0;
+	font: italic 1.5em/1em "Esteban", Georgia, serif;
+	text-align: center;
+	color: #444;
+	text-transform: lowercase;
 }
 
 h5 {
@@ -25,11 +31,16 @@ h5 {
 }
 
 h6 {
-	font: normal 2em/1.4 "Iceland", Helvetica, Arial, sans-serif;
+
 }
 
 p {
 
+}
+
+.page p {
+	font-size: 1.1em;
+	text-align: center;
 }
 
 a {
@@ -38,8 +49,4 @@ a {
 }
 a:hover {
 	color: #36B1BF;
-}
-
-.blog {
-	font-family: "Esteban", Helvetica, Arial, serif;
 }

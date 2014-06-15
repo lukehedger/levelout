@@ -11,39 +11,49 @@
 	<meta name="author" content="Luke Hedger" />
 	<meta name="copyright" content="Copyright Luke Hedger 2014. All Rights Reserved.">
 	<link rel="shortcut icon" href="img/favicon.ico">
+	<link href='http://fonts.googleapis.com/css?family=Esteban|Damion|Rosario' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="css/main.css">
 	<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 </head>
 <body>
-	<section role="document">
-		<div class="grid">
-			<div class="row">
-				<div class="column twelve">
+	<div class="grid">
+		<section role="document" class="row">
 
-					<!-- {% include header.html %} -->
+			{% include sidebar.html %}
 
-					<h1>{{ page.title }}</h1>
-					<h2>{{ page.description }}</h2>
+			<section role="main" class="column nine main">
+				<div class="inner">
 
-					<span class="date">{{ page.date | date_to_string }}</span> | <span class="read">{{ page.read }} min read</span>
+					<article>
 
-					<i class="category">{{ page.category }}</i>
-					<div class="tags">
-						{% for tag in page.tags %}
-							<span>{{ tag }}</span>
-						{% endfor %}
-					</div>
+						<!-- {% include header.html %} -->
 
-					{{ content }}
+						<h3>{{ page.title }}</h3>
+						<h4>{{ page.description }}</h4>
 
-					<!-- Link to next post here -->
+						<span class="date">{{ page.date | date_to_string }}</span> | <span class="read">{{ page.read }} min read</span>
 
-					<!-- {% include footer.html %} -->
-					
+						<i class="category">{{ page.category }}</i>
+						<div class="tags">
+							{% for tag in page.tags %}
+								<span>{{ tag }}</span>
+							{% endfor %}
+						</div>
+
+						{{ content }}
+
+						<!-- Link to next post here -->
+
+						<!-- {% include footer.html %} -->
+						
+					</article>
+
+					{% include footer.html %}
+
 				</div>
-			</div>
-		</div>
-	</section>
+			</section>
+		</section>
+	</div>
 
 <body>
 </html>

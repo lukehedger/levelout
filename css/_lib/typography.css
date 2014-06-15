@@ -1,6 +1,7 @@
 body{font:400 1em/1.4 Rosario,Helvetica,Arial,sans-serif}
 h1{margin:0;font:400 6em/100px Damion;text-indent:20px}
-h6{font:400 2em/1.4 Iceland,Helvetica,Arial,sans-serif}
+h3{font:700 3em/1em Esteban,Helvetica,Arial,sans-serif;letter-spacing:-2px;text-align:center}
+h4{margin:0;font:italic 1.5em/1em Esteban,Georgia,serif;text-align:center;color:#444;text-transform:lowercase}
+.page p{font-size:1.1em;text-align:center}
 a{color:#F2385A;-webkit-transition:.2s;transition:.2s}
 a:hover{color:#36B1BF}
-.blog{font-family:Esteban,Helvetica,Arial,serif}

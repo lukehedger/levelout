@@ -28,15 +28,18 @@
       };
 
       App.prototype._init = function() {
-        return this._startPage.toggleClass("anim-rotateSlideIn");
+        return this._startPage.fadeIn(400);
       };
 
       App.prototype._loadPage = function(e) {
         var page, pageNum;
         pageNum = $(e.target).data("page");
         page = $(".page[data-page='" + pageNum + "']");
-        $(".page").toggleClass("anim-rotateSlideOut");
-        return page.toggleClass("anim-rotateSlideIn");
+        return $(".page").fadeOut(400, (function(_this) {
+          return function() {
+            return page.fadeIn(400);
+          };
+        })(this));
       };
 
       return App;
