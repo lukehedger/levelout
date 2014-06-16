@@ -44,7 +44,7 @@ table{border-collapse:collapse;border-spacing:0}
 body,figure,form{margin:0}
 dl,menu,ol,p,pre,ul{margin:1em 0}
 a.img{text-decoration:none}
-a:active{border:none;outline:0}
+a:active{border:0;outline:0}
 @viewport{width:device-width}
 body,button,html,input,select,textarea{color:#333}
 html{height:100%}

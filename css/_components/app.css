@@ -1,0 +1,26 @@
+.inner{padding:0 20px}
+.sidebar{z-index:20;color:#FFF;background:#333;-webkit-transition:.4s;transition:.4s}
+.sidebar a{color:inherit}
+.sidebar .blurb{margin:20px 0;padding:10px;border:1px dashed #666;border-radius:4px;font-size:.8em;font-family:Consolas;text-align:center;-webkit-transition:1s;transition:1s}
+.sidebar .blurb:hover{border-color:#999}
+.sidebar .skills i{margin:0 5px}
+nav .nav{margin:20px auto;padding:0;text-align:center}
+nav .nav li{margin:0;padding:0;text-align:center;display:inline}
+nav .nav li:after{content:" | ";padding:0 5px}
+nav .nav li:last-of-type:after{content:"";padding:0}
+nav .nav li a{padding-bottom:1px;border-bottom:1px solid transparent}
+nav .nav li a.active,nav .nav li a:active,nav .nav li a:focus,nav .nav li a:hover{border-bottom-color:#fff}
+.sidebar .networks{text-align:center}
+.sidebar-toggle{width:40px;height:40px;border:2px solid #fff;border-radius:50%;text-align:center;background:#333;position:absolute;top:10px;right:-20px;cursor:pointer}
+.sidebar-toggle i{width:20px;height:20px;position:absolute;top:0;bottom:0;left:0;right:0;margin:auto;font-size:26px;line-height:15px;font-weight:100;font-style:normal;-webkit-transition:.1s;transition:.1s;-webkit-transform:rotate(0deg);-ms-transform:rotate(0deg);transform:rotate(0deg)}
+.main{z-index:10;background:#FFF;-webkit-transition:.2s;transition:.2s}
+footer{margin-top:20px;border-top:1px solid #999}
+img{width:100%;max-width:100%;margin:0 auto}
+@media only screen and (min-width:1024px){.sidebar{height:100%;position:fixed;left:0;padding-bottom:9999px;margin-bottom:-9999px}
+section[role=document].no-sidebar .sidebar{left:-24%}
+section[role=document].no-sidebar .sidebar .sidebar-toggle i{-webkit-transform:rotate(45deg);-ms-transform:rotate(45deg);transform:rotate(45deg)}
+.sidebar-toggle:active i,.sidebar-toggle:focus i,section[role=document] .sidebar .sidebar-toggle:hover i{-webkit-animation:icon-hover-close 2s 2 ease-in-out;animation:icon-hover-close 2s 2 ease-in-out}
+.sidebar-toggle:active i,.sidebar-toggle:focus i,section[role=document].no-sidebar .sidebar .sidebar-toggle:hover i{-webkit-animation:icon-hover-open 1s 2 ease-in-out;animation:icon-hover-open 1s 2 ease-in-out}
+.main{height:100%;position:absolute;right:0}
+section[role=document].no-sidebar .main{right:13%}}
+@media only screen and (max-width:1023px){.sidebar .blurb,.sidebar .sidebar-toggle{display:none}}

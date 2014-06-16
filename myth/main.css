@@ -1,8 +1,9 @@
 @import "_lib/normalize.css";
 @import "_lib/print.css";
 @import "_lib/syntax.css";
+@import "_lib/font-awesome.css";
 @import "_lib/typography.css";
 @import "_components/grid.css";
 @import "_components/animations.css";
 @import "_components/buttons.css";
-@import "_components/layout.css";
+@import "_components/app.css";

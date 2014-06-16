@@ -1,22 +1,26 @@
 define [
 	"jquery"
-	"jquery.hammer.min"
-], ($,Hammer) ->
+], ($) ->
 
 	class App
 
 		@START_PAGE : 1
 
-		_hammer : null
 		_startPage : null
 
 		constructor: ->
 
 			console.log 'App running...'
 
-			@_hammer = $('body').hammer();
+			$('body').hammer
+				behavior:
+					userSelect: true
 
 			@_setupView()
+
+			setTimeout =>
+				@_hideSidebar()
+			,1000
 
 		_setupView: ->
 
@@ -27,6 +31,9 @@ define [
 		_addListeners: ->
 
 			$(document).on "click", ".page-nav", @_loadPage
+			$(document).on "swiperight dragright", ".main, .sidebar", @_showSidebar
+			$(document).on "swipeleft dragleft", ".main, .sidebar", @_hideSidebar
+			$(document).on "tap", ".sidebar-toggle", @sidebarToggleTap
 
 			@_init()
 
@@ -41,3 +48,15 @@ define [
 
 			$(".page").fadeOut 400, =>
 				page.fadeIn 400
+
+		_showSidebar: (e) =>
+
+			$(".container").removeClass "no-sidebar"
+
+		_hideSidebar: (e) =>
+
+			$(".container").addClass "no-sidebar"
+
+		sidebarToggleTap: (e) =>
+
+			$(".container").toggleClass "no-sidebar"

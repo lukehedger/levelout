@@ -1,10 +1,10 @@
 require.config
 	paths:
 		"jquery": "lib/jquery"
-		"jquery.hammer.min": "lib/jquery.hammer.min"
+		"jquery.hammer": "lib/jquery.hammer"
 
 	shim:
 		app: ["jquery"]
+		"jquery.hammer": ["jquery"]
 
-
-require ["app"], (App) -> new App()
+require ["app","jquery.hammer"], (App) -> new App()

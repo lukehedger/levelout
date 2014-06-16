@@ -1,3 +1,7 @@
+@-webkit-keyframes icon-hover-open{50%{color:#9ACC56}}
+@keyframes icon-hover-open{50%{color:#9ACC56}}
+@-webkit-keyframes icon-hover-close{50%{color:#D22D1C}}
+@keyframes icon-hover-close{50%{color:#D22D1C}}
 .anim-moveFromLeft{-webkit-animation:moveFromLeft .7s ease both;animation:moveFromLeft .7s ease both}
 @-webkit-keyframes moveFromLeft{from{-webkit-transform:translateX(-100%);transform:translateX(-100%)}}
 @keyframes moveFromLeft{from{-webkit-transform:translateX(-100%);-ms-transform:translateX(-100%);transform:translateX(-100%)}}

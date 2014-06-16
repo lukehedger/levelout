@@ -2,14 +2,15 @@
   require.config({
     paths: {
       "jquery": "lib/jquery",
-      "jquery.hammer.min": "lib/jquery.hammer.min"
+      "jquery.hammer": "lib/jquery.hammer"
     },
     shim: {
-      app: ["jquery"]
+      app: ["jquery"],
+      "jquery.hammer": ["jquery"]
     }
   });
 
-  require(["app"], function(App) {
+  require(["app", "jquery.hammer"], function(App) {
     return new App();
   });
 
