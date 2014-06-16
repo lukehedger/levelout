@@ -45,7 +45,7 @@ Use `bundle install` to install all dependencies.
 
 - [x] Gulp build tasks
     - [x] Test jekyll-gulp
-- [ ] Pretty permalinks
+- [x] Pretty permalinks
 - [ ] Typography and general styles, inc settings.css file with vars
 - [ ] Site map
 - [ ] Sidebar blurb content

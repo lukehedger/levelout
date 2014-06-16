@@ -3,7 +3,7 @@ layout: post
 title: Firefox OS
 description: A brave new world
 read: 5
-permalink: customurl.html
+<!-- permalink: customurl.html -->
 category: talks
 tags: mobile talk
 ---
