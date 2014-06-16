@@ -4,13 +4,9 @@ define [
 
 	class App
 
-		@START_PAGE : 1
-
-		_startPage : null
-
 		constructor: ->
 
-			console.log 'App running...'
+			console.log 'Like what you see? Make me smile with a shout-out http://twitter.com/level_out'
 
 			$('body').hammer
 				behavior:
@@ -18,19 +14,12 @@ define [
 
 			@_setupView()
 
-			setTimeout =>
-				@_hideSidebar()
-			,1000
-
 		_setupView: ->
-
-			@_startPage = $(".page[data-page='#{App.START_PAGE}']")
 			
 			@_addListeners()
 
 		_addListeners: ->
 
-			$(document).on "click", ".page-nav", @_loadPage
 			$(document).on "swiperight dragright", ".main, .sidebar", @_showSidebar
 			$(document).on "swipeleft dragleft", ".main, .sidebar", @_hideSidebar
 			$(document).on "tap", ".sidebar-toggle", @sidebarToggleTap
@@ -39,15 +28,9 @@ define [
 
 		_init: ->
 
-			@_startPage.fadeIn 400
-
-		_loadPage: (e) =>
-
-			pageNum = $(e.target).data "page"
-			page = $(".page[data-page='#{pageNum}']")
-
-			$(".page").fadeOut 400, =>
-				page.fadeIn 400
+			setTimeout =>
+				@_hideSidebar()
+			,1000
 
 		_showSidebar: (e) =>
 

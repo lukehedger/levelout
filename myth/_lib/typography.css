@@ -50,6 +50,7 @@ p {
 a {
 	color: #F2385A;
 	transition: 0.2s;
+	text-decoration: none;
 }
 a:hover {
 	color: #36B1BF;
