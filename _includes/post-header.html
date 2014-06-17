@@ -1,11 +1,15 @@
 <h3>{{ page.title }}</h3>
 <h4>{{ page.description }}</h4>
+<hr class="small-divider" />
 
-<span class="date">{{ page.date | date_to_string }}</span> | <span class="read">{{ page.read }} min read</span>
+<div class="post-meta">
+	<span class="date"><i class="fa fa-calendar-o"></i>{{ page.date | date_to_string }}</span>
+	<span class="read"><i class="fa fa-clock-o"></i>{{ page.read }} min read</span>
+	<span class="category"><i class="fa fa-folder-open"></i>{{ page.category }}</span>
 
-<i class="category">{{ page.category }}</i>
-<div class="tags">
-	{% for tag in page.tags %}
-		<span>{{ tag }}</span>
-	{% endfor %}
+	<!-- <div class="tags">
+		{% for tag in page.tags %}
+			<span>{{ tag }}</span>
+		{% endfor %}
+	</div> -->
 </div>

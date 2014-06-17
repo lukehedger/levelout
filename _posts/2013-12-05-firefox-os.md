@@ -4,7 +4,7 @@ title: Firefox OS
 description: A brave new world
 read: 5
 <!-- permalink: customurl.html -->
-category: talks
+category: Talks
 tags: mobile talk
 ---
 
@@ -20,8 +20,8 @@ console.log('a sample JS codeblock');
 
 > Instantly quotable
 
-Insert an image like so...
-![dope image]({{ site.url }}/assets/screenshot.jpg)
+<!-- Insert an image like so...
+![dope image]({{ site.url }}/assets/screenshot.jpg) -->
 
 Embed a Gist:
 

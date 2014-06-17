@@ -4,5 +4,3 @@
 .button.github:hover{color:#333;background-color:#fff}
 .button.twitter{border-color:#55ACEE}
 .button.twitter:hover{background-color:#55ACEE}
-.logo{width:110px;height:110px;margin:10px auto;border-radius:50%;background:#F2385A;opacity:.8;-webkit-transition:all 1s ease-in-out;transition:all 1s ease-in-out}
-.logo:hover{-webkit-transform:rotate(360deg);-ms-transform:rotate(360deg);transform:rotate(360deg);opacity:1;background:#36B1BF}

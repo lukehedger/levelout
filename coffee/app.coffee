@@ -23,6 +23,7 @@ define [
 			$(document).on "swiperight dragright", ".main, .sidebar", @_showSidebar
 			$(document).on "swipeleft dragleft", ".main, .sidebar", @_hideSidebar
 			$(document).on "tap", ".sidebar-toggle", @sidebarToggleTap
+			$(document).on "tap", "footer .logo", @scrollTop
 
 			@_init()
 
@@ -43,3 +44,7 @@ define [
 		sidebarToggleTap: (e) =>
 
 			$(".container").toggleClass "no-sidebar"
+
+		scrollTop: ->
+
+			$("html,body").animate {scrollTop: 0},400

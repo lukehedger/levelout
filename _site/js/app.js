@@ -25,6 +25,7 @@
         $(document).on("swiperight dragright", ".main, .sidebar", this._showSidebar);
         $(document).on("swipeleft dragleft", ".main, .sidebar", this._hideSidebar);
         $(document).on("tap", ".sidebar-toggle", this.sidebarToggleTap);
+        $(document).on("tap", "footer .logo", this.scrollTop);
         return this._init();
       };
 
@@ -46,6 +47,12 @@
 
       App.prototype.sidebarToggleTap = function(e) {
         return $(".container").toggleClass("no-sidebar");
+      };
+
+      App.prototype.scrollTop = function() {
+        return $("html,body").animate({
+          scrollTop: 0
+        }, 400);
       };
 
       return App;

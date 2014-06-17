@@ -11,6 +11,11 @@ h1 {
 	font: normal 6em/100px "Damion";
 	text-indent: 20px;
 }
+.small-logo h1 {
+	font-size: 2.5em;
+	line-height: 50px;
+	text-indent: 10px;
+}
 
 h2 {
 	
@@ -21,10 +26,13 @@ h3 {
 	letter-spacing: -2px;
 	text-align: center;
 }
+.post h3 {
+	margin-bottom: 10px;
+}
 
 h4 {
 	margin: 0;
-	font: italic 1.5em/1em "Esteban", Georgia, serif;
+	font-weight: normal;
 	text-align: center;
 	color: #444;
 	text-transform: lowercase;
@@ -41,10 +49,11 @@ h6 {
 p {
 
 }
-
-.page p {
-	font-size: 1.1em;
-	text-align: center;
+footer p {
+	display: inline-block;
+	font-size: 14px;
+	vertical-align: -1px;
+	color: #777;
 }
 
 a {

@@ -30,18 +30,3 @@
 .button.twitter:hover {
 	background-color: #55ACEE;
 }
-
-.logo {
-	width: 110px;
-	height: 110px;
-	margin: 10px auto;
-	border-radius: 50%;
-	background: #F2385A;
-	opacity: 0.8;
-	transition: all 1s ease-in-out;
-}
-.logo:hover {
-	transform: rotate(360deg);
-	opacity: 1;
-	background: #36B1BF;
-}
