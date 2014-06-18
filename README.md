@@ -51,6 +51,6 @@ Use `bundle install` to install all dependencies.
 - [x] Custom domain
 - [x] Disqus comments
 - [ ] Blog index intro and layout
-- [ ] 1st post!
 - [ ] Work intro and layout
+- [ ] 1st post!
 - [ ] Tag/Category ecosystem - build generator for category/tag index pages

@@ -120,6 +120,7 @@ nav .nav li a:hover, nav .nav li a:focus, nav .nav li a:active, nav .nav li a.ac
 	border-top: 1px solid #999;
 }
 .post-meta {
+	margin-bottom: 50px;
 	text-align: center;
 }
 .post-meta span {
@@ -139,6 +140,21 @@ nav .nav li a:hover, nav .nav li a:focus, nav .nav li a:active, nav .nav li a.ac
 	color: #FFFFFF;
 	background: #36B1BF;
 	position: relative;
+}
+.post p {
+	margin: 1.5em 0;
+	padding: 0 10%;
+}
+.post p:first-of-type {
+	font-size: 18px;
+}
+.post p:first-of-type::first-letter {
+	font-size: 26px;
+	font-weight: bold;
+}
+.post .comments {
+	margin: 50px auto;
+	padding: 0 10%;
 }
 
 footer {
@@ -211,5 +227,9 @@ img.emoji {
 
 /* Mobile */
 @media only screen and (max-width:480px) {
+
+	.post p, .post .comments {
+		padding: 0;
+	}
 
 }
