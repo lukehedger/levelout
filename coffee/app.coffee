@@ -30,8 +30,8 @@ define [
 		_init: ->
 
 			setTimeout =>
-				@_hideSidebar()
-			,1000
+				@_showSidebar()
+			,100
 
 		_showSidebar: (e) =>
 

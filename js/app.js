@@ -32,9 +32,9 @@
       App.prototype._init = function() {
         return setTimeout((function(_this) {
           return function() {
-            return _this._hideSidebar();
+            return _this._showSidebar();
           };
-        })(this), 1000);
+        })(this), 100);
       };
 
       App.prototype._showSidebar = function(e) {

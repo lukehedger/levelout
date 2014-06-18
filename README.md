@@ -49,8 +49,8 @@ Use `bundle install` to install all dependencies.
 - [x] Site map
 - [x] Sidebar blurb content
 - [ ] Custom domain
-- [ ] Branch comments
-- [ ] Work intro and layout
+- [ ] Disqus comments
 - [ ] Blog index intro and layout
 - [ ] 1st post!
+- [ ] Work intro and layout
 - [ ] Tag/Category ecosystem - build generator for category/tag index pages
