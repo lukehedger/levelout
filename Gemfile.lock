@@ -100,4 +100,5 @@ PLATFORMS
 
 DEPENDENCIES
   github-pages
+  jekyll-mentions
   jekyll-sitemap

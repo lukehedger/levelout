@@ -18,6 +18,8 @@ A little bit of `code`
 console.log('a sample JS codeblock');
 {% endhighlight %}
 
+Mention @lukehedger
+
 > Instantly quotable
 
 <!-- Insert an image like so...

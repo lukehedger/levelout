@@ -11,3 +11,4 @@ permalink:   date
 markdown:    kramdown
 gems:
 - jekyll-sitemap
+- jekyll-mentions

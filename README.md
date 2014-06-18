@@ -46,7 +46,7 @@ Use `bundle install` to install all dependencies.
 - [x] Gulp build tasks
     - [x] Test jekyll-gulp
 - [x] Pretty permalinks
-- [ ] Site map
+- [x] Site map
 - [ ] Sidebar blurb content
 - [ ] Story intro and layout
 - [ ] Tag/Category ecosystem
