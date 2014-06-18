@@ -4,7 +4,7 @@ title: Firefox OS
 description: A brave new world
 read: 5
 <!-- permalink: customurl.html -->
-category: Talks
+category: talks
 tags: mobile talk
 ---
 

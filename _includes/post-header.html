@@ -5,11 +5,11 @@
 <div class="post-meta">
 	<span class="date"><i class="fa fa-calendar-o"></i>{{ page.date | date_to_string }}</span>
 	<span class="read"><i class="fa fa-clock-o"></i>{{ page.read }} min read</span>
-	<span class="category"><i class="fa fa-folder-open"></i>{{ page.category }}</span>
+	<span class="category"><i class="fa fa-folder-open"></i><a href="/{{ page.category }}">{{ page.category }}</a></span>
 
-	<!-- <div class="tags">
+	<span class="tags"><i class="fa fa-tags"></i>
 		{% for tag in page.tags %}
-			<span>{{ tag }}</span>
+			<a>{{ tag }}</a>
 		{% endfor %}
-	</div> -->
+	</span>
 </div>
