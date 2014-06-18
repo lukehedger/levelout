@@ -47,7 +47,10 @@ Use `bundle install` to install all dependencies.
     - [x] Test jekyll-gulp
 - [x] Pretty permalinks
 - [x] Site map
+- [x] Sidebar blurb content
+- [ ] Custom domain
 - [ ] Branch comments
-- [ ] Sidebar blurb content
-- [ ] Story intro and layout
+- [ ] Work intro and layout
+- [ ] Blog index intro and layout
+- [ ] 1st post!
 - [ ] Tag/Category ecosystem - build generator for category/tag index pages
