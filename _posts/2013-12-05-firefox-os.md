@@ -8,7 +8,7 @@ category: Talks
 tags: mobile talk
 ---
 
-Just write the post in here, no templated sections to confuse matters!
+Just write the post in here, no templated sections to confuse matters! :+1:
 
 [Linkage](https://www.level-out.com)
 

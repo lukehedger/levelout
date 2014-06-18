@@ -47,6 +47,8 @@ Use `bundle install` to install all dependencies.
     - [x] Test jekyll-gulp
 - [x] Pretty permalinks
 - [x] Site map
+- [ ] Custom 404
+- [ ] Tag/Category ecosystem
+- [ ] Branch comments
 - [ ] Sidebar blurb content
 - [ ] Story intro and layout
-- [ ] Tag/Category ecosystem
