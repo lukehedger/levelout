@@ -6,6 +6,7 @@ read: 5
 <!-- permalink: customurl.html -->
 category: talks
 tags: mobile talk
+comments: true
 ---
 
 Just write the post in here, no templated sections to confuse matters! :+1:

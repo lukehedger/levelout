@@ -48,8 +48,8 @@ Use `bundle install` to install all dependencies.
 - [x] Pretty permalinks
 - [x] Site map
 - [x] Sidebar blurb content
-- [ ] Custom domain
-- [ ] Disqus comments - https://help.disqus.com/customer/portal/articles/472138-jekyll-installation-instructions
+- [x] Custom domain
+- [x] Disqus comments
 - [ ] Blog index intro and layout
 - [ ] 1st post!
 - [ ] Work intro and layout
