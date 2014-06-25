@@ -1,6 +1,12 @@
-# Bayse
-
-## Creating a project starter template and responsive grid
+---
+layout: post
+title: Bayse
+description: reating a project starter template and responsive grid
+read: 10
+category: frontend
+tags: bayse responsive
+comments: true
+---
 
 Benefits of a template
 

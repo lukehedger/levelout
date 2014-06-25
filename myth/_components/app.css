@@ -7,7 +7,7 @@
 }
 
 /* ==========================================================================
-   SECTIONS
+   COMPONENTS
    ========================================================================== */
 
 .sidebar {
@@ -109,6 +109,73 @@ nav .nav li a:hover, nav .nav li a:focus, nav .nav li a:active, nav .nav li a.ac
 	transition: 0.2s;
 }
 
+footer {
+	margin-top: 20px;
+	border-top: 1px solid #999;
+}
+
+/* ==========================================================================
+   PAGES
+   ========================================================================== */
+
+h4.area {
+	margin: 20px auto;
+	padding: 6px;
+	width: 130px;
+	border-radius: 6px;
+	font-weight: bold;
+	text-transform: uppercase;
+	background-color: #333;
+	color: #fff;
+}
+h4.area:before {
+	content: "";
+	width: 12px;
+	height: 12px;
+	margin-right: 4px;
+	border-radius: 50%;
+	display: inline-block;
+}
+h4.area.area-currents:before {
+	background-color: #F2385A;
+}
+h4.area.area-story:before {
+	background-color: #36B1BF;
+}
+.area-intro {
+	text-align: center;
+}
+
+.currents {
+
+}
+.currents ul {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+.currents ul li {
+	margin: 0;
+	padding: 20px 0;
+	border-bottom: 1px solid #999;
+}
+.currents ul li:last-of-type {
+	padding: 20px 0;
+	border-bottom: 0;
+}
+.currents ul li p {
+	font-style: italic;
+}
+.currents ul li p:last-of-type {
+	margin-bottom: 0;
+}
+.currents .currents-title {
+	font-weight: bold;
+}
+.currents .currents-meta {
+	color: #999;
+}
+
 .post {
 
 }
@@ -144,6 +211,7 @@ nav .nav li a:hover, nav .nav li a:focus, nav .nav li a:active, nav .nav li a.ac
 .post p {
 	margin: 1.5em 0;
 	padding: 0 10%;
+	text-align: justify;
 }
 .post p:first-of-type {
 	font-size: 18px;
@@ -155,11 +223,6 @@ nav .nav li a:hover, nav .nav li a:focus, nav .nav li a:active, nav .nav li a.ac
 .post .comments {
 	margin: 50px auto;
 	padding: 0 10%;
-}
-
-footer {
-	margin-top: 20px;
-	border-top: 1px solid #999;
 }
 
 /* ==========================================================================

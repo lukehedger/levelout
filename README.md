@@ -52,5 +52,6 @@ Use `bundle install` to install all dependencies.
 - [x] Disqus comments
 - [ ] Blog index intro and layout
 - [ ] Work intro and layout
+- [ ] Feed sidebar include with variable for logo class (currents or story) to change background color
 - [ ] 1st post!
 - [ ] Tag/Category ecosystem - build generator for category/tag index pages

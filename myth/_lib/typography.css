@@ -25,9 +25,10 @@ h3 {
 	font: bold 3em/1em "Esteban", Helvetica, Arial, sans-serif;
 	letter-spacing: -2px;
 	text-align: center;
-}
-.post h3 {
 	margin-bottom: 10px;
+}
+h3.level-out {
+	font-family: "Damion";
 }
 
 h4 {
