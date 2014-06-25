@@ -41,6 +41,8 @@ Use `bundle install` to install all dependencies.
 
 ```$ bundle exec jekyll serve --watch```
 
+NB. If you get any errors when running `jekyll serve` trying clearing out the `Gemfile.lock` and running `bundle install`
+
 ## TODO
 
 - [x] Gulp build tasks
@@ -50,8 +52,8 @@ Use `bundle install` to install all dependencies.
 - [x] Sidebar blurb content
 - [x] Custom domain
 - [x] Disqus comments
-- [ ] Blog index intro and layout
 - [ ] Work intro and layout
-- [ ] Feed sidebar include with variable for logo class (currents or story) to change background color
 - [ ] 1st post!
 - [ ] Tag/Category ecosystem - build generator for category/tag index pages
+- [ ] Blog index intro and layout
+- [ ] Feed sidebar include with variable for logo class (currents or story) to change background color

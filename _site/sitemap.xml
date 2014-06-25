@@ -3,7 +3,7 @@
   
   
   <url>
-    <loc>http://localhost:4000/talks/2013/12/05/firefox-os.html</loc>
+    <loc>http://localhost:4000/blog/2013/12/05/firefox-os.html</loc>
     <lastmod>2013-12-05T00:00:00+00:00</lastmod>
     <priority>0.8</priority>
   </url>
@@ -11,14 +11,14 @@
   
   <url>
     <loc>http://localhost:4000/</loc>
-    <lastmod>2014-06-25T18:27:20+01:00</lastmod>
+    <lastmod>2014-06-25T20:38:48+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/story/</loc>
-    <lastmod>2014-06-25T18:27:20+01:00</lastmod>
+    <loc>http://localhost:4000/work/</loc>
+    <lastmod>2014-06-25T20:38:48+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>

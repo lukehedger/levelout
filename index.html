@@ -1,5 +1,5 @@
 ---
-title: Currents
+title: Blog
 ---
 <!doctype html>
 <html>
@@ -14,16 +14,16 @@ title: Currents
 
 			<section role="main" class="column nine main">
 				<div class="inner">
-					<div class="currents">
+					<div class="blog">
 						<h3 class="level-out">level out</h3>
-						<h4 class="area area-currents">Currents</h4>
-						<p class="area-intro">This here is a collection of thoughts, words and learnings from the desk of a frontend web developer.</p>
+						<h4 class="area area-blog">Blog</h4>
+						<p class="area-intro">The adventures of a frontend web developer</p>
 						<ul>
 						  {% for post in site.posts %}
 						    <li>
-						      <a class="currents-title" href="{{ post.url }}">{{ post.title }}</a>
-						      <span class="currents-meta"> - posted on <u>{{ post.date | date_to_string }}</u> in <u>{{ post.category }}</u></span>
+						      <a class="blog-post-title" href="{{ post.url }}">{{ post.title }}</a>
 						      {{ post.excerpt }}
+						      <span class="blog-post-meta">{{ post.date | date_to_string }}</span>
 						    </li>
 						  {% endfor %}
 						</ul>
