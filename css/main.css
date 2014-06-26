@@ -620,32 +620,25 @@ a:hover{color:#36B1BF}
 @keyframes icon-hover-open{50%{color:#9ACC56}}
 @-webkit-keyframes icon-hover-close{50%{color:#D22D1C}}
 @keyframes icon-hover-close{50%{color:#D22D1C}}
-.anim-moveFromLeft{-webkit-animation:moveFromLeft .7s ease both;animation:moveFromLeft .7s ease both}
-@-webkit-keyframes moveFromLeft{from{-webkit-transform:translateX(-100%);transform:translateX(-100%)}}
-@keyframes moveFromLeft{from{-webkit-transform:translateX(-100%);-ms-transform:translateX(-100%);transform:translateX(-100%)}}
-.anim-rotateSlideOut{-webkit-animation:rotateSlideOut 1s both ease;animation:rotateSlideOut 1s both ease}
-.anim-rotateSlideIn{-webkit-animation:rotateSlideIn 1s both ease;animation:rotateSlideIn 1s both ease}
-@-webkit-keyframes rotateSlideOut{25%{opacity:.5;-webkit-transform:translateZ(-500px);transform:translateZ(-500px)}
-100%,75%{opacity:.5;-webkit-transform:translateZ(-500px) translateX(-200%);transform:translateZ(-500px) translateX(-200%)}}
-@keyframes rotateSlideOut{25%{opacity:.5;-webkit-transform:translateZ(-500px);-ms-transform:translateZ(-500px);transform:translateZ(-500px)}
-100%,75%{opacity:.5;-webkit-transform:translateZ(-500px) translateX(-200%);-ms-transform:translateZ(-500px) translateX(-200%);transform:translateZ(-500px) translateX(-200%)}}
-@-webkit-keyframes rotateSlideIn{0%,25%{opacity:.5;-webkit-transform:translateZ(-500px) translateX(200%);transform:translateZ(-500px) translateX(200%)}
-75%{opacity:.5;-webkit-transform:translateZ(-500px);transform:translateZ(-500px)}
-100%{opacity:1;-webkit-transform:translateZ(0) translateX(0);transform:translateZ(0) translateX(0)}}
-@keyframes rotateSlideIn{0%,25%{opacity:.5;-webkit-transform:translateZ(-500px) translateX(200%);-ms-transform:translateZ(-500px) translateX(200%);transform:translateZ(-500px) translateX(200%)}
-75%{opacity:.5;-webkit-transform:translateZ(-500px);-ms-transform:translateZ(-500px);transform:translateZ(-500px)}
-100%{opacity:1;-webkit-transform:translateZ(0) translateX(0);-ms-transform:translateZ(0) translateX(0);transform:translateZ(0) translateX(0)}}
+.inner{padding:0 20px}
+.main{z-index:10;background:#FFF;-webkit-transition:.2s;transition:.2s}
+.main.has-hero,.main.has-hero .inner{padding:0}
+.main.has-hero .inner .content,.main.has-hero .inner footer{margin:0 50px}
 .button{margin:5px;padding:10px 20px;border:1px solid #333;border-radius:6px;display:inline-block;text-align:center;text-decoration:none;-webkit-transition:.2s;transition:.2s}
 .button:hover{color:#fff;background-color:#333}
 .button.github{border-color:#fff}
 .button.github:hover{color:#333;background-color:#fff}
 .button.twitter{border-color:#55ACEE}
 .button.twitter:hover{background-color:#55ACEE}
+.hero{width:100%;height:200px;background:no-repeat center;-webkit-background-size:100%;background-size:100%;position:relative;color:#fff;text-shadow:1px 1px 1px #999}
+#blog .hero{background-image:url(../../img/hero-blog.jpg)}
+#work .hero{background-image:url(../../img/hero-work.jpg)}
+.hero .hero-content{margin:auto;position:absolute;top:0;right:0;bottom:0;left:0;height:inherit}
+footer{margin-top:20px;border-top:1px solid #999}
 .logo{width:110px;height:110px;margin:10px auto;border-radius:50%;display:block;background:#F2385A;-webkit-transition:all 1s ease-in-out;transition:all 1s ease-in-out}
 .logo:not(.small-logo):hover{-webkit-transform:rotate(360deg);-ms-transform:rotate(360deg);transform:rotate(360deg);background:#36B1BF}
 .logo.small-logo{width:50px;height:50px;display:inline-block;color:#444;background:0 0;opacity:.8}
 .logo.small-logo:hover{opacity:1}
-.inner{padding:0 20px}
 .sidebar{z-index:20;color:#FFF;background:#333;-webkit-transition:.4s;transition:.4s}
 .sidebar a{color:inherit}
 .sidebar .blurb{margin:20px 0;padding:10px;border:1px dashed #666;border-radius:4px;text-align:center;-webkit-transition:1s;transition:1s}
@@ -660,10 +653,18 @@ nav .nav li a.active,nav .nav li a:active,nav .nav li a:focus,nav .nav li a:hove
 .sidebar .networks{text-align:center}
 .sidebar-toggle{width:40px;height:40px;border:2px solid #fff;border-radius:50%;text-align:center;background:#333;position:absolute;top:10px;right:-20px;cursor:pointer}
 .sidebar-toggle i{width:20px;height:20px;position:absolute;top:0;bottom:0;left:0;right:0;margin:auto;font-size:26px;line-height:15px;font-weight:100;font-style:normal;-webkit-transition:.1s;transition:.1s;-webkit-transform:rotate(0deg);-ms-transform:rotate(0deg);transform:rotate(0deg)}
-.main{z-index:10;background:#FFF;-webkit-transition:.2s;transition:.2s}
-.main.has-hero,.main.has-hero .inner{padding:0}
-.main.has-hero .inner .content,.main.has-hero .inner footer{margin:0 50px}
-footer{margin-top:20px;border-top:1px solid #999}
+img{width:100%;max-width:100%;margin:0 auto}
+img.emoji{width:auto;vertical-align:baseline}
+@media only screen and (min-width:1024px){.sidebar{height:100%;position:fixed;left:0;padding-bottom:9999px;margin-bottom:-9999px}
+section[role=document].no-sidebar .sidebar{left:-24%}
+section[role=document].no-sidebar .sidebar .sidebar-toggle i{-webkit-transform:rotate(45deg);-ms-transform:rotate(45deg);transform:rotate(45deg)}
+.sidebar-toggle:active i,.sidebar-toggle:focus i,section[role=document] .sidebar .sidebar-toggle:hover i{-webkit-animation:icon-hover-close 2s 2 ease-in-out;animation:icon-hover-close 2s 2 ease-in-out}
+.sidebar-toggle:active i,.sidebar-toggle:focus i,section[role=document].no-sidebar .sidebar .sidebar-toggle:hover i{-webkit-animation:icon-hover-open 1s 2 ease-in-out;animation:icon-hover-open 1s 2 ease-in-out}
+.main{height:100%;position:absolute;right:0;-webkit-transition:.4s;transition:.4s}
+section[role=document].no-sidebar .main{right:13%}
+section[role=document].no-sidebar .main.has-hero{width:100%;right:0}}
+@media only screen and (max-width:1023px){.sidebar .blurb,.sidebar .sidebar-toggle{display:none}}
+@media only screen and (max-width:480px){.post .comments,.post p{padding:0}}
 h4.area{margin:20px auto;padding:6px;width:130px;border-radius:6px;font-weight:700;text-transform:uppercase;background-color:#333;color:#fff}
 h4.area:before{content:"";width:12px;height:12px;margin-right:4px;border-radius:50%;display:inline-block}
 h4.area.area-blog:before{background-color:#F2385A}
@@ -686,19 +687,3 @@ h4.area.area-work:before{background-color:#36B1BF}
 .post p:first-of-type{font-size:18px}
 .post p:first-of-type::first-letter{font-size:26px;font-weight:700}
 .post .comments{margin:50px auto;padding:0 10%}
-img{width:100%;max-width:100%;margin:0 auto}
-img.emoji{width:auto;vertical-align:baseline}
-@media only screen and (min-width:1024px){.sidebar{height:100%;position:fixed;left:0;padding-bottom:9999px;margin-bottom:-9999px}
-section[role=document].no-sidebar .sidebar{left:-24%}
-section[role=document].no-sidebar .sidebar .sidebar-toggle i{-webkit-transform:rotate(45deg);-ms-transform:rotate(45deg);transform:rotate(45deg)}
-.sidebar-toggle:active i,.sidebar-toggle:focus i,section[role=document] .sidebar .sidebar-toggle:hover i{-webkit-animation:icon-hover-close 2s 2 ease-in-out;animation:icon-hover-close 2s 2 ease-in-out}
-.sidebar-toggle:active i,.sidebar-toggle:focus i,section[role=document].no-sidebar .sidebar .sidebar-toggle:hover i{-webkit-animation:icon-hover-open 1s 2 ease-in-out;animation:icon-hover-open 1s 2 ease-in-out}
-.main{height:100%;position:absolute;right:0;-webkit-transition:.4s;transition:.4s}
-section[role=document].no-sidebar .main{right:13%}
-section[role=document].no-sidebar .main.has-hero{width:100%;right:0}}
-@media only screen and (max-width:1023px){.sidebar .blurb,.sidebar .sidebar-toggle{display:none}}
-@media only screen and (max-width:480px){.post .comments,.post p{padding:0}}
-.hero{width:100%;height:200px;background:no-repeat center;-webkit-background-size:100%;background-size:100%;position:relative;color:#fff;text-shadow:1px 1px 1px #999}
-#blog .hero{background-image:url(../../img/hero-blog.jpg)}
-#work .hero{background-image:url(../../img/hero-work.jpg)}
-.hero .hero-content{margin:auto;position:absolute;top:0;right:0;bottom:0;left:0;height:inherit}

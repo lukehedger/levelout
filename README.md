@@ -52,7 +52,6 @@ NB. If you get any errors when running `jekyll serve` trying clearing out the `G
 - [x] Sidebar blurb content
 - [x] Custom domain
 - [x] Disqus comments
-- [ ] Modularise CSS
 - [ ] Hero category
 - [ ] Redirect /blog to index -> [see](https://help.github.com/articles/redirects-on-github-pages)
 - [ ] Build generator for tag index page
