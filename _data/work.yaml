@@ -1,0 +1,12 @@
+- project: Google Match
+  co: Lean Mean Fighting Machine
+  tech: [NodeJS,Socket.IO,CoffeeScript]
+  link: http://gmatch.jit.su/
+  shot: googlematch.jpg
+  description: Real-time multiplayer game prototyped for Google Play
+- project: To Be Jolly
+  co: Personal
+  tech: [JavaScript,Foundation,MasonryJS]
+  link: http://tobejolly.com/
+  shot: tobejolly.jpg
+  description: Interactive advent calendar

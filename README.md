@@ -53,8 +53,8 @@ NB. If you get any errors when running `jekyll serve` trying clearing out the `G
 - [x] Custom domain
 - [x] Disqus comments
 - [ ] Hero category
+- [ ] Feed sidebar include with variable for logo class (currents or story) to change background color
+- [ ] Work layout
+- [ ] Gulp image compression
 - [ ] Redirect /blog to index -> [see](https://help.github.com/articles/redirects-on-github-pages)
 - [ ] Build generator for tag index page
-- [ ] Work index intro and layout
-- [ ] Feed sidebar include with variable for logo class (currents or story) to change background color
-- [ ] Gulp image compression
