@@ -1,12 +1,15 @@
 h4.area {
-	margin: 20px auto;
+	margin: -70px auto 0;
 	padding: 6px;
-	width: 130px;
-	border-radius: 6px;
+	width: 100px;
+	height: 50px;
+	border-radius: 20px;
 	font-weight: bold;
 	text-transform: uppercase;
-	background-color: #333;
-	color: #fff;
+	background-color: #FFFFFF;
+	box-shadow: 0px -2px 0px rgba(0,0,0,0.1);
+	position: relative;
+	z-index: 10;
 }
 h4.area:before {
 	content: "";
@@ -22,6 +25,7 @@ h4.area.area-blog:before {
 h4.area.area-work:before {
 	background-color: #36B1BF;
 }
-.area-intro {
-	text-align: center;
+
+#blog .content, #work .content {
+	margin: 40px 50px !important;
 }

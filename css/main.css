@@ -634,6 +634,7 @@ a:hover{color:#36B1BF}
 #blog .hero{background-image:url(../../img/hero-blog.jpg)}
 #work .hero{background-image:url(../../img/hero-work.jpg)}
 .hero .hero-content{margin:auto;position:absolute;top:0;right:0;bottom:0;left:0;height:inherit}
+.hero .hero-content .hero-intro{text-align:center}
 footer{margin-top:20px;border-top:1px solid #999}
 .logo{width:110px;height:110px;margin:10px auto;border-radius:50%;display:block;background:#F2385A;-webkit-transition:all 1s ease-in-out;transition:all 1s ease-in-out}
 .logo:not(.small-logo):hover{-webkit-transform:rotate(360deg);-ms-transform:rotate(360deg);transform:rotate(360deg);background:#36B1BF}
@@ -665,12 +666,11 @@ section[role=document].no-sidebar .main{right:13%}
 section[role=document].no-sidebar .main.has-hero{width:100%;right:0}}
 @media only screen and (max-width:1023px){.sidebar .blurb,.sidebar .sidebar-toggle{display:none}}
 @media only screen and (max-width:480px){.post .comments,.post p{padding:0}}
-h4.area{margin:20px auto;padding:6px;width:130px;border-radius:6px;font-weight:700;text-transform:uppercase;background-color:#333;color:#fff}
+h4.area{margin:-70px auto 0;padding:6px;width:100px;height:50px;border-radius:20px;font-weight:700;text-transform:uppercase;background-color:#FFF;-webkit-box-shadow:0 -2px 0 rgba(0,0,0,.1);box-shadow:0 -2px 0 rgba(0,0,0,.1);position:relative;z-index:10}
 h4.area:before{content:"";width:12px;height:12px;margin-right:4px;border-radius:50%;display:inline-block}
 h4.area.area-blog:before{background-color:#F2385A}
 h4.area.area-work:before{background-color:#36B1BF}
-.area-intro{text-align:center}
-#blog .content{margin:40px 50px!important}
+#blog .content,#work .content{margin:40px 50px!important}
 #blog ul{margin:0;padding:0;list-style-type:none}
 #blog ul li{margin:0;padding:10px 0}
 #blog ul li p{font-style:italic}

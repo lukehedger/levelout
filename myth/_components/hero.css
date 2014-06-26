@@ -22,3 +22,6 @@
 	left: 0;
 	height: inherit;
 }
+.hero .hero-content .hero-intro {
+	text-align: center;
+}
