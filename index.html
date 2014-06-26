@@ -12,20 +12,24 @@ title: Blog
 
 			{% include sidebar.html %}
 
-			<section role="main" class="column nine main">
+			<section role="main" class="column nine main has-hero" id="blog">
 				<div class="inner">
-					<div class="blog">
-						<h3 class="level-out">level out</h3>
-						<h4 class="area area-blog">Blog</h4>
-						<p class="area-intro">The adventures of a frontend web developer</p>
+					<div class="hero">
+						<div class="hero-content">
+							<h3 class="level-out">level out</h3>
+							<p class="area-intro">The adventures of a frontend web developer</p>
+							<!-- <h4 class="area area-blog">Blog</h4> -->
+						</div>
+					</div>
+					<div class="content">
 						<ul>
-						  {% for post in site.posts %}
-						    <li>
-						      <a class="blog-post-title" href="{{ post.url }}">{{ post.title }}</a>
-						      {{ post.excerpt }}
-						      <span class="blog-post-meta">{{ post.date | date_to_string }}</span>
-						    </li>
-						  {% endfor %}
+							{% for post in site.posts %}
+								<li>
+									<a class="blog-post-title" href="{{ post.url }}">{{ post.title }}</a>
+									{{ post.excerpt }}
+									<span class="blog-post-meta">{{ post.date | date_to_string }}</span>
+								</li>
+							{% endfor %}
 						</ul>
 					</div>
 

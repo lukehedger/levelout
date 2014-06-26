@@ -43,7 +43,7 @@ table{border-collapse:collapse;border-spacing:0}
 body,figure,form{margin:0}
 dl,menu,ol,p,pre,ul{margin:1em 0}
 a.img{text-decoration:none}
-a:active{border:none;outline:0}
+a:active{border:0;outline:0}
 @viewport{width:device-width}
 body,button,html,input,select,textarea{color:#333}
 html{height:100%}
@@ -112,7 +112,7 @@ h2,h3{page-break-after:avoid}}
  *  Font Awesome 4.1.0 by @davegandy - http://fontawesome.io - @fontawesome
  *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
  */
-@font-face{font-family:FontAwesome;src:url(/_lib/fonts/FontAwesome/fontawesome-webfont.eot?v=4.1.0);src:url(/_lib/fonts/FontAwesome/fontawesome-webfont.eot?#iefix&v=4.1.0) format('embedded-opentype'),url(/_lib/.fonts/FontAwesome/fontawesome-webfont.woff?v=4.1.0) format('woff'),url(/_lib/fonts/FontAwesome/fontawesome-webfont.ttf?v=4.1.0) format('truetype'),url(/_lib/fonts/FontAwesome/fontawesome-webfont.svg?v=4.1.0#fontawesomeregular) format('svg');font-weight:400;font-style:normal}
+@font-face{font-family:FontAwesome;src:url(../../fonts/FontAwesome/fontawesome-webfont.eot?v=4.1.0);src:url(../../fonts/FontAwesome/fontawesome-webfont.eot?#iefix&v=4.1.0) format('embedded-opentype'),url(../../fonts/FontAwesome/fontawesome-webfont.woff?v=4.1.0) format('woff'),url(../../fonts/FontAwesome/fontawesome-webfont.ttf?v=4.1.0) format('truetype'),url(../../fonts/FontAwesome/fontawesome-webfont.svg?v=4.1.0#fontawesomeregular) format('svg');font-weight:400;font-style:normal}
 .fa{display:inline-block;font-family:FontAwesome;font-style:normal;font-weight:400;line-height:1;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
 .fa-lg{font-size:1.33333333em;line-height:.75em;vertical-align:-15%}
 .fa-2x{font-size:2em}
@@ -587,7 +587,7 @@ body{font:400 1em/1.4 Rosario,Helvetica,Arial,sans-serif}
 h1{margin:0;font:400 6em/100px Damion;text-indent:20px}
 .small-logo h1{font-size:2.5em;line-height:50px;text-indent:10px}
 h3{font:700 3em/1em Esteban,Helvetica,Arial,sans-serif;letter-spacing:-2px;text-align:center;margin-bottom:10px}
-h3.level-out{font-family:Damion}
+h3.level-out{font-family:Damion;font-size:3.5em}
 h4{margin:0;font-weight:400;text-align:center;color:#444;text-transform:lowercase}
 footer p{display:inline-block;font-size:14px;vertical-align:-1px;color:#777}
 a{color:#F2385A;-webkit-transition:.2s;transition:.2s;text-decoration:none}
@@ -661,19 +661,21 @@ nav .nav li a.active,nav .nav li a:active,nav .nav li a:focus,nav .nav li a:hove
 .sidebar-toggle{width:40px;height:40px;border:2px solid #fff;border-radius:50%;text-align:center;background:#333;position:absolute;top:10px;right:-20px;cursor:pointer}
 .sidebar-toggle i{width:20px;height:20px;position:absolute;top:0;bottom:0;left:0;right:0;margin:auto;font-size:26px;line-height:15px;font-weight:100;font-style:normal;-webkit-transition:.1s;transition:.1s;-webkit-transform:rotate(0deg);-ms-transform:rotate(0deg);transform:rotate(0deg)}
 .main{z-index:10;background:#FFF;-webkit-transition:.2s;transition:.2s}
+.main.has-hero,.main.has-hero .inner{padding:0}
+.main.has-hero .inner .content,.main.has-hero .inner footer{margin:0 50px}
 footer{margin-top:20px;border-top:1px solid #999}
 h4.area{margin:20px auto;padding:6px;width:130px;border-radius:6px;font-weight:700;text-transform:uppercase;background-color:#333;color:#fff}
 h4.area:before{content:"";width:12px;height:12px;margin-right:4px;border-radius:50%;display:inline-block}
 h4.area.area-blog:before{background-color:#F2385A}
 h4.area.area-work:before{background-color:#36B1BF}
 .area-intro{text-align:center}
-.blog ul{margin:0;padding:0;list-style-type:none}
-.blog ul li{margin:0;padding:20px 0;border-bottom:1px solid #999}
-.blog ul li:last-of-type{padding:20px 0;border-bottom:0}
-.blog ul li p{font-style:italic}
-.blog ul li p:last-of-type{margin-bottom:0}
-.blog .blog-post-title{font-weight:700}
-.blog .blog-post-meta{color:#999}
+#blog .content{margin:40px 50px!important}
+#blog ul{margin:0;padding:0;list-style-type:none}
+#blog ul li{margin:0;padding:10px 0}
+#blog ul li p{font-style:italic}
+#blog ul li p:last-of-type{margin:0}
+#blog .blog-post-title{font-weight:700;font-size:1.5em}
+#blog .blog-post-meta{color:#999}
 .small-divider{width:500px;max-width:100%;margin:20px auto;border:0;border-top:1px solid #999}
 .post-meta{margin-bottom:50px;text-align:center}
 .post-meta span{margin-right:10px}
@@ -691,7 +693,12 @@ section[role=document].no-sidebar .sidebar{left:-24%}
 section[role=document].no-sidebar .sidebar .sidebar-toggle i{-webkit-transform:rotate(45deg);-ms-transform:rotate(45deg);transform:rotate(45deg)}
 .sidebar-toggle:active i,.sidebar-toggle:focus i,section[role=document] .sidebar .sidebar-toggle:hover i{-webkit-animation:icon-hover-close 2s 2 ease-in-out;animation:icon-hover-close 2s 2 ease-in-out}
 .sidebar-toggle:active i,.sidebar-toggle:focus i,section[role=document].no-sidebar .sidebar .sidebar-toggle:hover i{-webkit-animation:icon-hover-open 1s 2 ease-in-out;animation:icon-hover-open 1s 2 ease-in-out}
-.main{height:100%;position:absolute;right:0}
-section[role=document].no-sidebar .main{right:13%}}
+.main{height:100%;position:absolute;right:0;-webkit-transition:.4s;transition:.4s}
+section[role=document].no-sidebar .main{right:13%}
+section[role=document].no-sidebar .main.has-hero{width:100%;right:0}}
 @media only screen and (max-width:1023px){.sidebar .blurb,.sidebar .sidebar-toggle{display:none}}
 @media only screen and (max-width:480px){.post .comments,.post p{padding:0}}
+.hero{width:100%;height:200px;background:no-repeat center;-webkit-background-size:100%;background-size:100%;position:relative;color:#fff;text-shadow:1px 1px 1px #999}
+#blog .hero{background-image:url(../../img/hero-blog.jpg)}
+#work .hero{background-image:url(../../img/hero-work.jpg)}
+.hero .hero-content{margin:auto;position:absolute;top:0;right:0;bottom:0;left:0;height:inherit}
