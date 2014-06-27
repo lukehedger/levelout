@@ -52,7 +52,6 @@ NB. If you get any errors when running `jekyll serve` trying clearing out the `G
 - [x] Sidebar blurb content
 - [x] Custom domain
 - [x] Disqus comments
-- [ ] Hero category
 - [ ] Feed sidebar include with variable for logo class (currents or story) to change background color
 - [ ] Work layout
 - [ ] Gulp image compression

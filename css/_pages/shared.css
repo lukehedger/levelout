@@ -1,5 +1,1 @@
-h4.area{margin:-70px auto 0;padding:6px;width:100px;height:50px;border-radius:20px;font-weight:700;text-transform:uppercase;background-color:#FFF;-webkit-box-shadow:0 -2px 0 rgba(0,0,0,.1);box-shadow:0 -2px 0 rgba(0,0,0,.1);position:relative;z-index:10}
-h4.area:before{content:"";width:12px;height:12px;margin-right:4px;border-radius:50%;display:inline-block}
-h4.area.area-blog:before{background-color:#F2385A}
-h4.area.area-work:before{background-color:#36B1BF}
 #blog .content,#work .content{margin:40px 50px!important}
