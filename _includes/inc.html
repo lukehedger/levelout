@@ -1,3 +1,5 @@
 <p>Reusable partials - insert into md files with <code>{% include header.html %}</code></p>
 <p>Could be used for headers, footers etc.</p>
 <p>Can also insert using a variable for the include filename <code>{% include {{my_variable}} %}</code></p>
+<p>You can also pass parameters to an include: <code>{% include header.html param="value" %}</code></p>
+<p>These parameters are available via Liquid in the include: <code>{{ include.param }}</code></p>
