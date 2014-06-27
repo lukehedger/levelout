@@ -3,6 +3,8 @@ var gulp = require('gulp'),
 	myth = require('gulp-myth'),
 	jekyll = require('gulp-jekyll'),
 	minifycss = require('gulp-minify-css'),
+	imagemin = require('gulp-imagemin'),
+	cache = require('gulp-cache'),
 	uglify = require('gulp-uglify'),
 	clean = require('gulp-clean'),
 	concat = require('gulp-concat'),
@@ -33,13 +35,20 @@ gulp.task('myth', function () {
 		.pipe(livereload(server));
 });
 
+gulp.task('images', function() {
+  return gulp.src('_img/**/*')
+    .pipe(cache(imagemin({ optimizationLevel: 5, progressive: true, interlaced: true })))
+    .pipe(gulp.dest('img'));
+});
+
 gulp.task('default', function () {
-	gulp.start('coffee', 'myth');
+	gulp.start('coffee', 'myth', 'images');
 });
 
 gulp.task('watch', function() {
 	gulp.watch('myth/**/*.css', ['myth']);
 	gulp.watch('coffee/**/*.coffee', ['coffee']);
+	gulp.watch('_img/**/*', ['images']);
 });
 
 // gulp-jekyll is still in development, only use when full config options available
