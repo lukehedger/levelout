@@ -1,9 +1,9 @@
 ---
 layout: post
 title: Bayse
-description: reating a project starter template and responsive grid
+description: Creating a project starter template and responsive grid
 read: 10
-category: frontend
+category: blog
 tags: bayse responsive
 comments: true
 ---

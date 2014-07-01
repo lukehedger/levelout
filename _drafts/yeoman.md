@@ -3,7 +3,7 @@ layout: post
 title: Yeoman
 description: Building your own generator
 read: 20
-category: hello-world-series
+category: blog
 tags: yeoman hello-world
 comments: true
 ---

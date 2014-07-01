@@ -3,7 +3,7 @@ layout: post
 title: Day One
 description: My first day as a website
 read: 3
-category: general
+category: blog
 tags: jekyll bayse
 comments: true
 ---
