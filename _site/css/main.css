@@ -614,7 +614,7 @@ a:hover{color:#36B1BF}
 .three{width:25%}
 .two{width:16.666667%}
 .one{width:8.333333333%}
-@media only screen and (max-width:1024px){.column{width:100%}
+@media only screen and (max-width:1023px){.column{width:100%}
 .column.bottom,.column.middle{position:relative}}
 @-webkit-keyframes icon-hover-open{50%{color:#9ACC56}}
 @keyframes icon-hover-open{50%{color:#9ACC56}}
