@@ -3,7 +3,7 @@ audio,canvas,video{display:inline;zoom:1}
 [hidden]{display:none}
 html{font-size:100%;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%}
 button,html,input,select,textarea{font-family:sans-serif;resize:vertical}
-a:focus{outline:thin dotted}
+a:focus{outline:dotted thin}
 a:active,a:hover{outline:0}
 h1{font-size:2em;margin:.67em 0}
 h2{font-size:1.5em;margin:.83em 0}
@@ -16,7 +16,7 @@ b,strong{font-weight:700}
 blockquote{margin:1em 40px}
 dfn{font-style:italic}
 mark{background:#ff0;color:#000}
-code,kbd,pre,samp{font-family:monospace,serif;_font-family:'courier new',monospace;font-size:1em}
+code,kbd,pre,samp{font-family:monospace,serif;font-size:1em}
 pre{white-space:pre-wrap;word-wrap:break-word}
 q{quotes:none}
 q:after,q:before{content:none}
@@ -26,7 +26,7 @@ sup{top:-.5em}
 sub{bottom:-.25em}
 dd{margin:0 0 0 40px}
 menu,ol,ul{padding:0 0 0 40px}
-nav ol,nav ul{list-style:none;list-style-image:none}
+nav ol,nav ul{list-style:none}
 img{border:0;-ms-interpolation-mode:bicubic}
 svg:not(:root){overflow:hidden}
 fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}
@@ -44,13 +44,13 @@ table{border-collapse:collapse;border-spacing:0}
 body,figure,form{margin:0}
 dl,menu,ol,p,pre,ul{margin:1em 0}
 a.img{text-decoration:none}
-a:active{border:0;outline:0}
+a:active{border:none;outline:0}
 @viewport{width:device-width}
 body,button,html,input,select,textarea{color:#333}
 html{height:100%}
 body{min-height:100%}
 ::-moz-selection{background:#b3d4fc}
 ::selection{background:#b3d4fc}
-a{cursor:pointer;-webkit-tap-highlight-color:rgba(0,0,0,0)}
+a{cursor:pointer;-webkit-tap-highlight-color:transparent}
 hr{display:block;height:1px;border:0;border-top:1px solid #ccc;margin:1em 0;padding:0}
 img{vertical-align:middle}

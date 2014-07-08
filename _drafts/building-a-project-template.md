@@ -25,3 +25,6 @@ A little bit of `code`
 
 > Instantly quotable -->
 
+I've made the framework as simple as possible so there shouldn't be anything in there that makes you think 'what on Earth does that do?' - no black boxes.
+
+I also wanted to introduce a few tools that may not be familiar but in a way that could be used to learn and embrace - rather than use and take for granted.

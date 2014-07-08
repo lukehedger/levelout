@@ -1,5 +1,5 @@
 .hero{width:100%;height:200px;background:no-repeat center;-webkit-background-size:100%;background-size:100%;position:relative;color:#fff;text-shadow:1px 1px 1px #999}
-#blog .hero{background-image:url(../../img/hero-blog.jpg)}
-#work .hero{background-image:url(../../img/hero-work.jpg)}
+#blog .hero{background-image:url(/Users/Lhedger/Documents/Experiments/lukehedger.github.io/img/hero-blog.jpg)}
+#work .hero{background-image:url(/Users/Lhedger/Documents/Experiments/lukehedger.github.io/img/hero-work.jpg)}
 .hero .hero-content{margin:auto;position:absolute;top:0;right:0;bottom:0;left:0;height:inherit}
 .hero .hero-content .hero-intro{text-align:center}

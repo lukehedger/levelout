@@ -2,8 +2,7 @@
    SETTINGS
    ========================================================================== */
 
-::root {
-	/* COLOURS */
-	--blue: #36B1BF;
-	--pink: #F2385A;
+:root {
+	--color-loblue: #36B1BF;
+	--color-lopink: #F2385A;
 }
