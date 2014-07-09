@@ -623,7 +623,7 @@ a:hover{color:#36B1BF}
 .inner{padding:0 20px}
 .main{z-index:10;background:#FFF;-webkit-transition:.2s;transition:.2s}
 .main.has-hero,.main.has-hero .inner{padding:0}
-.main.has-hero .inner .content,.main.has-hero .inner footer{margin:0 50px}
+.main.has-hero .inner .content{margin:0 50px}
 .button{margin:5px;padding:10px 20px;border:1px solid #333;border-radius:6px;display:inline-block;text-align:center;text-decoration:none;-webkit-transition:.2s;transition:.2s}
 .button:hover{color:#fff;background-color:#333}
 .button.github{border-color:#fff}
@@ -636,6 +636,7 @@ a:hover{color:#36B1BF}
 .hero .hero-content{margin:auto;position:absolute;top:0;right:0;bottom:0;left:0;height:inherit}
 .hero .hero-content .hero-intro{text-align:center}
 footer{margin-top:20px;border-top:1px solid #999}
+.main.has-hero .inner footer{margin:0 25px}
 .logo{width:110px;height:110px;margin:10px auto;border-radius:50%;display:block;background:#F2385A;-webkit-transition:all 1s ease-in-out;transition:all 1s ease-in-out}
 .logo:not(.small-logo):hover{-webkit-transform:rotate(360deg);-ms-transform:rotate(360deg);transform:rotate(360deg);background:#36B1BF}
 .logo.logo-work{background:#36B1BF}

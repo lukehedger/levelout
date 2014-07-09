@@ -14,6 +14,6 @@
 .main.has-hero, .main.has-hero .inner {
 	padding: 0;
 }
-.main.has-hero .inner .content, .main.has-hero .inner footer {
+.main.has-hero .inner .content {
 	margin: 0 50px;
 }

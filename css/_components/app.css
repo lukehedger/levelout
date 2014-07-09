@@ -1,4 +1,4 @@
 .inner{padding:0 20px}
 .main{z-index:10;background:#FFF;-webkit-transition:.2s;transition:.2s}
 .main.has-hero,.main.has-hero .inner{padding:0}
-.main.has-hero .inner .content,.main.has-hero .inner footer{margin:0 50px}
+.main.has-hero .inner .content{margin:0 50px}
