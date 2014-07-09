@@ -112,7 +112,7 @@ h2,h3{page-break-after:avoid}}
  *  Font Awesome 4.1.0 by @davegandy - http://fontawesome.io - @fontawesome
  *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
  */
-@font-face{font-family:FontAwesome;src:url(/Users/Lhedger/Documents/Experiments/fonts/FontAwesome/fontawesome-webfont.eot?v=4.1.0);src:url(/Users/Lhedger/Documents/Experiments/fonts/FontAwesome/fontawesome-webfont.eot?#iefix&v=4.1.0) format('embedded-opentype'),url(/Users/Lhedger/Documents/Experiments/fonts/FontAwesome/fontawesome-webfont.woff?v=4.1.0) format('woff'),url(/Users/Lhedger/Documents/Experiments/fonts/FontAwesome/fontawesome-webfont.ttf?v=4.1.0) format('truetype'),url(/Users/Lhedger/Documents/Experiments/fonts/FontAwesome/fontawesome-webfont.svg?v=4.1.0#fontawesomeregular) format('svg');font-weight:400;font-style:normal}
+@font-face{font-family:FontAwesome;src:url(/fonts/FontAwesome/fontawesome-webfont.eot?v=4.1.0);src:url(/fonts/FontAwesome/fontawesome-webfont.eot?#iefix&v=4.1.0) format('embedded-opentype'),url(/fonts/FontAwesome/fontawesome-webfont.woff?v=4.1.0) format('woff'),url(/fonts/FontAwesome/fontawesome-webfont.ttf?v=4.1.0) format('truetype'),url(/fonts/FontAwesome/fontawesome-webfont.svg?v=4.1.0#fontawesomeregular) format('svg');font-weight:400;font-style:normal}
 .fa{display:inline-block;font-family:FontAwesome;font-style:normal;font-weight:400;line-height:1;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
 .fa-lg{font-size:1.33333333em;line-height:.75em;vertical-align:-15%}
 .fa-2x{font-size:2em}
@@ -631,8 +631,8 @@ a:hover{color:#36B1BF}
 .button.twitter{border-color:#55ACEE}
 .button.twitter:hover{background-color:#55ACEE}
 .hero{width:100%;height:200px;background:no-repeat center;-webkit-background-size:100%;background-size:100%;position:relative;color:#fff;text-shadow:1px 1px 1px #999}
-#blog .hero{background-image:url(/Users/Lhedger/Documents/Experiments/img/hero-blog.jpg)}
-#work .hero{background-image:url(/Users/Lhedger/Documents/Experiments/img/hero-work.jpg)}
+#blog .hero{background-image:url(/img/hero-blog.jpg)}
+#work .hero{background-image:url(/img/hero-work.jpg)}
 .hero .hero-content{margin:auto;position:absolute;top:0;right:0;bottom:0;left:0;height:inherit}
 .hero .hero-content .hero-intro{text-align:center}
 footer{margin-top:20px;border-top:1px solid #999}

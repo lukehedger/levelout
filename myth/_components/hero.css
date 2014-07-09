@@ -8,10 +8,10 @@
 	text-shadow: 1px 1px 1px #999;
 }
 #blog .hero {
-	background-image: url('../../img/hero-blog.jpg');
+	background-image: url('/img/hero-blog.jpg');
 }
 #work .hero {
-	background-image: url('../../img/hero-work.jpg');
+	background-image: url('/img/hero-work.jpg');
 }
 .hero .hero-content {
 	margin: auto;
