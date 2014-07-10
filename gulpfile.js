@@ -42,7 +42,7 @@ gulp.task('images', function() {
 });
 
 gulp.task('default', function () {
-	gulp.start('coffee', 'myth', 'images');
+	gulp.start('coffee', 'myth', 'images', 'watch');
 });
 
 gulp.task('watch', function() {

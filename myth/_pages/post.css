@@ -1,5 +1,5 @@
 .post {
-
+	padding: 0 10%;
 }
 .small-divider {
 	width: 500px;
@@ -32,11 +32,11 @@
 }
 .post p {
 	margin: 1.5em 0;
-	padding: 0 10%;
-	text-align: justify;
+	font-size: 1.1em;
 }
 .post p:first-of-type {
-	font-size: 18px;
+	font-size: 1.2em;
+	text-align: center;
 }
 .post p:first-of-type::first-letter {
 	font-size: 26px;
@@ -44,5 +44,4 @@
 }
 .post .comments {
 	margin: 50px auto;
-	padding: 0 10%;
 }

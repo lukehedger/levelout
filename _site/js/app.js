@@ -38,11 +38,15 @@
       };
 
       App.prototype._showSidebar = function(e) {
-        return $(".container").removeClass("no-sidebar");
+        if (this.noTextSelected()) {
+          return $(".container").removeClass("no-sidebar");
+        }
       };
 
       App.prototype._hideSidebar = function(e) {
-        return $(".container").addClass("no-sidebar");
+        if (this.noTextSelected()) {
+          return $(".container").addClass("no-sidebar");
+        }
       };
 
       App.prototype.sidebarToggleTap = function(e) {
@@ -53,6 +57,14 @@
         return $("html,body").animate({
           scrollTop: 0
         }, 400);
+      };
+
+      App.prototype.noTextSelected = function() {
+        if (window.getSelection().type !== "Range" && window.getSelection().extentOffset === 0) {
+          return true;
+        } else {
+          return false;
+        }
       };
 
       return App;

@@ -8,6 +8,8 @@ tags: jekyll bayse
 comments: true
 ---
 
+As the Internet mourns the loss of my old website, the Internet rejoices in the arrival of my new website.
+
 - Why I created this site:
     + revamp of previous portfolio site
     + inclusion of blog
@@ -17,6 +19,7 @@ comments: true
     + concise thoughts, because you already have enough to digest in your daily life
     + precise tutorials, because I hate walkthroughs that seem to levitate over crucial parts
     + hello-world-series, coming up: Yeoman, Slush, Polymer, Famo.us, Browserify, Angular
+    + very much the unofficial word - I don't claim to be the Oracle on anything and would advise you to tread your own path
 
 - How I built it:
     + Jekyll

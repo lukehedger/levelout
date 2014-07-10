@@ -21,9 +21,8 @@ Runs our tasks - like compiling CoffeeScript and Myth CSS files.
 
 - Install Gulp (if you haven't got it already) `sudo npm install -g gulp`
 - Install Gulp dependencies (downloads all the required node modules as specified in `package.json`) `npm install --save-dev`
-- Compile and watch `gulp watch`
-- Or just compile once `gulp`
-- Stop watching `ctrl + z`
+- Compile and watch `gulp`
+- Stop watching `ctrl + c`
 
 ### Jekyll
 
@@ -32,6 +31,8 @@ Build, serve and watch
 ```$ jekyll serve --watch```
 
 URL - http://localhost:4000
+
+And with drafts `--drafts`
 
 #### Bundler
 

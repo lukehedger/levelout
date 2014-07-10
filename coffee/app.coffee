@@ -35,11 +35,13 @@ define [
 
 		_showSidebar: (e) =>
 
-			$(".container").removeClass "no-sidebar"
+			if @noTextSelected()
+				$(".container").removeClass "no-sidebar"
 
 		_hideSidebar: (e) =>
 
-			$(".container").addClass "no-sidebar"
+			if @noTextSelected()
+				$(".container").addClass "no-sidebar"
 
 		sidebarToggleTap: (e) =>
 
@@ -48,3 +50,7 @@ define [
 		scrollTop: ->
 
 			$("html,body").animate {scrollTop: 0},400
+
+		noTextSelected: ->
+
+			return if window.getSelection().type isnt "Range" and window.getSelection().extentOffset is 0 then true else false

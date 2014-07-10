@@ -8,8 +8,7 @@ a:active,a:hover{outline:0}
 h2{font-size:1.5em;margin:.83em 0}
 h3{margin:1em 0}
 h4{font-size:1em}
-h5{font-size:.83em;margin:1.67em 0}
-h6{font-size:.67em;margin:2.33em 0}
+h5{margin:1.67em 0}
 abbr[title]{border-bottom:1px dotted}
 b,strong{font-weight:700}
 blockquote{margin:1em 40px}
@@ -589,6 +588,8 @@ h1{margin:0;font:400 6em/100px Damion;text-indent:20px}
 h3{font:700 3em/1em Esteban,Helvetica,Arial,sans-serif;letter-spacing:-2px;text-align:center;margin-bottom:10px}
 h3.level-out{font-family:Damion;font-size:3.5em}
 h4{margin:0;font-weight:400;text-align:center;color:#444;text-transform:lowercase}
+h5{font-size:1.1em;text-transform:uppercase}
+h6{margin:0;font-size:1.1em;font-weight:700;font-style:italic}
 footer p{display:inline-block;font-size:14px;vertical-align:-1px;color:#777}
 a{color:#F2385A;-webkit-transition:.2s;transition:.2s;text-decoration:none}
 a:hover{color:#36B1BF}
@@ -630,6 +631,9 @@ a:hover{color:#36B1BF}
 .button.github:hover{color:#333;background-color:#fff}
 .button.twitter{border-color:#55ACEE}
 .button.twitter:hover{background-color:#55ACEE}
+code{padding:0 6px;border-radius:4px;font-size:.9em;background:#eee;color:#36B1BF}
+pre code{padding:10px 50px;border-radius:0;font-size:1em;display:block;background:#333;color:#fff}
+@media only screen and (max-width:480px){pre code{padding:10px}}
 .hero{width:100%;height:200px;background:no-repeat center;-webkit-background-size:100%;background-size:100%;position:relative;color:#fff;text-shadow:1px 1px 1px #999}
 #blog .hero{background-image:url(/img/hero-blog.jpg)}
 #work .hero{background-image:url(/img/hero-work.jpg)}
@@ -676,13 +680,14 @@ section[role=document].no-sidebar .main.has-hero{width:100%;right:0}}
 #blog ul li p:last-of-type{margin:0}
 #blog .blog-post-title{font-weight:700;font-size:1.5em}
 #blog .blog-post-meta{color:#999}
+.post{padding:0 10%}
 .small-divider{width:500px;max-width:100%;margin:20px auto;border:0;border-top:1px solid #999}
 .post-meta{margin-bottom:50px;text-align:center}
 .post-meta span{margin-right:10px}
 .post-meta span:last-of-type{margin-right:0}
 .post-meta i{padding-right:5px}
 .post .tags span{display:inline-block;padding:2px 5px;border-radius:6px;font-size:12px;color:#FFF;background:#36B1BF;position:relative}
-.post p{margin:1.5em 0;padding:0 10%;text-align:justify}
-.post p:first-of-type{font-size:18px}
+.post p{margin:1.5em 0;font-size:1.1em}
+.post p:first-of-type{font-size:1.2em;text-align:center}
 .post p:first-of-type::first-letter{font-size:26px;font-weight:700}
-.post .comments{margin:50px auto;padding:0 10%}
+.post .comments{margin:50px auto}
