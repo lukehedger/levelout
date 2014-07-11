@@ -46,15 +46,8 @@ NB. If you get any errors when running `jekyll serve` trying clearing out the `G
 
 ## TODO
 
-- [x] Gulp build tasks
-    - [x] Test jekyll-gulp
-- [x] Pretty permalinks
-- [x] Site map
-- [x] Sidebar blurb content
-- [x] Custom domain
-- [x] Disqus comments
-- [x] Feed sidebar include with variable for logo class (currents or story) to change background color
-- [x] Gulp image compression
+- [ ] Switch to [Rouge](https://github.com/jneen/rouge) for syntax highlighting
 - [ ] Redirect /blog to index -> [see](https://help.github.com/articles/redirects-on-github-pages)
-- [ ] Build generator for tag index page
 - [ ] Work layout
+- [ ] Build generator for tag index page
+- [ ] Bundle Jekyll build into Gulp -> [see](http://stackoverflow.com/questions/21293999/use-jekyll-with-gulp)

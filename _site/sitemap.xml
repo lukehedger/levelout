@@ -3,42 +3,6 @@
   
   
   <url>
-    <loc>http://localhost:4000/blog/2014/07/10/polymer.html</loc>
-    <lastmod>2014-07-10T17:52:07+01:00</lastmod>
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:4000/blog/2014/07/10/day-one.html</loc>
-    <lastmod>2014-07-10T17:25:14+01:00</lastmod>
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:4000/blog/2014/07/08/building-a-project-template.html</loc>
-    <lastmod>2014-07-08T10:55:20+01:00</lastmod>
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:4000/blog/2014/07/01/slush.html</loc>
-    <lastmod>2014-07-01T17:58:43+01:00</lastmod>
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:4000/blog/2014/07/01/yeoman.html</loc>
-    <lastmod>2014-07-01T17:57:57+01:00</lastmod>
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:4000/blog/2014/07/01/ciuoms.html</loc>
-    <lastmod>2014-07-01T17:57:35+01:00</lastmod>
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
     <loc>http://localhost:4000/blog/2013/12/05/firefox-os.html</loc>
     <lastmod>2013-12-05T00:00:00+00:00</lastmod>
     <priority>0.8</priority>
@@ -47,14 +11,14 @@
   
   <url>
     <loc>http://localhost:4000/</loc>
-    <lastmod>2014-07-10T17:52:01+01:00</lastmod>
+    <lastmod>2014-07-11T10:51:52+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   
   <url>
     <loc>http://localhost:4000/work/</loc>
-    <lastmod>2014-07-10T17:52:01+01:00</lastmod>
+    <lastmod>2014-07-11T10:51:52+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
