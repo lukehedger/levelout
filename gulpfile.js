@@ -5,9 +5,6 @@ var gulp = require('gulp'),
 	minifycss = require('gulp-minify-css'),
 	imagemin = require('gulp-imagemin'),
 	cache = require('gulp-cache'),
-	uglify = require('gulp-uglify'),
-	clean = require('gulp-clean'),
-	concat = require('gulp-concat'),
 	gutil = require('gulp-util'),
 	livereload = require('gulp-livereload'),
 	lr = require('tiny-lr'),
@@ -51,22 +48,8 @@ gulp.task('watch', function() {
 	gulp.watch('_img/**/*', ['images']);
 });
 
-// gulp-jekyll is still in development, only use when full config options available
+// this needs to be amended to run with bundler
+// require('child_process').spawn('bundle', ['exec jekyll serve --watch'], {stdio: 'inherit'});
 gulp.task('jekyll', function () {
-	gulp.src(['./index.html', './_layouts/*.html', './_posts/*.{markdown,md}'])
-		.pipe(jekyll({
-			source: './',
-			destination: './_site/',
-			bundleExec: true
-		}))
-		.pipe(gulp.dest('./_site/'))
-		.pipe(livereload(server));
-});
-
-// gulp build task not in use
-gulp.task('build', function(){
-	gulp.src(['js/main.js', 'js/app.js'])
-		.pipe(concat('main.min.js'))
-		.pipe(uglify())
-		.pipe(gulp.dest('js'));
+	require('child_process').spawn('jekyll', ['serve --watch'], {stdio: 'inherit'});
 });

@@ -46,8 +46,6 @@ NB. If you get any errors when running `jekyll serve` trying clearing out the `G
 
 ## TODO
 
-- [ ] Switch to [Rouge](https://github.com/jneen/rouge) for syntax highlighting
-- [ ] Redirect /blog to index -> [see](https://help.github.com/articles/redirects-on-github-pages)
+- [ ] Switch to [Rouge](https://github.com/jneen/rouge) for syntax highlighting -> need mustache support
 - [ ] Work layout
-- [ ] Build generator for tag index page
-- [ ] Bundle Jekyll build into Gulp -> [see](http://stackoverflow.com/questions/21293999/use-jekyll-with-gulp)
+- [ ] Build generator for tag/category index page (eg. `{% for post in site.categories.blog %}`)
