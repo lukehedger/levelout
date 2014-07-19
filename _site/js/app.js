@@ -3,6 +3,11 @@
 
   define(["jquery"], function($) {
     var App;
+    ({
+      _newVisit: false,
+      _$home: null,
+      _$post: null
+    });
     return App = (function() {
       function App() {
         this.sidebarToggleTap = __bind(this.sidebarToggleTap, this);
@@ -18,6 +23,8 @@
       }
 
       App.prototype._setupView = function() {
+        this._$home = $(document).find("#blog");
+        this._$post = $(document).find("#post");
         return this._addListeners();
       };
 
@@ -30,9 +37,11 @@
       };
 
       App.prototype._init = function() {
+        var func;
+        func = this._$post.length > 0 ? this._hideSidebar() : this._showSidebar();
         return setTimeout((function(_this) {
           return function() {
-            return _this._showSidebar();
+            return func;
           };
         })(this), 100);
       };

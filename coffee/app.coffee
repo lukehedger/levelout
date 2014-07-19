@@ -2,6 +2,10 @@ define [
 	"jquery"
 ], ($) ->
 
+	_newVisit : false
+	_$home : null
+	_$post : null
+
 	class App
 
 		constructor: ->
@@ -15,6 +19,9 @@ define [
 			@_setupView()
 
 		_setupView: ->
+
+			@_$home = $(document).find "#blog"
+			@_$post = $(document).find "#post"
 			
 			@_addListeners()
 
@@ -29,8 +36,9 @@ define [
 
 		_init: ->
 
+			func = if @_$post.length > 0 then @_hideSidebar() else @_showSidebar()
 			setTimeout =>
-				@_showSidebar()
+				func
 			,100
 
 		_showSidebar: (e) =>

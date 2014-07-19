@@ -47,5 +47,6 @@ NB. If you get any errors when running `jekyll serve` trying clearing out the `G
 ## TODO
 
 - [ ] Switch to [Rouge](https://github.com/jneen/rouge) for syntax highlighting -> need mustache support
+- [ ] Implement new visit check for sidebar show animation
 - [ ] Work layout
 - [ ] Build generator for tag/category index page (eg. `{% for post in site.categories.blog %}`)
