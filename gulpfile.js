@@ -5,18 +5,14 @@ var gulp = require('gulp'),
 	minifycss = require('gulp-minify-css'),
 	imagemin = require('gulp-imagemin'),
 	cache = require('gulp-cache'),
-	gutil = require('gulp-util'),
-	livereload = require('gulp-livereload'),
-	lr = require('tiny-lr'),
-	server = lr();
+	gutil = require('gulp-util');
 
 gulp.task('coffee', function () {
 	gulp.src('coffee/**/*.coffee')
 		.pipe(coffee({
 			map: true
 		}).on('error', gutil.log))
-		.pipe(gulp.dest('js'))
-		.pipe(livereload(server));
+		.pipe(gulp.dest('js'));
 });
 
 gulp.task('myth', function () {
@@ -28,8 +24,7 @@ gulp.task('myth', function () {
 			root: 'css',
 			processImport: true
 		}))
-		.pipe(gulp.dest('css'))
-		.pipe(livereload(server));
+		.pipe(gulp.dest('css'));
 });
 
 gulp.task('images', function() {

@@ -8,6 +8,7 @@ lukehedger.github.io
 - Requirejs - A JavaScript file and module loader
 - Gulpjs - A JavaScript task runner
 - Jekyll - A static site generator
+- Bundler - Used on top of Jekyll to keep Ruby packages up-to-date [http://bundler.io/](http://bundler.io/)
 
 ## Structure
 
@@ -26,21 +27,14 @@ Runs our tasks - like compiling CoffeeScript and Myth CSS files.
 
 ### Jekyll
 
-Build, serve and watch
-
-```$ jekyll serve --watch```
-
-URL - http://localhost:4000
-
-And with drafts `--drafts`
+- Install Jekyll `gem install jekyll`
+- Build, serve and watch `jekyll serve --watch` (http://localhost:4000)
+- and with drafts add `--drafts`
 
 #### Bundler
 
-Used on top of Jekyll to keep Ruby packages up-to-date [http://bundler.io/](http://bundler.io/)
-
-Use `bundle install` to install all dependencies.
-
-```$ bundle exec jekyll serve --watch```
+- Install Bundler `gem install bundler`
+- Use `bundle install` to install all dependencies `bundle exec jekyll serve --watch`
 
 NB. If you get any errors when running `jekyll serve` trying clearing out the `Gemfile.lock` and running `bundle install`
 
