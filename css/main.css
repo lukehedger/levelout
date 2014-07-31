@@ -671,9 +671,8 @@ section[role=document].no-sidebar .sidebar .sidebar-toggle i{-webkit-transform:r
 .main{height:100%;position:absolute;right:0;-webkit-transition:.4s;transition:.4s}
 section[role=document].no-sidebar .main{right:13%}
 section[role=document].no-sidebar .main.has-hero{width:100%;right:0}}
-@media only screen and (max-width:1023px){.sidebar .blurb,.sidebar .sidebar-toggle{display:none}}
-@media only screen and (max-width:480px){.hero{display:none}
-.post .comments,.post p{padding:0}}
+@media only screen and (max-width:1023px){.hero,.sidebar .blurb,.sidebar .sidebar-toggle{display:none}}
+@media only screen and (max-width:480px){.post .comments,.post p{padding:0}}
 #blog .content,#work .content{margin:40px 50px!important}
 #blog ul{margin:0;padding:0;list-style-type:none}
 #blog ul li{margin:0;padding:10px 0}

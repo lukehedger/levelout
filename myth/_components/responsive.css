@@ -61,7 +61,7 @@ img.emoji {
 /* Tablet etc */
 @media only screen and (max-width:1023px) {
 
-	.sidebar .blurb, .sidebar .sidebar-toggle {
+	.hero, .sidebar .blurb, .sidebar .sidebar-toggle {
 		display: none;
 	}
 
@@ -69,10 +69,6 @@ img.emoji {
 
 /* Mobile */
 @media only screen and (max-width:480px) {
-
-	.hero {
-		display: none;
-	}
 
 	.post p, .post .comments {
 		padding: 0;
