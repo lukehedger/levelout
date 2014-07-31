@@ -12,7 +12,10 @@ Thumbs.db
 ######################
 *.map
 
-# Project Files #
+# Dependencies #
 ######################
 node_modules/
-*TODO.md
+
+# Jekyll #
+######################
+_site

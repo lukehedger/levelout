@@ -40,6 +40,7 @@ NB. If you get any errors when running `jekyll serve` trying clearing out the `G
 
 ## TODO
 
+- [ ] Give social button styles to nav buttons and change social to circular with font-awesome icons
 - [ ] Switch to [Rouge](https://github.com/jneen/rouge) for syntax highlighting -> need mustache support
 - [ ] Implement new visit check for sidebar show animation
 - [ ] Work layout
