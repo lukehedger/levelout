@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+	{% include head.html %}
+</head>
+<body>
+	<div class="grid">
+		<section role="document" class="row container">
+
+			{% include sidebar.html active="blog" link="/work" %}
+
+			<section role="main" class="column nine main has-hero" id="blog">
+				<div class="inner">
+					<div class="hero">
+						<div class="hero-content">
+							<h3 class="level-out">level out</h3>
+							<p class="hero-intro">The adventures of a frontend web developer</p>
+						</div>
+					</div>
+					<div class="content">
+						
+            {{ content }}
+            
+					</div>
+
+					{% include footer.html %}
+
+				</div>
+			</section>
+		</section>
+	</div>
+
+	{% include ga.html %}
+
+	<script data-main="/js/main" src="/js/lib/require.js"></script>
+
+</body>
+</html>
