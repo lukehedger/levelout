@@ -3,6 +3,42 @@
   
   
   <url>
+    <loc>http://localhost:3000/blog/2014/08/01/polymer.html</loc>
+    <lastmod>2014-08-01T17:01:29+00:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:3000/blog/2014/08/01/yeoman.html</loc>
+    <lastmod>2014-08-01T14:13:05+00:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:3000/blog/2014/08/01/slush.html</loc>
+    <lastmod>2014-08-01T14:13:05+00:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:3000/blog/2014/08/01/day-one.html</loc>
+    <lastmod>2014-08-01T14:13:05+00:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:3000/blog/2014/08/01/ciuoms.html</loc>
+    <lastmod>2014-08-01T14:13:05+00:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:3000/blog/2014/08/01/building-a-project-template.html</loc>
+    <lastmod>2014-08-01T14:13:05+00:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
     <loc>http://localhost:3000/blog/2013/12/05/firefox-os.html</loc>
     <lastmod>2013-12-05T00:00:00+00:00</lastmod>
     <priority>0.8</priority>
@@ -11,49 +47,119 @@
   
   <url>
     <loc>http://localhost:3000/</loc>
-    <lastmod>2014-08-01T16:56:47+00:00</lastmod>
+    <lastmod>2014-08-01T17:01:52+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   
   <url>
     <loc>http://localhost:3000/blog/</loc>
-    <lastmod>2014-08-01T16:56:47+00:00</lastmod>
+    <lastmod>2014-08-01T17:01:52+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://localhost:3000/work/</loc>
-    <lastmod>2014-08-01T16:56:47+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:3000/blog/</loc>
-    <lastmod>2014-08-01T16:56:47+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:3000/tags/</loc>
-    <lastmod>2014-08-01T16:56:47+00:00</lastmod>
+    <lastmod>2014-08-01T17:01:52+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://localhost:3000/tag/mobile/</loc>
-    <lastmod>2014-08-01T16:56:47+00:00</lastmod>
+    <lastmod>2014-08-01T17:01:52+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://localhost:3000/tag/talk/</loc>
-    <lastmod>2014-08-01T16:56:47+00:00</lastmod>
+    <lastmod>2014-08-01T17:01:52+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:3000/tag/bayse/</loc>
+    <lastmod>2014-08-01T17:01:52+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:3000/tag/responsive/</loc>
+    <lastmod>2014-08-01T17:01:52+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:3000/tag/caniuse/</loc>
+    <lastmod>2014-08-01T17:01:52+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:3000/tag/levenstein/</loc>
+    <lastmod>2014-08-01T17:01:52+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:3000/tag/jekyll/</loc>
+    <lastmod>2014-08-01T17:01:52+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:3000/tag/slush/</loc>
+    <lastmod>2014-08-01T17:01:52+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:3000/tag/gulp/</loc>
+    <lastmod>2014-08-01T17:01:52+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:3000/tag/hello-world/</loc>
+    <lastmod>2014-08-01T17:01:52+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:3000/tag/yeoman/</loc>
+    <lastmod>2014-08-01T17:01:52+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:3000/tag/polymer/</loc>
+    <lastmod>2014-08-01T17:01:52+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:3000/tag/web-components/</loc>
+    <lastmod>2014-08-01T17:01:52+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:3000/tags/</loc>
+    <lastmod>2014-08-01T17:01:52+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
