@@ -11,14 +11,21 @@
   
   <url>
     <loc>http://localhost:4000/</loc>
-    <lastmod>2014-07-19T15:52:29+01:00</lastmod>
+    <lastmod>2014-08-01T15:05:32+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   
   <url>
+    <loc>http://localhost:4000/blog/</loc>
+    <lastmod>2014-08-01T15:05:32+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
     <loc>http://localhost:4000/work/</loc>
-    <lastmod>2014-07-19T15:52:29+01:00</lastmod>
+    <lastmod>2014-08-01T15:05:32+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
