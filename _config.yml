@@ -13,3 +13,4 @@ gems:
 - jekyll-sitemap
 - jekyll-mentions
 - jemoji
+- jekyll-redirect-from
