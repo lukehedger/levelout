@@ -20,10 +20,10 @@ TODO
 
 Runs our tasks - like compiling CoffeeScript and Myth CSS files.
 
-- Install Gulp (if you haven't got it already) `sudo npm install -g gulp`
-- Install Gulp dependencies (downloads all the required node modules as specified in `package.json`) `npm install --save-dev`
-- Compile and watch `gulp`
-- Stop watching `ctrl + c`
+- Install Gulp (if you haven't got it already): `npm install -g gulp`
+- Install Gulp dependencies (downloads all the required node modules as specified in `package.json`): `npm install --save-dev`
+- Compile and watch:`gulp`
+- Stop watching: `ctrl + c`
 
 ### Jekyll
 
@@ -34,7 +34,8 @@ Runs our tasks - like compiling CoffeeScript and Myth CSS files.
 #### Bundler
 
 - Install Bundler `gem install bundler`
-- Use `bundle install` to install all dependencies `bundle exec jekyll serve --watch`
+- Install all dependencies: `bundle install`
+- Build, serve and watch: `bundle exec jekyll serve --watch`
 
 NB. If you get any errors when running `jekyll serve` trying clearing out the `Gemfile.lock` and running `bundle install`
 
