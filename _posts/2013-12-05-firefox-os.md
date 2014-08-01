@@ -25,7 +25,7 @@ Godard Neutra readymade whatever. Leggings sartorial pug lomo polaroid raw denim
 
 A little bit of `code`
 
-{% highlight javascript linenos %}
+{% highlight js linenos %}
 console.log('a sample JS codeblock');
 {% endhighlight %}
 

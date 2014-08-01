@@ -1,7 +1,7 @@
 source:      .
 destination: ./_site
 exclude:     [coffee, myth, README.md, TODO.md, Gemfile, Gemfile.lock, package.json, node_modules, gulpfile.js]
-highlighter: pygments
+highlighter: rouge
 host:        0.0.0.0
 port:        3000
 baseurl:     /
