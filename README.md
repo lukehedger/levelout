@@ -41,7 +41,6 @@ NB. If you get any errors when running `jekyll serve` trying clearing out the `G
 
 ## TODO
 
-- [ ] Give social button styles to nav buttons and change social to circular with font-awesome icons
 - [ ] Implement new visit check for sidebar show animation
 - [ ] Analytics
 - [ ] Work layout

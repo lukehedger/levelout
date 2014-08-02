@@ -1,14 +1,71 @@
-.sidebar{z-index:20;color:#FFF;background:#333;-webkit-transition:.4s;transition:.4s}
-.sidebar a{color:inherit}
-.sidebar .blurb{margin:20px 0;padding:10px;border:1px dashed #666;border-radius:4px;text-align:center;-webkit-transition:1s;transition:1s}
-.sidebar .blurb:hover{border-color:#999}
-.sidebar .skills i{margin:0 5px}
-nav .nav{margin:20px auto;padding:0;text-align:center}
-nav .nav li{margin:0;padding:0;text-align:center;display:inline}
-nav .nav li:after{content:" | ";padding:0 5px}
-nav .nav li:last-of-type:after{content:"";padding:0}
-nav .nav li a{padding-bottom:1px;border-bottom:1px solid transparent}
-nav .nav li a.active,nav .nav li a:active,nav .nav li a:focus,nav .nav li a:hover{border-bottom-color:#fff}
-.sidebar .networks{text-align:center}
-.sidebar-toggle{width:40px;height:40px;border:2px solid #fff;border-radius:50%;text-align:center;background:#333;position:absolute;top:10px;right:-20px;cursor:pointer}
-.sidebar-toggle i{width:20px;height:20px;position:absolute;top:0;bottom:0;left:0;right:0;margin:auto;font-size:26px;line-height:15px;font-weight:100;font-style:normal;-webkit-transition:.1s;transition:.1s;-webkit-transform:rotate(0deg);-ms-transform:rotate(0deg);transform:rotate(0deg)}
+.sidebar {
+  z-index: 20;
+  color: #FFFFFF;
+  background: #333333;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.sidebar a {
+  color: inherit;
+}
+
+.sidebar .blurb {
+  margin: 20px 0;
+  padding: 10px;
+  border: 1px dashed #666;
+  border-radius: 4px;
+  text-align: center;
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
+.sidebar .blurb:hover {
+  border-color: #999;
+}
+
+.sidebar .skills i {
+  margin: 0 5px;
+}
+
+.sidebar .networks,
+nav {
+  text-align: center;
+}
+
+.sidebar .networks {
+  margin: 10px auto;
+}
+
+.sidebar-toggle {
+  width: 40px;
+  height: 40px;
+  border: 2px solid white;
+  border-radius: 50%;
+  text-align: center;
+  background: #333333;
+  position: absolute;
+  top: 10px;
+  right: -20px;
+  cursor: pointer;
+}
+
+.sidebar-toggle i {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  font-size: 26px;
+  line-height: 15px;
+  font-weight: 100;
+  font-style: normal;
+  -webkit-transition: 0.1s;
+  transition: 0.1s;
+  -webkit-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  transform: rotate(0deg);
+}

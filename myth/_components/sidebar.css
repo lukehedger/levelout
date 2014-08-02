@@ -25,37 +25,12 @@
 	margin: 0 5px;
 }
 
-nav .nav {
-	margin: 20px auto;
-	padding: 0;
+.sidebar .networks, nav {
 	text-align: center;
-}
-nav .nav li {
-	margin: 0;
-	padding: 0;
-	text-align: center;
-}
-nav .nav li {
-	display: inline;
-}
-nav .nav li:after {
-	content: " | ";
-	padding: 0 5px;
-}
-nav .nav li:last-of-type:after {
-	content: "";
-	padding: 0;
-}
-nav .nav li a {
-	padding-bottom: 1px;
-	border-bottom: 1px solid transparent;
-}
-nav .nav li a:hover, nav .nav li a:focus, nav .nav li a:active, nav .nav li a.active {
-	border-bottom-color: white;
 }
 
 .sidebar .networks {
-	text-align: center;
+	margin: 10px auto;
 }
 
 .sidebar-toggle {

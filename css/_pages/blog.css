@@ -1,6 +1,27 @@
-#blog ul{margin:0;padding:0;list-style-type:none}
-#blog ul li{margin:0;padding:10px 0}
-#blog ul li p{font-style:italic}
-#blog ul li p:last-of-type{margin:0}
-#blog .blog-post-title{font-weight:700;font-size:1.5em}
-#blog .blog-post-meta{color:#999}
+#blog ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+#blog ul li {
+  margin: 0;
+  padding: 10px 0;
+}
+
+#blog ul li p {
+  font-style: italic;
+}
+
+#blog ul li p:last-of-type {
+  margin: 0;
+}
+
+#blog .blog-post-title {
+  font-weight: bold;
+  font-size: 1.5em;
+}
+
+#blog .blog-post-meta {
+  color: #999;
+}
