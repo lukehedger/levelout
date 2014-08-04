@@ -1,5 +1,5 @@
 .button{margin:5px;padding:10px 20px;border:1px solid #fff;border-radius:6px;display:inline-block;text-align:center;text-decoration:none;-webkit-transition:.2s;transition:.2s}
-.button.active,.button:active,.button:focus,.button:hover{color:#333;background-color:#fff}
+.button.active,.button:active,.button:focus,.button:hover{border:1px solid #fff;color:#333;background-color:#fff}
 .button.circular{width:30px;height:30px;margin:2px;padding:0;border-radius:50%;border-color:#fff;opacity:.5;background:none!important}
 .button.circular:active,.button.circular:focus,.button.circular:hover{opacity:1}
 .button.circular i{padding-top:6px;color:#fff}

@@ -37,7 +37,7 @@ img.emoji {
 		animation: icon-hover-close 2s 2 ease-in-out;
 	}
 	section[role="document"].no-sidebar .sidebar .sidebar-toggle:hover i, .sidebar-toggle:focus i, .sidebar-toggle:active i {
-		animation: icon-hover-open 1s 2 ease-in-out;
+		animation: icon-hover-open 2s 2 ease-in-out;
 	}
 
 	.main {

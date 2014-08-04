@@ -4,7 +4,7 @@ img.emoji{width:auto;vertical-align:baseline}
 section[role=document].no-sidebar .sidebar{left:-24%}
 section[role=document].no-sidebar .sidebar .sidebar-toggle i{-webkit-transform:rotate(45deg);-ms-transform:rotate(45deg);transform:rotate(45deg)}
 .sidebar-toggle:active i,.sidebar-toggle:focus i,section[role=document] .sidebar .sidebar-toggle:hover i{-webkit-animation:icon-hover-close 2s 2 ease-in-out;animation:icon-hover-close 2s 2 ease-in-out}
-.sidebar-toggle:active i,.sidebar-toggle:focus i,section[role=document].no-sidebar .sidebar .sidebar-toggle:hover i{-webkit-animation:icon-hover-open 1s 2 ease-in-out;animation:icon-hover-open 1s 2 ease-in-out}
+.sidebar-toggle:active i,.sidebar-toggle:focus i,section[role=document].no-sidebar .sidebar .sidebar-toggle:hover i{-webkit-animation:icon-hover-open 2s 2 ease-in-out;animation:icon-hover-open 2s 2 ease-in-out}
 .main{height:100%;position:absolute;right:0;-webkit-transition:.4s;transition:.4s}
 section[role=document].no-sidebar .main{right:13%}
 section[role=document].no-sidebar .main.has-hero{width:100%;right:0}}

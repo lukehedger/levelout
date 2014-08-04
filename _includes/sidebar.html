@@ -1,8 +1,10 @@
 <section role="complimentary" class="column three sidebar">
 	<div class="inner">
-		<div class="sidebar-toggle" on-tap="sidebarToggleTap">
-			<i class="">&times;</i>
-		</div>
+    {% if include.toggle %}
+      <div class="sidebar-toggle" on-tap="sidebarToggleTap">
+        <i class="">&times;</i>
+      </div>
+    {% endif %}
 		<a class="logo logo-{{ include.active }}" href="{{ include.link }}">
 			<h1>lo</h1>
 		</a>

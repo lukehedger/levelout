@@ -13,6 +13,7 @@
 	transition: 0.2s;
 }
 .button:hover, .button:focus, .button:active, .button.active {
+	border: 1px solid white;
 	color: #333333;
 	background-color: white;
 }
