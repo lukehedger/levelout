@@ -28,19 +28,20 @@ Runs our tasks - like compiling CoffeeScript and Myth CSS files.
 ### Jekyll
 
 - Install Jekyll `gem install jekyll`
-- Build, serve and watch `jekyll serve --watch` (http://localhost:4000)
-- and with drafts add `--drafts`
+- ~~Build, serve and watch `jekyll serve --watch`~~
+- Use Bundler to build, serve and watch
 
 #### Bundler
 
 - Install Bundler `gem install bundler`
 - Install all dependencies: `bundle install`
-- Build, serve and watch: `bundle exec jekyll serve --watch`
+- Build, serve and watch: `bundle exec jekyll serve --watch` (http://localhost:3000)
+- and with drafts add `--drafts`
 
-NB. If you get any errors when running `jekyll serve` trying clearing out the `Gemfile.lock` and running `bundle install`
+NB. If you get any errors when running `jekyll serve` try clearing out the `Gemfile.lock` and running `bundle install`
 
 ## TODO
 
-- [ ] Implement new visit check for sidebar show animation
-- [ ] Analytics
+- [ ] Implement new visit localStorage for sidebar show animation on homepage
+- [ ] Day 1 post
 - [ ] Work layout
