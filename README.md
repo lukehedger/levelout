@@ -43,4 +43,5 @@ NB. If you get any errors when running `jekyll serve` try clearing out the `Gemf
 ## TODO
 
 - [ ] Day 1 post
+- [ ] Customise Pygments syntax highlighting
 - [ ] Work layout

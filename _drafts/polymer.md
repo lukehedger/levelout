@@ -90,8 +90,8 @@ Polymer's [data binding](http://www.polymer-project.org/docs/polymer/binding-typ
 Say you've got an array called `arr` defined on your element you can loop through this and print out the items really easily. You can also use conditional statements - where `arrRepeat` is a boolean value on your element:
 
 {% highlight html %}
-<template repeat="{{ arr }}" if="{{ arrRepeat }}">
-    <li>{{ }}</li>
+<template repeat='{{ "{{ arr "}}}}' if='{{ "{{ arrRepeat "}}}}'>
+    <li>{{ "{{"}} }}</li>
 </template>
 {% endhighlight %}
 
@@ -109,13 +109,13 @@ Include the component in your custom element:
 
 Use it with:
 {% highlight html %}
-<core-ajax url="../data/holidays.json" auto response="{{resp}}"></core-ajax>
+<core-ajax url="../data/holidays.json" auto response='{{ "{{ resp " }}}}'></core-ajax>
 <!-- setting the auto attribute means the element will perform a request whenever its url or params properties are changed -->
 {% endhighlight %}
 
 {% highlight html %}
-<!-- response data is bound to {{resp}} and can now be used anywhere in the template -->
-<p>AJAX data: {{resp.item}}</p>
+<!-- response data is bound to {{ "{{ resp " }}}} and can now be used anywhere in the template -->
+<p>AJAX data: {{ "{{ resp.item " }}}}</p>
 {% endhighlight %}
 
 ##### Event binding
@@ -123,7 +123,7 @@ Use it with:
 Methods defined on your custom element can be bound to elements as events:
 
 {% highlight html %}
-<paper-fab icon="android" style="fill:#A4C639;background:white;" id="androidButton" on-tap="{{eventEg}}"></paper-fab>
+<paper-fab icon="android" style="fill:#A4C639;background:white;" id="androidButton" on-tap='{{ "{{ eventEg " }}}}'></paper-fab>
 {% endhighlight %}
 
 You'll notice that Polymer has native support for [touch events](http://www.polymer-project.org/docs/polymer/touch.html).
