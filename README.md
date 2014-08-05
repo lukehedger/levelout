@@ -42,6 +42,5 @@ NB. If you get any errors when running `jekyll serve` try clearing out the `Gemf
 
 ## TODO
 
-- [ ] Implement new visit localStorage for sidebar show animation on homepage
 - [ ] Day 1 post
 - [ ] Work layout

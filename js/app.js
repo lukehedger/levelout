@@ -4,13 +4,12 @@
   define(["jquery"], function($) {
     var App;
     ({
-      _newVisit: false,
       _$home: null,
       _$post: null
     });
     return App = (function() {
       function App() {
-        this.sidebarToggleTap = __bind(this.sidebarToggleTap, this);
+        this._sidebarToggleTap = __bind(this._sidebarToggleTap, this);
         this._hideSidebar = __bind(this._hideSidebar, this);
         this._showSidebar = __bind(this._showSidebar, this);
         console.log('Like what you see? Make me smile with a shout-out http://twitter.com/level_out');
@@ -31,8 +30,8 @@
       App.prototype._addListeners = function() {
         $(document).on("swiperight dragright", ".main, .sidebar", this._showSidebar);
         $(document).on("swipeleft dragleft", ".main, .sidebar", this._hideSidebar);
-        $(document).on("tap", ".sidebar-toggle", this.sidebarToggleTap);
-        $(document).on("tap", "footer .logo", this.scrollTop);
+        $(document).on("tap", ".sidebar-toggle", this._sidebarToggleTap);
+        $(document).on("tap", "footer .logo", this._scrollTop);
         return this._init();
       };
 
@@ -58,11 +57,11 @@
         }
       };
 
-      App.prototype.sidebarToggleTap = function(e) {
+      App.prototype._sidebarToggleTap = function(e) {
         return $(".container").toggleClass("no-sidebar");
       };
 
-      App.prototype.scrollTop = function() {
+      App.prototype._scrollTop = function() {
         return $("html,body").animate({
           scrollTop: 0
         }, 400);
