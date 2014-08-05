@@ -31,10 +31,13 @@
 	position: relative;
 }
 .post p, .post ul {
-	font-size: 1.1em;
+	font-size: 1.4em;
+	line-height: 1.5;
+	letter-spacing: 0.01em;
 }
 .post p {
 	margin: 1.5em 0;
+	color: rgba(0,0,0,0.8);
 }
 .post p:first-of-type {
 	font-size: 1.2em;
