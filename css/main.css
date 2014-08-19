@@ -681,7 +681,7 @@ section[role=document].no-sidebar .main.has-hero{width:100%;right:0}}
 .post-meta span:last-of-type{margin-right:0}
 .post-meta i{padding-right:5px}
 .post .tags span{display:inline-block;padding:2px 5px;border-radius:6px;font-size:12px;color:#FFF;background:#36B1BF;position:relative}
-.post p,.post ul{font-size:1.4em;line-height:1.5;letter-spacing:.01em}
+.post p,.post ul{font-size:22px;line-height:1.5;letter-spacing:.01em}
 .post p{margin:1.5em 0;color:rgba(0,0,0,.8)}
 .post p:first-of-type{font-size:1.2em;text-align:center}
 .post p:first-of-type::first-letter{font-size:26px;font-weight:700}
