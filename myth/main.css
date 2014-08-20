@@ -13,8 +13,8 @@
 @import "_components/footer.css";
 @import "_components/logo.css";
 @import "_components/sidebar.css";
-@import "_components/responsive.css";
 @import "_pages/shared.css";
 @import "_pages/blog.css";
 @import "_pages/post.css";
 @import "_pages/work.css";
+@import "_components/responsive.css";

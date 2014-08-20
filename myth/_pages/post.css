@@ -39,13 +39,22 @@
 	margin: 1.5em 0;
 	color: rgba(0,0,0,0.8);
 }
-.post p:first-of-type {
-	font-size: 1.2em;
+.post > p:first-of-type {
+	font-size: 1.6em;
 	text-align: center;
 }
-.post p:first-of-type::first-letter {
+.post > p:first-of-type::first-letter {
 	font-size: 26px;
 	font-weight: bold;
+}
+.post blockquote {
+	border-left: 6px solid pink;
+	margin: 1em 0;
+	padding: 0 20px;
+}
+.post blockquote p {
+	font-style: italic;
+	color: rgba(0,0,0,0.6);
 }
 .post .comments {
 	margin: 50px auto;

@@ -18,7 +18,7 @@ TODO
 
 ### Gulp
 
-Runs our tasks - like compiling CoffeeScript and Myth CSS files.
+Runs my tasks - like compiling CoffeeScript and Myth CSS files.
 
 - Install Gulp (if you haven't got it already): `npm install -g gulp`
 - Install Gulp dependencies (downloads all the required node modules as specified in `package.json`): `npm install --save-dev`
@@ -42,6 +42,5 @@ NB. If you get any errors when running `jekyll serve` try clearing out the `Gemf
 
 ## TODO
 
-- [ ] Day 1 post
 - [ ] Customise Pygments syntax highlighting
 - [ ] Work layout

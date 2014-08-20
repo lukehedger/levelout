@@ -70,7 +70,7 @@ img.emoji {
 /* Mobile */
 @media only screen and (max-width:480px) {
 
-	.post p, .post .comments {
+	.post, .post p, .post .comments {
 		padding: 0;
 	}
 

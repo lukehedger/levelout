@@ -654,19 +654,7 @@ footer{margin-top:20px;border-top:1px solid #999}
 .sidebar .networks,nav{text-align:center}
 .sidebar .networks{margin:10px auto}
 .sidebar-toggle{width:40px;height:40px;border:2px solid #fff;border-radius:50%;text-align:center;background:#333;position:absolute;top:10px;right:-20px;cursor:pointer;-webkit-box-shadow:1px 0 10px 2px rgba(0,0,0,.5);box-shadow:1px 0 10px 2px rgba(0,0,0,.5)}
-.sidebar-toggle i{width:14px;height:14px;position:absolute;top:0;bottom:0;left:0;right:0;margin:auto;font-size:26px;line-height:15px;font-weight:100;font-style:normal;-webkit-transition:.1s;transition:.1s;-webkit-transform:rotate(0deg);-ms-transform:rotate(0deg);transform:rotate(0deg)}
-img{width:100%;max-width:100%;margin:0 auto}
-img.emoji{width:auto;vertical-align:baseline}
-@media only screen and (min-width:1024px){.sidebar{height:100%;position:fixed;left:0;padding-bottom:9999px;margin-bottom:-9999px}
-section[role=document].no-sidebar .sidebar{left:-24%}
-section[role=document].no-sidebar .sidebar .sidebar-toggle i{-webkit-transform:rotate(45deg);-ms-transform:rotate(45deg);transform:rotate(45deg)}
-.sidebar-toggle:active i,.sidebar-toggle:focus i,section[role=document] .sidebar .sidebar-toggle:hover i{-webkit-animation:icon-hover-close 2s 2 ease-in-out;animation:icon-hover-close 2s 2 ease-in-out}
-.sidebar-toggle:active i,.sidebar-toggle:focus i,section[role=document].no-sidebar .sidebar .sidebar-toggle:hover i{-webkit-animation:icon-hover-open 2s 2 ease-in-out;animation:icon-hover-open 2s 2 ease-in-out}
-.main{height:100%;position:absolute;right:0;-webkit-transition:.4s;transition:.4s}
-section[role=document].no-sidebar .main{right:13%}
-section[role=document].no-sidebar .main.has-hero{width:100%;right:0}}
-@media only screen and (max-width:1023px){.hero,.sidebar .blurb,.sidebar .sidebar-toggle{display:none}}
-@media only screen and (max-width:480px){.post .comments,.post p{padding:0}}
+.sidebar-toggle i{width:14px;height:14px;position:absolute;top:0;bottom:0;left:0;right:0;margin:auto;font-size:26px;line-height:14px;font-weight:100;font-style:normal;-webkit-transition:.1s;transition:.1s;-webkit-transform:rotate(0deg);-ms-transform:rotate(0deg);transform:rotate(0deg)}
 #blog .content,#work .content{margin:40px 50px!important}
 #blog ul{margin:0;padding:0;list-style-type:none}
 #blog ul li{margin:0;padding:10px 0}
@@ -683,6 +671,20 @@ section[role=document].no-sidebar .main.has-hero{width:100%;right:0}}
 .post .tags span{display:inline-block;padding:2px 5px;border-radius:6px;font-size:12px;color:#FFF;background:#36B1BF;position:relative}
 .post p,.post ul{font-size:22px;line-height:1.5;letter-spacing:.01em}
 .post p{margin:1.5em 0;color:rgba(0,0,0,.8)}
-.post p:first-of-type{font-size:1.2em;text-align:center}
-.post p:first-of-type::first-letter{font-size:26px;font-weight:700}
+.post>p:first-of-type{font-size:1.6em;text-align:center}
+.post>p:first-of-type::first-letter{font-size:26px;font-weight:700}
+.post blockquote{border-left:6px solid pink;margin:1em 0;padding:0 20px}
+.post blockquote p{font-style:italic;color:rgba(0,0,0,.6)}
 .post .comments{margin:50px auto}
+img{width:100%;max-width:100%;margin:0 auto}
+img.emoji{width:auto;vertical-align:baseline}
+@media only screen and (min-width:1024px){.sidebar{height:100%;position:fixed;left:0;padding-bottom:9999px;margin-bottom:-9999px}
+section[role=document].no-sidebar .sidebar{left:-24%}
+section[role=document].no-sidebar .sidebar .sidebar-toggle i{-webkit-transform:rotate(45deg);-ms-transform:rotate(45deg);transform:rotate(45deg)}
+.sidebar-toggle:active i,.sidebar-toggle:focus i,section[role=document] .sidebar .sidebar-toggle:hover i{-webkit-animation:icon-hover-close 2s 2 ease-in-out;animation:icon-hover-close 2s 2 ease-in-out}
+.sidebar-toggle:active i,.sidebar-toggle:focus i,section[role=document].no-sidebar .sidebar .sidebar-toggle:hover i{-webkit-animation:icon-hover-open 2s 2 ease-in-out;animation:icon-hover-open 2s 2 ease-in-out}
+.main{height:100%;position:absolute;right:0;-webkit-transition:.4s;transition:.4s}
+section[role=document].no-sidebar .main{right:13%}
+section[role=document].no-sidebar .main.has-hero{width:100%;right:0}}
+@media only screen and (max-width:1023px){.hero,.sidebar .blurb,.sidebar .sidebar-toggle{display:none}}
+@media only screen and (max-width:480px){.post,.post .comments,.post p{padding:0}}
