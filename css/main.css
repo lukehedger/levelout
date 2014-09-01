@@ -674,7 +674,7 @@ footer{margin-top:20px;border-top:1px solid #999}
 .post>p:first-of-type{font-size:1.6em;text-align:center}
 .post>p:first-of-type::first-letter{font-size:26px;font-weight:700}
 .post ul{margin:40px 0;padding:0 20px;list-style-type:square}
-.post blockquote{border-left:6px solid pink;margin:1em 0;padding:0 20px}
+.post blockquote{border-left:6px solid pink;margin:1em -26px;padding:0 20px}
 .post blockquote p{font-style:italic;color:rgba(0,0,0,.6)}
 .post .comments{margin:50px auto}
 img{width:100%;max-width:100%;margin:0 auto}
