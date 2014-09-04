@@ -18,7 +18,7 @@ If you haven't come across Divshot before it is a [static website](http://www.st
 
 ##### Command Line In-your-face deployment
 
-Deploying with Divshot is fast. Super-fast. You're going to need this in your locker when faced with an army of undead to warn the world of impending doom. Assumming you've got your static zombie-proof site already setup, you can deploy with `divshot push`. [This post](http://www.divshot.com/blog/product-updates/faster-deploys/) about faster deployment took **3.7 seconds** to deploy.
+Deploying with Divshot is fast. Super-fast. You're going to need this in your locker when faced with an army of undead to warn the world of impending doom. Assumming you've got your static zombie-proof site already setup, you can deploy with `divshot push` straight from the command line. [This post](http://www.divshot.com/blog/product-updates/faster-deploys/) about faster deployment took **3.7 seconds** to deploy.
 
 ##### Safe environments
 
@@ -28,7 +28,7 @@ I can also leverage the immense popularity of my current Divshot app to ensure m
 
 ##### Survival of the biggest (network)
 
-So, you're one step ahead of the zombies and you've deployed your static website warning the world about the apocalypse but how long will it survive? According to the [Divshot features page](http://www.divshot.com/features) they have *"a global network of edge servers spanning over 90 countries"* According to [this trustworthy source](http://geography.about.com/od/lists/a/averagecountry.htm), the average population of a country is 34,020,600.
+So, you're one step ahead of the zombies and you've deployed your static website warning the world about the apocalypse but how long will it survive? According to the [Divshot features page](http://www.divshot.com/features) they have *"a global network of edge servers spanning over 90 countries"*. According to [this trustworthy source](http://geography.about.com/od/lists/a/averagecountry.htm), the average population of a country is 34,020,600.
 
 `34,020,600 * 90 = 3,061,854,000`
 
