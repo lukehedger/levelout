@@ -43,4 +43,4 @@ NB. If you get any errors when running `jekyll serve` try clearing out the `Gemf
 ## TODO
 
 - [ ] Customise Pygments syntax highlighting
-- [ ] Work layout
+- [ ] Work layout (when Work is completed shift that to `index.html` and blog to `/blog/index.html` - can then remove redirect from `/blog/`)

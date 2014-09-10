@@ -64,3 +64,7 @@
 .post .comments {
 	margin: 50px auto;
 }
+
+.post .next {
+	float: right;
+}

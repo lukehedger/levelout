@@ -13,3 +13,4 @@
 .post blockquote{border-left:6px solid pink;margin:1em -26px;padding:0 20px}
 .post blockquote p{font-style:italic;color:rgba(0,0,0,.6)}
 .post .comments{margin:50px auto}
+.post .next{float:right}
