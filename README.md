@@ -21,7 +21,7 @@ TODO
 Runs my tasks - like compiling CoffeeScript and Myth CSS files.
 
 - Install Gulp (if you haven't got it already): `npm install -g gulp`
-- Install Gulp dependencies (downloads all the required node modules as specified in `package.json`): `npm install --save-dev`
+- Install dependencies: `npm install`
 - Compile and watch:`gulp`
 - Stop watching: `ctrl + c`
 
@@ -34,13 +34,16 @@ Runs my tasks - like compiling CoffeeScript and Myth CSS files.
 #### Bundler
 
 - Install Bundler `gem install bundler`
-- Install all dependencies: `bundle install`
-- Build, serve and watch: `bundle exec jekyll serve --watch` (http://localhost:3000)
+- Install dependencies: `bundle install`
+- Build, serve and watch: `bundle exec jekyll serve --watch` ([http://localhost:3000](http://localhost:3000))
 - and with drafts add `--drafts`
 
 NB. If you get any errors when running `jekyll serve` try clearing out the `Gemfile.lock` and running `bundle install`
 
 ## TODO
 
-- [ ] Customise Pygments syntax highlighting
-- [ ] Work layout (when Work is completed shift that to `index.html` and blog to `/blog/index.html` - can then remove redirect from `/blog/`)
+- [ ] Switch sidebar to hidden topbar
+- [ ] Switch hero image to enhanced logo
+- [ ] Site launch animation
+- [ ] Work showcase hovers -> shift work to `index.html` and blog to `/blog/index.html` - can then remove redirect from `/blog/`
+- [ ] Move to Divhsot hosting, to enable tag indexing

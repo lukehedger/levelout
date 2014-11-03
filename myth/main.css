@@ -1,7 +1,8 @@
 @import "_lib/settings.css";
 @import "_lib/normalize.css";
 @import "_lib/print.css";
-@import "_lib/syntax.css";
+/*@import "_lib/syntax.css";*/
+@import "_lib/syntax-solarized.css";
 @import "_lib/font-awesome.css";
 @import "_lib/typography.css";
 @import "_lib/grid.css";

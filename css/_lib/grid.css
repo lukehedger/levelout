@@ -1,5 +1,5 @@
 .grid{width:100%;max-width:1024px;margin:0 auto}
-*,:after,:before{margin:0;padding:0;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
+*,:after,:before{margin:0;padding:0;box-sizing:border-box}
 .row:after{content:"";display:table;clear:both}
 .column{padding:5px;float:left}
 .column.last,.column:last-of-type{padding-right:5px;float:right}
