@@ -43,8 +43,7 @@ gulp.task('watch', function() {
 	gulp.watch('_img/**/*', ['images']);
 });
 
-// this needs to be amended to run with bundler
-// require('child_process').spawn('bundle', ['exec jekyll serve --watch'], {stdio: 'inherit'});
+// this doesn't work
 gulp.task('jekyll', function () {
-	require('child_process').spawn('jekyll', ['serve --watch'], {stdio: 'inherit'});
+	require('child_process').spawn('bundle', ['exec', 'jekyll', 'serve --watch'], { stdio: 'inherit' });
 });

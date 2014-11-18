@@ -47,3 +47,4 @@ NB. If you get any errors when running `jekyll serve` try clearing out the `Gemf
 - [ ] Site launch animation
 - [ ] Work showcase hovers -> shift work to `index.html` and blog to `/blog/index.html` - can then remove redirect from `/blog/`
 - [ ] Move to Divhsot hosting, to enable tag indexing
+- [ ] Improve local dev workflow (perhaps a setup like [this](https://github.com/shakyShane/jekyll-gulp-sass-browser-sync))
