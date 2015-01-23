@@ -17,53 +17,14 @@ img.emoji {
 /* Desktop */
 @media only screen and (min-width: 1024px) {
 	
-	.sidebar {
-		height: 100%;
-		position: fixed;
-		left: 0;
-		padding-bottom: 9999px;
-		margin-bottom: -9999px;
-		/*overflow: hidden;*/
-	}
-
-	section[role="document"].no-sidebar .sidebar {
-		left: -24%;
-	}
-
-	section[role="document"].no-sidebar .sidebar .sidebar-toggle i {
-		transform: rotate(45deg);
-	}
-	section[role="document"] .sidebar .sidebar-toggle:hover i, .sidebar-toggle:focus i, .sidebar-toggle:active i {
-		animation: icon-hover-close 2s 2 ease-in-out;
-	}
-	section[role="document"].no-sidebar .sidebar .sidebar-toggle:hover i, .sidebar-toggle:focus i, .sidebar-toggle:active i {
-		animation: icon-hover-open 2s 2 ease-in-out;
-	}
-
-	.main {
-		height: 100%;
-		position: absolute;
-		right: 0;
-		transition: 0.4s;
-	}
-
-	section[role="document"].no-sidebar .main {
-		right: 13%;
-	}
-
-	section[role="document"].no-sidebar .main.has-hero {
-		width: 100%;
-		right: 0;
-	}
+	
 
 }
 
 /* Tablet etc */
 @media only screen and (max-width:1023px) {
-
-	.hero, .sidebar .blurb, .sidebar .sidebar-toggle {
-		display: none;
-	}
+	
+	
 
 }
 

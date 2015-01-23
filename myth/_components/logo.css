@@ -8,19 +8,22 @@
 	margin: 10px auto;
 	border-radius: 50%;
 	display: block;
-	background: #F2385A;
-	transition: all 1s ease-in-out;
+	/*background: #F2385A;*/
+	background: url("/img/hero-blog.jpg") no-repeat center center;
+	background-size: contain;
+	color: #FFF;
+	transition: transform 0.3s;
 }
-.logo:not(.small-logo):hover {
+.logo:not(.small-logo):hover, .logo:not(.small-logo):focus, .logo:not(.small-logo):active {
+	color: #FFF;
+	transition: transform 1s ease-in-out;
 	transform: rotate(360deg);
-	background: #36B1BF;
 }
-.logo.logo-work {
-	background: #36B1BF;
+.logo.scaled {
+	transform: scale(0.3);
+	transform-origin: center;
 }
-.logo.logo-work:not(.small-logo):hover {
-	background: #F2385A;
-}
+
 .logo.small-logo {
 	width: 50px;
 	height: 50px;

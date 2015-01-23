@@ -1,4 +1,5 @@
 ---
+title: Blog
 ---
 <!doctype html>
 <html>
@@ -7,31 +8,29 @@
 </head>
 <body>
 	<div class="grid">
-		<section role="document" class="row container no-sidebar">
+		<section role="document" class="row container">
 
-			{% include sidebar.html active="blog" link="/work" %}
+			{% include nav.html active="blog" %}
+			{% include logo.html %}
 
-			<section role="main" class="column nine main has-hero" id="blog">
-				<div class="inner">
-					<div class="hero">
-						<div class="hero-content">
-							<h3 class="level-out">level out</h3>
-							<p class="hero-intro">The adventures of a frontend web developer</p>
-						</div>
-					</div>
-					<div class="content">
-            Nothing here : ( <a href="/">go home</a>
-					</div>
-
-					{% include footer.html %}
-
+			<section role="main" class="column twelve main" id="blog">
+				<div class="content">
+					<ul>
+						{% for post in site.posts %}
+							<li>
+								<a class="blog-post-title" href="{{ post.url }}">{{ post.title }}</a>
+								{{ post.excerpt }}
+								<span class="blog-post-meta">{{ post.date | date_to_string }}</span>
+							</li>
+						{% endfor %}
+					</ul>
 				</div>
+				{% include footer.html %}
 			</section>
 		</section>
 	</div>
 
 	{% include ga.html %}
-
 	{% include require.html %}
 
 </body>

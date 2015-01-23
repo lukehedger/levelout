@@ -8,4 +8,4 @@ h5{margin-bottom:-.8em;font-size:1.9em;color:#000}
 h6{margin:0;font-size:1.5em;font-weight:700;font-style:italic}
 footer p{display:inline-block;font-size:14px;vertical-align:-1px;color:#777}
 a{color:#F2385A;-webkit-transition:.2s;transition:.2s;text-decoration:none}
-a:hover{color:#36B1BF}
+.active,a:focus,a:hover{color:#36B1BF}

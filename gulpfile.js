@@ -1,18 +1,23 @@
 var gulp = require('gulp'),
-	coffee = require('gulp-coffee'),
+	browserify = require('browserify'),
+	source = require('vinyl-source-stream'),
+	sourcemaps = require('gulp-sourcemaps'),
 	myth = require('gulp-myth'),
-	jekyll = require('gulp-jekyll'),
 	minifycss = require('gulp-minify-css'),
-	imagemin = require('gulp-imagemin'),
 	cache = require('gulp-cache'),
+	imagemin = require('gulp-imagemin'),
 	gutil = require('gulp-util');
 
-gulp.task('coffee', function () {
-	gulp.src('coffee/**/*.coffee')
-		.pipe(coffee({
-			map: true
-		}).on('error', gutil.log))
-		.pipe(gulp.dest('js'));
+gulp.task('browserify', function () {
+	browserify({
+		entries: ['./coffee/app.coffee'],
+		extensions: ['.coffee'],
+		debug: true
+	})
+	.bundle()
+	.on('error', gutil.log)
+	.pipe(source('bundle.js'))
+	.pipe(gulp.dest('./js'));
 });
 
 gulp.task('myth', function () {
@@ -34,16 +39,16 @@ gulp.task('images', function() {
 });
 
 gulp.task('default', function () {
-	gulp.start('coffee', 'myth', 'images', 'watch');
+	gulp.start('browserify', 'myth', 'images', 'watch');
 });
 
 gulp.task('watch', function() {
 	gulp.watch('myth/**/*.css', ['myth']);
-	gulp.watch('coffee/**/*.coffee', ['coffee']);
+	gulp.watch('coffee/**/*.coffee', ['browserify']);
 	gulp.watch('_img/**/*', ['images']);
 });
 
 // this doesn't work
-gulp.task('jekyll', function () {
-	require('child_process').spawn('bundle', ['exec', 'jekyll', 'serve --watch'], { stdio: 'inherit' });
-});
+// gulp.task('jekyll', function () {
+// 	require('child_process').spawn('bundle', ['exec', 'jekyll', 'serve --watch'], { stdio: 'inherit' });
+// });

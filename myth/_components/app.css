@@ -2,18 +2,16 @@
    LAYOUT
    ========================================================================== */
 
-.inner {
-	padding: 0 20px;
+@import "../_lib/settings.css";
+
+body:before {
+	content: "";
+	width: 100%;
+	height: 2px;
+	display: block;
+	background-image: linear-gradient(to right, var(--color-loblue), var(--color-lopink));
 }
 
-.main {
-	z-index: 10;
-	background: #FFFFFF;
-	transition: 0.2s;
-}
-.main.has-hero, .main.has-hero .inner {
-	padding: 0;
-}
-.main.has-hero .inner .content {
-	margin: 0 50px;
+.container {
+	padding: 0 20px;
 }

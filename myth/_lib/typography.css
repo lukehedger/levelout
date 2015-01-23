@@ -18,7 +18,7 @@ h1 {
 }
 
 h2 {
-	
+
 }
 
 h3 {
@@ -68,6 +68,6 @@ a {
 	transition: 0.2s;
 	text-decoration: none;
 }
-a:hover {
+a:hover, a:focus, .active {
 	color: #36B1BF;
 }

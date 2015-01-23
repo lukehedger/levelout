@@ -600,7 +600,7 @@ h5{margin-bottom:-.8em;font-size:1.9em;color:#000}
 h6{margin:0;font-size:1.5em;font-weight:700;font-style:italic}
 footer p{display:inline-block;font-size:14px;vertical-align:-1px;color:#777}
 a{color:#F2385A;-webkit-transition:.2s;transition:.2s;text-decoration:none}
-a:hover{color:#36B1BF}
+.active,a:focus,a:hover{color:#36B1BF}
 .grid{width:100%;max-width:1024px;margin:0 auto}
 *,:after,:before{margin:0;padding:0;box-sizing:border-box}
 .row:after{content:"";display:table;clear:both}
@@ -629,15 +629,12 @@ a:hover{color:#36B1BF}
 @keyframes icon-hover-open{50%{color:#9ACC56}}
 @-webkit-keyframes icon-hover-close{50%{color:#D22D1C}}
 @keyframes icon-hover-close{50%{color:#D22D1C}}
-.inner{padding:0 20px}
-.main{z-index:10;background:#FFF;-webkit-transition:.2s;transition:.2s}
-.main.has-hero,.main.has-hero .inner{padding:0}
-.main.has-hero .inner .content{margin:0 50px}
-.button{margin:5px;padding:10px 20px;border:1px solid #fff;border-radius:6px;display:inline-block;text-align:center;text-decoration:none;-webkit-transition:.2s;transition:.2s}
-.button.active,.button:active,.button:focus,.button:hover{border:1px solid #fff;color:#333;background-color:#fff}
-.button.circular{width:30px;height:30px;margin:2px;padding:0;border-radius:50%;border-color:#fff;opacity:.5;background:none!important}
-.button.circular:active,.button.circular:focus,.button.circular:hover{opacity:1}
-.button.circular i{padding-top:6px;color:#fff}
+body:before{content:"";width:100%;height:2px;display:block;background-image:-webkit-linear-gradient(left,#36B1BF,#F2385A);background-image:linear-gradient(to right,#36B1BF,#F2385A)}
+.container{padding:0 20px}
+.button{margin:5px;padding:10px 20px;border:1px solid #333;border-radius:6px;display:inline-block;text-align:center;text-decoration:none;-webkit-transition:.3s;transition:.3s}
+.button.circular{width:23px;height:23px;margin:2px;padding:0;border-radius:50%;opacity:.5;background:none!important;position:relative}
+.button.circular.active,.button.circular:active,.button.circular:focus,.button.circular:hover{opacity:1}
+.button.circular i{height:1em;margin:auto;position:absolute;top:0;right:0;bottom:0;left:0;color:#333}
 code{padding:0 6px;border-radius:4px;font-size:.9em;background:#eee;color:#36B1BF}
 pre code{padding:10px 50px;border-radius:0;font-size:1em;display:block;background:#333;color:#fff}
 @media only screen and (max-width:480px){pre code{padding:10px}}
@@ -647,23 +644,21 @@ pre code{padding:10px 50px;border-radius:0;font-size:1em;display:block;backgroun
 .hero .hero-content{margin:auto;position:absolute;top:0;right:0;bottom:0;left:0;height:inherit}
 .hero .hero-content .hero-intro{text-align:center}
 footer{margin-top:20px;border-top:1px solid #999}
-.main.has-hero .inner footer{margin:0 25px}
-.logo{width:110px;height:110px;margin:10px auto;border-radius:50%;display:block;background:#F2385A;-webkit-transition:all 1s ease-in-out;transition:all 1s ease-in-out}
-.logo:not(.small-logo):hover{-webkit-transform:rotate(360deg);-ms-transform:rotate(360deg);transform:rotate(360deg);background:#36B1BF}
-.logo.logo-work{background:#36B1BF}
-.logo.logo-work:not(.small-logo):hover{background:#F2385A}
+.logo{width:110px;height:110px;margin:10px auto;border-radius:50%;display:block;background:url(/img/hero-blog.jpg) center center/contain no-repeat;color:#FFF;-webkit-transition:-webkit-transform .3s;transition:transform .3s}
+.logo:not(.small-logo):active,.logo:not(.small-logo):focus,.logo:not(.small-logo):hover{color:#FFF;-webkit-transition:-webkit-transform 1s ease-in-out;transition:transform 1s ease-in-out;-webkit-transform:rotate(360deg);-ms-transform:rotate(360deg);transform:rotate(360deg)}
+.logo.scaled{-webkit-transform:scale(0.3);-ms-transform:scale(0.3);transform:scale(0.3);-webkit-transform-origin:center;-ms-transform-origin:center;transform-origin:center}
 .logo.small-logo{width:50px;height:50px;display:inline-block;color:#444;background:0 0;opacity:.8}
 .logo.small-logo:hover{opacity:1}
-.sidebar{z-index:20;color:#FFF;background:#333;box-shadow:1px 0 10px 2px rgba(0,0,0,.5);-webkit-transition:.4s;transition:.4s}
-.sidebar a{color:inherit}
-.sidebar .blurb{margin:20px 0;padding:10px;border:1px dashed #666;border-radius:4px;text-align:center;-webkit-transition:1s;transition:1s}
-.sidebar .blurb:hover{border-color:#999}
-.sidebar .skills i{margin:0 5px}
-.sidebar .networks,nav{text-align:center}
-.sidebar .networks{margin:10px auto}
-.sidebar-toggle{width:40px;height:40px;border:2px solid #fff;border-radius:50%;text-align:center;background:#333;position:absolute;top:10px;right:-20px;cursor:pointer;box-shadow:1px 0 10px 2px rgba(0,0,0,.5)}
-.sidebar-toggle i{width:14px;height:14px;position:absolute;top:0;bottom:0;left:0;right:0;margin:auto;font-size:26px;line-height:14px;font-weight:100;font-style:normal;-webkit-transition:.1s;transition:.1s;-webkit-transform:rotate(0deg);-ms-transform:rotate(0deg);transform:rotate(0deg)}
-#blog .content,#work .content{margin:40px 50px!important}
+nav{margin-top:10px}
+nav:after{content:"";display:table;clear:both}
+nav ul{margin:0;padding:0;float:right}
+nav li{margin:0;padding:0;display:inline-block;vertical-align:middle}
+.nav-link{margin-right:10px;text-transform:uppercase}
+.nav-link.active{border-bottom:2px solid #36B1BF}
+.showcase{text-align:center}
+.piece{background:url(https://unsplash.imgix.net/reserve/oIpwxeeSPy1cnwYpqJ1w_Dufer%20Collateral%20test.jpg?q=75&fm=jpg&s=d8cce13e5d977aeec5bdbec256987adf) center/contain no-repeat;display:inline-block;width:33.33%;height:200px;position:relative}
+.piece__title{color:#FFF;font-size:16px;line-height:16px;position:absolute;top:0;right:0;bottom:0;left:0;margin:auto;-webkit-transition:.5s;transition:.5s}
+.piece__title:hover{top:10px}
 #blog ul{margin:0;padding:0;list-style-type:none}
 #blog ul li{margin:0;padding:10px 0}
 #blog ul li p{font-style:italic}
@@ -688,13 +683,4 @@ footer{margin-top:20px;border-top:1px solid #999}
 .post .next{float:right}
 img{width:100%;max-width:100%;margin:0 auto}
 img.emoji{width:auto;vertical-align:baseline}
-@media only screen and (min-width:1024px){.sidebar{height:100%;position:fixed;left:0;padding-bottom:9999px;margin-bottom:-9999px}
-section[role=document].no-sidebar .sidebar{left:-24%}
-section[role=document].no-sidebar .sidebar .sidebar-toggle i{-webkit-transform:rotate(45deg);-ms-transform:rotate(45deg);transform:rotate(45deg)}
-.sidebar-toggle:active i,.sidebar-toggle:focus i,section[role=document] .sidebar .sidebar-toggle:hover i{-webkit-animation:icon-hover-close 2s 2 ease-in-out;animation:icon-hover-close 2s 2 ease-in-out}
-.sidebar-toggle:active i,.sidebar-toggle:focus i,section[role=document].no-sidebar .sidebar .sidebar-toggle:hover i{-webkit-animation:icon-hover-open 2s 2 ease-in-out;animation:icon-hover-open 2s 2 ease-in-out}
-.main{height:100%;position:absolute;right:0;-webkit-transition:.4s;transition:.4s}
-section[role=document].no-sidebar .main{right:13%}
-section[role=document].no-sidebar .main.has-hero{width:100%;right:0}}
-@media only screen and (max-width:1023px){.hero,.sidebar .blurb,.sidebar .sidebar-toggle{display:none}}
 @media only screen and (max-width:480px){.post,.post .comments,.post p{padding:0}}

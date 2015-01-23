@@ -5,16 +5,25 @@
     "type": "git",
     "url": "http://github.com/lukehedger/lukehedger.github.io"
   },
+  "author": "lukehedger",
+  "description": "me on the internets",
+  "browserify": {
+    "transform": [
+      "coffeeify"
+    ]
+  },
   "dependencies": {},
   "devDependencies": {
+    "browserify": "^6.3.2",
+    "coffeeify": "^1.0.0",
     "gulp": "~3.8.0",
-    "gulp-cache": "^0.2.0",
-    "gulp-coffee": "~1.4.1",
+    "gulp-cache": "^0.2.4",
     "gulp-imagemin": "^0.6.1",
-    "gulp-jekyll": "0.0.0",
     "gulp-minify-css": "~0.3.0",
     "gulp-myth": "~0.3.1",
     "gulp-notify": "~1.2.1",
-    "gulp-util": "~2.2.14"
+    "gulp-sourcemaps": "~0.4.1",
+    "gulp-util": "~2.2.14",
+    "vinyl-source-stream": "^1.0.0"
   }
 }

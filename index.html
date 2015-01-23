@@ -1,6 +1,5 @@
 ---
-title: Blog
-redirect_from: "/blog/"
+title: Portfolio
 ---
 <!doctype html>
 <html>
@@ -11,32 +10,25 @@ redirect_from: "/blog/"
 	<div class="grid">
 		<section role="document" class="row container">
 
-			{% include sidebar.html active="blog" link="/work" toggle=false %}
+			{% include nav.html active="work" %}
+			{% include logo.html %}
 
-			<section role="main" class="column nine main has-hero" id="blog">
-				<div class="inner">
-					{% include hero.html %}
-					<div class="content">
-						<ul>
-							{% for post in site.posts %}
-								<li>
-									<a class="blog-post-title" href="{{ post.url }}">{{ post.title }}</a>
-									{{ post.excerpt }}
-									<span class="blog-post-meta">{{ post.date | date_to_string }}</span>
-								</li>
-							{% endfor %}
-						</ul>
-					</div>
-
-					{% include footer.html %}
-
+			<section role="main" class="column twelve main" id="work">
+				<div class="content">
+					<h1 style="text-align:center;margin:100px 0">coming soon...</h1>
+					<!-- switch this to an include -->
+					<!-- <div class="showcase">
+						{% for work in site.data.work %}<div class="piece">
+								<h4 class="piece__title">{{ work.project }}</h4>
+							</div>{% endfor %}
+					</div> -->
 				</div>
+				{% include footer.html %}
 			</section>
 		</section>
 	</div>
 
 	{% include ga.html %}
-
 	{% include require.html %}
 
 </body>
