@@ -1,72 +1,83 @@
-- project: Google Match
-  co: Lean Mean Fighting Machine
-  tech: [NodeJS,Socket.IO,CoffeeScript]
-  link: http://gmatch.jit.su/
-  shot: google-match.jpg
-  description: Real-time multiplayer game prototyped for Google Play
-- project: Forevermark Promise
-  co: Lean Mean Fighting Machine
-  tech: [CoffeeScript]
-  link: http://theforevermarkpromise.com/en/events/
-  shot: fm-promise.jpg
-  description: Campaign site for Forevermark about the meaning of promises
-- project: Ben and Jerry's YouTube Gadget
-  co: Lean Mean Fighting Machine
-  tech: [CoffeeScript,Stylus]
-  link: https://www.youtube.com/user/BenandJerrysHomemade
-  shot: unilever-benjerry.jpg
-  description: Global YouTube gadget for Ben and Jerry's Free Cone Day
-- project: Men's Health Forum
-  co: Lean Mean Fighting Machine
-  tech: [CoffeeScript,Stylus,Drupal]
-  link: http://www.menshealthforum.org.uk/
-  shot: mhf.jpg
-  description: Site for the Men's Health Forum charity with NHS API search and GP chat
-- project: Forevermark Diamond
-  co: Lean Mean Fighting Machine
-  tech: [CoffeeScript]
-  link: 
-  shot: fm-diamond.jpg
-  description: Interactive diamond with eye-detection and device-orientation
-- project: Forevermark Journey
-  co: MC Saatchi
-  tech: [CoffeeScript]
-  link: 
-  shot: fm-journey.jpg
-  description: Parallax site showing the journey of a Forevermark diamond
-- project: Land Rover Dashboard
-  co: Lean Mean Fighting Machine
-  tech: [NodeJS,Sails.js,Angular]
-  link: 
-  shot: lr-dashboard.jpg
-  description: Realtime analytics dashboard for Land Rover
-- project: caniuseonmysite
-  co: Lean Mean Fighting Machine
-  tech: [CoffeeScript]
-  link: http://caniuseonmysite.com/
-  shot: lmfm-caniuseonmysite.jpg
-  description: CanIUse plus Google Analytics for targeted progressive-enhancement
-- project: Land Rover Can and Will
-  co: Lean Mean Fighting Machine
-  tech: [CoffeeScript,Stylus,Ractive]
-  link: https://www.canandwill.co.uk/
-  shot: lr-canandwill.jpg
-  description: Campaign site for Land Rover focused on can and will spirit
-- project: LivesOn
-  co: Lean Mean Fighting Machine
-  tech: [JavaScript,PHP]
-  link: http://liveson.org/
-  shot: lmfm-liveson.jpg
-  description: When your heart stops beating you'll keep tweeting
 - project: Bayse
   co: Personal
   tech: [CoffeeScript,Myth,Gulp]
   link: https://github.com/lukehedger/bayse
-  shot: bayse.jpg
-  description: A lightweight frontend framework
-- project: To Be Jolly
-  co: Personal
-  tech: [JavaScript,Foundation,MasonryJS]
-  link: http://tobejolly.com/
-  shot: tobejolly.jpg
-  description: Interactive advent calendar
+  shot: shots/bayse.jpg
+  detail: A lightweight frontend framework
+
+- project: Rubber Tracks
+  co: Converse
+  tech: [CoffeeScript,Google Maps]
+  link: https://www.converserubbertracks.co.uk/
+  shot: shots/converse-rubber-tracks.png
+  detail: Showcasing emerging London bands and their stories
+
+- project: Google Match
+  co: Google
+  tech: [NodeJS,Socket.IO,CoffeeScript]
+  link: http://gmatch.jit.su/
+  shot: shots/google-match.jpg
+  detail: Real-time multiplayer game prototyped for Google Play
+
+- project: caniuseonmysite
+  co: Lean Mean Fighting Machine
+  tech: [CoffeeScript]
+  link: http://caniuseonmysite.com/
+  shot: shots/lmfm-ciuoms.png
+  detail: CanIUse + Google Analytics = smart progressive-enhancement
+
+- project: The Promise
+  co: Forevermark
+  tech: [CoffeeScript]
+  link: http://theforevermarkpromise.com/en/events/
+  shot: shots/fm-promise.png
+  detail: Campaign site for Forevermark about the meaning of promises
+
+- project: Men's Health Forum
+  co: Men's Health Forum
+  tech: [CoffeeScript,Stylus,Drupal]
+  link: http://www.menshealthforum.org.uk/
+  shot: shots/mhf.png
+  detail: Home of the MHF charity with NHS API search and GP chat
+
+- project: Interactive Diamond
+  co: Forevermark
+  tech: [CoffeeScript]
+  link: https://github.com/lukehedger
+  shot: shots/fm-diamond.jpg
+  detail: Interactive diamond with eye-detection and device-orientation
+
+- project: Reporting Dashboard
+  co: Land Rover
+  tech: [NodeJS,Sails.js,Angular]
+  link: https://github.com/lukehedger
+  shot: shots/lr-dashboard.png
+  detail: Realtime analytics dashboard
+
+- project: Can and Will
+  co: Land Rover
+  tech: [CoffeeScript,Stylus,Ractive]
+  link: https://www.canandwill.co.uk/
+  shot: shots/lr-canandwill.png
+  detail: Campaign site for Land Rover focused on can and will spirit
+
+- project: MixM&chine
+  co: M&C Saatchi
+  tech: [NodeJS,CoffeeScript,FFMPEG]
+  link: http://mixmachine.mcsaatchi.com/
+  shot: shots/mcsaatchi-mixmachine.png
+  detail: DIY corporate video
+
+- project: Free Cone Day
+  co: Ben & Jerry's
+  tech: [CoffeeScript,Stylus]
+  link: https://www.youtube.com/user/BenandJerrysHomemade
+  shot: shots/unilever-benjerry.png
+  detail: Global YouTube gadget for Ben and Jerry's Free Cone Day
+
+- project: LivesOn
+  co: Lean Mean Fighting Machine
+  tech: [JavaScript,PHP]
+  link: http://liveson.org/
+  shot: shots/lmfm-liveson.png
+  detail: When your heart stops beating you'll keep tweeting

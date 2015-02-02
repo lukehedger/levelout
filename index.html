@@ -11,17 +11,13 @@ title: Portfolio
 		<section role="document" class="row container">
 
 			{% include nav.html active="work" %}
-			{% include logo.html %}
+			{% include header.html %}
 
 			<section role="main" class="column twelve main" id="work">
 				<div class="content">
-					<h1 style="text-align:center;margin:100px 0">coming soon...</h1>
-					<!-- switch this to an include -->
-					<!-- <div class="showcase">
-						{% for work in site.data.work %}<div class="piece">
-								<h4 class="piece__title">{{ work.project }}</h4>
-							</div>{% endfor %}
-					</div> -->
+					<div class="showcase">
+						{% include showcase.html %}
+					</div>
 				</div>
 				{% include footer.html %}
 			</section>

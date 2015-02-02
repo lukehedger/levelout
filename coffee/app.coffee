@@ -22,6 +22,9 @@ class App
 	_init: ->
 
 		# init app
+		setTimeout =>
+			@_loadShowcase()
+		, 500
 
 	_onScroll: () =>
 
@@ -29,5 +32,11 @@ class App
 			@$logo.classList.add "scaled"
 		else
 			@$logo.classList.remove "scaled"
+
+	_loadShowcase: ->
+
+		pieces = document.querySelectorAll ".piece"
+		for piece in pieces
+			piece.classList.add "loaded"
 
 new App()

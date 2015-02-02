@@ -42,8 +42,5 @@ NB. If you get any errors when running `jekyll serve` try clearing out the `Gemf
 
 ## TODO
 
-- [ ] Work showcase hovers -> [oscar](http://tympanus.net/Development/HoverEffectIdeas/) / [pen](http://codepen.io/lukehedger/pen/qEbbPq)
-- [ ] Site launch animation (pipe, ceci n'est pas une website)
-
 - [ ] Move to Divhsot hosting, to enable tag indexing -> style index pages
 - [ ] Improve local dev workflow (perhaps a setup like [this](https://github.com/shakyShane/jekyll-gulp-sass-browser-sync))
