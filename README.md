@@ -42,5 +42,6 @@ NB. If you get any errors when running `jekyll serve` try clearing out the `Gemf
 
 ## TODO
 
+### v2
 - [ ] Move to Divhsot hosting, to enable tag indexing -> style index pages
-- [ ] Improve local dev workflow (perhaps a setup like [this](https://github.com/shakyShane/jekyll-gulp-sass-browser-sync))
+- [ ] Improve local dev workflow (perhaps a setup like [this](https://github.com/shakyShane/jekyll-gulp-sass-browser-sync) or [this](https://github.com/zackcote/jekyll-kit)) -> or consider a [Metalsmith](http://www.metalsmith.io/) static-site on [Divshot](http://docs.divshot.com/integrations/metalsmith)
