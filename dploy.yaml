@@ -1,0 +1,23 @@
+dev:
+  host: "ftp.myserver.com"
+  user: "user"
+  pass: "password"
+  path:
+      local: "public/"
+      remote: "public_html/"
+
+stage:
+  host: "ftp.myserver.com"
+  user: "user"
+  pass: "password"
+  path:
+      local: "public/"
+      remote: "public_html/"
+
+live:
+  host: "ftp.myserver.com"
+  user: "user"
+  pass: "password"
+  path:
+      local: "public/"
+      remote: "public_html/"

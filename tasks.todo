@@ -1,0 +1,16 @@
+Redesign:
+  ☐ Single point-of-entry (no more work/blog distinction)- something like a timeline of work/posts -> keep /work/* + /blog/* routes and use /:type/:slug to display requested UI
+  ☐ add some nice transitions/interactions
+
+Refactor CSS (itcss/inuit):
+  ☐ read: https://gist.github.com/charlespeters/5864b9a8afff208dae11
+
+Refactor JS (es6):
+  ☐ read: https://hacks.mozilla.org/category/es6-in-depth/
+  ☐ try out: http://es6-features.org/#DefaultParameterValues
+
+Live:
+  ☐ update work + remove dead links (lr ab, treasure hunt)
+  ☐ cull posts
+  ☐ cull github repos
+  ☐ move to Divshot

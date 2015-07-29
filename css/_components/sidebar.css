@@ -1,7 +1,0 @@
-.sidebar{z-index:20;color:#FFF;background:#333;box-shadow:1px 0 10px 2px rgba(0,0,0,.5);-webkit-transition:.4s;transition:.4s}
-.sidebar a{color:inherit}
-.sidebar .blurb{margin:20px 0;padding:10px;border:1px dashed #666;border-radius:4px;text-align:center;-webkit-transition:1s;transition:1s}
-.sidebar .blurb:hover{border-color:#999}
-.sidebar .skills i{margin:0 5px}
-.sidebar .networks,nav{text-align:center}
-.sidebar .networks{margin:10px auto}

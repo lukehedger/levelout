@@ -1,0 +1,80 @@
+{
+  "env": {
+    "node": true,
+    "browser": true
+  },
+  "validateIndentation": 2,
+  "disallowEmptyBlocks": true,
+  "disallowMixedSpacesAndTabs": true,
+  "disallowMultipleSpaces": true,
+  "disallowNewlineBeforeBlockStatements": true,
+  "disallowSpaceAfterObjectKeys": true,
+  "disallowSpacesInCallExpression": true,
+  "disallowSpacesInFunctionDeclaration": {
+    "beforeOpeningRoundBrace": true
+  },
+  "disallowSpacesInsideParentheses": true,
+  "disallowTrailingComma": true,
+  "disallowYodaConditions": true,
+  "maximumLineLength": 80,
+  "requireBlocksOnNewline": true,
+  "requireCamelCaseOrUpperCaseIdentifiers": true,
+  "requireCapitalizedConstructors": true,
+  "requireCommaBeforeLineBreak": true,
+  "requireCurlyBraces": true,
+  "requireDollarBeforejQueryAssignment": true,
+  "requireDotNotation": true,
+  "requireFunctionDeclarations": true,
+  "requireLineBreakAfterVariableAssignment": true,
+  "requirePaddingNewLinesAfterBlocks": {
+    "allExcept": ["inCallExpressions", "inArrayExpressions", "inProperties"]
+  },
+  "requirePaddingNewLinesAfterUseStrict": true,
+  "requirePaddingNewlinesBeforeKeywords": [
+    "do",
+    "for",
+    "if",
+    "switch",
+    "case",
+    "void",
+    "while",
+    "with",
+    "typeof",
+    "function"
+  ],
+  "requirePaddingNewLinesBeforeLineComments": {
+    "allExcept": "firstAfterCurly"
+  },
+  "requireSemicolons": true,
+  "requireSpaceAfterBinaryOperators": true,
+  "requireSpaceBeforeBlockStatements": true,
+  "requireSpaceBeforeKeywords": [
+    "else",
+    "while",
+    "try",
+    "catch"
+  ],
+  "requireSpaceBeforeObjectValues": true,
+  "requireSpaceBetweenArguments": true,
+  "requireSpacesInAnonymousFunctionExpression": {
+    "beforeOpeningCurlyBrace": true
+  },
+  "requirePaddingNewlinesInBlocks": 1,
+  "requireSpacesInConditionalExpression": true,
+  "requireSpacesInForStatement": true,
+  "requireSpacesInFunctionDeclaration": {
+    "beforeOpeningCurlyBrace": true
+  },
+  "requireSpacesInFunction": {
+    "beforeOpeningCurlyBrace": true
+  },
+  "requireSpacesInNamedFunctionExpression": {
+    "beforeOpeningCurlyBrace": true
+  },
+  "requireSpacesInsideObjectBrackets": {
+    "allExcept": ["(", ")"]
+  },
+  "safeContextKeyword": ["self", "that"],
+  "validateParameterSeparator": ", ",
+  "validateQuoteMarks": { "mark": "'", "escape": true }
+}

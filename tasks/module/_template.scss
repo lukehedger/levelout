@@ -1,0 +1,10 @@
+/**
+ * @module:   {{name}}
+ * @js:       {{paths.js}}
+ * @html:     {{paths.html}}
+ */
+
+{{#shouldExtend}}@include module("{{name}}", (extend:"{{nameExtend}}")) { {{/shouldExtend}}
+{{^shouldExtend}}@include module("{{name}}") { {{/shouldExtend}}
+  // :)
+}

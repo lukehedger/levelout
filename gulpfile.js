@@ -1,54 +1,29 @@
-var gulp = require('gulp'),
-	browserify = require('browserify'),
-	source = require('vinyl-source-stream'),
-	sourcemaps = require('gulp-sourcemaps'),
-	myth = require('gulp-myth'),
-	minifycss = require('gulp-minify-css'),
-	cache = require('gulp-cache'),
-	imagemin = require('gulp-imagemin'),
-	gutil = require('gulp-util');
+var gulp = require('gulp');
+var script = require('./tasks/script');
+var test = require('./tasks/test');
+var moduleTask = require('./tasks/module');
+var style = require('./tasks/style');
+var watch = require('./tasks/watch');
+var server = require('./tasks/server');
+var publish = require('./tasks/publish');
 
-gulp.task('browserify', function () {
-	browserify({
-		entries: ['./coffee/app.coffee'],
-		extensions: ['.coffee'],
-		debug: true
-	})
-	.bundle()
-	.on('error', gutil.log)
-	.pipe(source('bundle.js'))
-	.pipe(gulp.dest('./js'));
-});
+gulp.task('script', ['module:rebuild'], script);
+gulp.task('script:build', ['test', 'module:rebuild'], script.build);
 
-gulp.task('myth', function () {
-	gulp.src('myth/**/*.css')
-		.pipe(myth())
-		.pipe(gulp.dest('css'))
-		.pipe(minifycss({
-			keepBreaks: true,
-			root: 'css',
-			processImport: true
-		}))
-		.pipe(gulp.dest('css'));
-});
+gulp.task('test', test);
 
-gulp.task('images', function() {
-  return gulp.src('_img/**/*')
-    .pipe(cache(imagemin({ optimizationLevel: 5, progressive: true, interlaced: true })))
-    .pipe(gulp.dest('img'));
-});
+gulp.task('module', moduleTask);
+gulp.task('module:rebuild', moduleTask.rebuild);
 
-gulp.task('default', function () {
-	gulp.start('browserify', 'myth', 'images', 'watch');
-});
+gulp.task('style', style);
+gulp.task('style:build', ['test'], style.build);
 
-gulp.task('watch', function() {
-	gulp.watch('myth/**/*.css', ['myth']);
-	gulp.watch('coffee/**/*.coffee', ['browserify']);
-	gulp.watch('_img/**/*', ['images']);
-});
+gulp.task('watch', watch);
 
-// this doesn't work
-// gulp.task('jekyll', function () {
-// 	require('child_process').spawn('bundle', ['exec', 'jekyll', 'serve --watch'], { stdio: 'inherit' });
-// });
+gulp.task('server', ['script'], server);
+
+gulp.task('publish', publish);
+
+gulp.task('default', ['script', 'style', 'watch', 'server']);
+
+gulp.task('build', ['test', 'script:build', 'style:build']);

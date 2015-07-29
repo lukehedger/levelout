@@ -1,0 +1,15 @@
+///////////////////////////////////////////////////////////////////////////////
+// # _settings.typography.scss
+//
+// You can override any typography inuitcss settings here.
+// For example, if you want to change the size of the h1 heading:
+// $inuit-heading-size-1: 48px;
+//
+// Read more avaiable properties:
+// https://github.com/inuitcss/base.headings/blob/master/_base.headings.scss
+///////////////////////////////////////////////////////////////////////////////
+$font-primary: "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-secondary: Georgia, serif;
+
+$font-size: 16px;
+$font-line-height: 24px;

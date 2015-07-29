@@ -1,0 +1,23 @@
+<!--
+  @module:   blog
+  @scss:     ./source/css/module/blog.scss
+  @js:       ./source/js/module/blog/blog.js
+-->
+
+<div class="blog">
+
+  {{#if slug}}
+
+  <ui-post post="{{post}}" />
+
+  {{else}}
+
+  {{#posts:post}}
+    {{#if status != 'draft' || draftsEnabled }}
+    <h3 on-tap="goPost:{{slug}}">{{title}}</h3>
+    {{/if}}
+  {{/posts}}
+
+  {{/if}}
+
+</div>

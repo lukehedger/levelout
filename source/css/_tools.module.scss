@@ -1,0 +1,26 @@
+///////////////////////////////////////////////////////////////////////////////
+// # Mixin to create modules with the ability of extending other modules
+//
+// @param String $name      The name of your module
+// @param Map $args         Map with two parameters:
+//        String $extend    The class you want to extend (optional)
+//        String $silent    If the class should be silent or not,
+//                          most of the times it's useful for abstract modules
+//
+// e.g.
+//    @include module("abstract-module", (silent: true)) { };
+//    @include module("new-module", (extend: "abstract-module")) { };
+//    @include module("simple-module") { };
+///////////////////////////////////////////////////////////////////////////////
+@mixin module($name, $args: ()) {
+  $i: ".";
+  @if map-get($args, "silent") { $i: "%"; }
+
+  #{$i}#{$name} {
+    @if map-get($args, "extend") {
+      @extend .#{map-get($args, "extend")} !optional;
+      @extend %#{map-get($args, "extend")} !optional;
+    }
+    @content;
+  }
+}

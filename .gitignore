@@ -5,17 +5,19 @@
 ._*
 .Spotlight-V100
 .Trashes
+Icon?
 ehthumbs.db
 Thumbs.db
 
-# Source Maps #
+# IDE files #
 ######################
-*.map
+.idea
 
-# Dependencies #
+# Project files #
 ######################
+*.sublime-project
+*.sublime-workspace
+
 node_modules/
-
-# Jekyll #
-######################
-_site/
+vendor/
+*.map
