@@ -2,18 +2,21 @@
 
 ## Languages
 
-#### [HTML (Hyper Text Markup Language)](http://www.w3schools.com/html/)
+#### [HTML (Hyper Text Markup Language)](https://developer.mozilla.org/en/docs/Web/HTML)
 > A markup language that uses tags to describe web pages.
 
 #### [Sass](http://sass-lang.com)
 > Sass is a scripting language that is interpreted into Cascading Style Sheets (CSS)
 
-#### [CoffeeScript](http://coffeescript.org)
-> An object-oriented computer programming language commonly used to create interactive effects within web browsers.
-
+#### [Babel](https://babeljs.io/)
+> A JavaScript compiler for using next generation JavaScript today
 
 #### [JSON](http://www.json.org)
-> An open standard format that uses human-readable text to define data objects.
+> An open standard format that uses human-readable text to define data objects
+
+#### [Markdown](http://daringfireball.net/projects/markdown/)
+> A text-to-HTML conversion tool for web writers
+
 
 ## Tools
 
