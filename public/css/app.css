@@ -805,19 +805,34 @@ html, body {
 
 /*auto-generated*/
 /**
+ * @module:   blog-post
+ * @js:       ./source/js/module/blog-post/blog-post.js
+ * @html:     ./source/js/module/blog-post/blog-post.html
+ */
+/**
+ * @module:   blog-preview
+ * @js:       ./source/js/module/blog-preview/blog-preview.js
+ * @html:     ./source/js/module/blog-preview/blog-preview.html
+ */
+/**
  * @module:   blog
  * @js:       ./source/js/module/blog/blog.js
  * @html:     ./source/js/module/blog/blog.html
  */
 /**
+ * @module:   footer
+ * @js:       ./source/js/module/footer/footer.js
+ * @html:     ./source/js/module/footer/footer.html
+ */
+/**
+ * @module:   logo
+ * @js:       ./source/js/module/logo/logo.js
+ * @html:     ./source/js/module/logo/logo.html
+ */
+/**
  * @module:   nav
  * @js:       ./source/js/module/nav/nav.js
  * @html:     ./source/js/module/nav/nav.html
- */
-/**
- * @module:   post
- * @js:       ./source/js/module/post/post.js
- * @html:     ./source/js/module/post/post.html
  */
 /**
  * @module:   work

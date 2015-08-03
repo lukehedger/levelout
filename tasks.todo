@@ -1,17 +1,15 @@
 Redesign:
-  ☐ Single point-of-entry (no more work/blog distinction)- something like a timeline of work/posts -> keep /work/* + /blog/* routes and use /:type/:slug to display requested UI
-  ☐ add some nice transitions/interactions
+  ☐ template: http://monograph.io/ || http://tympanus.net/Development/CreativeLinkEffects/
+  ☐ Ractive transitions to move between home/blog view (use some perspective/rotation)
+  ☐ lo svg draw onload (see 040715 research)
 
 Refactor CSS (itcss/inuit):
   ☐ read: https://gist.github.com/charlespeters/5864b9a8afff208dae11
 
-Refactor JS (es6):
-  ☐ read: https://hacks.mozilla.org/category/es6-in-depth/
-  ☐ try out: http://es6-features.org/#DefaultParameterValues
-
 Live:
-  ☐ update work + remove dead links (lr ab, treasure hunt)
+  ☐ update work (lr ab, treasure hunt, countr) + replace dead links (rubber tracks, gmatch) with Marvel -> https://marvelapp.com/
   ☐ cull posts
   ☐ cull github repos
   ☐ rename repo to level out
   ☐ move to Divshot
+  ☐ Will Code for Beer pen (add to featured work) -> http://codepen.io/ajerez/pen/dPmGZr / http://codepen.io/jay-bee-why/pen/KEdjD/

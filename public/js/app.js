@@ -34,7 +34,7 @@ var app = {
   app.render();
 });
 
-},{"./view/main":21,"domready":3}],2:[function(require,module,exports){
+},{"./view/main":27,"domready":3}],2:[function(require,module,exports){
 // shim for using process in browser
 
 var process = module.exports = {};
@@ -18444,8 +18444,72 @@ exports['default'] = _ractive2['default'].extend({
 module.exports = exports['default'];
 
 },{"ractive":8}],11:[function(require,module,exports){
-module.exports={"v":3,"t":[{"t":7,"e":"div","a":{"class":"blog"},"f":[{"t":4,"f":[{"t":7,"e":"ui-post","a":{"post":[{"t":2,"r":"post"}]}}],"n":50,"r":"slug"},{"t":4,"n":51,"f":[{"t":4,"f":[{"t":4,"f":[{"t":7,"e":"h3","v":{"tap":{"n":"goPost","d":[{"t":2,"r":"slug"}]}},"f":[{"t":2,"r":"title"}]}],"n":50,"x":{"r":["status","draftsEnabled"],"s":"_0!=\"draft\"||_1"}}],"i":"post","r":"posts"}],"r":"slug"}]}]}
+module.exports={"v":3,"t":[{"t":7,"e":"div","a":{"class":"blog-post"},"f":[{"t":7,"e":"h1","f":[{"t":2,"r":"post.title"}]}]}]}
 },{}],12:[function(require,module,exports){
+/**
+ * @module:   blog-post
+ * @scss:     ./source/css/module/blog-post.scss
+ * @html:     ./source/js/module/blog-post/blog-post.html
+ */
+
+'use strict';
+
+Object.defineProperty(exports, '__esModule', {
+  value: true
+});
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+var _abstractModule = require('../abstract-module');
+
+var _abstractModule2 = _interopRequireDefault(_abstractModule);
+
+var _blogPostHtml = require('./blog-post.html');
+
+var _blogPostHtml2 = _interopRequireDefault(_blogPostHtml);
+
+exports['default'] = _abstractModule2['default'].extend({
+
+  template: _blogPostHtml2['default']
+
+});
+module.exports = exports['default'];
+
+},{"../abstract-module":10,"./blog-post.html":11}],13:[function(require,module,exports){
+module.exports={"v":3,"t":[{"t":7,"e":"div","a":{"class":"blog-preview"},"f":[{"t":7,"e":"h1","f":["blog-preview :)"]}]}]}
+},{}],14:[function(require,module,exports){
+/**
+ * @module:   blog-preview
+ * @scss:     ./source/css/module/blog-preview.scss
+ * @html:     ./source/js/module/blog-preview/blog-preview.html
+ */
+
+'use strict';
+
+Object.defineProperty(exports, '__esModule', {
+  value: true
+});
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+var _abstractModule = require('../abstract-module');
+
+var _abstractModule2 = _interopRequireDefault(_abstractModule);
+
+var _blogPreviewHtml = require('./blog-preview.html');
+
+var _blogPreviewHtml2 = _interopRequireDefault(_blogPreviewHtml);
+
+exports['default'] = _abstractModule2['default'].extend({
+
+  template: _blogPreviewHtml2['default']
+
+});
+module.exports = exports['default'];
+
+},{"../abstract-module":10,"./blog-preview.html":13}],15:[function(require,module,exports){
+module.exports={"v":3,"t":[{"t":7,"e":"div","a":{"class":"blog"},"f":[{"t":4,"f":[{"t":7,"e":"ui-blog-post","a":{"post":[{"t":2,"r":"post"}]}}],"n":50,"r":"slug"},{"t":4,"n":51,"f":[{"t":4,"f":[{"t":4,"f":[{"t":7,"e":"h3","v":{"tap":{"n":"goPost","d":[{"t":2,"r":"slug"}]}},"f":[{"t":2,"r":"title"}]}],"n":50,"x":{"r":["status","draftsEnabled"],"s":"_0!=\"draft\"||_1"}}],"i":"post","r":"posts"}],"r":"slug"}]}]}
+},{}],16:[function(require,module,exports){
 /**
  * @module:   blog
  * @scss:     ./source/css/module/blog.scss
@@ -18518,7 +18582,39 @@ module.exports = exports['default'];
 
 // do something
 
-},{"../abstract-module":10,"./blog.html":11}],13:[function(require,module,exports){
+},{"../abstract-module":10,"./blog.html":15}],17:[function(require,module,exports){
+module.exports={"v":3,"t":[{"t":7,"e":"div","a":{"class":"footer"},"f":[{"t":7,"e":"h1","f":["footer :)"]}]}]}
+},{}],18:[function(require,module,exports){
+/**
+ * @module:   footer
+ * @scss:     ./source/css/module/footer.scss
+ * @html:     ./source/js/module/footer/footer.html
+ */
+
+'use strict';
+
+Object.defineProperty(exports, '__esModule', {
+  value: true
+});
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+var _abstractModule = require('../abstract-module');
+
+var _abstractModule2 = _interopRequireDefault(_abstractModule);
+
+var _footerHtml = require('./footer.html');
+
+var _footerHtml2 = _interopRequireDefault(_footerHtml);
+
+exports['default'] = _abstractModule2['default'].extend({
+
+  template: _footerHtml2['default']
+
+});
+module.exports = exports['default'];
+
+},{"../abstract-module":10,"./footer.html":17}],19:[function(require,module,exports){
 /*auto-generated*/
 'use strict';
 
@@ -18532,33 +18628,80 @@ var _ractive = require('ractive');
 
 var _ractive2 = _interopRequireDefault(_ractive);
 
+var _blogPostBlogPostJs = require('./blog-post/blog-post.js');
+
+var _blogPostBlogPostJs2 = _interopRequireDefault(_blogPostBlogPostJs);
+
+var _blogPreviewBlogPreviewJs = require('./blog-preview/blog-preview.js');
+
+var _blogPreviewBlogPreviewJs2 = _interopRequireDefault(_blogPreviewBlogPreviewJs);
+
 var _blogBlogJs = require('./blog/blog.js');
 
 var _blogBlogJs2 = _interopRequireDefault(_blogBlogJs);
+
+var _footerFooterJs = require('./footer/footer.js');
+
+var _footerFooterJs2 = _interopRequireDefault(_footerFooterJs);
+
+var _logoLogoJs = require('./logo/logo.js');
+
+var _logoLogoJs2 = _interopRequireDefault(_logoLogoJs);
 
 var _navNavJs = require('./nav/nav.js');
 
 var _navNavJs2 = _interopRequireDefault(_navNavJs);
 
-var _postPostJs = require('./post/post.js');
-
-var _postPostJs2 = _interopRequireDefault(_postPostJs);
-
 var _workWorkJs = require('./work/work.js');
 
 var _workWorkJs2 = _interopRequireDefault(_workWorkJs);
 
+_ractive2['default'].components['ui-blog-post'] = _blogPostBlogPostJs2['default'];
+_ractive2['default'].components['ui-blog-preview'] = _blogPreviewBlogPreviewJs2['default'];
 _ractive2['default'].components['ui-blog'] = _blogBlogJs2['default'];
+_ractive2['default'].components['ui-footer'] = _footerFooterJs2['default'];
+_ractive2['default'].components['ui-logo'] = _logoLogoJs2['default'];
 _ractive2['default'].components['ui-nav'] = _navNavJs2['default'];
-_ractive2['default'].components['ui-post'] = _postPostJs2['default'];
 _ractive2['default'].components['ui-work'] = _workWorkJs2['default'];
 
 exports['default'] = _ractive2['default'];
 module.exports = exports['default'];
 
-},{"./blog/blog.js":12,"./nav/nav.js":15,"./post/post.js":17,"./work/work.js":19,"ractive":8}],14:[function(require,module,exports){
+},{"./blog-post/blog-post.js":12,"./blog-preview/blog-preview.js":14,"./blog/blog.js":16,"./footer/footer.js":18,"./logo/logo.js":21,"./nav/nav.js":23,"./work/work.js":25,"ractive":8}],20:[function(require,module,exports){
+module.exports={"v":3,"t":[{"t":7,"e":"div","a":{"class":"logo"},"f":[{"t":7,"e":"h1","f":["logo :)"]}]}]}
+},{}],21:[function(require,module,exports){
+/**
+ * @module:   logo
+ * @scss:     ./source/css/module/logo.scss
+ * @html:     ./source/js/module/logo/logo.html
+ */
+
+'use strict';
+
+Object.defineProperty(exports, '__esModule', {
+  value: true
+});
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+var _abstractModule = require('../abstract-module');
+
+var _abstractModule2 = _interopRequireDefault(_abstractModule);
+
+var _logoHtml = require('./logo.html');
+
+var _logoHtml2 = _interopRequireDefault(_logoHtml);
+
+exports['default'] = _abstractModule2['default'].extend({
+
+  template: _logoHtml2['default']
+
+});
+module.exports = exports['default'];
+
+},{"../abstract-module":10,"./logo.html":20}],22:[function(require,module,exports){
 module.exports={"v":3,"t":[{"t":7,"e":"div","a":{"class":"nav"},"f":[{"t":7,"e":"a","v":{"tap":"toHome"},"f":["work"]}," ",{"t":7,"e":"a","v":{"tap":"toBlog"},"f":["blog"]}]}]}
-},{}],15:[function(require,module,exports){
+},{}],23:[function(require,module,exports){
 /**
  * @module:   nav
  * @scss:     ./source/css/module/nav.scss
@@ -18607,41 +18750,9 @@ exports['default'] = _abstractModule2['default'].extend({
 });
 module.exports = exports['default'];
 
-},{"../abstract-module":10,"./nav.html":14}],16:[function(require,module,exports){
-module.exports={"v":3,"t":[{"t":7,"e":"div","a":{"class":"post"},"f":[{"t":7,"e":"h1","f":[{"t":2,"r":"post.title"}]}]}]}
-},{}],17:[function(require,module,exports){
-/**
- * @module:   post
- * @scss:     ./source/css/module/post.scss
- * @html:     ./source/js/module/post/post.html
- */
-
-'use strict';
-
-Object.defineProperty(exports, '__esModule', {
-  value: true
-});
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-
-var _abstractModule = require('../abstract-module');
-
-var _abstractModule2 = _interopRequireDefault(_abstractModule);
-
-var _postHtml = require('./post.html');
-
-var _postHtml2 = _interopRequireDefault(_postHtml);
-
-exports['default'] = _abstractModule2['default'].extend({
-
-  template: _postHtml2['default']
-
-});
-module.exports = exports['default'];
-
-},{"../abstract-module":10,"./post.html":16}],18:[function(require,module,exports){
+},{"../abstract-module":10,"./nav.html":22}],24:[function(require,module,exports){
 module.exports={"v":3,"t":[{"t":7,"e":"div","a":{"class":"work"},"f":[{"t":7,"e":"h1","f":["work :)"]}]}]}
-},{}],19:[function(require,module,exports){
+},{}],25:[function(require,module,exports){
 /**
  * @module:   work
  * @scss:     ./source/css/module/work.scss
@@ -18671,9 +18782,9 @@ exports['default'] = _abstractModule2['default'].extend({
 });
 module.exports = exports['default'];
 
-},{"../abstract-module":10,"./work.html":18}],20:[function(require,module,exports){
-module.exports={"v":3,"t":[{"t":7,"e":"ui-nav","a":{"view":[{"t":2,"r":"view"}]}}," ",{"t":4,"f":[{"t":7,"e":"ui-work"}],"x":{"r":["view"],"s":"_0==\"index\""}},{"t":4,"f":[{"t":7,"e":"ui-blog","a":{"posts":[{"t":2,"r":"content.posts"}],"slug":[{"t":2,"r":"slug"}],"draftsEnabled":[{"t":2,"r":"content.config.drafts"}]}}],"x":{"r":["view"],"s":"_0==\"blog\""}}]}
-},{}],21:[function(require,module,exports){
+},{"../abstract-module":10,"./work.html":24}],26:[function(require,module,exports){
+module.exports={"v":3,"t":[{"t":7,"e":"ui-nav","a":{"view":[{"t":2,"r":"view"}]}}," ",{"t":7,"e":"ui-logo"}," ",{"t":4,"f":[{"t":7,"e":"ui-work"}," ",{"t":7,"e":"ui-blog-preview","a":{"posts":[{"t":2,"r":"content.posts"}]}}],"x":{"r":["view"],"s":"_0==\"index\""}},{"t":4,"f":[{"t":7,"e":"ui-blog","a":{"posts":[{"t":2,"r":"content.posts"}],"slug":[{"t":2,"r":"slug"}],"draftsEnabled":[{"t":2,"r":"content.config.drafts"}]}}],"x":{"r":["view"],"s":"_0==\"blog\""}},{"t":7,"e":"ui-footer"}]}
+},{}],27:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -18720,7 +18831,7 @@ exports['default'] = _module3['default'].extend({
 
     this.setRouter();
 
-    this.getContent().then(this.onContentSuccess.bind(this)).fail(this.onContentSuccess.bind(this));
+    this.getContent().then(this.onContentSuccess.bind(this)).fail(this.onContentError.bind(this));
 
     // handle routing events
     this.on('*.nav', function (path) {
@@ -18777,7 +18888,7 @@ exports['default'] = _module3['default'].extend({
 });
 module.exports = exports['default'];
 
-},{"../module":13,"./main.html":20,"page":4,"ractive-events-tap":7,"reqwest":9}]},{},[1])
+},{"../module":19,"./main.html":26,"page":4,"ractive-events-tap":7,"reqwest":9}]},{},[1])
 
 
 //# sourceMappingURL=app.js.map

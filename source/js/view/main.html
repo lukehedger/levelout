@@ -1,9 +1,13 @@
 <ui-nav view="{{view}}" />
+<ui-logo />
 
 {{#view == 'index'}}
 <ui-work />
+<ui-blog-preview posts="{{content.posts}}" />
 {{/}}
 
 {{#view == 'blog'}}
 <ui-blog posts="{{content.posts}}" slug="{{slug}}" draftsEnabled="{{content.config.drafts}}" />
 {{/}}
+
+<ui-footer />

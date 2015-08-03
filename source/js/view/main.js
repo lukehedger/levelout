@@ -28,7 +28,7 @@ export default Ractive.extend({
 
     this.getContent()
       .then(this.onContentSuccess.bind(this))
-      .fail(this.onContentSuccess.bind(this));
+      .fail(this.onContentError.bind(this));
 
     // handle routing events
     this.on('*.nav', function (path) {
