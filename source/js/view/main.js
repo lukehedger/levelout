@@ -69,15 +69,12 @@ export default Ractive.extend({
 
   setRouter() {
 
-    // TODO - can this be changed to () => {} ?
-    var self = this;
-
-    page('/', function () {
-      self.set('view', 'index');
+    page('/', () => {
+      this.set('view', 'index');
     });
 
-    page('/blog/:post?', function (ctx) {
-      self.set({
+    page('/blog/:post?', (ctx) => {
+      this.set({
         view: 'blog',
         slug: ctx.params.post
       });

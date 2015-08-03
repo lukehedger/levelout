@@ -18754,16 +18754,14 @@ exports['default'] = _module3['default'].extend({
   },
 
   setRouter: function setRouter() {
-
-    // TODO - can this be changed to () => {} ?
-    var self = this;
+    var _this = this;
 
     (0, _page2['default'])('/', function () {
-      self.set('view', 'index');
+      _this.set('view', 'index');
     });
 
     (0, _page2['default'])('/blog/:post?', function (ctx) {
-      self.set({
+      _this.set({
         view: 'blog',
         slug: ctx.params.post
       });
