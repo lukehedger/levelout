@@ -5,6 +5,55 @@
  */
 
 
-@include module("logo") { 
-  // :)
+@include module("logo") {
+
+  &__wrap {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    margin: 0 auto;
+    background-color: $color-lopink;
+    cursor: pointer;
+    transition: 0.3s;
+
+    &:hover {
+      background-color: $color-loblue;
+      transition: 1s ease-in-out;
+      transform: rotate(360deg);
+    }
+
+    &--scaled {
+      @extend .logo__wrap;
+      transform: scale(0.3);
+      transform-origin: center;
+    }
+
+  }
+
+  &__path {
+    fill: white;
+    fill-opacity: 0;
+    stroke-opacity: 1;
+    stroke-dasharray: 500;
+    stroke-dashoffset: 500;
+    animation: draw_path 4s cubic-bezier(1,.45,.13,1) forwards;
+
+    &--filled {
+      @extend .logo__path;
+      fill-opacity: 1;
+      stroke-opacity: 0;
+    }
+  }
+
+  @keyframes draw_path {
+    95% {
+      stroke-dashoffset: 0;
+    }
+
+    100% {
+      fill-opacity: 1;
+      stroke-opacity: 0;
+    }
+  }
+
 }

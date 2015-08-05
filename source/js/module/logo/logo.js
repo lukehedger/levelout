@@ -9,6 +9,31 @@ import template from './logo.html';
 
 export default Module.extend({
 
-  template: template
+  template: template,
+
+  data() {
+    return {
+      scaled: false
+    }
+  },
+
+  onrender() {
+
+    // event proxies
+    this.on({
+      toHome() {
+        this.fire('nav', '/');
+      }
+    });
+
+    window.onscroll = this.onScroll.bind(this);
+
+  },
+
+  onScroll() {
+
+    this.set('scaled', window.pageYOffset > 140);
+
+  }
 
 });

@@ -558,6 +558,13 @@ html, body {
   width: 100%;
   min-height: 100%; }
 
+body:before {
+  content: "";
+  width: 100%;
+  height: 2px;
+  display: block;
+  background-image: linear-gradient(to right, #36B1BF, #F2385A); }
+
 /*------------------------------------*    #LAYOUT
 \*------------------------------------*/
 /**
@@ -829,6 +836,54 @@ html, body {
  * @js:       ./source/js/module/logo/logo.js
  * @html:     ./source/js/module/logo/logo.html
  */
+.logo__wrap, .logo__wrap--scaled {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  margin: 0 auto;
+  background-color: #F2385A;
+  cursor: pointer;
+  transition: 0.3s; }
+  .logo__wrap:hover, .logo__wrap--scaled:hover {
+    background-color: #36B1BF;
+    transition: 1s ease-in-out;
+    -webkit-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+            transform: rotate(360deg); }
+  .logo__wrap--scaled {
+    -webkit-transform: scale(0.3);
+        -ms-transform: scale(0.3);
+            transform: scale(0.3);
+    -webkit-transform-origin: center;
+        -ms-transform-origin: center;
+            transform-origin: center; }
+
+.logo__path, .logo__path--filled {
+  fill: white;
+  fill-opacity: 0;
+  stroke-opacity: 1;
+  stroke-dasharray: 500;
+  stroke-dashoffset: 500;
+  -webkit-animation: draw_path 4s cubic-bezier(1, 0.45, 0.13, 1) forwards;
+          animation: draw_path 4s cubic-bezier(1, 0.45, 0.13, 1) forwards; }
+  .logo__path--filled {
+    fill-opacity: 1;
+    stroke-opacity: 0; }
+
+@-webkit-keyframes draw_path {
+  95% {
+    stroke-dashoffset: 0; }
+  100% {
+    fill-opacity: 1;
+    stroke-opacity: 0; } }
+
+@keyframes draw_path {
+  95% {
+    stroke-dashoffset: 0; }
+  100% {
+    fill-opacity: 1;
+    stroke-opacity: 0; } }
+
 /**
  * @module:   nav
  * @js:       ./source/js/module/nav/nav.js

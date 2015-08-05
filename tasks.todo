@@ -1,10 +1,7 @@
-Redesign:
+Refactor:
   ☐ template: http://monograph.io/ || http://tympanus.net/Development/CreativeLinkEffects/
+  ☐ BEM mixins? https://medium.com/@marcmintel/pushing-bem-to-the-next-level-with-sass-3-4-5239d2371321
   ☐ Ractive transitions to move between home/blog view (use some perspective/rotation)
-  ☐ lo svg draw onload (see 040715 research)
-
-Refactor CSS (itcss/inuit):
-  ☐ read: https://gist.github.com/charlespeters/5864b9a8afff208dae11
 
 Live:
   ☐ update work (lr ab, treasure hunt, countr) + replace dead links (rubber tracks, gmatch) with Marvel -> https://marvelapp.com/
@@ -13,3 +10,4 @@ Live:
   ☐ rename repo to level out
   ☐ move to Divshot
   ☐ Will Code for Beer pen (add to featured work) -> http://codepen.io/ajerez/pen/dPmGZr / http://codepen.io/jay-bee-why/pen/KEdjD/
+  ☐ add GH-style code split to head border
