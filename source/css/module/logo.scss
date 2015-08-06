@@ -31,18 +31,12 @@
   }
 
   &__path {
-    fill: white;
+    fill: transparent;
     fill-opacity: 0;
     stroke-opacity: 1;
     stroke-dasharray: 500;
     stroke-dashoffset: 500;
     animation: draw_path 4s cubic-bezier(1,.45,.13,1) forwards;
-
-    &--filled {
-      @extend .logo__path;
-      fill-opacity: 1;
-      stroke-opacity: 0;
-    }
   }
 
   @keyframes draw_path {
@@ -51,6 +45,7 @@
     }
 
     100% {
+      fill: white;
       fill-opacity: 1;
       stroke-opacity: 0;
     }

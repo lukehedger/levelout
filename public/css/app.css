@@ -858,22 +858,20 @@ body:before {
         -ms-transform-origin: center;
             transform-origin: center; }
 
-.logo__path, .logo__path--filled {
-  fill: white;
+.logo__path {
+  fill: transparent;
   fill-opacity: 0;
   stroke-opacity: 1;
   stroke-dasharray: 500;
   stroke-dashoffset: 500;
   -webkit-animation: draw_path 4s cubic-bezier(1, 0.45, 0.13, 1) forwards;
           animation: draw_path 4s cubic-bezier(1, 0.45, 0.13, 1) forwards; }
-  .logo__path--filled {
-    fill-opacity: 1;
-    stroke-opacity: 0; }
 
 @-webkit-keyframes draw_path {
   95% {
     stroke-dashoffset: 0; }
   100% {
+    fill: white;
     fill-opacity: 1;
     stroke-opacity: 0; } }
 
@@ -881,6 +879,7 @@ body:before {
   95% {
     stroke-dashoffset: 0; }
   100% {
+    fill: white;
     fill-opacity: 1;
     stroke-opacity: 0; } }
 
