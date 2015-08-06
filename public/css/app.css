@@ -827,6 +827,11 @@ body:before {
  * @html:     ./source/js/module/blog/blog.html
  */
 /**
+ * @module:   card
+ * @js:       ./source/js/module/card/card.js
+ * @html:     ./source/js/module/card/card.html
+ */
+/**
  * @module:   footer
  * @js:       ./source/js/module/footer/footer.js
  * @html:     ./source/js/module/footer/footer.html
@@ -893,6 +898,23 @@ body:before {
  * @js:       ./source/js/module/work/work.js
  * @html:     ./source/js/module/work/work.html
  */
+.work {
+  height: 400px;
+  margin: 40px 0;
+  padding: 20px 40px; }
+  .work__title {
+    text-align: center;
+    font-family: monospace;
+    font-size: 20px;
+    text-transform: uppercase; }
+    .work__title:after {
+      content: "";
+      width: 50px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid white;
+      display: block;
+      margin: auto; }
+
 /*------------------------------------*    #SPACING
 \*------------------------------------*/
 /**

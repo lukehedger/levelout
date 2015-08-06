@@ -34,7 +34,7 @@ var app = {
   app.render();
 });
 
-},{"./view/main":27,"domready":3}],2:[function(require,module,exports){
+},{"./view/main":29,"domready":3}],2:[function(require,module,exports){
 // shim for using process in browser
 
 var process = module.exports = {};
@@ -18583,8 +18583,40 @@ module.exports = exports['default'];
 // do something
 
 },{"../abstract-module":10,"./blog.html":15}],17:[function(require,module,exports){
-module.exports={"v":3,"t":[{"t":7,"e":"div","a":{"class":"footer"},"f":[{"t":7,"e":"h1","f":["footer :)"]}]}]}
+module.exports={"v":3,"t":[{"t":7,"e":"div","a":{"class":"card","style":"width: 20%; display: inline-block;"},"v":{"tap":{"n":[{"t":2,"r":"toX"}],"d":[]}},"f":[{"t":7,"e":"img","a":{"src":"https://images.unsplash.com/photo-1438216983993-cdcd7dea84ce","alt":"","style":"width: 200px; height: 100px; display: block;"}}," ",{"t":7,"e":"span","f":["client"]}," ",{"t":7,"e":"h3","f":["title"]}," ",{"t":7,"e":"span","f":["go →"]}]}]}
 },{}],18:[function(require,module,exports){
+/**
+ * @module:   card
+ * @scss:     ./source/css/module/card.scss
+ * @html:     ./source/js/module/card/card.html
+ */
+
+'use strict';
+
+Object.defineProperty(exports, '__esModule', {
+  value: true
+});
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+var _abstractModule = require('../abstract-module');
+
+var _abstractModule2 = _interopRequireDefault(_abstractModule);
+
+var _cardHtml = require('./card.html');
+
+var _cardHtml2 = _interopRequireDefault(_cardHtml);
+
+exports['default'] = _abstractModule2['default'].extend({
+
+  template: _cardHtml2['default']
+
+});
+module.exports = exports['default'];
+
+},{"../abstract-module":10,"./card.html":17}],19:[function(require,module,exports){
+module.exports={"v":3,"t":[{"t":7,"e":"div","a":{"class":"footer"},"f":[{"t":7,"e":"h1","f":["footer :)"]}]}]}
+},{}],20:[function(require,module,exports){
 /**
  * @module:   footer
  * @scss:     ./source/css/module/footer.scss
@@ -18614,7 +18646,7 @@ exports['default'] = _abstractModule2['default'].extend({
 });
 module.exports = exports['default'];
 
-},{"../abstract-module":10,"./footer.html":17}],19:[function(require,module,exports){
+},{"../abstract-module":10,"./footer.html":19}],21:[function(require,module,exports){
 /*auto-generated*/
 'use strict';
 
@@ -18640,6 +18672,10 @@ var _blogBlogJs = require('./blog/blog.js');
 
 var _blogBlogJs2 = _interopRequireDefault(_blogBlogJs);
 
+var _cardCardJs = require('./card/card.js');
+
+var _cardCardJs2 = _interopRequireDefault(_cardCardJs);
+
 var _footerFooterJs = require('./footer/footer.js');
 
 var _footerFooterJs2 = _interopRequireDefault(_footerFooterJs);
@@ -18659,6 +18695,7 @@ var _workWorkJs2 = _interopRequireDefault(_workWorkJs);
 _ractive2['default'].components['ui-blog-post'] = _blogPostBlogPostJs2['default'];
 _ractive2['default'].components['ui-blog-preview'] = _blogPreviewBlogPreviewJs2['default'];
 _ractive2['default'].components['ui-blog'] = _blogBlogJs2['default'];
+_ractive2['default'].components['ui-card'] = _cardCardJs2['default'];
 _ractive2['default'].components['ui-footer'] = _footerFooterJs2['default'];
 _ractive2['default'].components['ui-logo'] = _logoLogoJs2['default'];
 _ractive2['default'].components['ui-nav'] = _navNavJs2['default'];
@@ -18667,9 +18704,9 @@ _ractive2['default'].components['ui-work'] = _workWorkJs2['default'];
 exports['default'] = _ractive2['default'];
 module.exports = exports['default'];
 
-},{"./blog-post/blog-post.js":12,"./blog-preview/blog-preview.js":14,"./blog/blog.js":16,"./footer/footer.js":18,"./logo/logo.js":21,"./nav/nav.js":23,"./work/work.js":25,"ractive":8}],20:[function(require,module,exports){
+},{"./blog-post/blog-post.js":12,"./blog-preview/blog-preview.js":14,"./blog/blog.js":16,"./card/card.js":18,"./footer/footer.js":20,"./logo/logo.js":23,"./nav/nav.js":25,"./work/work.js":27,"ractive":8}],22:[function(require,module,exports){
 module.exports={"v":3,"t":[{"t":7,"e":"div","a":{"class":"logo"},"f":[{"t":7,"e":"div","a":{"class":["logo__wrap",{"t":4,"f":["--scaled"],"n":50,"r":"scaled"}]},"v":{"tap":"toHome"},"f":[{"t":7,"e":"svg","a":{"version":"1.1","xmlns":"http://www.w3.org/2000/svg","xmlns:xlink":"http://www.w3.org/1999/xlink","x":"0px","y":"0px","viewBox":"0 0 80 80","style":"enable-background:new 0 0 80 80;","xml:space":"preserve"},"f":[{"t":7,"e":"g","a":{"class":"logo__path"},"f":[{"t":7,"e":"path","a":{"d":"M18.6,50.1c-0.3,0.6-0.5,1.2-0.8,2c-0.3,0.7-0.4,1.4-0.4,2c0,0.4,0.1,0.7,0.2,0.9s0.4,0.3,0.8,0.3c0.5,0,1.2-0.2,1.9-0.5\n      \t\tc0.8-0.3,1.6-0.7,2.5-1.2c0.9-0.5,1.8-1.1,2.8-1.7c1-0.6,1.9-1.3,2.9-2c1-0.7,1.9-1.4,2.7-2.1c0.9-0.7,1.6-1.3,2.3-1.9\n      \t\tc0.2-0.2,0.4-0.3,0.7-0.4c0.3-0.1,0.5-0.1,0.7-0.1c0.5,0,0.9,0.2,1.2,0.5c0.3,0.3,0.5,0.8,0.5,1.4c0,0.5-0.2,1.1-0.5,1.7\n      \t\tc-0.3,0.6-0.9,1.3-1.8,1.9c-1.6,1.4-3.1,2.8-4.7,4.1c-1.6,1.3-3.2,2.4-4.7,3.4c-1.6,1-3.1,1.8-4.7,2.4s-3.1,0.9-4.5,0.9\n      \t\tc-1,0-1.8-0.1-2.5-0.4s-1.2-0.6-1.6-1.1c-0.4-0.5-0.7-1-0.9-1.6c-0.2-0.6-0.3-1.3-0.3-2c0-1.2,0.2-2.4,0.5-3.7\n      \t\tc0.4-1.3,0.8-2.4,1.3-3.5c0.9-1.9,1.7-3.8,2.6-5.7c0.9-1.9,1.7-3.6,2.4-5.2l11.1-23.6c0.4-1,1-1.6,1.8-2c0.7-0.4,1.5-0.6,2.3-0.6\n      \t\tc0.8,0,1.4,0.2,2.1,0.6c0.6,0.4,0.9,1.1,0.9,2c0,0.4-0.1,0.9-0.3,1.4c-0.2,0.5-0.5,1-0.8,1.6c-0.6,1.1-1.3,2.6-2.2,4.2\n      \t\tc-0.8,1.7-1.7,3.5-2.7,5.4c-1,2-2,4-3,6.1c-1,2.1-2,4.2-3,6.2c-1,2-1.9,3.9-2.7,5.7C19.9,47.3,19.2,48.8,18.6,50.1z","stroke":"#FFF","stroke-width":"1"}}," ",{"t":7,"e":"path","a":{"d":"M47.7,34.1c0.9,0,1.9,0.1,3,0.4c1.1,0.2,2,0.7,2.9,1.2c0.9,0.6,1.7,1.4,2.3,2.3c0.6,1,0.9,2.2,0.9,3.6\n      \t\tc0,0.7-0.1,1.6-0.3,2.5C56.3,45,56,46,55.6,47c0.2,0.3,0.5,0.5,0.8,0.6c0.3,0.1,0.7,0.2,1,0.2c0.5,0,1.1-0.1,1.7-0.4\n      \t\tc0.6-0.3,1.3-0.7,1.9-1.1c0.7-0.5,1.3-1,2-1.6c0.7-0.6,1.3-1.2,1.9-1.8s1.1-1.1,1.6-1.7c0.5-0.5,0.9-1,1.2-1.3\n      \t\tc0.2-0.2,0.4-0.3,0.6-0.3c0.3,0,0.6,0.2,0.9,0.5c0.3,0.4,0.4,0.8,0.4,1.5s-0.2,1.4-0.6,2.2c-0.4,0.8-1.1,1.7-2.1,2.6\n      \t\tc-0.6,0.6-1.3,1.4-2,2.2c-0.8,0.8-1.6,1.6-2.4,2.3c-0.9,0.7-1.7,1.4-2.7,1.9s-1.9,0.8-2.8,0.8c-0.6,0-1.3-0.1-1.8-0.3\n      \t\tc-0.6-0.2-1.2-0.5-1.8-1c-0.9,1.4-1.9,2.6-3,3.7c-1.1,1.1-2.4,2.1-3.8,2.9c-1.4,0.8-2.9,1.4-4.5,1.9c-1.6,0.5-3.3,0.7-5.1,0.7\n      \t\tc-0.7,0-1.5-0.1-2.4-0.4c-0.9-0.3-1.8-0.7-2.6-1.3c-0.8-0.6-1.5-1.4-2.1-2.4c-0.6-1-0.8-2.2-0.8-3.7c0-1,0.2-2.1,0.5-3.5\n      \t\tc0.3-1.4,0.8-2.8,1.4-4.2c0.6-1.5,1.5-2.9,2.5-4.3c1-1.4,2.2-2.7,3.5-3.8c1.4-1.1,2.9-2.1,4.7-2.7C43.6,34.4,45.5,34.1,47.7,34.1z\n      \t\t M45.8,40.5c-1.1,0-2.3,0.3-3.3,0.9c-1.1,0.6-2,1.3-2.8,2.3c-0.8,0.9-1.5,2-2,3.2c-0.5,1.2-0.7,2.4-0.7,3.6c0,0.5,0,1,0.1,1.5\n      \t\tc0.1,0.5,0.2,1.1,0.5,1.5c0.2,0.5,0.6,0.9,1,1.2s1,0.5,1.8,0.5c1.1,0,2.2-0.3,3.3-0.9c1.1-0.6,2-1.4,2.8-2.3c0.8-1,1.5-2.1,2-3.3\n      \t\tc0.5-1.2,0.7-2.5,0.7-3.7c0-0.5,0-1-0.1-1.5c-0.1-0.5-0.2-1-0.4-1.4c-0.2-0.4-0.6-0.8-1-1.1C47.1,40.7,46.5,40.5,45.8,40.5z","stroke":"#FFF","stroke-width":"1"}}]}]}]}]}]}
-},{}],21:[function(require,module,exports){
+},{}],23:[function(require,module,exports){
 /**
  * @module:   logo
  * @scss:     ./source/css/module/logo.scss
@@ -18722,9 +18759,9 @@ exports['default'] = _abstractModule2['default'].extend({
 });
 module.exports = exports['default'];
 
-},{"../abstract-module":10,"./logo.html":20}],22:[function(require,module,exports){
+},{"../abstract-module":10,"./logo.html":22}],24:[function(require,module,exports){
 module.exports={"v":3,"t":[{"t":7,"e":"div","a":{"class":"nav"},"f":[{"t":7,"e":"a","v":{"tap":"toHome"},"f":["work"]}," ",{"t":7,"e":"a","v":{"tap":"toBlog"},"f":["blog"]}]}]}
-},{}],23:[function(require,module,exports){
+},{}],25:[function(require,module,exports){
 /**
  * @module:   nav
  * @scss:     ./source/css/module/nav.scss
@@ -18773,9 +18810,9 @@ exports['default'] = _abstractModule2['default'].extend({
 });
 module.exports = exports['default'];
 
-},{"../abstract-module":10,"./nav.html":22}],24:[function(require,module,exports){
-module.exports={"v":3,"t":[{"t":7,"e":"div","a":{"class":"work"},"f":[{"t":7,"e":"h1","f":["work :)"]}]}]}
-},{}],25:[function(require,module,exports){
+},{"../abstract-module":10,"./nav.html":24}],26:[function(require,module,exports){
+module.exports={"v":3,"t":[{"t":7,"e":"div","a":{"class":"work"},"f":[{"t":7,"e":"h2","a":{"class":"work__title"},"f":["Featured Work"]}," ",{"t":7,"e":"ui-card"}," ",{"t":7,"e":"ui-card"}," ",{"t":7,"e":"ui-card"}," ",{"t":7,"e":"ui-card"}]}]}
+},{}],27:[function(require,module,exports){
 /**
  * @module:   work
  * @scss:     ./source/css/module/work.scss
@@ -18805,9 +18842,9 @@ exports['default'] = _abstractModule2['default'].extend({
 });
 module.exports = exports['default'];
 
-},{"../abstract-module":10,"./work.html":24}],26:[function(require,module,exports){
+},{"../abstract-module":10,"./work.html":26}],28:[function(require,module,exports){
 module.exports={"v":3,"t":[{"t":7,"e":"ui-nav","a":{"view":[{"t":2,"r":"view"}]}}," ",{"t":7,"e":"ui-logo"}," ",{"t":4,"f":[{"t":7,"e":"ui-work"}," ",{"t":7,"e":"ui-blog-preview","a":{"posts":[{"t":2,"r":"content.posts"}]}}],"x":{"r":["view"],"s":"_0==\"index\""}},{"t":4,"f":[{"t":7,"e":"ui-blog","a":{"posts":[{"t":2,"r":"content.posts"}],"slug":[{"t":2,"r":"slug"}],"draftsEnabled":[{"t":2,"r":"content.config.drafts"}]}}],"x":{"r":["view"],"s":"_0==\"blog\""}},{"t":7,"e":"ui-footer"}]}
-},{}],27:[function(require,module,exports){
+},{}],29:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -18911,7 +18948,7 @@ exports['default'] = _module3['default'].extend({
 });
 module.exports = exports['default'];
 
-},{"../module":19,"./main.html":26,"page":4,"ractive-events-tap":7,"reqwest":9}]},{},[1])
+},{"../module":21,"./main.html":28,"page":4,"ractive-events-tap":7,"reqwest":9}]},{},[1])
 
 
 //# sourceMappingURL=app.js.map

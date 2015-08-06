@@ -5,6 +5,17 @@
  */
 
 
-@include module("work") { 
-  // :)
+@include module("work") {
+
+  // TODO - move to section mixin
+  height: 400px; // temp
+  margin: 40px 0;
+  padding: 20px 40px;
+
+  // TODO - wait, how best to handle sections -> should they be in _base.section or in individual sheets like  _base.headings
+  // or like this -> this is good, isn't it?
+  &__title {
+    @include sectionTitle();
+  }
+
 }

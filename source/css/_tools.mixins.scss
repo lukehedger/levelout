@@ -165,3 +165,28 @@
   @return (type-of($value) == "number" and not unitless($value))
        or (index(auto initial inherit 0, $value) != false);
 }
+
+///////////////////////////////////////////////////////////////////////////////
+// # sectionTitle mixin
+//
+// e.g.
+//    @include relative(top right);
+///////////////////////////////////////////////////////////////////////////////
+
+@mixin sectionTitle() {
+
+  text-align: center;
+  font-family: monospace;
+  font-size: 20px;
+  text-transform: uppercase;
+
+  &:after {
+    content: "";
+    width: 50px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid white;
+    display: block;
+    margin: auto;
+  }
+
+}
