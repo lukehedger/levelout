@@ -18583,7 +18583,7 @@ module.exports = exports['default'];
 // do something
 
 },{"../abstract-module":10,"./blog.html":15}],17:[function(require,module,exports){
-module.exports={"v":3,"t":[{"t":7,"e":"div","a":{"class":"card","style":"width: 20%; display: inline-block;"},"v":{"tap":{"n":[{"t":2,"r":"toX"}],"d":[]}},"f":[{"t":7,"e":"img","a":{"src":"https://images.unsplash.com/photo-1438216983993-cdcd7dea84ce","alt":"","style":"width: 200px; height: 100px; display: block;"}}," ",{"t":7,"e":"span","f":["client"]}," ",{"t":7,"e":"h3","f":["title"]}," ",{"t":7,"e":"span","f":["go →"]}]}]}
+module.exports={"v":3,"t":[{"t":7,"e":"div","a":{"class":"card","style":"width: 20%; display: inline-block;"},"v":{"tap":{"n":[{"t":2,"r":"toX"}],"d":[]}},"f":[{"t":7,"e":"img","a":{"src":"https://images.unsplash.com/photo-1438216983993-cdcd7dea84ce","alt":"","style":"width: 200px; height: 100px; display: block;"}}," ",{"t":7,"e":"span","f":[{"t":2,"r":"content.co"}]}," ",{"t":7,"e":"h3","f":["title"]}," ",{"t":7,"e":"span","f":["go →"]}]}]}
 },{}],18:[function(require,module,exports){
 /**
  * @module:   card
@@ -18811,7 +18811,7 @@ exports['default'] = _abstractModule2['default'].extend({
 module.exports = exports['default'];
 
 },{"../abstract-module":10,"./nav.html":24}],26:[function(require,module,exports){
-module.exports={"v":3,"t":[{"t":7,"e":"div","a":{"class":"work"},"f":[{"t":7,"e":"h2","a":{"class":"work__title"},"f":["Featured Work"]}," ",{"t":7,"e":"ui-card"}," ",{"t":7,"e":"ui-card"}," ",{"t":7,"e":"ui-card"}," ",{"t":7,"e":"ui-card"}]}]}
+module.exports={"v":3,"t":[{"t":7,"e":"div","a":{"class":"work"},"f":[{"t":7,"e":"h2","a":{"class":"work__title"},"f":["Featured Work"]}," ",{"t":4,"f":[{"t":7,"e":"ui-card","a":{"content":[{"t":2,"r":"."}]}}],"r":"work"}]}]}
 },{}],27:[function(require,module,exports){
 /**
  * @module:   work
@@ -18843,7 +18843,7 @@ exports['default'] = _abstractModule2['default'].extend({
 module.exports = exports['default'];
 
 },{"../abstract-module":10,"./work.html":26}],28:[function(require,module,exports){
-module.exports={"v":3,"t":[{"t":7,"e":"ui-nav","a":{"view":[{"t":2,"r":"view"}]}}," ",{"t":7,"e":"ui-logo"}," ",{"t":4,"f":[{"t":7,"e":"ui-work"}," ",{"t":7,"e":"ui-blog-preview","a":{"posts":[{"t":2,"r":"content.posts"}]}}],"x":{"r":["view"],"s":"_0==\"index\""}},{"t":4,"f":[{"t":7,"e":"ui-blog","a":{"posts":[{"t":2,"r":"content.posts"}],"slug":[{"t":2,"r":"slug"}],"draftsEnabled":[{"t":2,"r":"content.config.drafts"}]}}],"x":{"r":["view"],"s":"_0==\"blog\""}},{"t":7,"e":"ui-footer"}]}
+module.exports={"v":3,"t":[{"t":7,"e":"ui-nav","a":{"view":[{"t":2,"r":"view"}]}}," ",{"t":7,"e":"ui-logo"}," ",{"t":4,"f":[{"t":7,"e":"ui-work","a":{"work":[{"t":2,"r":"work"}]}}," ",{"t":7,"e":"ui-blog-preview","a":{"posts":[{"t":2,"r":"content.posts"}]}}],"x":{"r":["view"],"s":"_0==\"index\""}},{"t":4,"f":[{"t":7,"e":"ui-blog","a":{"posts":[{"t":2,"r":"content.posts"}],"slug":[{"t":2,"r":"slug"}],"draftsEnabled":[{"t":2,"r":"content.config.drafts"}]}}],"x":{"r":["view"],"s":"_0==\"blog\""}},{"t":7,"e":"ui-footer"}]}
 },{}],29:[function(require,module,exports){
 'use strict';
 
@@ -18881,7 +18881,8 @@ exports['default'] = _module3['default'].extend({
   data: function data() {
     return {
       view: null,
-      content: null
+      content: null,
+      work: null
     };
   },
 
@@ -18891,7 +18892,10 @@ exports['default'] = _module3['default'].extend({
 
     this.setRouter();
 
+    // TODO - merge data requests into single promise
     this.getContent().then(this.onContentSuccess.bind(this)).fail(this.onContentError.bind(this));
+
+    this.getWork().then(this.onWorkSuccess.bind(this)).fail(this.onWorkError.bind(this));
 
     // handle routing events
     this.on('*.nav', function (path) {
@@ -18914,10 +18918,30 @@ exports['default'] = _module3['default'].extend({
     console.error(err);
   },
 
+  onWorkSuccess: function onWorkSuccess(resp) {
+
+    this.set('work', resp.work);
+  },
+
+  onWorkError: function onWorkError(err) {
+
+    console.error(err);
+  },
+
   getContent: function getContent() {
 
     return (0, _reqwest2['default'])({
       url: '/data/content.json',
+      type: 'json',
+      method: 'get',
+      contentType: 'application/json'
+    });
+  },
+
+  getWork: function getWork() {
+
+    return (0, _reqwest2['default'])({
+      url: '/data/work.json',
       type: 'json',
       method: 'get',
       contentType: 'application/json'

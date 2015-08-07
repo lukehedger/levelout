@@ -15,7 +15,8 @@ export default Ractive.extend({
   data() {
     return {
       view: null,
-      content: null
+      content: null,
+      work: null
     }
   },
 
@@ -26,9 +27,14 @@ export default Ractive.extend({
 
     this.setRouter();
 
+    // TODO - merge data requests into single promise
     this.getContent()
       .then(this.onContentSuccess.bind(this))
       .fail(this.onContentError.bind(this));
+
+    this.getWork()
+      .then(this.onWorkSuccess.bind(this))
+      .fail(this.onWorkError.bind(this));
 
     // handle routing events
     this.on('*.nav', function (path) {
@@ -56,10 +62,33 @@ export default Ractive.extend({
 
   },
 
+  onWorkSuccess(resp) {
+
+    this.set('work', resp.work);
+
+  },
+
+  onWorkError(err) {
+
+    console.error(err);
+
+  },
+
   getContent() {
 
     return request({
       url: '/data/content.json',
+      type: 'json',
+      method: 'get',
+      contentType: 'application/json'
+    });
+
+  },
+
+  getWork() {
+
+    return request({
+      url: '/data/work.json',
       type: 'json',
       method: 'get',
       contentType: 'application/json'

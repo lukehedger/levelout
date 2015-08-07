@@ -1,0 +1,88 @@
+{
+  "work": [
+    {
+      "project": "Countr",
+      "co": "Level Out",
+      "link": "https://countr.divshot.io/",
+      "shot": "",
+      "detail": "The app that counts against you"
+    },
+    {
+      "project": "Accessories Matcher",
+      "co": "Land Rover",
+      "link": "https://accessoriesmatcher.landrover.co.uk/",
+      "shot": "",
+      "detail": ""
+    },
+    {
+      "project": "Hen Hunt",
+      "co": "Level Out",
+      "link": "https://henhunt.divshot.io/",
+      "shot": "",
+      "detail": "London treasure hunt with Twilio-powered clues"
+    },
+    {
+      "project": "Rubber Tracks",
+      "co": "Converse",
+      "link": "MARVEL",
+      "shot": "shots/converse-rubber-tracks.png",
+      "detail": "Showcasing emerging London bands and their stories"
+    },
+    {
+      "project": "Google Match",
+      "co": "Google",
+      "link": "MARVEL",
+      "shot": "shots/google-match.jpg",
+      "detail": "Real-time multiplayer game prototyped for Google Play"
+    },
+    {
+      "project": "caniuseonmysite",
+      "co": "Lean Mean Fighting Machine",
+      "link": "http://caniuseonmysite.com/",
+      "shot": "shots/lmfm-ciuoms.png",
+      "detail": "CanIUse + Google Analytics = smart progressive-enhancement"
+    },
+    {
+      "project": "The Promise",
+      "co": "Forevermark",
+      "link": "http://theforevermarkpromise.com/en/events/",
+      "shot": "shots/fm-promise.png",
+      "detail": "Campaign site for Forevermark about the meaning of promises"
+    },
+    {
+      "project": "Men's Health Forum",
+      "co": "Men's Health Forum",
+      "link": "http://www.menshealthforum.org.uk/",
+      "shot": "shots/mhf.png",
+      "detail": "Home of the MHF charity with NHS API search and GP chat"
+    },
+    {
+      "project": "Interactive Diamond",
+      "co": "Forevermark",
+      "link": "DIVSHOT",
+      "shot": "shots/fm-diamond.jpg",
+      "detail": "Interactive diamond with eye and motion detection"
+    },
+    {
+      "project": "Analytics Dashboard",
+      "co": "Land Rover",
+      "link": "MARVEL",
+      "shot": "shots/lr-dashboard.png",
+      "detail": "Realtime analytics dashboard"
+    },
+    {
+      "project": "MixM&chine",
+      "co": "M&C Saatchi",
+      "link": "MARVEL",
+      "shot": "shots/mcsaatchi-mixmachine.png",
+      "detail": "DIY corporate video"
+    },
+    {
+      "project": "LivesOn",
+      "co": "Lean Mean Fighting Machine",
+      "link": "http://liveson.org/",
+      "shot": "shots/lmfm-liveson.png",
+      "detail": "When your heart stops beating you'll keep tweeting"
+    }
+  ]
+}

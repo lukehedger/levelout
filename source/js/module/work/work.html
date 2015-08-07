@@ -7,8 +7,8 @@
 <div class="work">
   <h2 class="work__title">Featured Work</h2>
 
-  <ui-card />
-  <ui-card />
-  <ui-card />
-  <ui-card />
+  {{#work}}
+  <ui-card content={{.}} />
+  {{/}}
+
 </div>

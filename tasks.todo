@@ -1,6 +1,5 @@
 Refactor:
-  ☐ Monograph work -> http://monograph.io/
-  ☐ Monograph blog (integrate images) + port blog styles, posts
+  ☐ Blog posts data
   ☐ Nav -> blog index, gh, twitter links
   ☐ Footer -> small lo logo, cape tagline
   ☐ Ractive transitions to move between home/blog view (use some perspective/rotation)
@@ -12,8 +11,11 @@ ITCSS:
   ☐ BEMIT: http://csswizardry.com/2015/08/bemit-taking-the-bem-naming-convention-a-step-further/
   ☐ BEM/IT mixins? https://medium.com/@marcmintel/pushing-bem-to-the-next-level-with-sass-3-4-5239d2371321
 
+  ☐ Style work -> http://monograph.io/
+  ☐ Style blog (integrate images) + port old styles
+
 Live:
-  ☐ update work (lr ab, treasure hunt, countr) + replace dead links (rubber tracks, gmatch) with Marvel -> https://marvelapp.com/
+  ☐ replace dead links (rubber tracks, gmatch) with Marvel -> https://marvelapp.com/
   ☐ cull posts
   ☐ cull github repos
   ☐ rename repo to level out
