@@ -599,6 +599,28 @@ body:before {
   width: 100%;
   /* [4] */ }
 
+/**
+     * Layouts with tiny gutters.
+     */
+.layout--tiny {
+  margin-left: -6px; }
+  .layout--tiny > .layout__item {
+    padding-left: 6px; }
+
+/**
+     * Make the layout items fill up from the right hand side.
+     */
+.layout--right {
+  text-align: right; }
+  .layout--right > .layout__item {
+    text-align: left; }
+
+/**
+     * Cause layout items to take up a non-explicit amount of width.
+     */
+.layout--auto > .layout__item {
+  width: auto; }
+
 /*------------------------------------*    #PACK
 \*------------------------------------*/
 /**
@@ -703,6 +725,20 @@ body:before {
   margin: 0;
   padding: 0;
   list-style: none; }
+
+.icon {
+  width: 18px;
+  height: 18px;
+  vertical-align: middle;
+  background: no-repeat center center;
+  opacity: 0.5;
+  transition: opacity 0.3s; }
+  .icon:hover, .icon:focus {
+    opacity: 1; }
+  .icon--github {
+    background-image: url("../img/github.svg"); }
+  .icon--twitter {
+    background-image: url("../img/twitter.svg"); }
 
 .highlight {
   background-color: #002b36;
@@ -893,6 +929,9 @@ body:before {
  * @js:       ./source/js/module/nav/nav.js
  * @html:     ./source/js/module/nav/nav.html
  */
+.nav__item {
+  display: inline-block; }
+
 /**
  * @module:   work
  * @js:       ./source/js/module/work/work.js

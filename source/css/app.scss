@@ -19,6 +19,7 @@
 @import "settings.typography";
 @import "settings.breakpoint";
 @import "settings.color";
+@import "settings.layout";
 @import "settings.default";
 @import "inuit-defaults";
 @import "inuit-responsive-settings";
@@ -59,9 +60,10 @@
 @import "inuit-media";
 @import "inuit-flag";
 @import "inuit-list-bare";
+@import "objects.icons";
 
 ///////////////////////////////////////////////////////////////////////////////
-// Themese
+// Themes
 ///////////////////////////////////////////////////////////////////////////////
 @import "themes.syntax";
 

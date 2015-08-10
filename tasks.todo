@@ -1,7 +1,6 @@
 Refactor:
-  ☐ Nav -> blog index, gh, twitter links
   ☐ Footer -> small lo logo, cape tagline
-  ☐ Ractive transitions to move between home/blog view (use some perspective/rotation)
+  ☐ Custom Ractive transitions to move between home/blog/post views (use some perspective/rotation)
   ☐ blog index page (with modified ui-cards)
   ☐ tag index page
 

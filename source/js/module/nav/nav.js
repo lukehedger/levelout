@@ -11,16 +11,6 @@ export default Module.extend({
 
   template: template,
 
-  data() {
-    return {
-
-    }
-  },
-
-  oninit() {
-
-  },
-
   onrender() {
 
     // event proxies

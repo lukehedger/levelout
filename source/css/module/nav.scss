@@ -5,6 +5,10 @@
  */
 
 
-@include module("nav") { 
-  // :)
+@include module("nav") {
+
+  &__item {
+    display: inline-block;
+  }
+
 }

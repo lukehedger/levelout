@@ -18763,7 +18763,7 @@ exports['default'] = _abstractModule2['default'].extend({
 module.exports = exports['default'];
 
 },{"../abstract-module":10,"./logo.html":22}],24:[function(require,module,exports){
-module.exports={"v":3,"t":[{"t":7,"e":"div","a":{"class":"nav"},"f":[{"t":7,"e":"a","v":{"tap":"toHome"},"f":["work"]}," ",{"t":7,"e":"a","v":{"tap":"toBlog"},"f":["blog"]}]}]}
+module.exports={"v":3,"t":[{"t":7,"e":"div","a":{"class":"nav layout layout--auto layout--tiny layout--right"},"f":[{"t":4,"f":[{"t":7,"e":"div","a":{"class":"layout__item"},"f":[{"t":7,"e":"a","a":{"class":"nav__item"},"v":{"tap":"toHome"},"f":["work"]}]}],"x":{"r":["view"],"s":"_0==\"blog\""}}," ",{"t":4,"f":[{"t":7,"e":"div","a":{"class":"layout__item"},"f":[{"t":7,"e":"a","a":{"class":"nav__item"},"v":{"tap":"toBlog"},"f":["blog"]}]}],"x":{"r":["view"],"s":"_0==\"index\""}}," ",{"t":7,"e":"div","a":{"class":"layout__item"},"f":[{"t":7,"e":"a","a":{"class":"nav__item icon icon--github","href":"https://github.com/lukehedger","target":"_blank"}}]}," ",{"t":7,"e":"div","a":{"class":"layout__item"},"f":[{"t":7,"e":"a","a":{"class":"nav__item icon icon--twitter","href":"https://twitter.com/level_out","target":"_blank"}}]}]}]}
 },{}],25:[function(require,module,exports){
 /**
  * @module:   nav
@@ -18790,12 +18790,6 @@ var _navHtml2 = _interopRequireDefault(_navHtml);
 exports['default'] = _abstractModule2['default'].extend({
 
   template: _navHtml2['default'],
-
-  data: function data() {
-    return {};
-  },
-
-  oninit: function oninit() {},
 
   onrender: function onrender() {
 
