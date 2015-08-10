@@ -1,5 +1,4 @@
 Refactor:
-  ☐ Blog posts data
   ☐ Nav -> blog index, gh, twitter links
   ☐ Footer -> small lo logo, cape tagline
   ☐ Ractive transitions to move between home/blog view (use some perspective/rotation)
@@ -16,7 +15,8 @@ ITCSS:
 
 Live:
   ☐ replace dead links (rubber tracks, gmatch) with Marvel -> https://marvelapp.com/
-  ☐ cull posts
+  ✔ cull posts @done(2015-08-10 11:16) @project(Live)
+  ☐ migrate comments -> https://help.disqus.com/customer/portal/articles/286778-migration-tools
   ☐ cull github repos
   ☐ rename repo to level out
   ☐ move to Divshot
