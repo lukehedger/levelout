@@ -31,8 +31,12 @@ export default Module.extend({
 
     // listen for posts loaded
     this.observe('posts', function (n, o) {
-      // do something
+      if (n) this.onPostsLoaded();
     });
+
+  },
+
+  onPostsLoaded() {
 
     // listen for post requested via slug
     this.observe('slug', function (n, o) {

@@ -18554,7 +18554,12 @@ exports['default'] = _abstractModule2['default'].extend({
   onrender: function onrender() {
 
     // listen for posts loaded
-    this.observe('posts', function (n, o) {});
+    this.observe('posts', function (n, o) {
+      if (n) this.onPostsLoaded();
+    });
+  },
+
+  onPostsLoaded: function onPostsLoaded() {
 
     // listen for post requested via slug
     this.observe('slug', function (n, o) {
@@ -18579,8 +18584,6 @@ exports['default'] = _abstractModule2['default'].extend({
 
 });
 module.exports = exports['default'];
-
-// do something
 
 },{"../abstract-module":10,"./blog.html":15}],17:[function(require,module,exports){
 module.exports={"v":3,"t":[{"t":7,"e":"div","a":{"class":"card","style":"width: 20%; display: inline-block;"},"v":{"tap":{"n":[{"t":2,"r":"toX"}],"d":[]}},"f":[{"t":7,"e":"img","a":{"src":"https://images.unsplash.com/photo-1438216983993-cdcd7dea84ce","alt":"","style":"width: 200px; height: 100px; display: block;"}}," ",{"t":7,"e":"span","f":[{"t":2,"r":"content.co"}]}," ",{"t":7,"e":"h3","f":["title"]}," ",{"t":7,"e":"span","f":["go →"]}]}]}
