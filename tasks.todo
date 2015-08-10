@@ -1,23 +1,18 @@
 Refactor:
-  ☐ Footer -> small lo logo, cape tagline
-  ☐ Custom Ractive transitions to move between home/blog/post views (use some perspective/rotation)
   ☐ blog index page (with modified ui-cards)
   ☐ tag index page
+  ☐ Custom Ractive transitions to move between home/blog/post views (use some perspective/rotation) -> http://docs.ractivejs.org/latest/writing-transition-plugins / http://tympanus.net/Development/PageTransitions/
 
 ITCSS:
-  ☐ UI namespacing http://csswizardry.com/2015/03/more-transparent-ui-code-with-namespaces/
-  ☐ BEMIT: http://csswizardry.com/2015/08/bemit-taking-the-bem-naming-convention-a-step-further/
-  ☐ BEM/IT mixins? https://medium.com/@marcmintel/pushing-bem-to-the-next-level-with-sass-3-4-5239d2371321
-
-  ☐ Style work -> http://monograph.io/
+  ☐ Style home/cards (https://github.com/inuitcss/objects.block) -> http://monograph.io/
   ☐ Style blog (integrate images) + port old styles
 
 Live:
-  ☐ replace dead links (rubber tracks, gmatch) with Marvel -> https://marvelapp.com/
   ✔ cull posts @done(2015-08-10 11:16) @project(Live)
   ☐ migrate comments -> https://help.disqus.com/customer/portal/articles/286778-migration-tools
-  ☐ cull github repos
   ☐ rename repo to level out
   ☐ move to Divshot
-  ☐ Will Code for Beer pen (add to featured work) -> http://codepen.io/ajerez/pen/dPmGZr / http://codepen.io/jay-bee-why/pen/KEdjD/
+  ☐ cull github repos
+  ☐ replace dead links (rubber tracks, gmatch) with Marvel -> https://marvelapp.com/
+  ☐ Will Code for Beer pen (add to featured work) -> http://codepen.io/ajerez/pen/dPmGZr / http://codepen.io/jay-bee-why/pen/KEdjD/ (allow PRs as way of hiring eg. * is buying Luke's next beer)
   ☐ add GH-style code split to head border

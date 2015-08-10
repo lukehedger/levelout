@@ -8,35 +8,43 @@
 @include module("logo") {
 
   &__wrap {
-    width: 110px;
-    height: 110px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     margin: 0 auto;
-    background-color: $color-lopink;
-    cursor: pointer;
-    transition: 0.3s;
-
-    &:hover {
-      background-color: $color-loblue;
-      transition: 1s ease-in-out;
-      transform: rotate(360deg);
-    }
-
-    &--scaled {
-      @extend .logo__wrap;
-      transform: scale(0.3);
-      transform-origin: center;
-    }
-
   }
 
-  &__path {
-    fill: transparent;
-    fill-opacity: 0;
-    stroke-opacity: 1;
-    stroke-dasharray: 500;
-    stroke-dashoffset: 500;
-    animation: draw_path 4s cubic-bezier(1,.45,.13,1) forwards;
+  &--special {
+
+    .logo__wrap {
+      width: 110px;
+      height: 110px;
+      background-color: $color-lopink;
+      cursor: pointer;
+      transition: 0.3s;
+
+      &:hover {
+        background-color: $color-loblue;
+        transition: 1s ease-in-out;
+        transform: rotate(360deg);
+      }
+
+      &--scaled {
+        transform: scale(0.3);
+        transform-origin: center;
+      }
+
+    }
+
+    .logo__path {
+      fill: transparent;
+      fill-opacity: 0;
+      stroke-opacity: 1;
+      stroke-dasharray: 500;
+      stroke-dashoffset: 500;
+      animation: draw_path 4s cubic-bezier(1,.45,.13,1) forwards;
+    }
+
   }
 
   @keyframes draw_path {

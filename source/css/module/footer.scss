@@ -5,6 +5,13 @@
  */
 
 
-@include module("footer") { 
-  // :)
+@include module("footer") {
+
+  &__tagline {
+    margin-top: 5px;
+    @include inuit-font-size(14px, 1.3);
+    text-align: center;
+    color: $color-ltgrey;
+  }
+
 }

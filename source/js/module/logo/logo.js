@@ -26,7 +26,8 @@ export default Module.extend({
       }
     });
 
-    window.onscroll = this.onScroll.bind(this);
+    // special logo scroll event
+    if (this.get('special')) window.onscroll = this.onScroll.bind(this);
 
   },
 
