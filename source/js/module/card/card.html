@@ -4,9 +4,10 @@
   @js:       ./source/js/module/card/card.js
 -->
 
-<div class="card" on-tap="{{toX}}" style="width: 20%; display: inline-block;">
-  <img src="https://images.unsplash.com/photo-1438216983993-cdcd7dea84ce" alt="" style="width: 200px; height: 100px; display: block;" />
+<div class="card" on-tap="{{toX}}" style="width: 20%; min-height: 340px; display: inline-block; vertical-align: top;">
+  <img src="{{content.shot}}" alt="{{content.project}}" style="width: 200px; height: 100px; display: block;" />
   <span>{{content.co}}</span>
-  <h3>title</h3>
-  <span>go &rarr;</span>
+  <h3>{{content.project}}</h3>
+  <p>{{content.detail}}</p>
+  <a href="{{content.link}}" target="_blank">go &rarr;</a>
 </div>

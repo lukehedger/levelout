@@ -956,7 +956,6 @@ body:before {
  * @html:     ./source/js/module/work/work.html
  */
 .work {
-  height: 400px;
   margin: 40px 0;
   padding: 20px 40px; }
   .work__title {

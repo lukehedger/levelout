@@ -16,7 +16,8 @@ export default Ractive.extend({
     return {
       view: null,
       isReady: false,
-      content: null,
+      config: null,
+      posts: null,
       tags: {},
       work: null
     }
@@ -38,8 +39,9 @@ export default Ractive.extend({
 
   onDataSuccess(data) {
 
-    this.set('content', data[0]);
-    this.set('work', data[1]);
+    this.set('config', data[0].config);
+    this.set('posts', data[0].posts);
+    this.set('work', data[1].work);
 
     this.setTags();
 
