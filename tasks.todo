@@ -1,11 +1,10 @@
 Refactor:
-  ☐ blog index page (with modified ui-cards)
-  ☐ tag index page
+  ☐ sort content promises - main.js
   ☐ Custom Ractive transitions to move between home/blog/post views (use some perspective/rotation) -> http://docs.ractivejs.org/latest/writing-transition-plugins / http://tympanus.net/Development/PageTransitions/
 
-ITCSS:
   ☐ Style home/cards (https://github.com/inuitcss/objects.block) -> http://monograph.io/
   ☐ Style blog (integrate images) + port old styles
+  ☐ blog index page (with modified ui-cards)
 
 Live:
   ✔ cull posts @done(2015-08-10 11:16) @project(Live)

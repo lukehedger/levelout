@@ -7,6 +7,7 @@ import card from './card/card.js';
 import footer from './footer/footer.js';
 import logo from './logo/logo.js';
 import nav from './nav/nav.js';
+import tag from './tag/tag.js';
 import work from './work/work.js';
 
 Ractive.components['ui-blog-post'] = blogPost;
@@ -16,6 +17,7 @@ Ractive.components['ui-card'] = card;
 Ractive.components['ui-footer'] = footer;
 Ractive.components['ui-logo'] = logo;
 Ractive.components['ui-nav'] = nav;
+Ractive.components['ui-tag'] = tag;
 Ractive.components['ui-work'] = work;
 
 export default Ractive;

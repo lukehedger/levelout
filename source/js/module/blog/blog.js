@@ -29,15 +29,6 @@ export default Module.extend({
 
   onrender() {
 
-    // listen for posts loaded
-    this.observe('posts', function (n, o) {
-      if (n) this.onPostsLoaded();
-    });
-
-  },
-
-  onPostsLoaded() {
-
     // listen for post requested via slug
     this.observe('slug', function (n, o) {
       if (n) this.setPost(n);

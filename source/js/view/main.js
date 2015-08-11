@@ -15,7 +15,9 @@ export default Ractive.extend({
   data() {
     return {
       view: null,
+      isReady: false,
       content: null,
+      tags: {},
       work: null
     }
   },
@@ -46,13 +48,20 @@ export default Ractive.extend({
 
   onrender() {
 
-    console.log('hello there');
+
 
   },
 
   onContentSuccess(resp) {
 
     this.set('content', resp);
+
+    // TODO - add to promise chain
+    this.setTags();
+
+    // TODO - do this at end of promise chain when ALL resolved
+    // might need a loading state too
+    this.set('isReady', true);
 
   },
 
@@ -96,6 +105,36 @@ export default Ractive.extend({
 
   },
 
+  setTags() {
+
+    var posts = this.get('content.posts');
+
+    // construct an index of tags with related posts
+    for (let post in posts) {
+
+      if (posts.hasOwnProperty(post)) {
+
+        // get all post tags
+        let tags = posts[post].tags.split(' ');
+
+        for (let tag of tags) {
+
+          // create new tag index
+          if (!this.get('tags').hasOwnProperty(tag)) {
+            this.set(`tags.${tag}`, []);
+          }
+
+          // add post to tag index
+          this.push(`tags.${tag}`, posts[post]);
+
+        }
+
+      }
+
+    }
+
+  },
+
   setRouter() {
 
     page('/', () => {
@@ -106,6 +145,13 @@ export default Ractive.extend({
       this.set({
         view: 'blog',
         slug: ctx.params.post
+      });
+    });
+
+    page('/tag/:search?', (ctx) => {
+      this.set({
+        view: 'tag',
+        tagSearch: ctx.params.search
       });
     });
 

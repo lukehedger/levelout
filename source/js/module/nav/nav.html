@@ -5,17 +5,18 @@
 -->
 
 <div class="nav layout layout--auto layout--tiny layout--right">
-  {{#view == 'blog'}}
-  <div class="layout__item">
-    <a class="nav__item" on-tap="toHome">work</a>
-  </div>
-  {{/}}
 
-  {{#view == 'index'}}
+  {{#if view == 'index'}}
   <div class="layout__item">
     <a class="nav__item" on-tap="toBlog">blog</a>
   </div>
-  {{/}}
+
+  {{else}}
+
+  <div class="layout__item">
+    <a class="nav__item" on-tap="toHome">work</a>
+  </div>
+  {{/if}}
 
   <div class="layout__item">
     <a class="nav__item icon icon--github" href="https://github.com/lukehedger" target="_blank"></a>

@@ -1,0 +1,25 @@
+<!--
+  @module:   tag
+  @scss:     ./source/css/module/tag.scss
+  @js:       ./source/js/module/tag/tag.js
+-->
+
+<div class="tag">
+
+  {{#if search}}
+
+  {{#taggedPosts:post}}
+    {{#if status != 'draft' || draftsEnabled}}
+    <h3 on-tap="goPost:{{slug}}">{{title}}</h3>
+    {{/if}}
+  {{/}}
+
+  {{else}}
+
+  {{#tags:tag}}
+    <h3 on-tap="goTag:{{tag}}">{{tag}}</h3>
+  {{/}}
+
+  {{/if}}
+
+</div>

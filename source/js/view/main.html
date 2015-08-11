@@ -1,3 +1,5 @@
+{{#isReady}}
+
 <ui-nav view="{{view}}" />
 <ui-logo special />
 
@@ -10,4 +12,10 @@
 <ui-blog posts="{{content.posts}}" slug="{{slug}}" draftsEnabled="{{content.config.drafts}}" />
 {{/}}
 
+{{#view == 'tag'}}
+<ui-tag tags="{{tags}}" search="{{tagSearch}}" draftsEnabled="{{content.config.drafts}}" />
+{{/}}
+
 <ui-footer />
+
+{{/isReady}}

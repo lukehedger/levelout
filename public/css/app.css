@@ -946,6 +946,11 @@ body:before {
   display: inline-block; }
 
 /**
+ * @module:   tag
+ * @js:       ./source/js/module/tag/tag.js
+ * @html:     ./source/js/module/tag/tag.html
+ */
+/**
  * @module:   work
  * @js:       ./source/js/module/work/work.js
  * @html:     ./source/js/module/work/work.html
