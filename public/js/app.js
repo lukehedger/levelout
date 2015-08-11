@@ -34,7 +34,7 @@ var app = {
   app.render();
 });
 
-},{"./view/main":31,"domready":3}],2:[function(require,module,exports){
+},{"./view/main":38,"domready":9}],2:[function(require,module,exports){
 // shim for using process in browser
 
 var process = module.exports = {};
@@ -95,6 +95,651 @@ process.chdir = function (dir) {
 process.umask = function() { return 0; };
 
 },{}],3:[function(require,module,exports){
+/**
+ * Expose `requestAnimationFrame()`.
+ */
+
+exports = module.exports = window.requestAnimationFrame
+  || window.webkitRequestAnimationFrame
+  || window.mozRequestAnimationFrame
+  || fallback;
+
+/**
+ * Fallback implementation.
+ */
+
+var prev = new Date().getTime();
+function fallback(fn) {
+  var curr = new Date().getTime();
+  var ms = Math.max(0, 16 - (curr - prev));
+  var req = setTimeout(fn, ms);
+  prev = curr;
+  return req;
+}
+
+/**
+ * Cancel.
+ */
+
+var cancel = window.cancelAnimationFrame
+  || window.webkitCancelAnimationFrame
+  || window.mozCancelAnimationFrame
+  || window.clearTimeout;
+
+exports.cancel = function(id){
+  cancel.call(window, id);
+};
+
+},{}],4:[function(require,module,exports){
+
+/**
+ * Module dependencies.
+ */
+
+var Emitter = require('emitter');
+var clone = require('clone');
+var type = require('type');
+var ease = require('ease');
+
+/**
+ * Expose `Tween`.
+ */
+
+module.exports = Tween;
+
+/**
+ * Initialize a new `Tween` with `obj`.
+ *
+ * @param {Object|Array} obj
+ * @api public
+ */
+
+function Tween(obj) {
+  if (!(this instanceof Tween)) return new Tween(obj);
+  this._from = obj;
+  this.ease('linear');
+  this.duration(500);
+}
+
+/**
+ * Mixin emitter.
+ */
+
+Emitter(Tween.prototype);
+
+/**
+ * Reset the tween.
+ *
+ * @api public
+ */
+
+Tween.prototype.reset = function(){
+  this.isArray = 'array' === type(this._from);
+  this._curr = clone(this._from);
+  this._done = false;
+  this._start = Date.now();
+  return this;
+};
+
+/**
+ * Tween to `obj` and reset internal state.
+ *
+ *    tween.to({ x: 50, y: 100 })
+ *
+ * @param {Object|Array} obj
+ * @return {Tween} self
+ * @api public
+ */
+
+Tween.prototype.to = function(obj){
+  this.reset();
+  this._to = obj;
+  return this;
+};
+
+/**
+ * Set duration to `ms` [500].
+ *
+ * @param {Number} ms
+ * @return {Tween} self
+ * @api public
+ */
+
+Tween.prototype.duration = function(ms){
+  this._duration = ms;
+  return this;
+};
+
+/**
+ * Set easing function to `fn`.
+ *
+ *    tween.ease('in-out-sine')
+ *
+ * @param {String|Function} fn
+ * @return {Tween}
+ * @api public
+ */
+
+Tween.prototype.ease = function(fn){
+  fn = 'function' == typeof fn ? fn : ease[fn];
+  if (!fn) throw new TypeError('invalid easing function');
+  this._ease = fn;
+  return this;
+};
+
+/**
+ * Stop the tween and immediately emit "stop" and "end".
+ *
+ * @return {Tween}
+ * @api public
+ */
+
+Tween.prototype.stop = function(){
+  this.stopped = true;
+  this._done = true;
+  this.emit('stop');
+  this.emit('end');
+  return this;
+};
+
+/**
+ * Perform a step.
+ *
+ * @return {Tween} self
+ * @api private
+ */
+
+Tween.prototype.step = function(){
+  if (this._done) return;
+
+  // duration
+  var duration = this._duration;
+  var now = Date.now();
+  var delta = now - this._start;
+  var done = delta >= duration;
+
+  // complete
+  if (done) {
+    this._from = this._to;
+    this._update(this._to);
+    this._done = true;
+    this.emit('end');
+    return this;
+  }
+
+  // tween
+  var from = this._from;
+  var to = this._to;
+  var curr = this._curr;
+  var fn = this._ease;
+  var p = (now - this._start) / duration;
+  var n = fn(p);
+
+  // array
+  if (this.isArray) {
+    for (var i = 0; i < from.length; ++i) {
+      curr[i] = from[i] + (to[i] - from[i]) * n;
+    }
+
+    this._update(curr);
+    return this;
+  }
+
+  // objech
+  for (var k in from) {
+    curr[k] = from[k] + (to[k] - from[k]) * n;
+  }
+
+  this._update(curr);
+  return this;
+};
+
+/**
+ * Set update function to `fn` or
+ * when no argument is given this performs
+ * a "step".
+ *
+ * @param {Function} fn
+ * @return {Tween} self
+ * @api public
+ */
+
+Tween.prototype.update = function(fn){
+  if (0 == arguments.length) return this.step();
+  this._update = fn;
+  return this;
+};
+},{"clone":5,"ease":8,"emitter":6,"type":7}],5:[function(require,module,exports){
+/**
+ * Module dependencies.
+ */
+
+var type;
+try {
+  type = require('component-type');
+} catch (_) {
+  type = require('type');
+}
+
+/**
+ * Module exports.
+ */
+
+module.exports = clone;
+
+/**
+ * Clones objects.
+ *
+ * @param {Mixed} any object
+ * @api public
+ */
+
+function clone(obj){
+  switch (type(obj)) {
+    case 'object':
+      var copy = {};
+      for (var key in obj) {
+        if (obj.hasOwnProperty(key)) {
+          copy[key] = clone(obj[key]);
+        }
+      }
+      return copy;
+
+    case 'array':
+      var copy = new Array(obj.length);
+      for (var i = 0, l = obj.length; i < l; i++) {
+        copy[i] = clone(obj[i]);
+      }
+      return copy;
+
+    case 'regexp':
+      // from millermedeiros/amd-utils - MIT
+      var flags = '';
+      flags += obj.multiline ? 'm' : '';
+      flags += obj.global ? 'g' : '';
+      flags += obj.ignoreCase ? 'i' : '';
+      return new RegExp(obj.source, flags);
+
+    case 'date':
+      return new Date(obj.getTime());
+
+    default: // string, number, boolean, …
+      return obj;
+  }
+}
+
+},{"component-type":7,"type":7}],6:[function(require,module,exports){
+
+/**
+ * Expose `Emitter`.
+ */
+
+module.exports = Emitter;
+
+/**
+ * Initialize a new `Emitter`.
+ *
+ * @api public
+ */
+
+function Emitter(obj) {
+  if (obj) return mixin(obj);
+};
+
+/**
+ * Mixin the emitter properties.
+ *
+ * @param {Object} obj
+ * @return {Object}
+ * @api private
+ */
+
+function mixin(obj) {
+  for (var key in Emitter.prototype) {
+    obj[key] = Emitter.prototype[key];
+  }
+  return obj;
+}
+
+/**
+ * Listen on the given `event` with `fn`.
+ *
+ * @param {String} event
+ * @param {Function} fn
+ * @return {Emitter}
+ * @api public
+ */
+
+Emitter.prototype.on =
+Emitter.prototype.addEventListener = function(event, fn){
+  this._callbacks = this._callbacks || {};
+  (this._callbacks['$' + event] = this._callbacks['$' + event] || [])
+    .push(fn);
+  return this;
+};
+
+/**
+ * Adds an `event` listener that will be invoked a single
+ * time then automatically removed.
+ *
+ * @param {String} event
+ * @param {Function} fn
+ * @return {Emitter}
+ * @api public
+ */
+
+Emitter.prototype.once = function(event, fn){
+  function on() {
+    this.off(event, on);
+    fn.apply(this, arguments);
+  }
+
+  on.fn = fn;
+  this.on(event, on);
+  return this;
+};
+
+/**
+ * Remove the given callback for `event` or all
+ * registered callbacks.
+ *
+ * @param {String} event
+ * @param {Function} fn
+ * @return {Emitter}
+ * @api public
+ */
+
+Emitter.prototype.off =
+Emitter.prototype.removeListener =
+Emitter.prototype.removeAllListeners =
+Emitter.prototype.removeEventListener = function(event, fn){
+  this._callbacks = this._callbacks || {};
+
+  // all
+  if (0 == arguments.length) {
+    this._callbacks = {};
+    return this;
+  }
+
+  // specific event
+  var callbacks = this._callbacks['$' + event];
+  if (!callbacks) return this;
+
+  // remove all handlers
+  if (1 == arguments.length) {
+    delete this._callbacks['$' + event];
+    return this;
+  }
+
+  // remove specific handler
+  var cb;
+  for (var i = 0; i < callbacks.length; i++) {
+    cb = callbacks[i];
+    if (cb === fn || cb.fn === fn) {
+      callbacks.splice(i, 1);
+      break;
+    }
+  }
+  return this;
+};
+
+/**
+ * Emit `event` with the given args.
+ *
+ * @param {String} event
+ * @param {Mixed} ...
+ * @return {Emitter}
+ */
+
+Emitter.prototype.emit = function(event){
+  this._callbacks = this._callbacks || {};
+  var args = [].slice.call(arguments, 1)
+    , callbacks = this._callbacks['$' + event];
+
+  if (callbacks) {
+    callbacks = callbacks.slice(0);
+    for (var i = 0, len = callbacks.length; i < len; ++i) {
+      callbacks[i].apply(this, args);
+    }
+  }
+
+  return this;
+};
+
+/**
+ * Return array of callbacks for `event`.
+ *
+ * @param {String} event
+ * @return {Array}
+ * @api public
+ */
+
+Emitter.prototype.listeners = function(event){
+  this._callbacks = this._callbacks || {};
+  return this._callbacks['$' + event] || [];
+};
+
+/**
+ * Check if this emitter has `event` handlers.
+ *
+ * @param {String} event
+ * @return {Boolean}
+ * @api public
+ */
+
+Emitter.prototype.hasListeners = function(event){
+  return !! this.listeners(event).length;
+};
+
+},{}],7:[function(require,module,exports){
+/**
+ * toString ref.
+ */
+
+var toString = Object.prototype.toString;
+
+/**
+ * Return the type of `val`.
+ *
+ * @param {Mixed} val
+ * @return {String}
+ * @api public
+ */
+
+module.exports = function(val){
+  switch (toString.call(val)) {
+    case '[object Date]': return 'date';
+    case '[object RegExp]': return 'regexp';
+    case '[object Arguments]': return 'arguments';
+    case '[object Array]': return 'array';
+    case '[object Error]': return 'error';
+  }
+
+  if (val === null) return 'null';
+  if (val === undefined) return 'undefined';
+  if (val !== val) return 'nan';
+  if (val && val.nodeType === 1) return 'element';
+
+  val = val.valueOf
+    ? val.valueOf()
+    : Object.prototype.valueOf.apply(val)
+
+  return typeof val;
+};
+
+},{}],8:[function(require,module,exports){
+
+// easing functions from "Tween.js"
+
+exports.linear = function(n){
+  return n;
+};
+
+exports.inQuad = function(n){
+  return n * n;
+};
+
+exports.outQuad = function(n){
+  return n * (2 - n);
+};
+
+exports.inOutQuad = function(n){
+  n *= 2;
+  if (n < 1) return 0.5 * n * n;
+  return - 0.5 * (--n * (n - 2) - 1);
+};
+
+exports.inCube = function(n){
+  return n * n * n;
+};
+
+exports.outCube = function(n){
+  return --n * n * n + 1;
+};
+
+exports.inOutCube = function(n){
+  n *= 2;
+  if (n < 1) return 0.5 * n * n * n;
+  return 0.5 * ((n -= 2 ) * n * n + 2);
+};
+
+exports.inQuart = function(n){
+  return n * n * n * n;
+};
+
+exports.outQuart = function(n){
+  return 1 - (--n * n * n * n);
+};
+
+exports.inOutQuart = function(n){
+  n *= 2;
+  if (n < 1) return 0.5 * n * n * n * n;
+  return -0.5 * ((n -= 2) * n * n * n - 2);
+};
+
+exports.inQuint = function(n){
+  return n * n * n * n * n;
+}
+
+exports.outQuint = function(n){
+  return --n * n * n * n * n + 1;
+}
+
+exports.inOutQuint = function(n){
+  n *= 2;
+  if (n < 1) return 0.5 * n * n * n * n * n;
+  return 0.5 * ((n -= 2) * n * n * n * n + 2);
+};
+
+exports.inSine = function(n){
+  return 1 - Math.cos(n * Math.PI / 2 );
+};
+
+exports.outSine = function(n){
+  return Math.sin(n * Math.PI / 2);
+};
+
+exports.inOutSine = function(n){
+  return .5 * (1 - Math.cos(Math.PI * n));
+};
+
+exports.inExpo = function(n){
+  return 0 == n ? 0 : Math.pow(1024, n - 1);
+};
+
+exports.outExpo = function(n){
+  return 1 == n ? n : 1 - Math.pow(2, -10 * n);
+};
+
+exports.inOutExpo = function(n){
+  if (0 == n) return 0;
+  if (1 == n) return 1;
+  if ((n *= 2) < 1) return .5 * Math.pow(1024, n - 1);
+  return .5 * (-Math.pow(2, -10 * (n - 1)) + 2);
+};
+
+exports.inCirc = function(n){
+  return 1 - Math.sqrt(1 - n * n);
+};
+
+exports.outCirc = function(n){
+  return Math.sqrt(1 - (--n * n));
+};
+
+exports.inOutCirc = function(n){
+  n *= 2
+  if (n < 1) return -0.5 * (Math.sqrt(1 - n * n) - 1);
+  return 0.5 * (Math.sqrt(1 - (n -= 2) * n) + 1);
+};
+
+exports.inBack = function(n){
+  var s = 1.70158;
+  return n * n * (( s + 1 ) * n - s);
+};
+
+exports.outBack = function(n){
+  var s = 1.70158;
+  return --n * n * ((s + 1) * n + s) + 1;
+};
+
+exports.inOutBack = function(n){
+  var s = 1.70158 * 1.525;
+  if ( ( n *= 2 ) < 1 ) return 0.5 * ( n * n * ( ( s + 1 ) * n - s ) );
+  return 0.5 * ( ( n -= 2 ) * n * ( ( s + 1 ) * n + s ) + 2 );
+};
+
+exports.inBounce = function(n){
+  return 1 - exports.outBounce(1 - n);
+};
+
+exports.outBounce = function(n){
+  if ( n < ( 1 / 2.75 ) ) {
+    return 7.5625 * n * n;
+  } else if ( n < ( 2 / 2.75 ) ) {
+    return 7.5625 * ( n -= ( 1.5 / 2.75 ) ) * n + 0.75;
+  } else if ( n < ( 2.5 / 2.75 ) ) {
+    return 7.5625 * ( n -= ( 2.25 / 2.75 ) ) * n + 0.9375;
+  } else {
+    return 7.5625 * ( n -= ( 2.625 / 2.75 ) ) * n + 0.984375;
+  }
+};
+
+exports.inOutBounce = function(n){
+  if (n < .5) return exports.inBounce(n * 2) * .5;
+  return exports.outBounce(n * 2 - 1) * .5 + .5;
+};
+
+// aliases
+
+exports['in-quad'] = exports.inQuad;
+exports['out-quad'] = exports.outQuad;
+exports['in-out-quad'] = exports.inOutQuad;
+exports['in-cube'] = exports.inCube;
+exports['out-cube'] = exports.outCube;
+exports['in-out-cube'] = exports.inOutCube;
+exports['in-quart'] = exports.inQuart;
+exports['out-quart'] = exports.outQuart;
+exports['in-out-quart'] = exports.inOutQuart;
+exports['in-quint'] = exports.inQuint;
+exports['out-quint'] = exports.outQuint;
+exports['in-out-quint'] = exports.inOutQuint;
+exports['in-sine'] = exports.inSine;
+exports['out-sine'] = exports.outSine;
+exports['in-out-sine'] = exports.inOutSine;
+exports['in-expo'] = exports.inExpo;
+exports['out-expo'] = exports.outExpo;
+exports['in-out-expo'] = exports.inOutExpo;
+exports['in-circ'] = exports.inCirc;
+exports['out-circ'] = exports.outCirc;
+exports['in-out-circ'] = exports.inOutCirc;
+exports['in-back'] = exports.inBack;
+exports['out-back'] = exports.outBack;
+exports['in-out-back'] = exports.inOutBack;
+exports['in-bounce'] = exports.inBounce;
+exports['out-bounce'] = exports.outBounce;
+exports['in-out-bounce'] = exports.inOutBounce;
+
+},{}],9:[function(require,module,exports){
 /*!
   * domready (c) Dustin Diaz 2014 - License MIT
   */
@@ -126,7 +771,7 @@ process.umask = function() { return 0; };
 
 });
 
-},{}],4:[function(require,module,exports){
+},{}],10:[function(require,module,exports){
 (function (process){
   /* globals require, module */
 
@@ -750,7 +1395,7 @@ process.umask = function() { return 0; };
 
 }).call(this,require('_process'))
 
-},{"_process":2,"path-to-regexp":5}],5:[function(require,module,exports){
+},{"_process":2,"path-to-regexp":11}],11:[function(require,module,exports){
 var isArray = require('isarray');
 
 /**
@@ -954,12 +1599,12 @@ function pathToRegexp (path, keys, options) {
   return attachKeys(new RegExp('^' + route, flags(options)), keys);
 }
 
-},{"isarray":6}],6:[function(require,module,exports){
+},{"isarray":12}],12:[function(require,module,exports){
 module.exports = Array.isArray || function (arr) {
   return Object.prototype.toString.call(arr) == '[object Array]';
 };
 
-},{}],7:[function(require,module,exports){
+},{}],13:[function(require,module,exports){
 (function (global, factory) {
 	typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
 	typeof define === 'function' && define.amd ? define(factory) :
@@ -1177,7 +1822,7 @@ module.exports = Array.isArray || function (arr) {
 	return ractive_events_tap;
 
 }));
-},{}],8:[function(require,module,exports){
+},{}],14:[function(require,module,exports){
 /*
 	Ractive.js v0.7.3
 	Sat Apr 25 2015 13:52:38 GMT-0400 (EDT) - commit da40f81c660ba2f09c45a09a9c20fdd34ee36d80
@@ -17798,7 +18443,7 @@ module.exports = Array.isArray || function (arr) {
 }));
 //# sourceMappingURL=ractive.js.map
 
-},{}],9:[function(require,module,exports){
+},{}],15:[function(require,module,exports){
 /*!
   * Reqwest! A general purpose XHR connection manager
   * license MIT (c) Dustin Diaz 2014
@@ -18415,7 +19060,7 @@ module.exports = Array.isArray || function (arr) {
   return reqwest
 });
 
-},{}],10:[function(require,module,exports){
+},{}],16:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -18443,9 +19088,9 @@ exports['default'] = _ractive2['default'].extend({
 });
 module.exports = exports['default'];
 
-},{"ractive":8}],11:[function(require,module,exports){
-module.exports={"v":3,"t":[{"t":7,"e":"div","a":{"class":"blog-post"},"f":[{"t":7,"e":"h1","f":[{"t":2,"r":"post.title"}]}]}]}
-},{}],12:[function(require,module,exports){
+},{"ractive":14}],17:[function(require,module,exports){
+module.exports={"v":3,"t":[{"t":7,"e":"div","a":{"class":"blog-post"},"t1":"scale","f":[{"t":7,"e":"h1","f":[{"t":2,"r":"post.title"}]}]}]}
+},{}],18:[function(require,module,exports){
 /**
  * @module:   blog-post
  * @scss:     ./source/css/module/blog-post.scss
@@ -18468,16 +19113,24 @@ var _blogPostHtml = require('./blog-post.html');
 
 var _blogPostHtml2 = _interopRequireDefault(_blogPostHtml);
 
+var _transitionPageScale = require('../../transition/page-scale');
+
+var _transitionPageScale2 = _interopRequireDefault(_transitionPageScale);
+
 exports['default'] = _abstractModule2['default'].extend({
 
-  template: _blogPostHtml2['default']
+  template: _blogPostHtml2['default'],
+
+  transitions: {
+    scale: _transitionPageScale2['default']
+  }
 
 });
 module.exports = exports['default'];
 
-},{"../abstract-module":10,"./blog-post.html":11}],13:[function(require,module,exports){
+},{"../../transition/page-scale":36,"../abstract-module":16,"./blog-post.html":17}],19:[function(require,module,exports){
 module.exports={"v":3,"t":[{"t":7,"e":"div","a":{"class":"blog-preview"},"f":[{"t":7,"e":"h1","f":["blog-preview :)"]}]}]}
-},{}],14:[function(require,module,exports){
+},{}],20:[function(require,module,exports){
 /**
  * @module:   blog-preview
  * @scss:     ./source/css/module/blog-preview.scss
@@ -18507,9 +19160,9 @@ exports['default'] = _abstractModule2['default'].extend({
 });
 module.exports = exports['default'];
 
-},{"../abstract-module":10,"./blog-preview.html":13}],15:[function(require,module,exports){
-module.exports={"v":3,"t":[{"t":7,"e":"div","a":{"class":"blog"},"f":[{"t":4,"f":[{"t":7,"e":"ui-blog-post","a":{"post":[{"t":2,"r":"post"}]}}],"n":50,"r":"slug"},{"t":4,"n":51,"f":[{"t":4,"f":[{"t":4,"f":[{"t":7,"e":"h3","v":{"tap":{"n":"goPost","d":[{"t":2,"r":"slug"}]}},"f":[{"t":2,"r":"title"}]}],"n":50,"x":{"r":["status","draftsEnabled"],"s":"_0!=\"draft\"||_1"}}],"i":"post","r":"posts"}],"r":"slug"}]}]}
-},{}],16:[function(require,module,exports){
+},{"../abstract-module":16,"./blog-preview.html":19}],21:[function(require,module,exports){
+module.exports={"v":3,"t":[{"t":7,"e":"div","a":{"class":"blog"},"t1":"scale","f":[{"t":4,"f":[{"t":7,"e":"ui-blog-post","a":{"post":[{"t":2,"r":"post"}]}}],"n":50,"r":"slug"},{"t":4,"n":51,"f":[{"t":4,"f":[{"t":4,"f":[{"t":7,"e":"h3","v":{"tap":{"n":"goPost","d":[{"t":2,"r":"slug"}]}},"f":[{"t":2,"r":"title"}]}],"n":50,"x":{"r":["status","draftsEnabled"],"s":"_0!=\"draft\"||_1"}}],"i":"post","r":"posts"}],"r":"slug"}]}]}
+},{}],22:[function(require,module,exports){
 /**
  * @module:   blog
  * @scss:     ./source/css/module/blog.scss
@@ -18532,9 +19185,17 @@ var _blogHtml = require('./blog.html');
 
 var _blogHtml2 = _interopRequireDefault(_blogHtml);
 
+var _transitionPageScale = require('../../transition/page-scale');
+
+var _transitionPageScale2 = _interopRequireDefault(_transitionPageScale);
+
 exports['default'] = _abstractModule2['default'].extend({
 
   template: _blogHtml2['default'],
+
+  transitions: {
+    scale: _transitionPageScale2['default']
+  },
 
   data: function data() {
     return {
@@ -18577,9 +19238,9 @@ exports['default'] = _abstractModule2['default'].extend({
 });
 module.exports = exports['default'];
 
-},{"../abstract-module":10,"./blog.html":15}],17:[function(require,module,exports){
+},{"../../transition/page-scale":36,"../abstract-module":16,"./blog.html":21}],23:[function(require,module,exports){
 module.exports={"v":3,"t":[{"t":7,"e":"div","a":{"class":"card","style":"width: 20%; display: inline-block;"},"v":{"tap":{"n":[{"t":2,"r":"toX"}],"d":[]}},"f":[{"t":7,"e":"img","a":{"src":"https://images.unsplash.com/photo-1438216983993-cdcd7dea84ce","alt":"","style":"width: 200px; height: 100px; display: block;"}}," ",{"t":7,"e":"span","f":[{"t":2,"r":"content.co"}]}," ",{"t":7,"e":"h3","f":["title"]}," ",{"t":7,"e":"span","f":["go →"]}]}]}
-},{}],18:[function(require,module,exports){
+},{}],24:[function(require,module,exports){
 /**
  * @module:   card
  * @scss:     ./source/css/module/card.scss
@@ -18609,9 +19270,9 @@ exports['default'] = _abstractModule2['default'].extend({
 });
 module.exports = exports['default'];
 
-},{"../abstract-module":10,"./card.html":17}],19:[function(require,module,exports){
+},{"../abstract-module":16,"./card.html":23}],25:[function(require,module,exports){
 module.exports={"v":3,"t":[{"t":7,"e":"div","a":{"class":"footer"},"f":[{"t":7,"e":"ui-logo"}," ",{"t":7,"e":"p","a":{"class":"footer__tagline"},"f":["Level Out is the guise of Luke Hedger.",{"t":7,"e":"br"}," It's his equivalent of a cape."]}]}]}
-},{}],20:[function(require,module,exports){
+},{}],26:[function(require,module,exports){
 /**
  * @module:   footer
  * @scss:     ./source/css/module/footer.scss
@@ -18641,7 +19302,7 @@ exports['default'] = _abstractModule2['default'].extend({
 });
 module.exports = exports['default'];
 
-},{"../abstract-module":10,"./footer.html":19}],21:[function(require,module,exports){
+},{"../abstract-module":16,"./footer.html":25}],27:[function(require,module,exports){
 /*auto-generated*/
 'use strict';
 
@@ -18704,9 +19365,9 @@ _ractive2['default'].components['ui-work'] = _workWorkJs2['default'];
 exports['default'] = _ractive2['default'];
 module.exports = exports['default'];
 
-},{"./blog-post/blog-post.js":12,"./blog-preview/blog-preview.js":14,"./blog/blog.js":16,"./card/card.js":18,"./footer/footer.js":20,"./logo/logo.js":23,"./nav/nav.js":25,"./tag/tag.js":27,"./work/work.js":29,"ractive":8}],22:[function(require,module,exports){
+},{"./blog-post/blog-post.js":18,"./blog-preview/blog-preview.js":20,"./blog/blog.js":22,"./card/card.js":24,"./footer/footer.js":26,"./logo/logo.js":29,"./nav/nav.js":31,"./tag/tag.js":33,"./work/work.js":35,"ractive":14}],28:[function(require,module,exports){
 module.exports={"v":3,"t":[{"t":7,"e":"div","a":{"class":["logo ",{"t":4,"f":["logo--special"],"n":50,"r":"special"}]},"f":[{"t":7,"e":"div","a":{"class":["logo__wrap ",{"t":4,"f":["logo__wrap--scaled"],"n":50,"r":"scaled"}]},"v":{"tap":{"n":[{"t":4,"f":["toHome"],"n":50,"r":"special"}],"d":[]}},"f":[{"t":7,"e":"svg","a":{"version":"1.1","xmlns":"http://www.w3.org/2000/svg","xmlns:xlink":"http://www.w3.org/1999/xlink","x":"0px","y":"0px","viewBox":"0 0 80 80","style":"enable-background:new 0 0 80 80;","xml:space":"preserve"},"f":[{"t":7,"e":"g","a":{"class":"logo__path"},"f":[{"t":7,"e":"path","a":{"d":"M18.6,50.1c-0.3,0.6-0.5,1.2-0.8,2c-0.3,0.7-0.4,1.4-0.4,2c0,0.4,0.1,0.7,0.2,0.9s0.4,0.3,0.8,0.3c0.5,0,1.2-0.2,1.9-0.5\n      \t\tc0.8-0.3,1.6-0.7,2.5-1.2c0.9-0.5,1.8-1.1,2.8-1.7c1-0.6,1.9-1.3,2.9-2c1-0.7,1.9-1.4,2.7-2.1c0.9-0.7,1.6-1.3,2.3-1.9\n      \t\tc0.2-0.2,0.4-0.3,0.7-0.4c0.3-0.1,0.5-0.1,0.7-0.1c0.5,0,0.9,0.2,1.2,0.5c0.3,0.3,0.5,0.8,0.5,1.4c0,0.5-0.2,1.1-0.5,1.7\n      \t\tc-0.3,0.6-0.9,1.3-1.8,1.9c-1.6,1.4-3.1,2.8-4.7,4.1c-1.6,1.3-3.2,2.4-4.7,3.4c-1.6,1-3.1,1.8-4.7,2.4s-3.1,0.9-4.5,0.9\n      \t\tc-1,0-1.8-0.1-2.5-0.4s-1.2-0.6-1.6-1.1c-0.4-0.5-0.7-1-0.9-1.6c-0.2-0.6-0.3-1.3-0.3-2c0-1.2,0.2-2.4,0.5-3.7\n      \t\tc0.4-1.3,0.8-2.4,1.3-3.5c0.9-1.9,1.7-3.8,2.6-5.7c0.9-1.9,1.7-3.6,2.4-5.2l11.1-23.6c0.4-1,1-1.6,1.8-2c0.7-0.4,1.5-0.6,2.3-0.6\n      \t\tc0.8,0,1.4,0.2,2.1,0.6c0.6,0.4,0.9,1.1,0.9,2c0,0.4-0.1,0.9-0.3,1.4c-0.2,0.5-0.5,1-0.8,1.6c-0.6,1.1-1.3,2.6-2.2,4.2\n      \t\tc-0.8,1.7-1.7,3.5-2.7,5.4c-1,2-2,4-3,6.1c-1,2.1-2,4.2-3,6.2c-1,2-1.9,3.9-2.7,5.7C19.9,47.3,19.2,48.8,18.6,50.1z","stroke":"#FFF","stroke-width":"1"}}," ",{"t":7,"e":"path","a":{"d":"M47.7,34.1c0.9,0,1.9,0.1,3,0.4c1.1,0.2,2,0.7,2.9,1.2c0.9,0.6,1.7,1.4,2.3,2.3c0.6,1,0.9,2.2,0.9,3.6\n      \t\tc0,0.7-0.1,1.6-0.3,2.5C56.3,45,56,46,55.6,47c0.2,0.3,0.5,0.5,0.8,0.6c0.3,0.1,0.7,0.2,1,0.2c0.5,0,1.1-0.1,1.7-0.4\n      \t\tc0.6-0.3,1.3-0.7,1.9-1.1c0.7-0.5,1.3-1,2-1.6c0.7-0.6,1.3-1.2,1.9-1.8s1.1-1.1,1.6-1.7c0.5-0.5,0.9-1,1.2-1.3\n      \t\tc0.2-0.2,0.4-0.3,0.6-0.3c0.3,0,0.6,0.2,0.9,0.5c0.3,0.4,0.4,0.8,0.4,1.5s-0.2,1.4-0.6,2.2c-0.4,0.8-1.1,1.7-2.1,2.6\n      \t\tc-0.6,0.6-1.3,1.4-2,2.2c-0.8,0.8-1.6,1.6-2.4,2.3c-0.9,0.7-1.7,1.4-2.7,1.9s-1.9,0.8-2.8,0.8c-0.6,0-1.3-0.1-1.8-0.3\n      \t\tc-0.6-0.2-1.2-0.5-1.8-1c-0.9,1.4-1.9,2.6-3,3.7c-1.1,1.1-2.4,2.1-3.8,2.9c-1.4,0.8-2.9,1.4-4.5,1.9c-1.6,0.5-3.3,0.7-5.1,0.7\n      \t\tc-0.7,0-1.5-0.1-2.4-0.4c-0.9-0.3-1.8-0.7-2.6-1.3c-0.8-0.6-1.5-1.4-2.1-2.4c-0.6-1-0.8-2.2-0.8-3.7c0-1,0.2-2.1,0.5-3.5\n      \t\tc0.3-1.4,0.8-2.8,1.4-4.2c0.6-1.5,1.5-2.9,2.5-4.3c1-1.4,2.2-2.7,3.5-3.8c1.4-1.1,2.9-2.1,4.7-2.7C43.6,34.4,45.5,34.1,47.7,34.1z\n      \t\t M45.8,40.5c-1.1,0-2.3,0.3-3.3,0.9c-1.1,0.6-2,1.3-2.8,2.3c-0.8,0.9-1.5,2-2,3.2c-0.5,1.2-0.7,2.4-0.7,3.6c0,0.5,0,1,0.1,1.5\n      \t\tc0.1,0.5,0.2,1.1,0.5,1.5c0.2,0.5,0.6,0.9,1,1.2s1,0.5,1.8,0.5c1.1,0,2.2-0.3,3.3-0.9c1.1-0.6,2-1.4,2.8-2.3c0.8-1,1.5-2.1,2-3.3\n      \t\tc0.5-1.2,0.7-2.5,0.7-3.7c0-0.5,0-1-0.1-1.5c-0.1-0.5-0.2-1-0.4-1.4c-0.2-0.4-0.6-0.8-1-1.1C47.1,40.7,46.5,40.5,45.8,40.5z","stroke":"#FFF","stroke-width":"1"}}]}]}]}]}]}
-},{}],23:[function(require,module,exports){
+},{}],29:[function(require,module,exports){
 /**
  * @module:   logo
  * @scss:     ./source/css/module/logo.scss
@@ -18760,9 +19421,9 @@ exports['default'] = _abstractModule2['default'].extend({
 });
 module.exports = exports['default'];
 
-},{"../abstract-module":10,"./logo.html":22}],24:[function(require,module,exports){
+},{"../abstract-module":16,"./logo.html":28}],30:[function(require,module,exports){
 module.exports={"v":3,"t":[{"t":7,"e":"div","a":{"class":"nav layout layout--auto layout--tiny layout--right"},"f":[{"t":4,"f":[{"t":7,"e":"div","a":{"class":"layout__item"},"f":[{"t":7,"e":"a","a":{"class":"nav__item"},"v":{"tap":"toBlog"},"f":["blog"]}]}],"n":50,"x":{"r":["view"],"s":"_0==\"index\""}},{"t":4,"n":51,"f":[{"t":7,"e":"div","a":{"class":"layout__item"},"f":[{"t":7,"e":"a","a":{"class":"nav__item"},"v":{"tap":"toHome"},"f":["work"]}]}],"x":{"r":["view"],"s":"_0==\"index\""}}," ",{"t":7,"e":"div","a":{"class":"layout__item"},"f":[{"t":7,"e":"a","a":{"class":"nav__item icon icon--github","href":"https://github.com/lukehedger","target":"_blank"}}]}," ",{"t":7,"e":"div","a":{"class":"layout__item"},"f":[{"t":7,"e":"a","a":{"class":"nav__item icon icon--twitter","href":"https://twitter.com/level_out","target":"_blank"}}]}]}]}
-},{}],25:[function(require,module,exports){
+},{}],31:[function(require,module,exports){
 /**
  * @module:   nav
  * @scss:     ./source/css/module/nav.scss
@@ -18805,9 +19466,9 @@ exports['default'] = _abstractModule2['default'].extend({
 });
 module.exports = exports['default'];
 
-},{"../abstract-module":10,"./nav.html":24}],26:[function(require,module,exports){
+},{"../abstract-module":16,"./nav.html":30}],32:[function(require,module,exports){
 module.exports={"v":3,"t":[{"t":7,"e":"div","a":{"class":"tag"},"f":[{"t":4,"f":[{"t":4,"f":[{"t":4,"f":[{"t":7,"e":"h3","v":{"tap":{"n":"goPost","d":[{"t":2,"r":"slug"}]}},"f":[{"t":2,"r":"title"}]}],"n":50,"x":{"r":["status","draftsEnabled"],"s":"_0!=\"draft\"||_1"}}],"i":"post","r":"taggedPosts"}],"n":50,"r":"search"},{"t":4,"n":51,"f":[{"t":4,"f":[{"t":7,"e":"h3","v":{"tap":{"n":"goTag","d":[{"t":2,"r":"tag"}]}},"f":[{"t":2,"r":"tag"}]}],"i":"tag","r":"tags"}],"r":"search"}]}]}
-},{}],27:[function(require,module,exports){
+},{}],33:[function(require,module,exports){
 /**
  * @module:   tag
  * @scss:     ./source/css/module/tag.scss
@@ -18877,9 +19538,9 @@ exports['default'] = _abstractModule2['default'].extend({
 });
 module.exports = exports['default'];
 
-},{"../abstract-module":10,"./tag.html":26}],28:[function(require,module,exports){
-module.exports={"v":3,"t":[{"t":7,"e":"div","a":{"class":"work"},"f":[{"t":7,"e":"h2","a":{"class":"work__title"},"f":["Featured Work"]}," ",{"t":4,"f":[{"t":7,"e":"ui-card","a":{"content":[{"t":2,"r":"."}]}}],"r":"work"}]}]}
-},{}],29:[function(require,module,exports){
+},{"../abstract-module":16,"./tag.html":32}],34:[function(require,module,exports){
+module.exports={"v":3,"t":[{"t":7,"e":"div","a":{"class":"work"},"t1":"scale","f":[{"t":7,"e":"h2","a":{"class":"work__title"},"f":["Featured Work"]}," ",{"t":4,"f":[{"t":7,"e":"ui-card","a":{"content":[{"t":2,"r":"."}]}}],"r":"work"}]}]}
+},{}],35:[function(require,module,exports){
 /**
  * @module:   work
  * @scss:     ./source/css/module/work.scss
@@ -18902,16 +19563,88 @@ var _workHtml = require('./work.html');
 
 var _workHtml2 = _interopRequireDefault(_workHtml);
 
+var _transitionPageScale = require('../../transition/page-scale');
+
+var _transitionPageScale2 = _interopRequireDefault(_transitionPageScale);
+
 exports['default'] = _abstractModule2['default'].extend({
 
-  template: _workHtml2['default']
+  template: _workHtml2['default'],
+
+  transitions: {
+    scale: _transitionPageScale2['default']
+  }
 
 });
 module.exports = exports['default'];
 
-},{"../abstract-module":10,"./work.html":28}],30:[function(require,module,exports){
+},{"../../transition/page-scale":36,"../abstract-module":16,"./work.html":34}],36:[function(require,module,exports){
+'use strict';
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+var _componentTween = require('component-tween');
+
+var _componentTween2 = _interopRequireDefault(_componentTween);
+
+var _componentRaf = require('component-raf');
+
+var _componentRaf2 = _interopRequireDefault(_componentRaf);
+
+var DEFAULTS = {
+  duration: 500,
+  y: 10
+};
+
+function pageScale(t, params) {
+
+  var id, tween, target;
+
+  params = t.processParams(params, DEFAULTS);
+
+  if (t.isIntro) {
+
+    // intro
+    tween = (0, _componentTween2['default'])({ y: params.y, opacity: 0 });
+    target = { y: 0, opacity: 1 };
+  } else {
+
+    // outro
+    tween = (0, _componentTween2['default'])({ y: 0, opacity: 1 });
+    target = { y: params.y, opacity: 0 };
+  }
+
+  tween.ease('in-out-quart').duration(params.duration).to(target);
+
+  tween.update(function (o) {
+
+    var transform = 'translateY(' + o.y + '%)';
+
+    t.setStyle('opacity', o.opacity);
+    t.setStyle('transform', transform);
+  });
+
+  tween.on('end', function () {
+
+    _componentRaf2['default'].cancel(id);
+    animate = null;
+    t.complete();
+  });
+
+  function animate() {
+
+    id = (0, _componentRaf2['default'])(animate);
+    tween.update();
+  }
+
+  animate();
+}
+
+module.exports = pageScale;
+
+},{"component-raf":3,"component-tween":4}],37:[function(require,module,exports){
 module.exports={"v":3,"t":[{"t":4,"f":[{"t":7,"e":"ui-nav","a":{"view":[{"t":2,"r":"view"}]}}," ",{"t":7,"e":"ui-logo","a":{"special":0}}," ",{"t":4,"f":[{"t":7,"e":"ui-work","a":{"work":[{"t":2,"r":"work"}]}}," ",{"t":7,"e":"ui-blog-preview","a":{"posts":[{"t":2,"r":"content.posts"}]}}],"x":{"r":["view"],"s":"_0==\"index\""}},{"t":4,"f":[{"t":7,"e":"ui-blog","a":{"posts":[{"t":2,"r":"content.posts"}],"slug":[{"t":2,"r":"slug"}],"draftsEnabled":[{"t":2,"r":"content.config.drafts"}]}}],"x":{"r":["view"],"s":"_0==\"blog\""}},{"t":4,"f":[{"t":7,"e":"ui-tag","a":{"tags":[{"t":2,"r":"tags"}],"search":[{"t":2,"r":"tagSearch"}],"draftsEnabled":[{"t":2,"r":"content.config.drafts"}]}}],"x":{"r":["view"],"s":"_0==\"tag\""}},{"t":7,"e":"ui-footer"}],"r":"isReady"}]}
-},{}],31:[function(require,module,exports){
+},{}],38:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -19087,7 +19820,7 @@ exports['default'] = _module3['default'].extend({
 });
 module.exports = exports['default'];
 
-},{"../module":21,"./main.html":30,"page":4,"ractive-events-tap":7,"reqwest":9}]},{},[1])
+},{"../module":27,"./main.html":37,"page":10,"ractive-events-tap":13,"reqwest":15}]},{},[1])
 
 
 //# sourceMappingURL=app.js.map

@@ -37,6 +37,8 @@
     "yargs": "^3.8.0"
   },
   "dependencies": {
+    "component-raf": "^1.2.0",
+    "component-tween": "^1.2.0",
     "domready": "^1.0.8",
     "inuit-box-sizing": "^0.2.0",
     "inuit-clearfix": "lucasmotta/trumps.clearfix",

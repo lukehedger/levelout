@@ -107,9 +107,7 @@ export default Ractive.extend({
           this.push(`tags.${tag}`, posts[post]);
 
         }
-
       }
-
     }
 
   },
