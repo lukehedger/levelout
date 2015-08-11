@@ -22,68 +22,47 @@ export default Ractive.extend({
     }
   },
 
-  computed: {
-  },
-
   oninit() {
 
     this.setRouter();
 
-    // TODO - merge data requests into single promise
-    this.getContent()
-      .then(this.onContentSuccess.bind(this))
-      .fail(this.onContentError.bind(this));
-
-    this.getWork()
-      .then(this.onWorkSuccess.bind(this))
-      .fail(this.onWorkError.bind(this));
+    this.getData();
 
     // handle routing events
-    this.on('*.nav', function (path) {
+    this.on('*.nav', function(path) {
         page(path);
       }
     );
 
   },
 
-  onrender() {
+  onDataSuccess(data) {
 
+    this.set('content', data[0]);
+    this.set('work', data[1]);
 
-
-  },
-
-  onContentSuccess(resp) {
-
-    this.set('content', resp);
-
-    // TODO - add to promise chain
     this.setTags();
 
-    // TODO - do this at end of promise chain when ALL resolved
-    // might need a loading state too
+    // TODO - might need a loading state
     this.set('isReady', true);
 
   },
 
-  onContentError(err) {
+  getData() {
 
-    console.error(err);
+    let promises = [this.requestContent(), this.requestWork()];
 
-  },
-
-  onWorkSuccess(resp) {
-
-    this.set('work', resp.work);
-
-  },
-
-  onWorkError(err) {
-
-    console.error(err);
+    Promise.all(promises)
+      .then( (values) => {
+        this.onDataSuccess(values);
+      })
+      .catch( (reason) => {
+        console.error('Failed to load data', reason);
+      });
 
   },
 
-  getContent() {
+  requestContent() {
 
     return request({
       url: '/data/content.json',
@@ -94,7 +73,7 @@ export default Ractive.extend({
 
   },
 
-  getWork() {
+  requestWork() {
 
     return request({
       url: '/data/work.json',

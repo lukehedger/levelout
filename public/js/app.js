@@ -18955,16 +18955,11 @@ exports['default'] = _module3['default'].extend({
     };
   },
 
-  computed: {},
-
   oninit: function oninit() {
 
     this.setRouter();
 
-    // TODO - merge data requests into single promise
-    this.getContent().then(this.onContentSuccess.bind(this)).fail(this.onContentError.bind(this));
-
-    this.getWork().then(this.onWorkSuccess.bind(this)).fail(this.onWorkError.bind(this));
+    this.getData();
 
     // handle routing events
     this.on('*.nav', function (path) {
@@ -18972,36 +18967,30 @@ exports['default'] = _module3['default'].extend({
     });
   },
 
-  onrender: function onrender() {},
+  onDataSuccess: function onDataSuccess(data) {
 
-  onContentSuccess: function onContentSuccess(resp) {
+    this.set('content', data[0]);
+    this.set('work', data[1]);
 
-    this.set('content', resp);
-
-    // TODO - add to promise chain
     this.setTags();
 
-    // TODO - do this at end of promise chain when ALL resolved
-    // might need a loading state too
+    // TODO - might need a loading state
     this.set('isReady', true);
   },
 
-  onContentError: function onContentError(err) {
+  getData: function getData() {
+    var _this = this;
 
-    console.error(err);
+    var promises = [this.requestContent(), this.requestWork()];
+
+    Promise.all(promises).then(function (values) {
+      _this.onDataSuccess(values);
+    })['catch'](function (reason) {
+      console.error('Failed to load data', reason);
+    });
   },
 
-  onWorkSuccess: function onWorkSuccess(resp) {
-
-    this.set('work', resp.work);
-  },
-
-  onWorkError: function onWorkError(err) {
-
-    console.error(err);
-  },
-
-  getContent: function getContent() {
+  requestContent: function requestContent() {
 
     return (0, _reqwest2['default'])({
       url: '/data/content.json',
@@ -19011,7 +19000,7 @@ exports['default'] = _module3['default'].extend({
     });
   },
 
-  getWork: function getWork() {
+  requestWork: function requestWork() {
 
     return (0, _reqwest2['default'])({
       url: '/data/work.json',
@@ -19068,21 +19057,21 @@ exports['default'] = _module3['default'].extend({
   },
 
   setRouter: function setRouter() {
-    var _this = this;
+    var _this2 = this;
 
     (0, _page2['default'])('/', function () {
-      _this.set('view', 'index');
+      _this2.set('view', 'index');
     });
 
     (0, _page2['default'])('/blog/:post?', function (ctx) {
-      _this.set({
+      _this2.set({
         view: 'blog',
         slug: ctx.params.post
       });
     });
 
     (0, _page2['default'])('/tag/:search?', function (ctx) {
-      _this.set({
+      _this2.set({
         view: 'tag',
         tagSearch: ctx.params.search
       });
