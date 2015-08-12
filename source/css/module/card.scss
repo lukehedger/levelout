@@ -21,4 +21,20 @@
     @include inuit-font-size(22px, 1.4);
   }
 
+  &__detail {
+
+    &--preview {
+      &:after {
+        content: '...';
+      }
+    }
+
+  }
+
+  &__cta {
+    @include inuit-font-size(10px, none);
+    color: $color-ltgrey;
+    text-transform: uppercase;
+  }
+
 }

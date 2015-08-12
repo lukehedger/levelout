@@ -6,9 +6,14 @@
 
 import Module from '../abstract-module';
 import template from './blog-preview.html';
+import creep from '../../transition/page-creep';
 
 export default Module.extend({
 
-  template: template
+  template: template,
+
+  transitions: {
+    creep: creep
+  }
 
 });

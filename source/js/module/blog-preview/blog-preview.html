@@ -4,6 +4,18 @@
   @js:       ./source/js/module/blog-preview/blog-preview.js
 -->
 
-<div class="blog-preview">
-  <h1>blog-preview :)</h1>
+<div class="blog-preview" intro="creep">
+
+  <h2 class="blog-preview__title">Some Thoughts</h2>
+
+  <div class="layout--flush">
+
+    {{#posts:post}}
+      {{#if @index  < limit}}
+      <ui-card content={{.}} preview />
+      {{/if}}
+    {{/}}
+
+  </div>
+
 </div>

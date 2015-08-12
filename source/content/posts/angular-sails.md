@@ -1,6 +1,6 @@
 ---
 title: Angular-Sails
-description: Plain sailing with Angular
+detail: Plain sailing with Angular
 read: 10
 tags: sails angular node
 comments: true

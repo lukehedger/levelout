@@ -19129,7 +19129,7 @@ exports['default'] = _abstractModule2['default'].extend({
 module.exports = exports['default'];
 
 },{"../../transition/page-creep":36,"../abstract-module":16,"./blog-post.html":17}],19:[function(require,module,exports){
-module.exports={"v":3,"t":[{"t":7,"e":"div","a":{"class":"blog-preview"},"f":[{"t":7,"e":"h1","f":["blog-preview :)"]}]}]}
+module.exports={"v":3,"t":[{"t":7,"e":"div","a":{"class":"blog-preview"},"t1":"creep","f":[{"t":7,"e":"h2","a":{"class":"blog-preview__title"},"f":["Some Thoughts"]}," ",{"t":7,"e":"div","a":{"class":"layout--flush"},"f":[{"t":4,"f":[{"t":4,"f":[{"t":7,"e":"ui-card","a":{"content":[{"t":2,"r":"."}],"preview":0}}],"n":50,"x":{"r":["@index","limit"],"s":"_0<_1"}}],"i":"post","r":"posts"}]}]}]}
 },{}],20:[function(require,module,exports){
 /**
  * @module:   blog-preview
@@ -19153,14 +19153,22 @@ var _blogPreviewHtml = require('./blog-preview.html');
 
 var _blogPreviewHtml2 = _interopRequireDefault(_blogPreviewHtml);
 
+var _transitionPageCreep = require('../../transition/page-creep');
+
+var _transitionPageCreep2 = _interopRequireDefault(_transitionPageCreep);
+
 exports['default'] = _abstractModule2['default'].extend({
 
-  template: _blogPreviewHtml2['default']
+  template: _blogPreviewHtml2['default'],
+
+  transitions: {
+    creep: _transitionPageCreep2['default']
+  }
 
 });
 module.exports = exports['default'];
 
-},{"../abstract-module":16,"./blog-preview.html":19}],21:[function(require,module,exports){
+},{"../../transition/page-creep":36,"../abstract-module":16,"./blog-preview.html":19}],21:[function(require,module,exports){
 module.exports={"v":3,"t":[{"t":7,"e":"div","a":{"class":"blog"},"t1":"creep","f":[{"t":4,"f":[{"t":7,"e":"ui-blog-post","a":{"post":[{"t":2,"r":"post"}]}}],"n":50,"r":"slug"},{"t":4,"n":51,"f":[{"t":4,"f":[{"t":4,"f":[{"t":7,"e":"h3","v":{"tap":{"n":"goPost","d":[{"t":2,"r":"slug"}]}},"f":[{"t":2,"r":"title"}]}],"n":50,"x":{"r":["status","draftsEnabled"],"s":"_0!=\"draft\"||_1"}}],"i":"post","r":"posts"}],"r":"slug"}]}]}
 },{}],22:[function(require,module,exports){
 /**
@@ -19236,7 +19244,7 @@ exports['default'] = _abstractModule2['default'].extend({
 module.exports = exports['default'];
 
 },{"../../transition/page-creep":36,"../abstract-module":16,"./blog.html":21}],23:[function(require,module,exports){
-module.exports={"v":3,"t":[{"t":7,"e":"div","a":{"class":"card layout__item u-1/2-lap u-1/4-desk"},"v":{"tap":{"n":[{"t":2,"r":"toX"}],"d":[]}},"f":[{"t":7,"e":"div","a":{"class":"block block--small"},"f":[{"t":7,"e":"img","a":{"class":"block__img","src":["/img/",{"t":2,"r":"content.shot"}],"alt":[{"t":2,"r":"content.project"}]}}," ",{"t":7,"e":"div","a":{"class":"block__body"},"f":[{"t":7,"e":"span","a":{"class":"card__owner"},"f":[{"t":2,"r":"content.co"}]}," ",{"t":7,"e":"h3","a":{"class":"card__title"},"f":[{"t":2,"r":"content.project"}]}," ",{"t":7,"e":"p","a":{"class":"card__detail"},"f":[{"t":2,"r":"content.detail"}]}," ",{"t":7,"e":"span","a":{"class":"card__cta"},"f":["go →"]}]}]}]}]}
+module.exports={"v":3,"t":[{"t":7,"e":"div","a":{"class":["card layout__item ",{"t":4,"f":["u-1/2-lap-and-up"],"n":50,"r":"preview"},{"t":4,"n":51,"f":["u-1/2-lap u-1/4-desk"],"r":"preview"}]},"v":{"tap":{"n":[{"t":2,"r":"toX"}],"d":[]}},"f":[{"t":7,"e":"div","a":{"class":["block ",{"t":4,"f":["block--small"],"n":50,"x":{"r":["preview"],"s":"!_0"}}]},"f":[{"t":7,"e":"img","a":{"class":["block__img ",{"t":4,"f":["block__img--preview"],"n":50,"r":"preview"}],"src":["/img/",{"t":2,"r":"content.shot"}],"alt":[{"t":2,"r":"content.project"}]}}," ",{"t":7,"e":"div","a":{"class":"block__body"},"f":[{"t":4,"f":[{"t":7,"e":"span","a":{"class":"card__owner"},"f":[{"t":2,"r":"content.co"}]}],"n":51,"r":"preview"}," ",{"t":7,"e":"h3","a":{"class":"card__title"},"f":[{"t":2,"r":"content.title"}]}," ",{"t":7,"e":"p","a":{"class":["card__detail ",{"t":4,"f":["card__detail--preview"],"n":50,"r":"preview"}]},"f":[{"t":2,"r":"content.detail"}]}," ",{"t":7,"e":"span","a":{"class":"card__cta"},"f":[{"t":4,"f":["read on →"],"n":50,"r":"preview"},{"t":4,"n":51,"f":["explore project →"],"r":"preview"}]}]}]}]}]}
 },{}],24:[function(require,module,exports){
 /**
  * @module:   card
@@ -19637,7 +19645,7 @@ function pageCreep(t, params) {
 module.exports = pageCreep;
 
 },{"component-raf":3,"component-tween":4}],37:[function(require,module,exports){
-module.exports={"v":3,"t":[{"t":4,"f":[{"t":7,"e":"ui-nav","a":{"view":[{"t":2,"r":"view"}]}}," ",{"t":7,"e":"ui-logo","a":{"special":0}}," ",{"t":4,"f":[{"t":7,"e":"ui-work","a":{"work":[{"t":2,"r":"work"}]}}," ",{"t":7,"e":"ui-blog-preview","a":{"posts":[{"t":2,"r":"posts"}]}}],"x":{"r":["view"],"s":"_0==\"index\""}},{"t":4,"f":[{"t":7,"e":"ui-blog","a":{"posts":[{"t":2,"r":"posts"}],"slug":[{"t":2,"r":"slug"}],"draftsEnabled":[{"t":2,"r":"config.drafts"}]}}],"x":{"r":["view"],"s":"_0==\"blog\""}},{"t":4,"f":[{"t":7,"e":"ui-tag","a":{"tags":[{"t":2,"r":"tags"}],"search":[{"t":2,"r":"tagSearch"}],"draftsEnabled":[{"t":2,"r":"config.drafts"}]}}],"x":{"r":["view"],"s":"_0==\"tag\""}},{"t":7,"e":"ui-footer"}],"r":"isReady"}]}
+module.exports={"v":3,"t":[{"t":4,"f":[{"t":7,"e":"ui-nav","a":{"view":[{"t":2,"r":"view"}]}}," ",{"t":7,"e":"ui-logo","a":{"special":0}}," ",{"t":4,"f":[{"t":7,"e":"ui-work","a":{"work":[{"t":2,"r":"work"}]}}," ",{"t":7,"e":"ui-blog-preview","a":{"posts":[{"t":2,"r":"posts"}],"limit":[{"t":2,"r":"blogPreviewLimit"}]}}],"x":{"r":["view"],"s":"_0==\"index\""}},{"t":4,"f":[{"t":7,"e":"ui-blog","a":{"posts":[{"t":2,"r":"posts"}],"slug":[{"t":2,"r":"slug"}],"draftsEnabled":[{"t":2,"r":"config.drafts"}]}}],"x":{"r":["view"],"s":"_0==\"blog\""}},{"t":4,"f":[{"t":7,"e":"ui-tag","a":{"tags":[{"t":2,"r":"tags"}],"search":[{"t":2,"r":"tagSearch"}],"draftsEnabled":[{"t":2,"r":"config.drafts"}]}}],"x":{"r":["view"],"s":"_0==\"tag\""}},{"t":7,"e":"ui-footer"}],"r":"isReady"}]}
 },{}],38:[function(require,module,exports){
 'use strict';
 
@@ -19679,7 +19687,8 @@ exports['default'] = _module3['default'].extend({
       config: null,
       posts: null,
       tags: {},
-      work: null
+      work: null,
+      blogPreviewLimit: 2
     };
   },
 

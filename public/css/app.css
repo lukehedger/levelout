@@ -609,6 +609,14 @@ body:before {
     padding-left: 6px; }
 
 /**
+     * Layouts with no gutters.
+     */
+.layout--flush {
+  margin-left: 0; }
+  .layout--flush > .layout__item {
+    padding-left: 0; }
+
+/**
      * Make the layout items fill up from the right hand side.
      */
 .layout--right {
@@ -764,6 +772,8 @@ body:before {
   .block__img {
     width: 100%;
     height: 160px; }
+    .block__img--preview {
+      height: 360px; }
   .block__body {
     padding: 24px; }
 
@@ -898,6 +908,25 @@ body:before {
  * @js:       ./source/js/module/blog-preview/blog-preview.js
  * @html:     ./source/js/module/blog-preview/blog-preview.html
  */
+.blog-preview {
+  padding: 40px 0 60px; }
+  .blog-preview__title {
+    font-size: 22px;
+    font-size: 1.375rem;
+    line-height: 1;
+    font-family: monospace;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-align: center;
+    color: #333333; }
+    .blog-preview__title:after {
+      content: "";
+      width: 50px;
+      padding-bottom: 15px;
+      border-bottom: 3px solid #333333;
+      display: block;
+      margin: auto; }
+
 /**
  * @module:   blog
  * @js:       ./source/js/module/blog/blog.js
@@ -922,6 +951,13 @@ body:before {
     font-size: 22px;
     font-size: 1.375rem;
     line-height: 1.4; }
+  .card__detail--preview:after {
+    content: '...'; }
+  .card__cta {
+    font-size: 10px;
+    font-size: 0.625rem;
+    color: #777777;
+    text-transform: uppercase; }
 
 /**
  * @module:   footer
@@ -1011,7 +1047,7 @@ body:before {
  * @html:     ./source/js/module/work/work.html
  */
 .work {
-  margin: 40px 0;
+  margin-top: 40px;
   padding: 40px 40px 60px;
   background-image: linear-gradient(135deg, #fff7f9, #f7fcfd); }
   .work__title {

@@ -19,7 +19,8 @@ export default Ractive.extend({
       config: null,
       posts: null,
       tags: {},
-      work: null
+      work: null,
+      blogPreviewLimit: 2
     }
   },
 

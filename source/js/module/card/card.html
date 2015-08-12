@@ -4,18 +4,29 @@
   @js:       ./source/js/module/card/card.js
 -->
 
-<div class="card layout__item u-1/2-lap u-1/4-desk" on-tap="{{toX}}">
+<div class="card layout__item {{#if preview}}u-1/2-lap-and-up{{else}}u-1/2-lap u-1/4-desk{{/if}}" on-tap="{{toX}}">
 
-  <div class="block block--small">
+  <div class="block {{#if !preview}}block--small{{/if}}">
 
-    <img class="block__img" src="/img/{{content.shot}}" alt="{{content.project}}" />
+    <img class="block__img {{#if preview}}block__img--preview{{/if}}" src="/img/{{content.shot}}" alt="{{content.project}}" />
 
     <div class="block__body">
 
+      {{^preview}}
       <span class="card__owner">{{content.co}}</span>
-      <h3 class="card__title">{{content.project}}</h3>
-      <p class="card__detail">{{content.detail}}</p>
-      <span class="card__cta">go &rarr;</span>
+      {{/}}
+
+      <h3 class="card__title">{{content.title}}</h3>
+
+      <p class="card__detail {{#if preview}}card__detail--preview{{/if}}">{{content.detail}}</p>
+
+      <span class="card__cta">
+        {{#if preview}}
+        read on &rarr;
+        {{else}}
+        explore project &rarr;
+        {{/if}}
+      </span>
 
     </div>
 

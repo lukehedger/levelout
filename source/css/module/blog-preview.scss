@@ -5,6 +5,12 @@
  */
 
 
-@include module("blog-preview") { 
-  // :)
+@include module("blog-preview") {
+
+  padding: 40px 0 60px;
+
+  &__title {
+    @include sectionTitle($color-dkgrey);
+  }
+
 }

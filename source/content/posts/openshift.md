@@ -1,6 +1,6 @@
 ---
 title: OpenShift
-description: Node.js hosting on OpenShift
+detail: Node.js hosting on OpenShift
 read: 15
 tags: node hosting
 comments: true

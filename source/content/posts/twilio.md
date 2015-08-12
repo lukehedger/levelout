@@ -1,6 +1,6 @@
 ---
 title: Twilio
-description: Hunting treasure with Twilio
+detail: Hunting treasure with Twilio
 read: 10
 tags: node twilio mobile
 comments: true

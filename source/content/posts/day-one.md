@@ -1,6 +1,6 @@
 ---
 title: Day One
-description: My first day as a website
+detail: My first day as a website
 read: 3
 tags: jekyll
 comments: true

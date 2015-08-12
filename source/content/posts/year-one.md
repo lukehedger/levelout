@@ -1,6 +1,6 @@
 ---
 title: Year One
-description: My first year as a website
+detail: My first year as a website
 read: 3
 tags: blog
 comments: true

@@ -1,6 +1,6 @@
 ---
 title: Divshot (to the face)
-description: Deploying a static website during the zombie apocalypse
+detail: Deploying a static website during the zombie apocalypse
 read: 3
 tags: divshot
 comments: true

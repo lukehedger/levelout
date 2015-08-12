@@ -1,6 +1,6 @@
 ---
 title: Jeet Whizz
-description: Feel griddy all over
+detail: Feel griddy all over
 read: 10
 tags: jeet stylus css
 comments: true

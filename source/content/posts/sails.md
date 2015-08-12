@@ -1,6 +1,6 @@
 ---
 title: Sails.js
-description: Hitting the open sea with Sails.js
+detail: Hitting the open sea with Sails.js
 read: 10
 tags: sails mongodb node
 comments: true
