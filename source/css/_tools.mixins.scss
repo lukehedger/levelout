@@ -175,17 +175,18 @@
 
 @mixin sectionTitle($color) {
 
-  text-align: center;
+  @include inuit-font-size(22px, 1);
   font-family: monospace;
-  font-size: 20px;
+  letter-spacing: 2px;
   text-transform: uppercase;
+  text-align: center;
   color: $color;
 
   &:after {
     content: "";
     width: 50px;
-    padding-bottom: 10px;
-    border-bottom: 2px solid $color;
+    padding-bottom: 15px;
+    border-bottom: 3px solid $color;
     display: block;
     margin: auto;
   }

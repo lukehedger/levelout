@@ -1,6 +1,11 @@
 .block {
-  min-height: 300px;
+  min-height: 400px;
   background-color: #FFFFFF;
+
+  &__img {
+    width: 100%;
+    height: 160px;
+  }
 
   &__body {
     padding: $inuit-base-spacing-unit;

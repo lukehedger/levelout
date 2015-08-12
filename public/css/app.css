@@ -557,7 +557,7 @@ li > ol {
 html, body {
   width: 100%;
   min-height: 100%;
-  font-family: "PT Sans", "Helvetica Neue", Helvetica, Arial, sans-serif; }
+  font-family: Helvetica, Arial, sans-serif; }
 
 body:before {
   content: "";
@@ -759,8 +759,11 @@ body:before {
   display: block; }
 
 .block {
-  min-height: 300px;
+  min-height: 400px;
   background-color: #FFFFFF; }
+  .block__img {
+    width: 100%;
+    height: 160px; }
   .block__body {
     padding: 24px; }
 
@@ -1009,19 +1012,22 @@ body:before {
  */
 .work {
   margin: 40px 0;
-  padding: 20px 40px;
+  padding: 40px 40px 60px;
   background-color: #fff7f9; }
   .work__title {
-    text-align: center;
+    font-size: 22px;
+    font-size: 1.375rem;
+    line-height: 1;
     font-family: monospace;
-    font-size: 20px;
+    letter-spacing: 2px;
     text-transform: uppercase;
+    text-align: center;
     color: #333333; }
     .work__title:after {
       content: "";
       width: 50px;
-      padding-bottom: 10px;
-      border-bottom: 2px solid #333333;
+      padding-bottom: 15px;
+      border-bottom: 3px solid #333333;
       display: block;
       margin: auto; }
 
