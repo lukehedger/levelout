@@ -1,0 +1,9 @@
+.block {
+  min-height: 300px;
+  background-color: #FFFFFF;
+
+  &__body {
+    padding: $inuit-base-spacing-unit;
+  }
+
+}

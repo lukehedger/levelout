@@ -7,14 +7,12 @@
 
 @include module("work") {
 
-  // TODO - move to section mixin
   margin: 40px 0;
   padding: 20px 40px;
+  background-color: lighten($color-lopink, 40);
 
-  // TODO - wait, how best to handle sections -> should they be in _base.section or in individual sheets like  _base.headings
-  // or like this -> this is good, isn't it?
   &__title {
-    @include sectionTitle();
+    @include sectionTitle($color-dkgrey);
   }
 
 }

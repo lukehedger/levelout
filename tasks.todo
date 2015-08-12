@@ -1,7 +1,8 @@
-Refactor:
-  ☐ Style home/cards (https://github.com/inuitcss/objects.block) -> http://monograph.io/
-  ☐ Style blog (integrate images) + port old styles (+ http://zeppelin.io/blog/best-architecture-websites-part-1 -> post---01 etc)
+Style:
+  ☐ cards
+  ☐ blog preview
   ☐ blog index page (with modified ui-cards)
+  ☐ blog (integrate images) + port old styles (+ http://zeppelin.io/blog/best-architecture-websites-part-1 -> post---01 etc)
 
 Live:
   ✔ cull posts @done(2015-08-10 11:16) @project(Live)

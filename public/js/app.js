@@ -19236,7 +19236,7 @@ exports['default'] = _abstractModule2['default'].extend({
 module.exports = exports['default'];
 
 },{"../../transition/page-creep":36,"../abstract-module":16,"./blog.html":21}],23:[function(require,module,exports){
-module.exports={"v":3,"t":[{"t":7,"e":"div","a":{"class":"card","style":"width: 20%; min-height: 340px; display: inline-block; vertical-align: top;"},"v":{"tap":{"n":[{"t":2,"r":"toX"}],"d":[]}},"f":[{"t":7,"e":"img","a":{"src":[{"t":2,"r":"content.shot"}],"alt":[{"t":2,"r":"content.project"}],"style":"width: 200px; height: 100px; display: block;"}}," ",{"t":7,"e":"span","f":[{"t":2,"r":"content.co"}]}," ",{"t":7,"e":"h3","f":[{"t":2,"r":"content.project"}]}," ",{"t":7,"e":"p","f":[{"t":2,"r":"content.detail"}]}," ",{"t":7,"e":"a","a":{"href":[{"t":2,"r":"content.link"}],"target":"_blank"},"f":["go →"]}]}]}
+module.exports={"v":3,"t":[{"t":7,"e":"div","a":{"class":"card layout__item u-1/2-lap u-1/4-desk"},"v":{"tap":{"n":[{"t":2,"r":"toX"}],"d":[]}},"f":[{"t":7,"e":"div","a":{"class":"block block--small"},"f":[{"t":7,"e":"img","a":{"class":"block__img","src":[{"t":2,"r":"content.shot"}],"alt":[{"t":2,"r":"content.project"}]}}," ",{"t":7,"e":"div","a":{"class":"block__body"},"f":[{"t":7,"e":"span","a":{"class":"card__owner"},"f":[{"t":2,"r":"content.co"}]}," ",{"t":7,"e":"h3","a":{"class":"card__title"},"f":[{"t":2,"r":"content.project"}]}," ",{"t":7,"e":"p","a":{"class":"card__detail"},"f":[{"t":2,"r":"content.detail"}]}," ",{"t":7,"e":"span","a":{"class":"card__cta"},"f":["go →"]}]}]}]}]}
 },{}],24:[function(require,module,exports){
 /**
  * @module:   card
@@ -19533,7 +19533,7 @@ exports['default'] = _abstractModule2['default'].extend({
 module.exports = exports['default'];
 
 },{"../abstract-module":16,"./tag.html":32}],34:[function(require,module,exports){
-module.exports={"v":3,"t":[{"t":7,"e":"div","a":{"class":"work"},"t1":"creep","f":[{"t":7,"e":"h2","a":{"class":"work__title"},"f":["Featured Work"]}," ",{"t":4,"f":[{"t":7,"e":"ui-card","a":{"content":[{"t":2,"r":"."}]}}],"r":"work"}]}]}
+module.exports={"v":3,"t":[{"t":7,"e":"div","a":{"class":"work"},"t1":"creep","f":[{"t":7,"e":"h2","a":{"class":"work__title"},"f":["Featured Work"]}," ",{"t":7,"e":"div","a":{"class":"layout"},"f":[{"t":4,"f":[{"t":7,"e":"ui-card","a":{"content":[{"t":2,"r":"."}]}}],"r":"work"}]}]}]}
 },{}],35:[function(require,module,exports){
 /**
  * @module:   work

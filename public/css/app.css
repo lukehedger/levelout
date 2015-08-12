@@ -727,6 +727,43 @@ body:before {
   padding: 0;
   list-style: none; }
 
+/*------------------------------------*    #BLOCK
+\*------------------------------------*/
+/**
+ * The block object simply stacks an image on top of some text-like content.
+ */
+/**
+ * Stacked image-with-text object. A simple abstraction to cover a very commonly
+ * occurring design pattern.
+ */
+.block {
+  display: block; }
+
+/**
+     * 1. Eliminate whitespace around images.
+     */
+.block__img {
+  vertical-align: middle;
+  /* [1] */
+  margin-bottom: 24px;
+  /**
+             * Small space between the image and the text content.
+             */ }
+  .block--small > .block__img {
+    margin-bottom: 12px; }
+
+/**
+     * Text-content.
+     */
+.block__body {
+  display: block; }
+
+.block {
+  min-height: 300px;
+  background-color: #FFFFFF; }
+  .block__body {
+    padding: 24px; }
+
 .icon {
   width: 18px;
   height: 18px;
@@ -868,6 +905,21 @@ body:before {
  * @js:       ./source/js/module/card/card.js
  * @html:     ./source/js/module/card/card.html
  */
+.card {
+  margin-bottom: 24px; }
+  .card__owner {
+    margin-bottom: 4px;
+    display: block;
+    font-size: 14px;
+    font-size: 0.875rem;
+    line-height: 1.2;
+    letter-spacing: 1px;
+    text-transform: uppercase; }
+  .card__title {
+    font-size: 22px;
+    font-size: 1.375rem;
+    line-height: 1.4; }
+
 /**
  * @module:   footer
  * @js:       ./source/js/module/footer/footer.js
@@ -957,17 +1009,19 @@ body:before {
  */
 .work {
   margin: 40px 0;
-  padding: 20px 40px; }
+  padding: 20px 40px;
+  background-color: #fff7f9; }
   .work__title {
     text-align: center;
     font-family: monospace;
     font-size: 20px;
-    text-transform: uppercase; }
+    text-transform: uppercase;
+    color: #333333; }
     .work__title:after {
       content: "";
       width: 50px;
       padding-bottom: 10px;
-      border-bottom: 2px solid white;
+      border-bottom: 2px solid #333333;
       display: block;
       margin: auto; }
 

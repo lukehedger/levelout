@@ -173,18 +173,19 @@
 //    @include relative(top right);
 ///////////////////////////////////////////////////////////////////////////////
 
-@mixin sectionTitle() {
+@mixin sectionTitle($color) {
 
   text-align: center;
   font-family: monospace;
   font-size: 20px;
   text-transform: uppercase;
+  color: $color;
 
   &:after {
     content: "";
     width: 50px;
     padding-bottom: 10px;
-    border-bottom: 2px solid white;
+    border-bottom: 2px solid $color;
     display: block;
     margin: auto;
   }

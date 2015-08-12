@@ -5,6 +5,20 @@
  */
 
 
-@include module("card") { 
-  // :)
+@include module("card") {
+
+  margin-bottom: $inuit-base-spacing-unit;
+
+  &__owner {
+    margin-bottom: 4px;
+    display: block;
+    @include inuit-font-size(14px, 1.2);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  &__title {
+    @include inuit-font-size(22px, 1.4);
+  }
+
 }
