@@ -780,7 +780,6 @@ body:before {
 .icon {
   width: 18px;
   height: 18px;
-  vertical-align: middle;
   background: no-repeat center center;
   opacity: 0.5;
   transition: opacity 0.3s; }
@@ -1033,8 +1032,22 @@ body:before {
  * @js:       ./source/js/module/nav/nav.js
  * @html:     ./source/js/module/nav/nav.html
  */
-.nav__item {
-  display: inline-block; }
+.nav {
+  padding: 5px 20px 0; }
+  .nav__item {
+    display: inline-block;
+    cursor: pointer; }
+    .nav__item--text {
+      border-bottom: 1px solid #36B1BF;
+      display: block;
+      font-size: 12px;
+      font-size: 0.75rem;
+      line-height: 1.5;
+      color: #36B1BF;
+      text-transform: uppercase;
+      transition: border-width 0.2s; }
+      .nav__item--text:hover, .nav__item--text:focus {
+        border-bottom-width: 3px; }
 
 /**
  * @module:   tag
