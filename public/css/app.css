@@ -1013,7 +1013,7 @@ body:before {
 .work {
   margin: 40px 0;
   padding: 40px 40px 60px;
-  background-color: #fff7f9; }
+  background-image: linear-gradient(135deg, #fff7f9, #f7fcfd); }
   .work__title {
     font-size: 22px;
     font-size: 1.375rem;
