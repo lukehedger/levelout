@@ -1,8 +1,6 @@
 Refactor:
-  ☐ Use Ractive computed props instead of observe for blog slug and tag search - could even use it for setTags in main.js
-
   ☐ Style home/cards (https://github.com/inuitcss/objects.block) -> http://monograph.io/
-  ☐ Style blog (integrate images) + port old styles
+  ☐ Style blog (integrate images) + port old styles (+ http://zeppelin.io/blog/best-architecture-websites-part-1 -> post---01 etc)
   ☐ blog index page (with modified ui-cards)
 
 Live:

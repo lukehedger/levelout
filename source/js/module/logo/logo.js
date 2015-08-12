@@ -17,9 +17,8 @@ export default Module.extend({
     }
   },
 
-  onrender() {
+  oninit() {
 
-    // event proxies
     this.on({
       toHome() {
         this.fire('nav', '/');

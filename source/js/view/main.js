@@ -88,7 +88,7 @@ export default Ractive.extend({
 
   setTags() {
 
-    var posts = this.get('content.posts');
+    var posts = this.get('posts');
 
     // construct an index of tags with related posts
     for (let post in posts) {

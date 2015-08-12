@@ -17,6 +17,28 @@ export default Module.extend({
     }
   },
 
+  computed: {
+
+    taggedPosts() {
+
+      let search = this.get('search');
+      let tagged = this.get(`tags.${search}`);
+
+      // check for search term and recognised tag
+      if (search && tagged) {
+
+        // return posts with searched tag
+        return tagged;
+
+      }
+
+      // redirect to /tag if tag not found
+      this.fire('nav', '/tag');
+
+    }
+
+  },
+
   oninit() {
 
     this.on({
@@ -27,32 +49,6 @@ export default Module.extend({
         this.fire('nav', `/tag/${tag}`);
       }
     });
-
-  },
-
-  onrender() {
-
-    // listen for tag search
-    this.observe('search', function (n, o) {
-      if (n) this.searchTag(n);
-    });
-
-  },
-
-  searchTag(search) {
-
-    // check for search term and recognised tag
-    if (search && this.get(`tags.${search}`)) {
-
-      // return posts with searched tag
-      this.set('taggedPosts', this.get(`tags.${search}`));
-
-    } else {
-
-      // redirect to /tag if tag not found
-      this.fire('nav', '/tag');
-
-    }
 
   }
 

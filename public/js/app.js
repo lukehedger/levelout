@@ -19203,6 +19203,26 @@ exports['default'] = _abstractModule2['default'].extend({
     };
   },
 
+  computed: {
+
+    post: function post() {
+
+      // search posts for matching slug
+      var posts = this.get('posts');
+      var slug = this.get('slug');
+
+      for (var post in posts) {
+        if (posts.hasOwnProperty(post) && posts[post].slug === slug) {
+          return posts[post];
+        }
+      }
+
+      // redirect to /blog if post not found
+      this.fire('nav', '/blog');
+    }
+
+  },
+
   oninit: function oninit() {
 
     this.on({
@@ -19210,29 +19230,6 @@ exports['default'] = _abstractModule2['default'].extend({
         this.fire('nav', '/blog/' + slug);
       }
     });
-  },
-
-  onrender: function onrender() {
-
-    // listen for post requested via slug
-    this.observe('slug', function (n, o) {
-      if (n) this.setPost(n);
-    });
-  },
-
-  setPost: function setPost(slug) {
-
-    // search posts for matching slug
-    var posts = this.get('posts');
-
-    for (var post in posts) {
-      if (posts.hasOwnProperty(post) && posts[post].slug === slug) {
-        return this.set('post', posts[post]);
-      }
-    }
-
-    // redirect to /blog if post not found
-    this.fire('nav', '/blog');
   }
 
 });
@@ -19400,9 +19397,8 @@ exports['default'] = _abstractModule2['default'].extend({
     };
   },
 
-  onrender: function onrender() {
+  oninit: function oninit() {
 
-    // event proxies
     this.on({
       toHome: function toHome() {
         this.fire('nav', '/');
@@ -19450,7 +19446,7 @@ exports['default'] = _abstractModule2['default'].extend({
 
   template: _navHtml2['default'],
 
-  onrender: function onrender() {
+  oninit: function oninit() {
 
     // event proxies
     this.on({
@@ -19501,6 +19497,26 @@ exports['default'] = _abstractModule2['default'].extend({
     };
   },
 
+  computed: {
+
+    taggedPosts: function taggedPosts() {
+
+      var search = this.get('search');
+      var tagged = this.get('tags.' + search);
+
+      // check for search term and recognised tag
+      if (search && tagged) {
+
+        // return posts with searched tag
+        return tagged;
+      }
+
+      // redirect to /tag if tag not found
+      this.fire('nav', '/tag');
+    }
+
+  },
+
   oninit: function oninit() {
 
     this.on({
@@ -19511,28 +19527,6 @@ exports['default'] = _abstractModule2['default'].extend({
         this.fire('nav', '/tag/' + tag);
       }
     });
-  },
-
-  onrender: function onrender() {
-
-    // listen for tag search
-    this.observe('search', function (n, o) {
-      if (n) this.searchTag(n);
-    });
-  },
-
-  searchTag: function searchTag(search) {
-
-    // check for search term and recognised tag
-    if (search && this.get('tags.' + search)) {
-
-      // return posts with searched tag
-      this.set('taggedPosts', this.get('tags.' + search));
-    } else {
-
-      // redirect to /tag if tag not found
-      this.fire('nav', '/tag');
-    }
   }
 
 });
@@ -19747,7 +19741,7 @@ exports['default'] = _module3['default'].extend({
 
   setTags: function setTags() {
 
-    var posts = this.get('content.posts');
+    var posts = this.get('posts');
 
     // construct an index of tags with related posts
     for (var post in posts) {

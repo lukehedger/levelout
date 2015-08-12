@@ -22,6 +22,27 @@ export default Module.extend({
     }
   },
 
+  computed: {
+
+    post() {
+
+      // search posts for matching slug
+      let posts = this.get('posts');
+      let slug = this.get('slug');
+
+      for (let post in posts) {
+        if (posts.hasOwnProperty(post) && posts[post].slug === slug) {
+          return posts[post];
+        }
+      }
+
+      // redirect to /blog if post not found
+      this.fire('nav', '/blog');
+
+    }
+
+  },
+
   oninit() {
 
     this.on({
@@ -29,31 +50,6 @@ export default Module.extend({
         this.fire('nav', `/blog/${slug}`);
       }
     });
-
-  },
-
-  onrender() {
-
-    // listen for post requested via slug
-    this.observe('slug', function (n, o) {
-      if (n) this.setPost(n);
-    });
-
-  },
-
-  setPost(slug) {
-
-    // search posts for matching slug
-    var posts = this.get('posts');
-
-    for (var post in posts) {
-      if (posts.hasOwnProperty(post) && posts[post].slug === slug) {
-        return this.set('post', posts[post]);
-      }
-    }
-
-    // redirect to /blog if post not found
-    this.fire('nav', '/blog');
 
   }
 

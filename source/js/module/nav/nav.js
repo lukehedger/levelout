@@ -11,7 +11,7 @@ export default Module.extend({
 
   template: template,
 
-  onrender() {
+  oninit() {
 
     // event proxies
     this.on({
