@@ -4,7 +4,7 @@
   @js:       ./source/js/module/card/card.js
 -->
 
-<div class="card layout__item {{#if preview}}u-1/2-lap-and-up{{else}}u-1/2-lap u-1/4-desk{{/if}}" on-tap="{{toX}}">
+<div class="card layout__item {{#if preview}}u-1/2-lap-and-up{{else}}u-1/2-lap u-1/4-desk{{/if}}" on-tap="toLink:{{content.slug}}">
 
   <div class="block {{#if !preview}}block--small{{/if}}">
 

@@ -9,6 +9,20 @@ import template from './card.html';
 
 export default Module.extend({
 
-  template: template
+  template: template,
+
+  oninit() {
+
+    this.on({
+      toLink(e, slug) {
+        if (this.get('preview')) {
+          this.fire('nav', `/blog/${slug}`);
+        } else {
+          window.open(this.get('content.link'));
+        }
+      }
+    });
+
+  }
 
 });

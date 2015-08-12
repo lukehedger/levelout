@@ -19244,7 +19244,7 @@ exports['default'] = _abstractModule2['default'].extend({
 module.exports = exports['default'];
 
 },{"../../transition/page-creep":36,"../abstract-module":16,"./blog.html":21}],23:[function(require,module,exports){
-module.exports={"v":3,"t":[{"t":7,"e":"div","a":{"class":["card layout__item ",{"t":4,"f":["u-1/2-lap-and-up"],"n":50,"r":"preview"},{"t":4,"n":51,"f":["u-1/2-lap u-1/4-desk"],"r":"preview"}]},"v":{"tap":{"n":[{"t":2,"r":"toX"}],"d":[]}},"f":[{"t":7,"e":"div","a":{"class":["block ",{"t":4,"f":["block--small"],"n":50,"x":{"r":["preview"],"s":"!_0"}}]},"f":[{"t":7,"e":"img","a":{"class":["block__img ",{"t":4,"f":["block__img--preview"],"n":50,"r":"preview"}],"src":["/img/",{"t":2,"r":"content.shot"}],"alt":[{"t":2,"r":"content.project"}]}}," ",{"t":7,"e":"div","a":{"class":"block__body"},"f":[{"t":4,"f":[{"t":7,"e":"span","a":{"class":"card__owner"},"f":[{"t":2,"r":"content.co"}]}],"n":51,"r":"preview"}," ",{"t":7,"e":"h3","a":{"class":"card__title"},"f":[{"t":2,"r":"content.title"}]}," ",{"t":7,"e":"p","a":{"class":["card__detail ",{"t":4,"f":["card__detail--preview"],"n":50,"r":"preview"}]},"f":[{"t":2,"r":"content.detail"}]}," ",{"t":7,"e":"span","a":{"class":"card__cta"},"f":[{"t":4,"f":["read on →"],"n":50,"r":"preview"},{"t":4,"n":51,"f":["explore project →"],"r":"preview"}]}]}]}]}]}
+module.exports={"v":3,"t":[{"t":7,"e":"div","a":{"class":["card layout__item ",{"t":4,"f":["u-1/2-lap-and-up"],"n":50,"r":"preview"},{"t":4,"n":51,"f":["u-1/2-lap u-1/4-desk"],"r":"preview"}]},"v":{"tap":{"n":"toLink","d":[{"t":2,"r":"content.slug"}]}},"f":[{"t":7,"e":"div","a":{"class":["block ",{"t":4,"f":["block--small"],"n":50,"x":{"r":["preview"],"s":"!_0"}}]},"f":[{"t":7,"e":"img","a":{"class":["block__img ",{"t":4,"f":["block__img--preview"],"n":50,"r":"preview"}],"src":["/img/",{"t":2,"r":"content.shot"}],"alt":[{"t":2,"r":"content.project"}]}}," ",{"t":7,"e":"div","a":{"class":"block__body"},"f":[{"t":4,"f":[{"t":7,"e":"span","a":{"class":"card__owner"},"f":[{"t":2,"r":"content.co"}]}],"n":51,"r":"preview"}," ",{"t":7,"e":"h3","a":{"class":"card__title"},"f":[{"t":2,"r":"content.title"}]}," ",{"t":7,"e":"p","a":{"class":["card__detail ",{"t":4,"f":["card__detail--preview"],"n":50,"r":"preview"}]},"f":[{"t":2,"r":"content.detail"}]}," ",{"t":7,"e":"span","a":{"class":"card__cta"},"f":[{"t":4,"f":["read on →"],"n":50,"r":"preview"},{"t":4,"n":51,"f":["explore project →"],"r":"preview"}]}]}]}]}]}
 },{}],24:[function(require,module,exports){
 /**
  * @module:   card
@@ -19270,7 +19270,20 @@ var _cardHtml2 = _interopRequireDefault(_cardHtml);
 
 exports['default'] = _abstractModule2['default'].extend({
 
-  template: _cardHtml2['default']
+  template: _cardHtml2['default'],
+
+  oninit: function oninit() {
+
+    this.on({
+      toLink: function toLink(e, slug) {
+        if (this.get('preview')) {
+          this.fire('nav', '/blog/' + slug);
+        } else {
+          window.open(this.get('content.link'));
+        }
+      }
+    });
+  }
 
 });
 module.exports = exports['default'];
