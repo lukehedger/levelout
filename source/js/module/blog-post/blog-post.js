@@ -24,6 +24,13 @@ export default Module.extend({
       }
     });
 
+  },
+
+  onrender() {
+
+    // scroll to top
+    window.scroll(0, 0);
+
   }
 
 });

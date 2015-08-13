@@ -19132,6 +19132,12 @@ exports['default'] = _abstractModule2['default'].extend({
         this.fire('nav', '/tag/' + tag);
       }
     });
+  },
+
+  onrender: function onrender() {
+
+    // scroll to top
+    window.scroll(0, 0);
   }
 
 });
