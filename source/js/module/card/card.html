@@ -4,15 +4,15 @@
   @js:       ./source/js/module/card/card.js
 -->
 
-<div class="card layout__item {{#if preview}}u-1/2-lap-and-up{{else}}u-1/2-lap u-1/4-desk{{/if}}" on-tap="toLink:{{content.slug}}">
+<div class="card layout__item {{#if standard}}u-1/2-lap u-1/4-desk{{/if}} {{#if preview}}u-1/2-lap-and-up{{/if}} {{#if single}}card--single{{/if}}" on-tap="toLink:{{content.slug}}">
 
-  <div class="block {{#if !preview}}block--small{{/if}}">
+  <div class="block {{#if single}}block--single{{/if}} ">
 
     <img class="block__img {{#if preview}}block__img--preview{{/if}}" src="/img/{{content.shot}}" alt="{{content.project}}" />
 
     <div class="block__body">
 
-      {{^preview}}
+      {{#project}}
       <span class="card__owner">{{content.co}}</span>
       {{/}}
 
@@ -21,9 +21,10 @@
       <p class="card__detail {{#if preview}}card__detail--preview{{/if}}">{{content.detail}}</p>
 
       <span class="card__cta">
-        {{#if preview}}
+        {{#if post}}
         read on &rarr;
-        {{else}}
+        {{/if}}
+        {{#if project}}
         explore project &rarr;
         {{/if}}
       </span>

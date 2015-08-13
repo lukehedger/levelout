@@ -170,7 +170,7 @@
 // # sectionTitle mixin
 //
 // e.g.
-//    @include relative(top right);
+//    @include sectionTitle(black);
 ///////////////////////////////////////////////////////////////////////////////
 
 @mixin sectionTitle($color) {
@@ -190,5 +190,19 @@
     display: block;
     margin: auto;
   }
+
+}
+
+///////////////////////////////////////////////////////////////////////////////
+// # textSelection mixin
+//
+// e.g.
+//    @include textSelection(white, black);
+///////////////////////////////////////////////////////////////////////////////
+
+@mixin textSelection($color, $background-color) {
+
+  color: $color;
+  background: $background-color;
 
 }

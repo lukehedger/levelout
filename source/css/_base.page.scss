@@ -11,3 +11,10 @@ body:before {
 	display: block;
 	background-image: linear-gradient(to right, $color-loblue, $color-lopink);
 }
+
+::-moz-selection {
+  @include textSelection(#FFFFFF, $color-dkgrey);
+}
+::selection {
+  @include textSelection(#FFFFFF, $color-dkgrey);
+}

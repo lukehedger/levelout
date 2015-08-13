@@ -19129,7 +19129,7 @@ exports['default'] = _abstractModule2['default'].extend({
 module.exports = exports['default'];
 
 },{"../../transition/page-creep":38,"../abstract-module":16,"./blog-post.html":17}],19:[function(require,module,exports){
-module.exports={"v":3,"t":[{"t":7,"e":"div","a":{"class":"blog-preview"},"t1":"creep","f":[{"t":7,"e":"h2","a":{"class":"blog-preview__title"},"f":["Some Thoughts"]}," ",{"t":7,"e":"div","a":{"class":"layout--flush"},"f":[{"t":4,"f":[{"t":4,"f":[{"t":7,"e":"ui-card","a":{"content":[{"t":2,"r":"."}],"preview":0}}],"n":50,"x":{"r":["@index","limit"],"s":"_0<_1"}}],"i":"post","r":"posts"}]}]}]}
+module.exports={"v":3,"t":[{"t":7,"e":"div","a":{"class":"blog-preview"},"t1":"creep","f":[{"t":7,"e":"h2","a":{"class":"blog-preview__title"},"f":["Some Thoughts"]}," ",{"t":7,"e":"div","a":{"class":"layout--flush"},"f":[{"t":4,"f":[{"t":4,"f":[{"t":7,"e":"ui-card","a":{"content":[{"t":2,"r":"."}],"preview":0,"post":0}}],"n":50,"x":{"r":["@index","limit"],"s":"_0<_1"}}],"i":"post","r":"posts"}]}]}]}
 },{}],20:[function(require,module,exports){
 /**
  * @module:   blog-preview
@@ -19169,7 +19169,7 @@ exports['default'] = _abstractModule2['default'].extend({
 module.exports = exports['default'];
 
 },{"../../transition/page-creep":38,"../abstract-module":16,"./blog-preview.html":19}],21:[function(require,module,exports){
-module.exports={"v":3,"t":[{"t":7,"e":"div","a":{"class":"blog"},"t1":"creep","f":[{"t":4,"f":[{"t":7,"e":"ui-blog-post","a":{"post":[{"t":2,"r":"post"}]}}],"n":50,"r":"slug"},{"t":4,"n":51,"f":[{"t":4,"f":[{"t":4,"f":[{"t":7,"e":"h3","v":{"tap":{"n":"goPost","d":[{"t":2,"r":"slug"}]}},"f":[{"t":2,"r":"title"}]}],"n":50,"x":{"r":["status","draftsEnabled"],"s":"_0!=\"draft\"||_1"}}],"i":"post","r":"posts"}],"r":"slug"}]}]}
+module.exports={"v":3,"t":[{"t":7,"e":"div","a":{"class":"blog"},"t1":"creep","f":[{"t":4,"f":[{"t":7,"e":"ui-blog-post","a":{"post":[{"t":2,"r":"post"}]}}],"n":50,"r":"slug"},{"t":4,"n":51,"f":[{"t":7,"e":"h2","a":{"class":"blog__heading"},"f":["Thoughts and shit"]}," ",{"t":7,"e":"h5","a":{"class":"blog__tagline"},"f":["Odd musings about web development and beer"]}," ",{"t":7,"e":"div","a":{"class":"layout layout--flush"}}," ",{"t":4,"f":[{"t":4,"f":[{"t":7,"e":"ui-card","a":{"content":[{"t":2,"r":"."}],"single":0,"post":0}}],"n":50,"x":{"r":["status","draftsEnabled"],"s":"_0!=\"draft\"||_1"}}],"i":"post","r":"posts"}],"r":"slug"}]}]}
 },{}],22:[function(require,module,exports){
 /**
  * @module:   blog
@@ -19244,7 +19244,7 @@ exports['default'] = _abstractModule2['default'].extend({
 module.exports = exports['default'];
 
 },{"../../transition/page-creep":38,"../abstract-module":16,"./blog.html":21}],23:[function(require,module,exports){
-module.exports={"v":3,"t":[{"t":7,"e":"div","a":{"class":["card layout__item ",{"t":4,"f":["u-1/2-lap-and-up"],"n":50,"r":"preview"},{"t":4,"n":51,"f":["u-1/2-lap u-1/4-desk"],"r":"preview"}]},"v":{"tap":{"n":"toLink","d":[{"t":2,"r":"content.slug"}]}},"f":[{"t":7,"e":"div","a":{"class":["block ",{"t":4,"f":["block--small"],"n":50,"x":{"r":["preview"],"s":"!_0"}}]},"f":[{"t":7,"e":"img","a":{"class":["block__img ",{"t":4,"f":["block__img--preview"],"n":50,"r":"preview"}],"src":["/img/",{"t":2,"r":"content.shot"}],"alt":[{"t":2,"r":"content.project"}]}}," ",{"t":7,"e":"div","a":{"class":"block__body"},"f":[{"t":4,"f":[{"t":7,"e":"span","a":{"class":"card__owner"},"f":[{"t":2,"r":"content.co"}]}],"n":51,"r":"preview"}," ",{"t":7,"e":"h3","a":{"class":"card__title"},"f":[{"t":2,"r":"content.title"}]}," ",{"t":7,"e":"p","a":{"class":["card__detail ",{"t":4,"f":["card__detail--preview"],"n":50,"r":"preview"}]},"f":[{"t":2,"r":"content.detail"}]}," ",{"t":7,"e":"span","a":{"class":"card__cta"},"f":[{"t":4,"f":["read on →"],"n":50,"r":"preview"},{"t":4,"n":51,"f":["explore project →"],"r":"preview"}]}]}]}]}]}
+module.exports={"v":3,"t":[{"t":7,"e":"div","a":{"class":["card layout__item ",{"t":4,"f":["u-1/2-lap u-1/4-desk"],"n":50,"r":"standard"}," ",{"t":4,"f":["u-1/2-lap-and-up"],"n":50,"r":"preview"}," ",{"t":4,"f":["card--single"],"n":50,"r":"single"}]},"v":{"tap":{"n":"toLink","d":[{"t":2,"r":"content.slug"}]}},"f":[{"t":7,"e":"div","a":{"class":["block ",{"t":4,"f":["block--single"],"n":50,"r":"single"}]},"f":[{"t":7,"e":"img","a":{"class":["block__img ",{"t":4,"f":["block__img--preview"],"n":50,"r":"preview"}],"src":["/img/",{"t":2,"r":"content.shot"}],"alt":[{"t":2,"r":"content.project"}]}}," ",{"t":7,"e":"div","a":{"class":"block__body"},"f":[{"t":4,"f":[{"t":7,"e":"span","a":{"class":"card__owner"},"f":[{"t":2,"r":"content.co"}]}],"r":"project"}," ",{"t":7,"e":"h3","a":{"class":"card__title"},"f":[{"t":2,"r":"content.title"}]}," ",{"t":7,"e":"p","a":{"class":["card__detail ",{"t":4,"f":["card__detail--preview"],"n":50,"r":"preview"}]},"f":[{"t":2,"r":"content.detail"}]}," ",{"t":7,"e":"span","a":{"class":"card__cta"},"f":[{"t":4,"f":["read on →"],"n":50,"r":"post"}," ",{"t":4,"f":["explore project →"],"n":50,"r":"project"}]}]}]}]}]}
 },{}],24:[function(require,module,exports){
 /**
  * @module:   card
@@ -19276,7 +19276,7 @@ exports['default'] = _abstractModule2['default'].extend({
 
     this.on({
       toLink: function toLink(e, slug) {
-        if (this.get('preview')) {
+        if (this.get('post')) {
           this.fire('nav', '/blog/' + slug);
         } else {
           window.open(this.get('content.link'));
@@ -19591,7 +19591,7 @@ exports['default'] = _abstractModule2['default'].extend({
 module.exports = exports['default'];
 
 },{"../abstract-module":16,"./tag.html":34}],36:[function(require,module,exports){
-module.exports={"v":3,"t":[{"t":7,"e":"div","a":{"class":"work"},"t1":"creep","f":[{"t":7,"e":"h2","a":{"class":"work__title"},"f":["Featured Work"]}," ",{"t":7,"e":"div","a":{"class":"layout"},"f":[{"t":4,"f":[{"t":7,"e":"ui-card","a":{"content":[{"t":2,"r":"."}]}}],"r":"work"}]}]}]}
+module.exports={"v":3,"t":[{"t":7,"e":"div","a":{"class":"work"},"t1":"creep","f":[{"t":7,"e":"h2","a":{"class":"work__title"},"f":["Featured Work"]}," ",{"t":7,"e":"div","a":{"class":"layout"},"f":[{"t":4,"f":[{"t":7,"e":"ui-card","a":{"content":[{"t":2,"r":"."}],"standard":0,"project":0}}],"r":"work"}]}]}]}
 },{}],37:[function(require,module,exports){
 /**
  * @module:   work

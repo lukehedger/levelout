@@ -8,6 +8,11 @@
 @include module("card") {
 
   margin-bottom: $inuit-base-spacing-unit;
+  cursor: pointer;
+
+  &--single {
+    padding-right: $inuit-base-spacing-unit;
+  }
 
   &__owner {
     margin-bottom: 4px;
@@ -33,7 +38,7 @@
 
   &__cta {
     @include inuit-font-size(10px, none);
-    color: $color-ltgrey;
+    color: $color-loblue;
     text-transform: uppercase;
   }
 

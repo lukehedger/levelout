@@ -2,8 +2,9 @@
   min-height: 400px;
   background-color: #FFFFFF;
 
-  &--preview {
-    
+  &--single {
+    max-width: 520px;
+    margin: auto;
   }
 
   &__img {

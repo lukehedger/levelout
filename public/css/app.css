@@ -566,6 +566,14 @@ body:before {
   display: block;
   background-image: linear-gradient(to right, #36B1BF, #F2385A); }
 
+::-moz-selection {
+  color: #FFFFFF;
+  background: #333333; }
+
+::selection {
+  color: #FFFFFF;
+  background: #333333; }
+
 /*------------------------------------*    #LAYOUT
 \*------------------------------------*/
 /**
@@ -769,6 +777,9 @@ body:before {
 .block {
   min-height: 400px;
   background-color: #FFFFFF; }
+  .block--single {
+    max-width: 520px;
+    margin: auto; }
   .block__img {
     width: 100%;
     height: 160px; }
@@ -931,13 +942,31 @@ body:before {
  * @js:       ./source/js/module/blog/blog.js
  * @html:     ./source/js/module/blog/blog.html
  */
+.blog__heading {
+  margin: 40px auto 10px;
+  font-size: 48px;
+  font-size: 3rem;
+  line-height: 1.2;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-align: center;
+  color: #333333; }
+
+.blog__tagline {
+  margin-bottom: 60px;
+  font-weight: 100;
+  text-align: center; }
+
 /**
  * @module:   card
  * @js:       ./source/js/module/card/card.js
  * @html:     ./source/js/module/card/card.html
  */
 .card {
-  margin-bottom: 24px; }
+  margin-bottom: 24px;
+  cursor: pointer; }
+  .card--single {
+    padding-right: 24px; }
   .card__owner {
     margin-bottom: 4px;
     display: block;
@@ -955,7 +984,7 @@ body:before {
   .card__cta {
     font-size: 10px;
     font-size: 0.625rem;
-    color: #777777;
+    color: #36B1BF;
     text-transform: uppercase; }
 
 /**

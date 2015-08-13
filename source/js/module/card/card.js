@@ -15,7 +15,7 @@ export default Module.extend({
 
     this.on({
       toLink(e, slug) {
-        if (this.get('preview')) {
+        if (this.get('post')) {
           this.fire('nav', `/blog/${slug}`);
         } else {
           window.open(this.get('content.link'));

@@ -12,9 +12,13 @@
 
   {{else}}
 
+  <h2 class="blog__heading">Thoughts and shit</h2>
+  <h5 class="blog__tagline">Odd musings about web development and beer</h5>
+
+  <div class="layout layout--flush"></div>
   {{#posts:post}}
     {{#if status != 'draft' || draftsEnabled }}
-    <h3 on-tap="goPost:{{slug}}">{{title}}</h3>
+    <ui-card content={{.}} single post />
     {{/if}}
   {{/posts}}
 
