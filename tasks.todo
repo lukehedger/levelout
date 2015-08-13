@@ -1,8 +1,9 @@
 Style:
   ☐ sort posts by date in main.js
-  ☐ convert tags string to array in main.js resuse ln:100
+
   ☐ next/prev posts
   ☐ scroll post to top onrender
+
   ☐ card hover state (image effect)
 
 Content:

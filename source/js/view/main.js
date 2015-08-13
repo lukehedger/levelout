@@ -40,10 +40,26 @@ export default Ractive.extend({
 
   onDataSuccess(data) {
 
-    this.set('config', data[0].config);
-    this.set('posts', data[0].posts);
-    this.set('work', data[1].work);
+    let config = data[0].config;
+    this.set('config', config);
 
+    let posts = data[0].posts;
+    // TODO - sort posts chronologically
+    // for (let post in posts) {
+    //   console.log(posts[post].date, new Date(posts[post].date));
+    // }
+    this.set('posts', posts);
+
+    let work = data[1].work;
+    this.set('work', work);
+
+    // convert tags string to array
+    for (let post in posts) {
+      let tags = posts[post].tags.split(' ');
+      this.set(`posts.${post}.tags`, tags);
+    }
+
+    // analyse tags
     this.setTags();
 
     // TODO - might need a loading state
@@ -97,7 +113,7 @@ export default Ractive.extend({
       if (posts.hasOwnProperty(post)) {
 
         // get all post tags
-        let tags = posts[post].tags.split(' ');
+        let tags = posts[post].tags;
 
         for (let tag of tags) {
 
