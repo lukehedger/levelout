@@ -972,6 +972,11 @@ body:before {
   color: #777777; }
 
 /**
+ * @module:   header
+ * @js:       ./source/js/module/header/header.js
+ * @html:     ./source/js/module/header/header.html
+ */
+/**
  * @module:   logo
  * @js:       ./source/js/module/logo/logo.js
  * @html:     ./source/js/module/logo/logo.html
