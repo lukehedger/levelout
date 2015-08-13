@@ -5,6 +5,76 @@
  */
 
 
-@include module("blog-post") { 
-  // :)
+@include module("blog-post") {
+
+  max-width: 1024px;
+  margin: 40px auto;
+  padding: 20px;
+
+  &__title {
+    margin: 0 auto 40px;
+    @include inuit-font-size(48px, 1.2);
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: $color-dkgrey;
+  }
+
+  &__body {
+
+    h3 {
+      margin-top: 15px;
+      margin-bottom: 2.5px;
+      @include inuit-font-size(16px, 1);
+      font-weight: 700;
+      letter-spacing: 0.1px;
+
+      @include break(not-small) {
+        margin-top: 30px;
+        margin-bottom: 5px;
+        @include inuit-font-size(32px, 1);
+      }
+    }
+
+    a {
+      border-bottom: 1px solid $color-lopink;
+      color: $color-lopink;
+      cursor: pointer;
+      text-decoration: none;
+      transition: 0.2s;
+
+      &:hover, &:focus {
+        border-bottom-width: 5px;
+      }
+    }
+
+    p {
+      @include inuit-font-size(18px, 1.75);
+      font-weight: 400;
+
+      > code {
+        border-radius: 4px;
+        padding: 0 6px;
+        background: lighten($color-loblue, 50);
+        color: $color-loblue;
+      }
+
+    }
+
+  }
+
+  &__meta {
+    @include inuit-font-size(10px, 1.6);
+    font-weight: 500;
+    letter-spacing: 0.2px;
+    text-transform: uppercase;
+
+  }
+
+  &__meta-separator {
+    width: 15px;
+    border-top: 1px solid $color-dkgrey;
+    display: inline-block;
+    vertical-align: middle;
+  }
+
 }

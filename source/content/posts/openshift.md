@@ -1,6 +1,6 @@
 ---
 title: OpenShift
-detail: Node.js hosting on OpenShift
+detail: You've just finished building a killer Node-based API but need a host who doesn't rip you off - who can you turn to?
 read: 15
 tags: node hosting
 comments: true
@@ -9,13 +9,11 @@ status: published
 date: 01-06-2015
 ---
 
-You've just finished building a killer Node-based API but need a host who doesn't rip you off - who can you turn to?
-
-##### Free
+### Free
 
 With the [demise of Nodejitsu](https://blog.nodejitsu.com/nodejitsu-joins-godaddy/), it's not easy finding free Node.js hosting these days. But OpenShift has a [really good free plan](https://www.openshift.com/web-hosting/node-js) with capacity for 3 applications. You're tied to an `rhcloud.com` subdomain but if you're just hosting an API or service who cares?
 
-##### Bit of a git
+### Bit of a git
 
 It's free, happy days! But I did find the setup slightly painful. I wanted a setup similar to [Divshot](https://divshot.com/): `npm install crazy-shit`, `init bruv` and `deploy to-the-world`. No such luck but it's not too bad once you know how...
 
@@ -41,7 +39,7 @@ $ git push openshift HEAD
 
 Now, you'll be able to make changes to your code and `git push` to your GitHub repo as normal. Anytime you want to push to OpenShift (thus deploying your site) run `git push openshift`. Simple. It's just a deploy process using Git - once you're cool with that OpenShift feels like a breeze.
 
-##### Host/Port
+### Host/Port
 
 When you point your server to a host/port you'll need to use OpenShift's environment variables with a local fallback. Here's a quick sample Express server:
 
@@ -64,7 +62,7 @@ var server = app.listen(server_port, server_ip_address, function () {
 });
 ```
 
-##### CLI
+### CLI
 
 OpenShift has a tool called `rhc` that's useful for managing your apps on the command-line. Install it and setup with:
 
@@ -79,7 +77,7 @@ You can then get a list of your apps:
 $ rhc apps
 ```
 
-##### Env vars
+### Env vars
 
 Another useful command is setting environment variables:
 
@@ -88,6 +86,6 @@ $ rhc env set VARIABLE1=VALUE1 -a appname
 $ rhc env list -a appname
 ```
 
-##### Server logs
+### Server logs
 
 OpenShift provides a shortcut for SSHing onto your server - find it on your application's dashboard under "Remote Access". Once you're on, you can find the server logs under: `app-root/logs/`

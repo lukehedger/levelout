@@ -5,5 +5,17 @@
 -->
 
 <div class="blog-post" intro="creep">
-  <h1>{{post.title}}</h1>
+
+  <div class="blog-post__meta">
+    {{post.date}} <span class="blog-post__meta-separator"></span> {{post.read}} min read <span class="blog-post__meta-separator"></span> {{#post.tags}}{{.}}{{/}}
+  </div>
+
+  <h2 class="blog-post__title">
+    {{post.title}}
+  </h2>
+
+  <div class="blog-post__body">
+    {{{post.body}}}
+  </div>
+
 </div>

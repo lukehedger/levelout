@@ -557,7 +557,7 @@ li > ol {
 html, body {
   width: 100%;
   min-height: 100%;
-  font-family: Helvetica, Arial, sans-serif; }
+  font-family: "aktiv-grotesk", Helvetica, Arial, sans-serif; }
 
 body:before {
   content: "";
@@ -801,111 +801,100 @@ body:before {
   .icon--twitter {
     background-image: url("../img/twitter.svg"); }
 
-.highlight {
-  background-color: #002b36;
-  color: #93a1a1; }
-  .highlight .c {
-    color: #586e75; }
-  .highlight .err, .highlight .g {
-    color: #93a1a1; }
-  .highlight .k {
-    color: #859900; }
-  .highlight .l, .highlight .n {
-    color: #93a1a1; }
-  .highlight .o {
-    color: #859900; }
-  .highlight .x {
-    color: #cb4b16; }
-  .highlight .p {
-    color: #93a1a1; }
-  .highlight .cm {
-    color: #586e75; }
-  .highlight .cp {
-    color: #859900; }
-  .highlight .c1 {
-    color: #586e75; }
-  .highlight .cs {
-    color: #859900; }
-  .highlight .gd {
-    color: #2aa198; }
-  .highlight .ge {
-    color: #93a1a1;
-    font-style: italic; }
-  .highlight .gr {
-    color: #dc322f; }
-  .highlight .gh {
-    color: #cb4b16; }
-  .highlight .gi {
-    color: #859900; }
-  .highlight .go, .highlight .gp {
-    color: #93a1a1; }
-  .highlight .gs {
-    color: #93a1a1;
-    font-weight: bold; }
-  .highlight .gu {
-    color: #cb4b16; }
-  .highlight .gt {
-    color: #93a1a1; }
-  .highlight .kc {
-    color: #cb4b16; }
-  .highlight .kd {
-    color: #268bd2; }
-  .highlight .kn, .highlight .kp {
-    color: #859900; }
-  .highlight .kr {
-    color: #268bd2; }
-  .highlight .kt {
-    color: #dc322f; }
-  .highlight .ld {
-    color: #93a1a1; }
-  .highlight .m, .highlight .s {
-    color: #2aa198; }
-  .highlight .na {
-    color: #93a1a1; }
-  .highlight .nb {
-    color: #B58900; }
-  .highlight .nc {
-    color: #268bd2; }
-  .highlight .no {
-    color: #cb4b16; }
-  .highlight .nd {
-    color: #268bd2; }
-  .highlight .ni, .highlight .ne {
-    color: #cb4b16; }
-  .highlight .nf {
-    color: #268bd2; }
-  .highlight .nl, .highlight .nn, .highlight .nx, .highlight .py {
-    color: #93a1a1; }
-  .highlight .nt, .highlight .nv {
-    color: #268bd2; }
-  .highlight .ow {
-    color: #859900; }
-  .highlight .w {
-    color: #93a1a1; }
-  .highlight .mf, .highlight .mh, .highlight .mi, .highlight .mo {
-    color: #2aa198; }
-  .highlight .sb {
-    color: #586e75; }
-  .highlight .sc {
-    color: #2aa198; }
-  .highlight .sd {
-    color: #93a1a1; }
-  .highlight .s2 {
-    color: #2aa198; }
-  .highlight .se {
-    color: #cb4b16; }
-  .highlight .sh {
-    color: #93a1a1; }
-  .highlight .si, .highlight .sx {
-    color: #2aa198; }
-  .highlight .sr {
-    color: #dc322f; }
-  .highlight .s1, .highlight .ss {
-    color: #2aa198; }
-  .highlight .bp, .highlight .vc, .highlight .vg, .highlight .vi {
-    color: #268bd2; }
-  .highlight .il {
-    color: #2aa198; }
+/* Tomorrow Night Eighties Theme */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+pre code {
+  display: block;
+  background: #2d2d2d;
+  color: #cccccc;
+  font-family: Menlo, Monaco, Consolas, monospace;
+  line-height: 1.5;
+  border: 1px solid #ccc;
+  padding: 10px;
+  overflow: auto; }
+
+/* Tomorrow Comment */
+.hljs-comment {
+  color: #999999; }
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-attribute,
+.hljs-tag,
+.hljs-regexp,
+.ruby .hljs-constant,
+.xml .hljs-tag .hljs-title,
+.xml .hljs-pi,
+.xml .hljs-doctype,
+.html .hljs-doctype,
+.css .hljs-id,
+.css .hljs-class,
+.css .hljs-pseudo {
+  color: #f2777a; }
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-preprocessor,
+.hljs-pragma,
+.hljs-built_in,
+.hljs-literal,
+.hljs-params,
+.hljs-constant {
+  color: #f99157; }
+
+/* Tomorrow Yellow */
+.ruby .hljs-class .hljs-title,
+.css .hljs-rule .hljs-attribute {
+  color: #ffcc66; }
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-value,
+.hljs-inheritance,
+.hljs-header,
+.hljs-name,
+.ruby .hljs-symbol,
+.xml .hljs-cdata {
+  color: #99cc99; }
+
+/* Tomorrow Aqua */
+.hljs-title,
+.css .hljs-hexcolor {
+  color: #66cccc; }
+
+/* Tomorrow Blue */
+.hljs-function,
+.python .hljs-decorator,
+.python .hljs-title,
+.ruby .hljs-function .hljs-title,
+.ruby .hljs-title .hljs-keyword,
+.perl .hljs-sub,
+.javascript .hljs-title,
+.coffeescript .hljs-title {
+  color: #6699cc; }
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.javascript .hljs-function {
+  color: #cc99cc; }
+
+.hljs {
+  display: block;
+  overflow-x: auto;
+  background: #2d2d2d;
+  color: #cccccc;
+  padding: 0.5em;
+  -webkit-text-size-adjust: none; }
+
+.coffeescript .javascript,
+.javascript .xml,
+.tex .hljs-formula,
+.xml .javascript,
+.xml .vbscript,
+.xml .css,
+.xml .hljs-cdata {
+  opacity: 0.5; }
 
 /*auto-generated*/
 /**
@@ -913,6 +902,64 @@ body:before {
  * @js:       ./source/js/module/blog-post/blog-post.js
  * @html:     ./source/js/module/blog-post/blog-post.html
  */
+.blog-post {
+  max-width: 1024px;
+  margin: 40px auto;
+  padding: 20px; }
+  .blog-post__title {
+    margin: 0 auto 40px;
+    font-size: 48px;
+    font-size: 3rem;
+    line-height: 1.2;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: #333333; }
+  .blog-post__body h3 {
+    margin-top: 15px;
+    margin-bottom: 2.5px;
+    font-size: 16px;
+    font-size: 1rem;
+    line-height: 1;
+    font-weight: 700;
+    letter-spacing: 0.1px; }
+    @media only screen and (min-width: 641px) {
+      .blog-post__body h3 {
+        margin-top: 30px;
+        margin-bottom: 5px;
+        font-size: 32px;
+        font-size: 2rem;
+        line-height: 1; } }
+  .blog-post__body a {
+    border-bottom: 1px solid #F2385A;
+    color: #F2385A;
+    cursor: pointer;
+    text-decoration: none;
+    transition: 0.2s; }
+    .blog-post__body a:hover, .blog-post__body a:focus {
+      border-bottom-width: 5px; }
+  .blog-post__body p {
+    font-size: 18px;
+    font-size: 1.125rem;
+    line-height: 1.75;
+    font-weight: 400; }
+    .blog-post__body p > code {
+      border-radius: 4px;
+      padding: 0 6px;
+      background: #f7fcfd;
+      color: #36B1BF; }
+  .blog-post__meta {
+    font-size: 10px;
+    font-size: 0.625rem;
+    line-height: 1.6;
+    font-weight: 500;
+    letter-spacing: 0.2px;
+    text-transform: uppercase; }
+  .blog-post__meta-separator {
+    width: 15px;
+    border-top: 1px solid #333333;
+    display: inline-block;
+    vertical-align: middle; }
+
 /**
  * @module:   blog-preview
  * @js:       ./source/js/module/blog-preview/blog-preview.js

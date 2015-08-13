@@ -1,11 +1,15 @@
 Style:
-  ☐ blog (integrate images) + port old styles (+ http://zeppelin.io/blog/best-architecture-websites-part-1 -> post---01 etc)
+  ☐ sort posts by date in main.js
+  ☐ convert tags string to array in main.js resuse ln:100
+  ☐ next/prev posts
+  ☐ scroll post to top onrender
   ☐ card hover state (image effect)
 
 Content:
   ☐ work images
-  ☐ post cover images
   ☐ work details
+  ☐ post cover images
+  ☐ post - combine intro + details
 
 Live:
   ✔ cull posts @done(2015-08-10 11:16) @project(Live)

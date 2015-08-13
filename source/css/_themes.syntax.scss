@@ -1,162 +1,112 @@
 ///////////////////////////////////////////////////////////////////////////////
 // # _themes.syntax.scss
 //
-// Solarized Dark syntax highlighting
+// Tomorrow Night Eighties syntax highlighting
 ///////////////////////////////////////////////////////////////////////////////
 
-.highlight {
-  background-color: #002b36;
-  color: #93a1a1;
-  .c {
-    color: #586e75;
-  }
-  .err, .g {
-    color: #93a1a1;
-  }
-  .k {
-    color: #859900;
-  }
-  .l, .n {
-    color: #93a1a1;
-  }
-  .o {
-    color: #859900;
-  }
-  .x {
-    color: #cb4b16;
-  }
-  .p {
-    color: #93a1a1;
-  }
-  .cm {
-    color: #586e75;
-  }
-  .cp {
-    color: #859900;
-  }
-  .c1 {
-    color: #586e75;
-  }
-  .cs {
-    color: #859900;
-  }
-  .gd {
-    color: #2aa198;
-  }
-  .ge {
-    color: #93a1a1;
-    font-style: italic;
-  }
-  .gr {
-    color: #dc322f;
-  }
-  .gh {
-    color: #cb4b16;
-  }
-  .gi {
-    color: #859900;
-  }
-  .go, .gp {
-    color: #93a1a1;
-  }
-  .gs {
-    color: #93a1a1;
-    font-weight: bold;
-  }
-  .gu {
-    color: #cb4b16;
-  }
-  .gt {
-    color: #93a1a1;
-  }
-  .kc {
-    color: #cb4b16;
-  }
-  .kd {
-    color: #268bd2;
-  }
-  .kn, .kp {
-    color: #859900;
-  }
-  .kr {
-    color: #268bd2;
-  }
-  .kt {
-    color: #dc322f;
-  }
-  .ld {
-    color: #93a1a1;
-  }
-  .m, .s {
-    color: #2aa198;
-  }
-  .na {
-    color: #93a1a1;
-  }
-  .nb {
-    color: #B58900;
-  }
-  .nc {
-    color: #268bd2;
-  }
-  .no {
-    color: #cb4b16;
-  }
-  .nd {
-    color: #268bd2;
-  }
-  .ni, .ne {
-    color: #cb4b16;
-  }
-  .nf {
-    color: #268bd2;
-  }
-  .nl, .nn, .nx, .py {
-    color: #93a1a1;
-  }
-  .nt, .nv {
-    color: #268bd2;
-  }
-  .ow {
-    color: #859900;
-  }
-  .w {
-    color: #93a1a1;
-  }
-  .mf, .mh, .mi, .mo {
-    color: #2aa198;
-  }
-  .sb {
-    color: #586e75;
-  }
-  .sc {
-    color: #2aa198;
-  }
-  .sd {
-    color: #93a1a1;
-  }
-  .s2 {
-    color: #2aa198;
-  }
-  .se {
-    color: #cb4b16;
-  }
-  .sh {
-    color: #93a1a1;
-  }
-  .si, .sx {
-    color: #2aa198;
-  }
-  .sr {
-    color: #dc322f;
-  }
-  .s1, .ss {
-    color: #2aa198;
-  }
-  .bp, .vc, .vg, .vi {
-    color: #268bd2;
-  }
-  .il {
-    color: #2aa198;
-  }
+/* Tomorrow Night Eighties Theme */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+
+pre code {
+  display: block;
+  background: #2d2d2d;
+  color: #cccccc;
+  font-family: Menlo, Monaco, Consolas, monospace;
+  line-height: 1.5;
+  border: 1px solid #ccc;
+  padding: 10px;
+  overflow: auto;
+}
+
+/* Tomorrow Comment */
+.hljs-comment {
+  color: #999999;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-attribute,
+.hljs-tag,
+.hljs-regexp,
+.ruby .hljs-constant,
+.xml .hljs-tag .hljs-title,
+.xml .hljs-pi,
+.xml .hljs-doctype,
+.html .hljs-doctype,
+.css .hljs-id,
+.css .hljs-class,
+.css .hljs-pseudo {
+  color: #f2777a;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-preprocessor,
+.hljs-pragma,
+.hljs-built_in,
+.hljs-literal,
+.hljs-params,
+.hljs-constant {
+  color: #f99157;
+}
+
+/* Tomorrow Yellow */
+.ruby .hljs-class .hljs-title,
+.css .hljs-rule .hljs-attribute {
+  color: #ffcc66;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-value,
+.hljs-inheritance,
+.hljs-header,
+.hljs-name,
+.ruby .hljs-symbol,
+.xml .hljs-cdata {
+  color: #99cc99;
+}
+
+/* Tomorrow Aqua */
+.hljs-title,
+.css .hljs-hexcolor {
+  color: #66cccc;
+}
+
+/* Tomorrow Blue */
+.hljs-function,
+.python .hljs-decorator,
+.python .hljs-title,
+.ruby .hljs-function .hljs-title,
+.ruby .hljs-title .hljs-keyword,
+.perl .hljs-sub,
+.javascript .hljs-title,
+.coffeescript .hljs-title {
+  color: #6699cc;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.javascript .hljs-function {
+  color: #cc99cc;
+}
+
+.hljs {
+  display: block;
+  overflow-x: auto;
+  background: #2d2d2d;
+  color: #cccccc;
+  padding: 0.5em;
+  -webkit-text-size-adjust: none;
+}
+
+.coffeescript .javascript,
+.javascript .xml,
+.tex .hljs-formula,
+.xml .javascript,
+.xml .vbscript,
+.xml .css,
+.xml .hljs-cdata {
+  opacity: 0.5;
 }

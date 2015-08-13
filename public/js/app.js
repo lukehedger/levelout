@@ -19089,7 +19089,7 @@ exports['default'] = _ractive2['default'].extend({
 module.exports = exports['default'];
 
 },{"ractive":14}],17:[function(require,module,exports){
-module.exports={"v":3,"t":[{"t":7,"e":"div","a":{"class":"blog-post"},"t1":"creep","f":[{"t":7,"e":"h1","f":[{"t":2,"r":"post.title"}]}]}]}
+module.exports={"v":3,"t":[{"t":7,"e":"div","a":{"class":"blog-post"},"t1":"creep","f":[{"t":7,"e":"div","a":{"class":"blog-post__meta"},"f":[{"t":2,"r":"post.date"}," ",{"t":7,"e":"span","a":{"class":"blog-post__meta-separator"}}," ",{"t":2,"r":"post.read"}," min read ",{"t":7,"e":"span","a":{"class":"blog-post__meta-separator"}}," ",{"t":4,"f":[{"t":2,"r":"."}],"r":"post.tags"}]}," ",{"t":7,"e":"h2","a":{"class":"blog-post__title"},"f":[{"t":2,"r":"post.title"}]}," ",{"t":7,"e":"div","a":{"class":"blog-post__body"},"f":[{"t":3,"r":"post.body"}]}]}]}
 },{}],18:[function(require,module,exports){
 /**
  * @module:   blog-post
