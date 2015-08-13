@@ -959,6 +959,11 @@ pre code {
     border-top: 1px solid #333333;
     display: inline-block;
     vertical-align: middle; }
+  .blog-post__meta-tag {
+    margin-right: 5px;
+    cursor: pointer; }
+    .blog-post__meta-tag:last-of-type {
+      margin-right: 0; }
 
 /**
  * @module:   blog-preview

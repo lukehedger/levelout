@@ -14,6 +14,16 @@ export default Module.extend({
 
   transitions: {
     creep: creep
+  },
+
+  oninit() {
+
+    this.on({
+      goTag(e, tag) {
+        this.fire('nav', `/tag/${tag}`);
+      }
+    });
+
   }
 
 });

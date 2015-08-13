@@ -7,7 +7,7 @@
 <div class="blog-post" intro="creep">
 
   <div class="blog-post__meta">
-    {{post.date}} <span class="blog-post__meta-separator"></span> {{post.read}} min read <span class="blog-post__meta-separator"></span> {{#post.tags}}{{.}}{{/}}
+    {{post.date}} <span class="blog-post__meta-separator"></span> {{post.read}} min read <span class="blog-post__meta-separator"></span> {{#post.tags}}<a class="blog-post__meta-tag" on-tap="goTag:{{.}}">{{.}}</a>{{/}}
   </div>
 
   <h2 class="blog-post__title">

@@ -77,4 +77,13 @@
     vertical-align: middle;
   }
 
+  &__meta-tag {
+    margin-right: 5px;
+    cursor: pointer;
+
+    &:last-of-type {
+      margin-right: 0;
+    }
+  }
+
 }
