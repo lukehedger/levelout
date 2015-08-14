@@ -72,13 +72,14 @@
 
   &__meta-separator {
     width: 15px;
-    border-top: 1px solid $color-dkgrey;
+    border-top: 1px solid $color-foreground;
     display: inline-block;
     vertical-align: middle;
   }
 
   &__meta-tag {
     margin-right: 5px;
+    color: $color-foreground;
     cursor: pointer;
 
     &:last-of-type {

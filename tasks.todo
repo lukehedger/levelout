@@ -8,6 +8,7 @@ Content:
 Live:
   ✔ cull posts @done(2015-08-10 11:16) @project(Live)
   ☐ migrate comments -> https://help.disqus.com/customer/portal/articles/286778-migration-tools
+  ☐ removed unrequired .js/.css files
   ☐ rename repo to level out
   ☐ move to Divshot
   ☐ cull github repos

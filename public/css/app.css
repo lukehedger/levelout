@@ -566,6 +566,9 @@ body:before {
   display: block;
   background-image: linear-gradient(to right, #36B1BF, #F2385A); }
 
+a {
+  color: #F2385A; }
+
 ::-moz-selection {
   color: #FFFFFF;
   background: #333333; }
@@ -964,11 +967,12 @@ pre code {
     text-transform: uppercase; }
   .blog-post__meta-separator {
     width: 15px;
-    border-top: 1px solid #333333;
+    border-top: 1px solid #151515;
     display: inline-block;
     vertical-align: middle; }
   .blog-post__meta-tag {
     margin-right: 5px;
+    color: #151515;
     cursor: pointer; }
     .blog-post__meta-tag:last-of-type {
       margin-right: 0; }
@@ -1053,6 +1057,11 @@ pre code {
     color: #36B1BF;
     text-transform: uppercase; }
 
+/**
+ * @module:   comments
+ * @js:       ./source/js/module/comments/comments.js
+ * @html:     ./source/js/module/comments/comments.html
+ */
 /**
  * @module:   error
  * @js:       ./source/js/module/error/error.js
