@@ -24759,6 +24759,7 @@ exports['default'] = _module3['default'].extend({
     }
 
     // construct an index of tags with related posts
+    var tagsTempObj = {};
     for (var post in posts) {
 
       if (posts.hasOwnProperty(post)) {
@@ -24775,12 +24776,12 @@ exports['default'] = _module3['default'].extend({
             var tag = _step.value;
 
             // create new tag index
-            if (!this.get('tags').hasOwnProperty(tag)) {
-              this.set('tags.' + tag, []);
+            if (!tagsTempObj.hasOwnProperty(tag)) {
+              tagsTempObj[tag] = [];
             }
 
             // add post to tag index
-            this.push('tags.' + tag, posts[post]);
+            tagsTempObj[tag].push(posts[post]);
           }
         } catch (err) {
           _didIteratorError = true;
@@ -24798,6 +24799,27 @@ exports['default'] = _module3['default'].extend({
         }
       }
     }
+
+    // convert tags obj to array for sorting
+    var tagsArray = [];
+    for (var tag in tagsTempObj) {
+      if (tagsTempObj.hasOwnProperty(tag)) {
+        tagsArray.push([tag, tagsTempObj[tag]]);
+      }
+    }
+
+    // sort tags alphabetically
+    var tagsSorted = (0, _moutArray.sort)(tagsArray, function (a, b) {
+      return a[0] > b[0];
+    });
+
+    // convert array back to object
+    var tagsObj = {};
+    tagsSorted.forEach(function (el) {
+      tagsObj[el[0]] = el[1];
+    });
+
+    this.set('tags', tagsObj);
   },
 
   setRouter: function setRouter() {

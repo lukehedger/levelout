@@ -1,5 +1,7 @@
 Build:
+  ☐ account for posts now being array
   ☐ set next/prev posts in main.js
+  ☐ 404 route
 
 Style:
   ☐ card hover state (image effect)
@@ -8,6 +10,7 @@ Style:
 Content:
   ☐ work images
   ☐ work details
+  ☐ consolidate tags
   ☐ post cover images
   ☐ post - combine intro + details
 

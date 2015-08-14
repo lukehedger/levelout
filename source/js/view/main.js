@@ -133,6 +133,7 @@ export default Ractive.extend({
     }
 
     // construct an index of tags with related posts
+    var tagsTempObj = {};
     for (let post in posts) {
 
       if (posts.hasOwnProperty(post)) {
@@ -143,16 +144,37 @@ export default Ractive.extend({
         for (let tag of tags) {
 
           // create new tag index
-          if (!this.get('tags').hasOwnProperty(tag)) {
-            this.set(`tags.${tag}`, []);
+          if (!tagsTempObj.hasOwnProperty(tag)) {
+            tagsTempObj[tag] = [];
           }
 
           // add post to tag index
-          this.push(`tags.${tag}`, posts[post]);
+          tagsTempObj[tag].push(posts[post]);
 
         }
       }
     }
+
+    // convert tags obj to array for sorting
+    let tagsArray = [];
+    for (let tag in tagsTempObj) {
+      if (tagsTempObj.hasOwnProperty(tag)) {
+        tagsArray.push([tag, tagsTempObj[tag]]);
+      }
+    }
+
+    // sort tags alphabetically
+    let tagsSorted = sort(tagsArray, function(a, b) {
+      return a[0] > b[0];
+    })
+
+    // convert array back to object
+    let tagsObj = {};
+    tagsSorted.forEach(function(el) {
+      tagsObj[el[0]] = el[1];
+    });
+
+    this.set('tags', tagsObj);
 
   },
 
