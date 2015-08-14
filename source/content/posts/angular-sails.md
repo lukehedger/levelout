@@ -1,6 +1,6 @@
 ---
 title: Angular-Sails
-detail: Plain sailing with Angular
+detail: Put the wind back in your Sails app with an Angular frontend
 read: 10
 tags: sails angular node
 comments: true
@@ -9,7 +9,7 @@ status: published
 date: 02-12-2014
 ---
 
-Get the wind back in your Sails app with an Angular frontend!
+### Plain sailing with Angular
 
 Sure, with Sails you can get a pretty mean API up and running in no time at all and also serve up client-side views in [numerous templating languages](http://sailsjs.org/#/documentation/concepts/Views/ViewEngines.html) but [as Michael Bleigh put it](https://divshot.com/blog/opinion/every-web-app-is-two-apps/) there are two sides to every web app.
 
@@ -19,7 +19,7 @@ And to make it nice and simple, Sails is front-end agnostic by design!
 
 Angular seems to fit particularly nicely when it comes to web apps and there is also an official [angularSails](http://balderdashy.github.io/angularSails/#/api/ngsails.$sailsSocket) binding to wrap [Sails' socket.io client](http://sailsjs.org/#/documentation/reference/websockets/sails.io.js) - so let's go with that and see what happens! We'll aim to have a simple app that'll display a list of users.
 
-##### Sails
+### Sails
 
 If you haven't already got a basic Sails app up and running, its easy - run the following commands and you'll be good to go:
 ```bash
@@ -32,7 +32,7 @@ $ sails lift
 
 Check that your User API (controller/model) exists by going to the endpoint [http://localhost:1337/user](http://localhost:1337/user). You can add a new user at [http://localhost:1337/user/create?username=super&password=heroic](http://localhost:1337/user/create?username=super&password=heroic)
 
-##### + Angular
+### + Angular
 
 We'll start by clearing out some of the default Sails stuff and Angular-ising it. Your `views/layout.ejs` file will need to have the a couple of directives to bootstrap the app and a main controller, so go ahead and modify it with the following:
 ```html
@@ -72,7 +72,7 @@ This ensures any Bower dependencies are installed in the `/assets` directory, wh
 $ bower install --save-dev angular angular-loader angular-mocks angular-route angularSails
 ```
 
-##### + a sprinkle of Structure
+### + a sprinkle of Structure
 
 The best way to start developing a new app is to get a good structure in place - this allows you to visualise the app and be clear on how its different modules will work together. If you're working with a framework for the first time it's a good idea to do a bit of reading first or even use a generator. Sails comes with a pretty rigid/opinionated [base structure](http://sailsjs.org/#/documentation/anatomy/myApp) whereas Angular leaves it up to you. There are [various approaches](http://scotch.io/tutorials/javascript/angularjs-best-practices-directory-structure) and much depends on the projected size of your app. As we're only setting up a test app, we'll go with [Brian Ford's approach](http://briantford.com/blog/huuuuuge-angular-apps) slightly modified to fit with Sails:
 
@@ -153,7 +153,7 @@ var jsFilesToInject = [
 ]
 ```
 
-##### = MmmmmVC
+### = MmmmmVC
 
 Now our dependencies are loaded correctly but you'll still receive some Angular-related console errors as some of them don't exist yet! Let's create a `controllers/controllers.js` file:
 
@@ -276,7 +276,7 @@ Finally, we need to display this data on the page. We'll use the `templates/user
 
 If you navigate to [http://localhost:1337/#/app/user](http://localhost:1337/#/app/user) you should see a list of users. Nice work! :boat:
 
-##### Resources
+### Resources
 
 - [angularSails](http://balderdashy.github.io/angularSails/#/api/ngsails.$sailsSocket)
 - [Angular Controllers](http://toddmotto.com/rethinking-angular-js-controllers/)

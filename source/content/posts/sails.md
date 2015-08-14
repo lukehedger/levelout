@@ -1,6 +1,6 @@
 ---
 title: Sails.js
-detail: Hitting the open sea with Sails.js
+detail: One of the strengths of Sails is its ability to interface with a range of databases using a uniform API.
 read: 10
 tags: sails node
 comments: true
@@ -9,9 +9,11 @@ status: published
 date: 28-08-2014
 ---
 
-One of the strengths of Sails is its ability to interface with a range of databases using a uniform API. In this post I'm going to take a look at integrating with MongoDB - the leading NoSQL database. Hopefully by the end of the post you'll be set up with a Sails server, Mongo database and the basic structure of an app that you can build upon. Let's get started.
+### Hitting the open sea with Sails.js
 
-##### Setup Sails
+In this post I'm going to take a look at integrating with MongoDB - the leading NoSQL database. Hopefully by the end of the post you'll be set up with a Sails server, Mongo database and the basic structure of an app that you can build upon. Let's get started.
+
+### Setup Sails
 
 We'll begin by installing Sails and creating a new app:
 ```bash
@@ -33,7 +35,7 @@ Adapters are essentially plugins for [Waterline](https://github.com/balderdashy/
 
 Once you've installed the Mongo adapter, you'll need to configure your app to use it. Dive into the `/config` folder and edit the following files:
 
-###### /config/connections.js
+#### /config/connections.js
 
 ```js
 module.exports.connections = {
@@ -50,7 +52,7 @@ module.exports.connections = {
 };
 ```
 
-###### /config/models.js
+#### /config/models.js
 
 ```js
 module.exports.models = {
@@ -61,7 +63,7 @@ module.exports.models = {
 };
 ```
 
-###### /config/local.js
+#### /config/local.js
 
 ```js
 module.exports = {
@@ -80,7 +82,7 @@ module.exports = {
 };
 ```
 
-##### Setup MongoDB
+### Setup MongoDB
 
 If you've already got Mongo installed you can skip this part. Otherwise, we'll install MongoDB using [Homebrew](http://brew.sh/). Note - it may take some time for the install to complete so go get a cup of tea and leave it to run. Further info about installation can be found in the [Mongo manual](http://docs.mongodb.org/manual/tutorial/install-mongodb-on-os-x/#install-mongodb). Don't forget to create a directory for Mongo to store data in once the installation has completed!
 
@@ -127,7 +129,7 @@ For bonus points you can also add a bit of security to your database by creating
 
 These login credentials can then be added to your `config/local.js` file.
 
-##### Test it out
+### Test it out
 
 First create a new model and controller by running:
 
@@ -162,7 +164,7 @@ You can add a record using the model's JSON API by going to [http://localhost:13
 
 I've only been working with Sails.js for a few days and have found it pretty straight-forward to get started with. This post should get you on your feet quickly but there's loads more to explore. I've included some resources below. Happy sailing and try not to get seasick!
 
-##### Resources
+### Resources
 
 - [Sails.js docs](http://sailsjs.org/#/documentation)
 - [sailsCasts](http://irlnathan.github.io/sailscasts) - these are awesome for getting a basic app up and running
