@@ -1,13 +1,12 @@
 Content:
   ☐ work images
   ☐ work details
-  ☐ consolidate tags
   ☐ post cover images
   ☐ post - combine intro + details
 
 Live:
   ✔ cull posts @done(2015-08-10 11:16) @project(Live)
-  ☐ migrate comments -> https://help.disqus.com/customer/portal/articles/286778-migration-tools
+  ☐ migrate comments -> https://levelout.disqus.com/admin/discussions/migrate/
   ☐ removed unrequired .js/.css files
   ☐ rename repo to level out
   ☐ move to Divshot

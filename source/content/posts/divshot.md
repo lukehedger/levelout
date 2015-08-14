@@ -2,7 +2,7 @@
 title: Divshot (to the face)
 detail: Deploying a static website during the zombie apocalypse
 read: 3
-tags: divshot
+tags: hosting
 comments: true
 slug: divshot
 status: published

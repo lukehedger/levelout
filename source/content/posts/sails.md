@@ -2,7 +2,7 @@
 title: Sails.js
 detail: Hitting the open sea with Sails.js
 read: 10
-tags: sails mongodb node
+tags: sails node
 comments: true
 slug: sails
 status: published

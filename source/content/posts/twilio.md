@@ -2,7 +2,7 @@
 title: Twilio
 detail: Hunting treasure with Twilio
 read: 10
-tags: node twilio mobile
+tags: node
 comments: true
 slug: twilio
 status: draft

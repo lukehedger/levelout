@@ -2,7 +2,7 @@
 title: Day One
 detail: My first day as a website
 read: 3
-tags: jekyll
+tags: blog
 comments: true
 slug: day-one
 status: published

@@ -2,7 +2,7 @@
 title: Jeet Whizz
 detail: Feel griddy all over
 read: 10
-tags: jeet stylus css
+tags: css
 comments: true
 slug: jeet-whizz
 status: published
