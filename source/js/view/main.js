@@ -106,19 +106,25 @@ export default Ractive.extend({
     let postsArray = []
     for (let post in posts) {
       if (posts.hasOwnProperty(post)) {
-        postsArray.push(posts[post]);
+        postsArray.push([post, posts[post]]);
       }
     }
 
     // sort posts chronologically
     let postsSorted = sort(postsArray, function(a, b) {
       // convert date string to date
-      let aDate = moment(a.date, DATE_FORMAT),
-          bDate = moment(b.date, DATE_FORMAT);
+      let aDate = moment(a[1].date, DATE_FORMAT),
+          bDate = moment(b[1].date, DATE_FORMAT);
       return bDate - aDate;
     });
 
-    this.set('posts', postsSorted);
+    // convert array back to object
+    let postsObj = {};
+    postsSorted.forEach(function(post) {
+      postsObj[post[0]] = post[1];
+    });
+
+    this.set('posts', postsObj);
 
   },
 
@@ -170,8 +176,8 @@ export default Ractive.extend({
 
     // convert array back to object
     let tagsObj = {};
-    tagsSorted.forEach(function(el) {
-      tagsObj[el[0]] = el[1];
+    tagsSorted.forEach(function(tag) {
+      tagsObj[tag[0]] = tag[1];
     });
 
     this.set('tags', tagsObj);

@@ -1,7 +1,6 @@
 Build:
-  ☐ account for posts now being array
   ☐ set next/prev posts in main.js
-  ☐ 404 route
+  ☐ 404 route (page('*', notfound))
 
 Style:
   ☐ card hover state (image effect)
