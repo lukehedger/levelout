@@ -1,8 +1,7 @@
+Build:
+  ☐ set next/prev posts in main.js
+
 Style:
-  ☐ sort posts by date in main.js
-
-  ☐ next/prev posts
-
   ☐ card hover state (image effect)
   ☐ tag indexes
 

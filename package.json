@@ -66,6 +66,8 @@
     "inuit-spacing": "^0.7.0",
     "inuit-tools-widths": "^0.1.4",
     "inuit-widths": "^0.4.2",
+    "moment": "^2.10.6",
+    "mout": "^0.11.0",
     "page": "^1.6.3",
     "ractive": "^0.7.3",
     "ractive-events-tap": "^0.2.0",

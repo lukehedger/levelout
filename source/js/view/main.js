@@ -2,9 +2,13 @@ import Ractive from '../module';
 import template from './main.html';
 import page from 'page';
 import request from 'reqwest';
+import moment from 'moment';
+import { sort } from 'mout/array';
 
 // register global Ractive plugins
 Ractive.events.tap = require('ractive-events-tap');
+
+const DATE_FORMAT = "DD-MM-YYYY";
 
 export default Ractive.extend({
 
@@ -40,26 +44,19 @@ export default Ractive.extend({
 
   onDataSuccess(data) {
 
+    // set config data
     let config = data[0].config;
     this.set('config', config);
 
-    let posts = data[0].posts;
-    // TODO - sort posts chronologically
-    // for (let post in posts) {
-    //   console.log(posts[post].date, new Date(posts[post].date));
-    // }
-    this.set('posts', posts);
-
+    // set work data
     let work = data[1].work;
     this.set('work', work);
 
-    // convert tags string to array
-    for (let post in posts) {
-      let tags = posts[post].tags.split(' ');
-      this.set(`posts.${post}.tags`, tags);
-    }
+    // set posts data
+    let posts = data[0].posts;
+    this.setPosts(posts);
 
-    // analyse tags
+    // set tags data
     this.setTags();
 
     // TODO - might need a loading state
@@ -103,9 +100,37 @@ export default Ractive.extend({
 
   },
 
+  setPosts(posts) {
+
+    // convert posts obj to array
+    let postsArray = []
+    for (let post in posts) {
+      if (posts.hasOwnProperty(post)) {
+        postsArray.push(posts[post]);
+      }
+    }
+
+    // sort posts chronologically
+    let postsSorted = sort(postsArray, function(a, b) {
+      // convert date string to date
+      let aDate = moment(a.date, DATE_FORMAT),
+          bDate = moment(b.date, DATE_FORMAT);
+      return bDate - aDate;
+    });
+
+    this.set('posts', postsSorted);
+
+  },
+
   setTags() {
 
     var posts = this.get('posts');
+
+    // convert tags string to array
+    for (let post in posts) {
+      let tags = posts[post].tags.split(' ');
+      this.set(`posts.${post}.tags`, tags);
+    }
 
     // construct an index of tags with related posts
     for (let post in posts) {
