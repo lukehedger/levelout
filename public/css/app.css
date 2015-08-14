@@ -1134,6 +1134,8 @@ pre code {
       transition: border-width 0.2s; }
       .nav__item--text:hover, .nav__item--text:focus {
         border-bottom-width: 3px; }
+    .nav__item--active {
+      border-bottom-width: 3px; }
 
 /**
  * @module:   tag

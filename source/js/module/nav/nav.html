@@ -6,17 +6,13 @@
 
 <div class="nav layout layout--auto layout--tiny layout--right">
 
-  {{#if view == 'index'}}
   <div class="layout__item">
-    <a class="nav__item nav__item--text" on-tap="toBlog">blog</a>
+    <a class="nav__item nav__item--text {{#if view == 'index'}}nav__item--active{{/if}}" on-tap="toHome">work</a>
   </div>
 
-  {{else}}
-
   <div class="layout__item">
-    <a class="nav__item nav__item--text" on-tap="toHome">work</a>
+    <a class="nav__item nav__item--text {{#if view == 'blog'}}nav__item--active{{/if}}" on-tap="toBlog">blog</a>
   </div>
-  {{/if}}
 
   <div class="layout__item">
     <a class="nav__item icon icon--github" href="https://github.com/lukehedger" target="_blank"></a>
