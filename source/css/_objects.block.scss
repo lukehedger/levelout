@@ -1,15 +1,29 @@
 .block {
   min-height: 400px;
   background-color: #FFFFFF;
+  position: relative;
+
+  &:hover {
+
+    .block__overlay {
+      opacity: 0.6;
+    }
+
+    .block__img {
+      opacity: 0.4;
+    }
+
+  }
 
   &--single {
     max-width: 520px;
     margin: auto;
   }
 
-  &__img {
+  &__img, &__overlay {
     width: 100%;
     height: 160px;
+    transition: opacity 0.3s ease-in-out;
 
     &--preview {
       height: 360px;
@@ -19,6 +33,13 @@
 
   &__body {
     padding: $inuit-base-spacing-unit;
+  }
+
+  &__overlay {
+    background-image: linear-gradient(135deg, $color-lopink 0, $color-loblue 100%);
+    opacity: 0;
+    position: absolute;
+    top: 0;
   }
 
 }

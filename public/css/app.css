@@ -776,17 +776,28 @@ body:before {
 
 .block {
   min-height: 400px;
-  background-color: #FFFFFF; }
+  background-color: #FFFFFF;
+  position: relative; }
+  .block:hover .block__overlay {
+    opacity: 0.6; }
+  .block:hover .block__img {
+    opacity: 0.4; }
   .block--single {
     max-width: 520px;
     margin: auto; }
-  .block__img {
+  .block__img, .block__overlay {
     width: 100%;
-    height: 160px; }
-    .block__img--preview {
+    height: 160px;
+    transition: opacity 0.3s ease-in-out; }
+    .block__img--preview, .block__overlay--preview {
       height: 360px; }
   .block__body {
     padding: 24px; }
+  .block__overlay {
+    background-image: linear-gradient(135deg, #F2385A 0, #36B1BF 100%);
+    opacity: 0;
+    position: absolute;
+    top: 0; }
 
 .icon {
   width: 18px;
