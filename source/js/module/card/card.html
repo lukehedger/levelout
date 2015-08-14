@@ -4,35 +4,37 @@
   @js:       ./source/js/module/card/card.js
 -->
 
-<div class="card layout__item {{#if standard}}u-1/2-lap u-1/4-desk{{/if}} {{#if preview}}u-1/2-lap-and-up{{/if}} {{#if single}}card--single{{/if}}" on-tap="toLink:{{content.slug}}">
+<div class="layout__item {{#if standard}}u-1/2-lap u-1/4-desk{{/if}} {{#if preview}}u-1/2-lap-and-up{{/if}}">
+  <div class="card {{#if single}}card--single{{/if}}" on-tap="toLink:{{content.slug}}">
 
-  <div class="block {{#if single}}block--single{{/if}} ">
+    <div class="block">
 
-    <div class="block__overlay {{#if preview}}block__overlay--preview{{/if}}"></div>
+      <div class="block__overlay {{#if preview}}block__overlay--preview{{/if}}"></div>
 
-    <img class="block__img {{#if preview}}block__img--preview{{/if}}" src="/img/{{content.shot}}" alt="{{content.project}}" />
+      <img class="block__img {{#if preview}}block__img--preview{{/if}}" src="/img/{{content.shot}}" alt="{{content.project}}" />
 
-    <div class="block__body">
+      <div class="block__body">
 
-      {{#project}}
-      <span class="card__owner">{{content.co}}</span>
-      {{/}}
+        {{#project}}
+        <span class="card__owner">{{content.co}}</span>
+        {{/}}
 
-      <h3 class="card__title">{{content.title}}</h3>
+        <h3 class="card__title">{{content.title}}</h3>
 
-      <p class="card__detail {{#if preview}}card__detail--preview{{/if}}">{{content.detail}}</p>
+        <p class="card__detail {{#if preview}}card__detail--preview{{/if}}">{{content.detail}}</p>
 
-      <span class="card__cta">
-        {{#if post}}
-        read on &rarr;
-        {{/if}}
-        {{#if project}}
-        explore project &rarr;
-        {{/if}}
-      </span>
+        <span class="card__cta">
+          {{#if post}}
+          read on &rarr;
+          {{/if}}
+          {{#if project}}
+          explore project &rarr;
+          {{/if}}
+        </span>
+
+      </div>
 
     </div>
 
   </div>
-
 </div>

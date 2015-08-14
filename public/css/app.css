@@ -782,9 +782,6 @@ body:before {
     opacity: 0.6; }
   .block:hover .block__img {
     opacity: 0.4; }
-  .block--single {
-    max-width: 520px;
-    margin: auto; }
   .block__img, .block__overlay {
     width: 100%;
     height: 160px;
@@ -986,7 +983,7 @@ pre code {
  * @html:     ./source/js/module/blog-preview/blog-preview.html
  */
 .blog-preview {
-  padding: 40px 0 60px; }
+  padding: 40px 0 0; }
   .blog-preview__title {
     font-size: 22px;
     font-size: 1.375rem;
@@ -1033,6 +1030,8 @@ pre code {
   margin-bottom: 24px;
   cursor: pointer; }
   .card--single {
+    max-width: 520px;
+    margin: auto;
     padding-right: 24px; }
   .card__owner {
     margin-bottom: 4px;
@@ -1074,19 +1073,24 @@ pre code {
  * @js:       ./source/js/module/footer/footer.js
  * @html:     ./source/js/module/footer/footer.html
  */
-.footer__tagline {
-  margin-top: 5px;
-  font-size: 14px;
-  font-size: 0.875rem;
-  line-height: 1.3;
-  text-align: center;
-  color: #777777; }
+.footer {
+  margin-top: 40px; }
+  .footer__tagline {
+    margin-top: 5px;
+    font-size: 14px;
+    font-size: 0.875rem;
+    line-height: 1.3;
+    text-align: center;
+    color: #777777; }
 
 /**
  * @module:   header
  * @js:       ./source/js/module/header/header.js
  * @html:     ./source/js/module/header/header.html
  */
+.header {
+  margin-bottom: 40px; }
+
 /**
  * @module:   logo
  * @js:       ./source/js/module/logo/logo.js
@@ -1172,6 +1176,23 @@ pre code {
  * @js:       ./source/js/module/tag/tag.js
  * @html:     ./source/js/module/tag/tag.html
  */
+.tag {
+  max-width: 520px;
+  margin: 0 auto;
+  text-align: center; }
+  .tag__name {
+    margin: 0 10px 10px 0;
+    padding: 10px 20px;
+    background-color: #36B1BF;
+    color: #FFFFFF;
+    display: inline-block;
+    cursor: pointer;
+    transition: background-color 0.3s; }
+    .tag__name:last-of-type {
+      margin-right: 0; }
+    .tag__name:hover {
+      background-color: #80d2db; }
+
 /**
  * @module:   work
  * @js:       ./source/js/module/work/work.js

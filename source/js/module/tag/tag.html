@@ -8,16 +8,20 @@
 
   {{#if search}}
 
+  <h4 class="tag__heading">Posts</h4>
+
   {{#taggedPosts:post}}
     {{#if status != 'draft' || draftsEnabled}}
-    <h3 on-tap="goPost:{{slug}}">{{title}}</h3>
+    <span class="tag__name" on-tap="goPost:{{slug}}">{{title}}</span>
     {{/if}}
   {{/}}
 
   {{else}}
 
+  <h4 class="tag__heading">Tags</h4>
+
   {{#tags:tag}}
-    <h3 on-tap="goTag:{{tag}}">{{tag}}</h3>
+    <span class="tag__name" on-tap="goTag:{{tag}}">{{tag}}</span>
   {{/}}
 
   {{/if}}

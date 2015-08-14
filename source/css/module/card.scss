@@ -11,6 +11,8 @@
   cursor: pointer;
 
   &--single {
+    max-width: 520px;
+    margin: auto;
     padding-right: $inuit-base-spacing-unit;
   }
 
