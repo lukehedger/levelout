@@ -40,6 +40,7 @@
     "component-raf": "^1.2.0",
     "component-tween": "^1.2.0",
     "domready": "^1.0.8",
+    "emojify.js": "^1.1.0",
     "inuit-block": "^0.1.2",
     "inuit-box-sizing": "^0.2.0",
     "inuit-clearfix": "lucasmotta/trumps.clearfix",

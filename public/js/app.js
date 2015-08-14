@@ -34,7 +34,7 @@ var app = {
   app.render();
 });
 
-},{"./view/main":108,"domready":9}],2:[function(require,module,exports){
+},{"./view/main":109,"domready":9}],2:[function(require,module,exports){
 // shim for using process in browser
 
 var process = module.exports = {};
@@ -772,6 +772,386 @@ exports['in-out-bounce'] = exports.inOutBounce;
 });
 
 },{}],10:[function(require,module,exports){
+(function (root, factory) {
+    'use strict';
+
+    if (typeof define === 'function' && define.amd) {
+        // AMD. Register as an anonymous module.
+        define([], factory);
+    } else if (typeof exports === 'object') {
+        // Node. Does not work with strict CommonJS, but
+        // only CommonJS-like environments that support module.exports,
+        // like Node.
+        module.exports = factory();
+    } else {
+        // Browser globals (root is window)
+        root.emojify = factory();
+    }
+}(this, function () {
+        'use strict';
+
+        var emojify = (function () {
+            /**
+             * NB!
+             * The namedEmojiString variable is updated automatically by the
+             * "update" gulp task. Do not remove the comment as this will
+             * cause the gulp task to stop working.
+             */
+            var namedEmojiString =
+            /*##EMOJILIST*/"+1,-1,100,1234,8ball,a,ab,abc,abcd,accept,aerial_tramway,airplane,alarm_clock,alien,ambulance,anchor,angel,anger,angry,anguished,ant,apple,aquarius,aries,arrow_backward,arrow_double_down,arrow_double_up,arrow_down,arrow_down_small,arrow_forward,arrow_heading_down,arrow_heading_up,arrow_left,arrow_lower_left,arrow_lower_right,arrow_right,arrow_right_hook,arrow_up,arrow_up_down,arrow_up_small,arrow_upper_left,arrow_upper_right,arrows_clockwise,arrows_counterclockwise,art,articulated_lorry,astonished,atm,b,baby,baby_bottle,baby_chick,baby_symbol,back,baggage_claim,balloon,ballot_box_with_check,bamboo,banana,bangbang,bank,bar_chart,barber,baseball,basketball,bath,bathtub,battery,bear,bee,beer,beers,beetle,beginner,bell,bento,bicyclist,bike,bikini,bird,birthday,black_circle,black_joker,black_medium_small_square,black_medium_square,black_nib,black_small_square,black_square,black_square_button,blossom,blowfish,blue_book,blue_car,blue_heart,blush,boar,boat,bomb,book,bookmark,bookmark_tabs,books,boom,boot,bouquet,bow,bowling,bowtie,boy,bread,bride_with_veil,bridge_at_night,briefcase,broken_heart,bug,bulb,bullettrain_front,bullettrain_side,bus,busstop,bust_in_silhouette,busts_in_silhouette,cactus,cake,calendar,calling,camel,camera,cancer,candy,capital_abcd,capricorn,car,card_index,carousel_horse,cat,cat2,cd,chart,chart_with_downwards_trend,chart_with_upwards_trend,checkered_flag,cherries,cherry_blossom,chestnut,chicken,children_crossing,chocolate_bar,christmas_tree,church,cinema,circus_tent,city_sunrise,city_sunset,cl,clap,clapper,clipboard,clock1,clock10,clock1030,clock11,clock1130,clock12,clock1230,clock130,clock2,clock230,clock3,clock330,clock4,clock430,clock5,clock530,clock6,clock630,clock7,clock730,clock8,clock830,clock9,clock930,closed_book,closed_lock_with_key,closed_umbrella,cloud,clubs,cn,cocktail,coffee,cold_sweat,collision,computer,confetti_ball,confounded,confused,congratulations,construction,construction_worker,convenience_store,cookie,cool,cop,copyright,corn,couple,couple_with_heart,couplekiss,cow,cow2,credit_card,crescent_moon,crocodile,crossed_flags,crown,cry,crying_cat_face,crystal_ball,cupid,curly_loop,currency_exchange,curry,custard,customs,cyclone,dancer,dancers,dango,dart,dash,date,de,deciduous_tree,department_store,diamond_shape_with_a_dot_inside,diamonds,disappointed,disappointed_relieved,dizzy,dizzy_face,do_not_litter,dog,dog2,dollar,dolls,dolphin,donut,door,doughnut,dragon,dragon_face,dress,dromedary_camel,droplet,dvd,e-mail,ear,ear_of_rice,earth_africa,earth_americas,earth_asia,egg,eggplant,eight,eight_pointed_black_star,eight_spoked_asterisk,electric_plug,elephant,email,end,envelope,es,euro,european_castle,european_post_office,evergreen_tree,exclamation,expressionless,eyeglasses,eyes,facepunch,factory,fallen_leaf,family,fast_forward,fax,fearful,feelsgood,feet,ferris_wheel,file_folder,finnadie,fire,fire_engine,fireworks,first_quarter_moon,first_quarter_moon_with_face,fish,fish_cake,fishing_pole_and_fish,fist,five,flags,flashlight,floppy_disk,flower_playing_cards,flushed,foggy,football,fork_and_knife,fountain,four,four_leaf_clover,fr,free,fried_shrimp,fries,frog,frowning,fu,fuelpump,full_moon,full_moon_with_face,game_die,gb,gem,gemini,ghost,gift,gift_heart,girl,globe_with_meridians,goat,goberserk,godmode,golf,grapes,green_apple,green_book,green_heart,grey_exclamation,grey_question,grimacing,grin,grinning,guardsman,guitar,gun,haircut,hamburger,hammer,hamster,hand,handbag,hankey,hash,hatched_chick,hatching_chick,headphones,hear_no_evil,heart,heart_decoration,heart_eyes,heart_eyes_cat,heartbeat,heartpulse,hearts,heavy_check_mark,heavy_division_sign,heavy_dollar_sign,heavy_exclamation_mark,heavy_minus_sign,heavy_multiplication_x,heavy_plus_sign,helicopter,herb,hibiscus,high_brightness,high_heel,hocho,honey_pot,honeybee,horse,horse_racing,hospital,hotel,hotsprings,hourglass,hourglass_flowing_sand,house,house_with_garden,hurtrealbad,hushed,ice_cream,icecream,id,ideograph_advantage,imp,inbox_tray,incoming_envelope,information_desk_person,information_source,innocent,interrobang,iphone,it,izakaya_lantern,jack_o_lantern,japan,japanese_castle,japanese_goblin,japanese_ogre,jeans,joy,joy_cat,jp,key,keycap_ten,kimono,kiss,kissing,kissing_cat,kissing_closed_eyes,kissing_face,kissing_heart,kissing_smiling_eyes,koala,koko,kr,large_blue_circle,large_blue_diamond,large_orange_diamond,last_quarter_moon,last_quarter_moon_with_face,laughing,leaves,ledger,left_luggage,left_right_arrow,leftwards_arrow_with_hook,lemon,leo,leopard,libra,light_rail,link,lips,lipstick,lock,lock_with_ink_pen,lollipop,loop,loudspeaker,love_hotel,love_letter,low_brightness,m,mag,mag_right,mahjong,mailbox,mailbox_closed,mailbox_with_mail,mailbox_with_no_mail,man,man_with_gua_pi_mao,man_with_turban,mans_shoe,maple_leaf,mask,massage,meat_on_bone,mega,melon,memo,mens,metal,metro,microphone,microscope,milky_way,minibus,minidisc,mobile_phone_off,money_with_wings,moneybag,monkey,monkey_face,monorail,mortar_board,mount_fuji,mountain_bicyclist,mountain_cableway,mountain_railway,mouse,mouse2,movie_camera,moyai,muscle,mushroom,musical_keyboard,musical_note,musical_score,mute,nail_care,name_badge,neckbeard,necktie,negative_squared_cross_mark,neutral_face,new,new_moon,new_moon_with_face,newspaper,ng,nine,no_bell,no_bicycles,no_entry,no_entry_sign,no_good,no_mobile_phones,no_mouth,no_pedestrians,no_smoking,non-potable_water,nose,notebook,notebook_with_decorative_cover,notes,nut_and_bolt,o,o2,ocean,octocat,octopus,oden,office,ok,ok_hand,ok_woman,older_man,older_woman,on,oncoming_automobile,oncoming_bus,oncoming_police_car,oncoming_taxi,one,open_file_folder,open_hands,open_mouth,ophiuchus,orange_book,outbox_tray,ox,package,page_facing_up,page_with_curl,pager,palm_tree,panda_face,paperclip,parking,part_alternation_mark,partly_sunny,passport_control,paw_prints,peach,pear,pencil,pencil2,penguin,pensive,performing_arts,persevere,person_frowning,person_with_blond_hair,person_with_pouting_face,phone,pig,pig2,pig_nose,pill,pineapple,pisces,pizza,plus1,point_down,point_left,point_right,point_up,point_up_2,police_car,poodle,poop,post_office,postal_horn,postbox,potable_water,pouch,poultry_leg,pound,pouting_cat,pray,princess,punch,purple_heart,purse,pushpin,put_litter_in_its_place,question,rabbit,rabbit2,racehorse,radio,radio_button,rage,rage1,rage2,rage3,rage4,railway_car,rainbow,raised_hand,raised_hands,raising_hand,ram,ramen,rat,recycle,red_car,red_circle,registered,relaxed,relieved,repeat,repeat_one,restroom,revolving_hearts,rewind,ribbon,rice,rice_ball,rice_cracker,rice_scene,ring,rocket,roller_coaster,rooster,rose,rotating_light,round_pushpin,rowboat,ru,rugby_football,runner,running,running_shirt_with_sash,sa,sagittarius,sailboat,sake,sandal,santa,satellite,satisfied,saxophone,school,school_satchel,scissors,scorpius,scream,scream_cat,scroll,seat,secret,see_no_evil,seedling,seven,shaved_ice,sheep,shell,ship,shipit,shirt,shit,shoe,shower,signal_strength,six,six_pointed_star,ski,skull,sleeping,sleepy,slot_machine,small_blue_diamond,small_orange_diamond,small_red_triangle,small_red_triangle_down,smile,smile_cat,smiley,smiley_cat,smiling_imp,smirk,smirk_cat,smoking,snail,snake,snowboarder,snowflake,snowman,sob,soccer,soon,sos,sound,space_invader,spades,spaghetti,sparkle,sparkler,sparkles,sparkling_heart,speak_no_evil,speaker,speech_balloon,speedboat,squirrel,star,star2,stars,station,statue_of_liberty,steam_locomotive,stew,straight_ruler,strawberry,stuck_out_tongue,stuck_out_tongue_closed_eyes,stuck_out_tongue_winking_eye,sun_with_face,sunflower,sunglasses,sunny,sunrise,sunrise_over_mountains,surfer,sushi,suspect,suspension_railway,sweat,sweat_drops,sweat_smile,sweet_potato,swimmer,symbols,syringe,tada,tanabata_tree,tangerine,taurus,taxi,tea,telephone,telephone_receiver,telescope,tennis,tent,thought_balloon,three,thumbsdown,thumbsup,ticket,tiger,tiger2,tired_face,tm,toilet,tokyo_tower,tomato,tongue,top,tophat,tractor,traffic_light,train,train2,tram,triangular_flag_on_post,triangular_ruler,trident,triumph,trolleybus,trollface,trophy,tropical_drink,tropical_fish,truck,trumpet,tshirt,tulip,turtle,tv,twisted_rightwards_arrows,two,two_hearts,two_men_holding_hands,two_women_holding_hands,u5272,u5408,u55b6,u6307,u6708,u6709,u6e80,u7121,u7533,u7981,u7a7a,uk,umbrella,unamused,underage,unlock,up,us,v,vertical_traffic_light,vhs,vibration_mode,video_camera,video_game,violin,virgo,volcano,vs,walking,waning_crescent_moon,waning_gibbous_moon,warning,watch,water_buffalo,watermelon,wave,wavy_dash,waxing_crescent_moon,waxing_gibbous_moon,wc,weary,wedding,whale,whale2,wheelchair,white_check_mark,white_circle,white_flower,white_large_square,white_medium_small_square,white_medium_square,white_small_square,white_square_button,wind_chime,wine_glass,wink,wolf,woman,womans_clothes,womans_hat,womens,worried,wrench,x,yellow_heart,yen,yum,zap,zero,zzz";
+
+            var namedEmoji = namedEmojiString.split(/,/);
+
+            /* A hash with the named emoji as keys */
+            var namedMatchHash = namedEmoji.reduce(function(memo, v) {
+                memo[v] = true;
+                return memo;
+            }, {});
+
+            var emoticonsProcessed;
+            var emojiMegaRe;
+
+            function initEmoticonsProcessed() {
+                /* List of emoticons used in the regular expression */
+                var emoticons = {
+         /* :..: */ named: /:([a-z0-9A-Z_-]+):/,
+         /* :-)  */ smile: /:-?\)/g,
+         /* :o   */ open_mouth: /:o/gi,
+         /* :-o  */ scream: /:-o/gi,
+         /* :-]  */ smirk: /[:;]-?]/g,
+         /* :-D  */ grinning: /[:;]-?d/gi,
+         /* X-D  */ stuck_out_tongue_closed_eyes: /x-d/gi,
+         /* ;-p  */ stuck_out_tongue_winking_eye: /[:;]-?p/gi,
+   /* :-[ / :-@  */ rage: /:-?[\[@]/g,
+         /* :-(  */ frowning: /:-?\(/g,
+         /* :'-( */ sob: /:['’]-?\(|:&#x27;\(/g,
+         /* :-*  */ kissing_heart: /:-?\*/g,
+         /* ;-)  */ wink: /;-?\)/g,
+         /* :-/  */ pensive: /:-?\//g,
+         /* :-s  */ confounded: /:-?s/gi,
+         /* :-|  */ flushed: /:-?\|/g,
+         /* :-$  */ relaxed: /:-?\$/g,
+         /* :-x  */ mask: /:-x/gi,
+         /* <3   */ heart: /<3|&lt;3/g,
+         /* </3  */ broken_heart: /<\/3|&lt;&#x2F;3/g,
+         /* :+1: */ thumbsup: /:\+1:/g,
+         /* :-1: */ thumbsdown: /:\-1:/g
+                };
+
+                if (defaultConfig.ignore_emoticons) {
+                    emoticons = {
+             /* :..: */ named: /:([a-z0-9A-Z_-]+):/,
+             /* :+1: */ thumbsup: /:\+1:/g,
+             /* :-1: */ thumbsdown: /:\-1:/g
+                    };
+                }
+
+                return Object.keys(emoticons).map(function(key) {
+                    return [emoticons[key], key];
+                });
+            }
+
+            function initMegaRe() {
+                /* The source for our mega-regex */
+                var mega = emoticonsProcessed
+                        .map(function(v) {
+                            var re = v[0];
+                            var val = re.source || re;
+                            val = val.replace(/(^|[^\[])\^/g, '$1');
+                            return "(" + val + ")";
+                        })
+                        .join('|');
+
+                /* The regex used to find emoji */
+                return new RegExp(mega, "gi");
+            }
+
+            var defaultConfig = {
+                blacklist: {
+                    'ids': [],
+                    'classes': ['no-emojify'],
+                    'elements': ['script', 'textarea', 'a', 'pre', 'code']
+                },
+                tag_type: null,
+                only_crawl_id: null,
+                img_dir: 'images/emoji',
+                ignore_emoticons: false,
+                mode: 'img'
+            };
+
+            /* Returns true if the given char is whitespace */
+            function isWhitespace(s) {
+                return s === ' ' || s === '\t' || s === '\r' || s === '\n' || s === '' || s === String.fromCharCode(160);
+            }
+
+            var modeToElementTagType = {
+                'img': 'img',
+                'sprite': 'span',
+                'data-uri': 'span'
+            };
+
+            /* Given a match in a node, replace the text with an image */
+            function insertEmojicon(args) {
+                var emojiElement = null;
+
+
+                if(args.replacer){
+                    emojiElement = args.replacer.apply({
+                            config: defaultConfig
+                        },
+                        [':' + args.emojiName + ':', args.emojiName]
+                    );
+                }
+                else {
+                    var elementType = defaultConfig.tag_type || modeToElementTagType[defaultConfig.mode];
+                    emojiElement = args.win.document.createElement(elementType);
+
+                    if (elementType !== 'img') {
+                        emojiElement.setAttribute('class', 'emoji emoji-' + args.emojiName);
+                    } else {
+                        emojiElement.setAttribute('align', 'absmiddle');
+                        emojiElement.setAttribute('alt', ':' + args.emojiName + ':');
+                        emojiElement.setAttribute('class', 'emoji');
+                        emojiElement.setAttribute('src', defaultConfig.img_dir + '/' + args.emojiName + '.png');
+                    }
+
+                    emojiElement.setAttribute('title', ':' + args.emojiName + ':');
+                }
+
+                args.node.splitText(args.match.index);
+                args.node.nextSibling.nodeValue = args.node.nextSibling.nodeValue.substr(
+                    args.match[0].length,
+                    args.node.nextSibling.nodeValue.length
+                );
+                emojiElement.appendChild(args.node.splitText(args.match.index));
+                args.node.parentNode.insertBefore(emojiElement, args.node.nextSibling);
+            }
+
+            /* Given an regex match, return the name of the matching emoji */
+            function getEmojiNameForMatch(match) {
+                /* Special case for named emoji */
+                if(match[1] && match[2]) {
+                    var named = match[2];
+                    if(namedMatchHash[named]) { return named; }
+                    return;
+                }
+                for(var i = 3; i < match.length - 1; i++) {
+                    if(match[i]) {
+                        return emoticonsProcessed[i - 2][1];
+                    }
+                }
+            }
+
+            function defaultReplacer(emoji, name) {
+                /*jshint validthis: true */
+                var elementType = this.config.tag_type || modeToElementTagType[this.config.mode];
+                if (elementType !== 'img') {
+                    return "<" +  elementType +" class='emoji emoji-" + name + "' title=':" + name + ":'></" + elementType+ ">";
+                } else {
+                    return "<img align='absmiddle' alt=':" + name + ":' class='emoji' src='" + this.config.img_dir + '/' + name + ".png' title=':" + name + ":' />";
+                }
+            }
+
+            function Validator() {
+                this.lastEmojiTerminatedAt = -1;
+            }
+
+            Validator.prototype = {
+                validate: function(match, index, input) {
+                    var self = this;
+
+                    /* Validator */
+                    var emojiName = getEmojiNameForMatch(match);
+                    if(!emojiName) { return; }
+
+                    var m = match[0];
+                    var length = m.length;
+                    // var index = match.index;
+                    // var input = match.input;
+
+                    function success() {
+                        self.lastEmojiTerminatedAt = length + index;
+                        return emojiName;
+                    }
+
+                    /* At the beginning? */
+                    if(index === 0) { return success(); }
+
+                    /* At the end? */
+                    if(input.length === m.length + index) { return success(); }
+
+                    var hasEmojiBefore = this.lastEmojiTerminatedAt === index;
+                    if (hasEmojiBefore) { return success();}
+
+                    /* Has a whitespace before? */
+                    if(isWhitespace(input.charAt(index - 1))) { return success(); }
+
+                    var hasWhitespaceAfter = isWhitespace(input.charAt(m.length + index));
+                    /* Has a whitespace after? */
+                    if(hasWhitespaceAfter && hasEmojiBefore) { return success(); }
+
+                    return;
+                }
+            };
+
+            function emojifyString (htmlString, replacer) {
+                if(!htmlString) { return htmlString; }
+                if(!replacer) { replacer = defaultReplacer; }
+
+                emoticonsProcessed = initEmoticonsProcessed();
+                emojiMegaRe = initMegaRe();
+
+                var validator = new Validator();
+
+                return htmlString.replace(emojiMegaRe, function() {
+                    var matches = Array.prototype.slice.call(arguments, 0, -2);
+                    var index = arguments[arguments.length - 2];
+                    var input = arguments[arguments.length - 1];
+                    var emojiName = validator.validate(matches, index, input);
+                    if(emojiName) {
+                        return replacer.apply({
+                                config: defaultConfig
+                            },
+                            [arguments[0], emojiName]
+                        );
+                    }
+                    /* Did not validate, return the original value */
+                    return arguments[0];
+                });
+
+            }
+            function run(el, replacer) {
+
+                // Check if an element was not passed.
+                // This will only work in the browser
+                if(typeof el === 'undefined'){
+                    // Check if an element was configured. If not, default to the body.
+                    if (defaultConfig.only_crawl_id) {
+                        el = document.getElementById(defaultConfig.only_crawl_id);
+                    } else {
+                        el = document.body;
+                    }
+                }
+
+                // Get the window object from the passed element.
+                var doc = el.ownerDocument,
+                    win = doc.defaultView || doc.parentWindow;
+
+                var treeTraverse = function (parent, cb){
+                    var child;
+
+                    if (parent.hasChildNodes()) {
+                        child = parent.firstChild;
+                        while(child){
+                            if(cb(child)) {
+                                treeTraverse(child, cb);
+                            }
+                            child = child.nextSibling;
+                        }
+                    }
+                };
+
+                var matchAndInsertEmoji = function(node) {
+                    var match;
+                    var matches = [];
+                    var validator = new Validator();
+
+                    while ((match = emojiMegaRe.exec(node.data)) !== null) {
+                        if(validator.validate(match, match.index, match.input)) {
+                            matches.push(match);
+                        }
+                    }
+
+                    for (var i = matches.length; i-- > 0;) {
+                        /* Replace the text with the emoji */
+                        var emojiName = getEmojiNameForMatch(matches[i]);
+                        insertEmojicon({
+                            node: node,
+                            match: matches[i],
+                            emojiName: emojiName,
+                            replacer: replacer,
+                            win: win
+                        });
+                    }
+                };
+
+                emoticonsProcessed = initEmoticonsProcessed();
+                emojiMegaRe = initMegaRe();
+
+                var nodes = [];
+
+                var elementsBlacklist = new RegExp(defaultConfig.blacklist.elements.join('|'), 'i'),
+                    classesBlacklist = new RegExp(defaultConfig.blacklist.classes.join('|'), 'i');
+
+                if(typeof win.document.createTreeWalker !== 'undefined') {
+                    var nodeIterator = win.document.createTreeWalker(
+                        el,
+                        win.NodeFilter.SHOW_TEXT | win.NodeFilter.SHOW_ELEMENT,
+                        function(node) {
+                            if(node.nodeType !== 1) {
+                                /* Text Node? Good! */
+                                return win.NodeFilter.FILTER_ACCEPT;
+                            }
+
+                            if(node.tagName.match(elementsBlacklist) || node.tagName === "svg" || node.className.match(classesBlacklist)) {
+                                return win.NodeFilter.FILTER_REJECT;
+                            }
+
+                            return win.NodeFilter.FILTER_SKIP;
+                        },
+                        false
+                    );
+
+                    var node;
+
+                    while((node = nodeIterator.nextNode()) !== null) {
+                        nodes.push(node);
+                    }
+                }
+                else {
+                    treeTraverse(el, function(node){
+                        if(
+                            (typeof node.tagName !== 'undefined' && node.tagName.match(elementsBlacklist)) ||
+                            (typeof node.className !== 'undefined' && node.className.match(classesBlacklist))
+                        ){
+                            return false;
+                        }
+                        if (node.nodeType === 1) {
+                            return true;
+                        }
+
+                        nodes.push(node);
+                        return true;
+                    });
+                }
+
+                nodes.forEach(matchAndInsertEmoji);
+            }
+
+            return {
+                // Sane defaults
+                defaultConfig: defaultConfig,
+                emojiNames: namedEmoji,
+                setConfig: function (newConfig) {
+                    Object.keys(defaultConfig).forEach(function(f) {
+                        if(f in newConfig) {
+                            defaultConfig[f] = newConfig[f];
+                        }
+                    });
+                },
+
+                replace: emojifyString,
+
+                // Main method
+                run: run
+            };
+        })();
+
+        return emojify;
+    }
+));
+
+},{}],11:[function(require,module,exports){
 //! moment.js
 //! version : 2.10.6
 //! authors : Tim Wood, Iskren Chernev, Moment.js contributors
@@ -3967,7 +4347,7 @@ exports['in-out-bounce'] = exports.inOutBounce;
     return _moment;
 
 }));
-},{}],11:[function(require,module,exports){
+},{}],12:[function(require,module,exports){
 
 
 //automatically generated, do not edit!
@@ -4023,7 +4403,7 @@ module.exports = {
 
 
 
-},{"./array/append":12,"./array/collect":13,"./array/combine":14,"./array/compact":15,"./array/contains":16,"./array/difference":17,"./array/equals":18,"./array/every":19,"./array/filter":20,"./array/find":21,"./array/findIndex":22,"./array/findLast":23,"./array/findLastIndex":24,"./array/flatten":25,"./array/forEach":26,"./array/groupBy":27,"./array/indexOf":28,"./array/insert":29,"./array/intersection":30,"./array/invoke":31,"./array/join":32,"./array/last":33,"./array/lastIndexOf":34,"./array/map":35,"./array/max":36,"./array/min":37,"./array/pick":38,"./array/pluck":39,"./array/range":40,"./array/reduce":41,"./array/reduceRight":42,"./array/reject":43,"./array/remove":44,"./array/removeAll":45,"./array/shuffle":46,"./array/slice":47,"./array/some":48,"./array/sort":49,"./array/sortBy":50,"./array/split":51,"./array/take":52,"./array/toLookup":53,"./array/union":54,"./array/unique":55,"./array/xor":56,"./array/zip":57}],12:[function(require,module,exports){
+},{"./array/append":13,"./array/collect":14,"./array/combine":15,"./array/compact":16,"./array/contains":17,"./array/difference":18,"./array/equals":19,"./array/every":20,"./array/filter":21,"./array/find":22,"./array/findIndex":23,"./array/findLast":24,"./array/findLastIndex":25,"./array/flatten":26,"./array/forEach":27,"./array/groupBy":28,"./array/indexOf":29,"./array/insert":30,"./array/intersection":31,"./array/invoke":32,"./array/join":33,"./array/last":34,"./array/lastIndexOf":35,"./array/map":36,"./array/max":37,"./array/min":38,"./array/pick":39,"./array/pluck":40,"./array/range":41,"./array/reduce":42,"./array/reduceRight":43,"./array/reject":44,"./array/remove":45,"./array/removeAll":46,"./array/shuffle":47,"./array/slice":48,"./array/some":49,"./array/sort":50,"./array/sortBy":51,"./array/split":52,"./array/take":53,"./array/toLookup":54,"./array/union":55,"./array/unique":56,"./array/xor":57,"./array/zip":58}],13:[function(require,module,exports){
 
 
     /**
@@ -4046,7 +4426,7 @@ module.exports = {
     module.exports = append;
 
 
-},{}],13:[function(require,module,exports){
+},{}],14:[function(require,module,exports){
 var append = require('./append');
 var makeIterator = require('../function/makeIterator_');
 
@@ -4075,7 +4455,7 @@ var makeIterator = require('../function/makeIterator_');
 
 
 
-},{"../function/makeIterator_":59,"./append":12}],14:[function(require,module,exports){
+},{"../function/makeIterator_":60,"./append":13}],15:[function(require,module,exports){
 var indexOf = require('./indexOf');
 
     /**
@@ -4099,7 +4479,7 @@ var indexOf = require('./indexOf');
     module.exports = combine;
 
 
-},{"./indexOf":28}],15:[function(require,module,exports){
+},{"./indexOf":29}],16:[function(require,module,exports){
 var filter = require('./filter');
 
     /**
@@ -4114,7 +4494,7 @@ var filter = require('./filter');
     module.exports = compact;
 
 
-},{"./filter":20}],16:[function(require,module,exports){
+},{"./filter":21}],17:[function(require,module,exports){
 var indexOf = require('./indexOf');
 
     /**
@@ -4126,7 +4506,7 @@ var indexOf = require('./indexOf');
     module.exports = contains;
 
 
-},{"./indexOf":28}],17:[function(require,module,exports){
+},{"./indexOf":29}],18:[function(require,module,exports){
 var unique = require('./unique');
 var filter = require('./filter');
 var some = require('./some');
@@ -4151,7 +4531,7 @@ var slice = require('./slice');
 
 
 
-},{"./contains":16,"./filter":20,"./slice":47,"./some":48,"./unique":55}],18:[function(require,module,exports){
+},{"./contains":17,"./filter":21,"./slice":48,"./some":49,"./unique":56}],19:[function(require,module,exports){
 var is = require('../lang/is');
 var isArray = require('../lang/isArray');
 var every = require('./every');
@@ -4183,7 +4563,7 @@ var every = require('./every');
 
 
 
-},{"../lang/is":61,"../lang/isArray":62,"./every":19}],19:[function(require,module,exports){
+},{"../lang/is":62,"../lang/isArray":63,"./every":20}],20:[function(require,module,exports){
 var makeIterator = require('../function/makeIterator_');
 
     /**
@@ -4212,7 +4592,7 @@ var makeIterator = require('../function/makeIterator_');
     module.exports = every;
 
 
-},{"../function/makeIterator_":59}],20:[function(require,module,exports){
+},{"../function/makeIterator_":60}],21:[function(require,module,exports){
 var makeIterator = require('../function/makeIterator_');
 
     /**
@@ -4240,7 +4620,7 @@ var makeIterator = require('../function/makeIterator_');
 
 
 
-},{"../function/makeIterator_":59}],21:[function(require,module,exports){
+},{"../function/makeIterator_":60}],22:[function(require,module,exports){
 var findIndex = require('./findIndex');
 
     /**
@@ -4255,7 +4635,7 @@ var findIndex = require('./findIndex');
 
 
 
-},{"./findIndex":22}],22:[function(require,module,exports){
+},{"./findIndex":23}],23:[function(require,module,exports){
 var makeIterator = require('../function/makeIterator_');
 
     /**
@@ -4280,7 +4660,7 @@ var makeIterator = require('../function/makeIterator_');
     module.exports = findIndex;
 
 
-},{"../function/makeIterator_":59}],23:[function(require,module,exports){
+},{"../function/makeIterator_":60}],24:[function(require,module,exports){
 var findLastIndex = require('./findLastIndex');
 
     /**
@@ -4295,7 +4675,7 @@ var findLastIndex = require('./findLastIndex');
 
 
 
-},{"./findLastIndex":24}],24:[function(require,module,exports){
+},{"./findLastIndex":25}],25:[function(require,module,exports){
 var makeIterator = require('../function/makeIterator_');
 
     /**
@@ -4321,7 +4701,7 @@ var makeIterator = require('../function/makeIterator_');
 
 
 
-},{"../function/makeIterator_":59}],25:[function(require,module,exports){
+},{"../function/makeIterator_":60}],26:[function(require,module,exports){
 var isArray = require('../lang/isArray');
 var append = require('./append');
 
@@ -4366,7 +4746,7 @@ var append = require('./append');
 
 
 
-},{"../lang/isArray":62,"./append":12}],26:[function(require,module,exports){
+},{"../lang/isArray":63,"./append":13}],27:[function(require,module,exports){
 
 
     /**
@@ -4391,7 +4771,7 @@ var append = require('./append');
 
 
 
-},{}],27:[function(require,module,exports){
+},{}],28:[function(require,module,exports){
 var forEach = require('../array/forEach');
 var identity = require('../function/identity');
 var makeIterator = require('../function/makeIterator_');
@@ -4423,7 +4803,7 @@ var makeIterator = require('../function/makeIterator_');
     module.exports = groupBy;
 
 
-},{"../array/forEach":26,"../function/identity":58,"../function/makeIterator_":59}],28:[function(require,module,exports){
+},{"../array/forEach":27,"../function/identity":59,"../function/makeIterator_":60}],29:[function(require,module,exports){
 
 
     /**
@@ -4453,7 +4833,7 @@ var makeIterator = require('../function/makeIterator_');
     module.exports = indexOf;
 
 
-},{}],29:[function(require,module,exports){
+},{}],30:[function(require,module,exports){
 var difference = require('./difference');
 var slice = require('./slice');
 
@@ -4470,7 +4850,7 @@ var slice = require('./slice');
     module.exports = insert;
 
 
-},{"./difference":17,"./slice":47}],30:[function(require,module,exports){
+},{"./difference":18,"./slice":48}],31:[function(require,module,exports){
 var unique = require('./unique');
 var filter = require('./filter');
 var every = require('./every');
@@ -4496,7 +4876,7 @@ var slice = require('./slice');
 
 
 
-},{"./contains":16,"./every":19,"./filter":20,"./slice":47,"./unique":55}],31:[function(require,module,exports){
+},{"./contains":17,"./every":20,"./filter":21,"./slice":48,"./unique":56}],32:[function(require,module,exports){
 var slice = require('./slice');
 
     /**
@@ -4521,7 +4901,7 @@ var slice = require('./slice');
     module.exports = invoke;
 
 
-},{"./slice":47}],32:[function(require,module,exports){
+},{"./slice":48}],33:[function(require,module,exports){
 var filter = require('./filter');
 
     function isValidString(val) {
@@ -4540,7 +4920,7 @@ var filter = require('./filter');
     module.exports = join;
 
 
-},{"./filter":20}],33:[function(require,module,exports){
+},{"./filter":21}],34:[function(require,module,exports){
 
 
     /**
@@ -4558,7 +4938,7 @@ var filter = require('./filter');
 
 
 
-},{}],34:[function(require,module,exports){
+},{}],35:[function(require,module,exports){
 
 
     /**
@@ -4588,7 +4968,7 @@ var filter = require('./filter');
     module.exports = lastIndexOf;
 
 
-},{}],35:[function(require,module,exports){
+},{}],36:[function(require,module,exports){
 var makeIterator = require('../function/makeIterator_');
 
     /**
@@ -4612,7 +4992,7 @@ var makeIterator = require('../function/makeIterator_');
      module.exports = map;
 
 
-},{"../function/makeIterator_":59}],36:[function(require,module,exports){
+},{"../function/makeIterator_":60}],37:[function(require,module,exports){
 var makeIterator = require('../function/makeIterator_');
 
     /**
@@ -4648,7 +5028,7 @@ var makeIterator = require('../function/makeIterator_');
 
 
 
-},{"../function/makeIterator_":59}],37:[function(require,module,exports){
+},{"../function/makeIterator_":60}],38:[function(require,module,exports){
 var makeIterator = require('../function/makeIterator_');
 
     /**
@@ -4684,7 +5064,7 @@ var makeIterator = require('../function/makeIterator_');
 
 
 
-},{"../function/makeIterator_":59}],38:[function(require,module,exports){
+},{"../function/makeIterator_":60}],39:[function(require,module,exports){
 var randInt = require('../random/randInt');
 
     /**
@@ -4717,7 +5097,7 @@ var randInt = require('../random/randInt');
 
 
 
-},{"../random/randInt":74}],39:[function(require,module,exports){
+},{"../random/randInt":75}],40:[function(require,module,exports){
 var map = require('./map');
 
     /**
@@ -4731,7 +5111,7 @@ var map = require('./map');
 
 
 
-},{"./map":35}],40:[function(require,module,exports){
+},{"./map":36}],41:[function(require,module,exports){
 var countSteps = require('../math/countSteps');
 
     /**
@@ -4760,7 +5140,7 @@ var countSteps = require('../math/countSteps');
 
 
 
-},{"../math/countSteps":66}],41:[function(require,module,exports){
+},{"../math/countSteps":67}],42:[function(require,module,exports){
 
 
     /**
@@ -4795,7 +5175,7 @@ var countSteps = require('../math/countSteps');
     module.exports = reduce;
 
 
-},{}],42:[function(require,module,exports){
+},{}],43:[function(require,module,exports){
 
 
     /**
@@ -4831,7 +5211,7 @@ var countSteps = require('../math/countSteps');
     module.exports = reduceRight;
 
 
-},{}],43:[function(require,module,exports){
+},{}],44:[function(require,module,exports){
 var makeIterator = require('../function/makeIterator_');
 
     /**
@@ -4858,7 +5238,7 @@ var makeIterator = require('../function/makeIterator_');
     module.exports = reject;
 
 
-},{"../function/makeIterator_":59}],44:[function(require,module,exports){
+},{"../function/makeIterator_":60}],45:[function(require,module,exports){
 var indexOf = require('./indexOf');
 
     /**
@@ -4873,7 +5253,7 @@ var indexOf = require('./indexOf');
     module.exports = remove;
 
 
-},{"./indexOf":28}],45:[function(require,module,exports){
+},{"./indexOf":29}],46:[function(require,module,exports){
 var indexOf = require('./indexOf');
 
     /**
@@ -4890,7 +5270,7 @@ var indexOf = require('./indexOf');
     module.exports = removeAll;
 
 
-},{"./indexOf":28}],46:[function(require,module,exports){
+},{"./indexOf":29}],47:[function(require,module,exports){
 var randInt = require('../random/randInt');
 
     /**
@@ -4920,7 +5300,7 @@ var randInt = require('../random/randInt');
     module.exports = shuffle;
 
 
-},{"../random/randInt":74}],47:[function(require,module,exports){
+},{"../random/randInt":75}],48:[function(require,module,exports){
 
 
     /**
@@ -4957,7 +5337,7 @@ var randInt = require('../random/randInt');
 
 
 
-},{}],48:[function(require,module,exports){
+},{}],49:[function(require,module,exports){
 var makeIterator = require('../function/makeIterator_');
 
     /**
@@ -4986,7 +5366,7 @@ var makeIterator = require('../function/makeIterator_');
     module.exports = some;
 
 
-},{"../function/makeIterator_":59}],49:[function(require,module,exports){
+},{"../function/makeIterator_":60}],50:[function(require,module,exports){
 
 
     /**
@@ -5043,7 +5423,7 @@ var makeIterator = require('../function/makeIterator_');
 
 
 
-},{}],50:[function(require,module,exports){
+},{}],51:[function(require,module,exports){
 var sort = require('./sort');
 var makeIterator = require('../function/makeIterator_');
 
@@ -5064,7 +5444,7 @@ var makeIterator = require('../function/makeIterator_');
 
 
 
-},{"../function/makeIterator_":59,"./sort":49}],51:[function(require,module,exports){
+},{"../function/makeIterator_":60,"./sort":50}],52:[function(require,module,exports){
 
 
     /**
@@ -5101,7 +5481,7 @@ var makeIterator = require('../function/makeIterator_');
     module.exports = split;
 
 
-},{}],52:[function(require,module,exports){
+},{}],53:[function(require,module,exports){
 
 
     /**
@@ -5127,7 +5507,7 @@ var makeIterator = require('../function/makeIterator_');
 
 
 
-},{}],53:[function(require,module,exports){
+},{}],54:[function(require,module,exports){
 var isFunction = require('../lang/isFunction');
 
     /**
@@ -5157,7 +5537,7 @@ var isFunction = require('../lang/isFunction');
     module.exports = toLookup;
 
 
-},{"../lang/isFunction":63}],54:[function(require,module,exports){
+},{"../lang/isFunction":64}],55:[function(require,module,exports){
 var unique = require('./unique');
 var append = require('./append');
 
@@ -5178,7 +5558,7 @@ var append = require('./append');
 
 
 
-},{"./append":12,"./unique":55}],55:[function(require,module,exports){
+},{"./append":13,"./unique":56}],56:[function(require,module,exports){
 var filter = require('./filter');
 
     /**
@@ -5205,7 +5585,7 @@ var filter = require('./filter');
 
 
 
-},{"./filter":20}],56:[function(require,module,exports){
+},{"./filter":21}],57:[function(require,module,exports){
 var unique = require('./unique');
 var filter = require('./filter');
 var contains = require('./contains');
@@ -5233,7 +5613,7 @@ var contains = require('./contains');
 
 
 
-},{"./contains":16,"./filter":20,"./unique":55}],57:[function(require,module,exports){
+},{"./contains":17,"./filter":21,"./unique":56}],58:[function(require,module,exports){
 var max = require('./max');
 var map = require('./map');
 
@@ -5263,7 +5643,7 @@ var map = require('./map');
 
 
 
-},{"./map":35,"./max":36}],58:[function(require,module,exports){
+},{"./map":36,"./max":37}],59:[function(require,module,exports){
 
 
     /**
@@ -5277,7 +5657,7 @@ var map = require('./map');
 
 
 
-},{}],59:[function(require,module,exports){
+},{}],60:[function(require,module,exports){
 var identity = require('./identity');
 var prop = require('./prop');
 var deepMatches = require('../object/deepMatches');
@@ -5313,7 +5693,7 @@ var deepMatches = require('../object/deepMatches');
 
 
 
-},{"../object/deepMatches":69,"./identity":58,"./prop":60}],60:[function(require,module,exports){
+},{"../object/deepMatches":70,"./identity":59,"./prop":61}],61:[function(require,module,exports){
 
 
     /**
@@ -5329,7 +5709,7 @@ var deepMatches = require('../object/deepMatches');
 
 
 
-},{}],61:[function(require,module,exports){
+},{}],62:[function(require,module,exports){
 
 
     /**
@@ -5354,7 +5734,7 @@ var deepMatches = require('../object/deepMatches');
 
 
 
-},{}],62:[function(require,module,exports){
+},{}],63:[function(require,module,exports){
 var isKind = require('./isKind');
     /**
      */
@@ -5364,7 +5744,7 @@ var isKind = require('./isKind');
     module.exports = isArray;
 
 
-},{"./isKind":64}],63:[function(require,module,exports){
+},{"./isKind":65}],64:[function(require,module,exports){
 var isKind = require('./isKind');
     /**
      */
@@ -5374,7 +5754,7 @@ var isKind = require('./isKind');
     module.exports = isFunction;
 
 
-},{"./isKind":64}],64:[function(require,module,exports){
+},{"./isKind":65}],65:[function(require,module,exports){
 var kindOf = require('./kindOf');
     /**
      * Check if value is from a specific "kind".
@@ -5385,7 +5765,7 @@ var kindOf = require('./kindOf');
     module.exports = isKind;
 
 
-},{"./kindOf":65}],65:[function(require,module,exports){
+},{"./kindOf":66}],66:[function(require,module,exports){
 
 
     var _rKind = /^\[object (.*)\]$/,
@@ -5407,7 +5787,7 @@ var kindOf = require('./kindOf');
     module.exports = kindOf;
 
 
-},{}],66:[function(require,module,exports){
+},{}],67:[function(require,module,exports){
 
     /**
     * Count number of full steps.
@@ -5425,7 +5805,7 @@ var kindOf = require('./kindOf');
     module.exports = countSteps;
 
 
-},{}],67:[function(require,module,exports){
+},{}],68:[function(require,module,exports){
 /**
  * @constant Maximum 32-bit signed integer value. (2^31 - 1)
  */
@@ -5433,7 +5813,7 @@ var kindOf = require('./kindOf');
     module.exports = 2147483647;
 
 
-},{}],68:[function(require,module,exports){
+},{}],69:[function(require,module,exports){
 /**
  * @constant Minimum 32-bit signed integer value (-2^31).
  */
@@ -5441,7 +5821,7 @@ var kindOf = require('./kindOf');
     module.exports = -2147483648;
 
 
-},{}],69:[function(require,module,exports){
+},{}],70:[function(require,module,exports){
 var forOwn = require('./forOwn');
 var isArray = require('../lang/isArray');
 
@@ -5498,7 +5878,7 @@ var isArray = require('../lang/isArray');
 
 
 
-},{"../lang/isArray":62,"./forOwn":71}],70:[function(require,module,exports){
+},{"../lang/isArray":63,"./forOwn":72}],71:[function(require,module,exports){
 var hasOwn = require('./hasOwn');
 
     var _hasDontEnumBug,
@@ -5576,7 +5956,7 @@ var hasOwn = require('./hasOwn');
 
 
 
-},{"./hasOwn":72}],71:[function(require,module,exports){
+},{"./hasOwn":73}],72:[function(require,module,exports){
 var hasOwn = require('./hasOwn');
 var forIn = require('./forIn');
 
@@ -5597,7 +5977,7 @@ var forIn = require('./forIn');
 
 
 
-},{"./forIn":70,"./hasOwn":72}],72:[function(require,module,exports){
+},{"./forIn":71,"./hasOwn":73}],73:[function(require,module,exports){
 
 
     /**
@@ -5611,7 +5991,7 @@ var forIn = require('./forIn');
 
 
 
-},{}],73:[function(require,module,exports){
+},{}],74:[function(require,module,exports){
 var random = require('./random');
 var MIN_INT = require('../number/MIN_INT');
 var MAX_INT = require('../number/MAX_INT');
@@ -5628,7 +6008,7 @@ var MAX_INT = require('../number/MAX_INT');
     module.exports = rand;
 
 
-},{"../number/MAX_INT":67,"../number/MIN_INT":68,"./random":75}],74:[function(require,module,exports){
+},{"../number/MAX_INT":68,"../number/MIN_INT":69,"./random":76}],75:[function(require,module,exports){
 var MIN_INT = require('../number/MIN_INT');
 var MAX_INT = require('../number/MAX_INT');
 var rand = require('./rand');
@@ -5648,7 +6028,7 @@ var rand = require('./rand');
     module.exports = randInt;
 
 
-},{"../number/MAX_INT":67,"../number/MIN_INT":68,"./rand":73}],75:[function(require,module,exports){
+},{"../number/MAX_INT":68,"../number/MIN_INT":69,"./rand":74}],76:[function(require,module,exports){
 
 
     /**
@@ -5668,7 +6048,7 @@ var rand = require('./rand');
 
 
 
-},{}],76:[function(require,module,exports){
+},{}],77:[function(require,module,exports){
 (function (process){
   /* globals require, module */
 
@@ -6292,7 +6672,7 @@ var rand = require('./rand');
 
 }).call(this,require('_process'))
 
-},{"_process":2,"path-to-regexp":77}],77:[function(require,module,exports){
+},{"_process":2,"path-to-regexp":78}],78:[function(require,module,exports){
 var isArray = require('isarray');
 
 /**
@@ -6496,12 +6876,12 @@ function pathToRegexp (path, keys, options) {
   return attachKeys(new RegExp('^' + route, flags(options)), keys);
 }
 
-},{"isarray":78}],78:[function(require,module,exports){
+},{"isarray":79}],79:[function(require,module,exports){
 module.exports = Array.isArray || function (arr) {
   return Object.prototype.toString.call(arr) == '[object Array]';
 };
 
-},{}],79:[function(require,module,exports){
+},{}],80:[function(require,module,exports){
 (function (global, factory) {
 	typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
 	typeof define === 'function' && define.amd ? define(factory) :
@@ -6719,7 +7099,7 @@ module.exports = Array.isArray || function (arr) {
 	return ractive_events_tap;
 
 }));
-},{}],80:[function(require,module,exports){
+},{}],81:[function(require,module,exports){
 /*
 	Ractive.js v0.7.3
 	Sat Apr 25 2015 13:52:38 GMT-0400 (EDT) - commit da40f81c660ba2f09c45a09a9c20fdd34ee36d80
@@ -23340,7 +23720,7 @@ module.exports = Array.isArray || function (arr) {
 }));
 //# sourceMappingURL=ractive.js.map
 
-},{}],81:[function(require,module,exports){
+},{}],82:[function(require,module,exports){
 /*!
   * Reqwest! A general purpose XHR connection manager
   * license MIT (c) Dustin Diaz 2014
@@ -23957,7 +24337,7 @@ module.exports = Array.isArray || function (arr) {
   return reqwest
 });
 
-},{}],82:[function(require,module,exports){
+},{}],83:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -23985,9 +24365,9 @@ exports['default'] = _ractive2['default'].extend({
 });
 module.exports = exports['default'];
 
-},{"ractive":80}],83:[function(require,module,exports){
+},{"ractive":81}],84:[function(require,module,exports){
 module.exports={"v":3,"t":[{"t":7,"e":"div","a":{"class":"blog-post"},"t1":"creep","f":[{"t":7,"e":"div","a":{"class":"blog-post__meta"},"f":[{"t":2,"r":"post.date"}," ",{"t":7,"e":"span","a":{"class":"blog-post__meta-separator"}}," ",{"t":2,"r":"post.read"}," min read ",{"t":7,"e":"span","a":{"class":"blog-post__meta-separator"}}," ",{"t":4,"f":[{"t":7,"e":"a","a":{"class":"blog-post__meta-tag"},"v":{"tap":{"n":"goTag","d":[{"t":2,"r":"."}]}},"f":[{"t":2,"r":"."}]}],"r":"post.tags"}]}," ",{"t":7,"e":"h2","a":{"class":"blog-post__title"},"f":[{"t":2,"r":"post.title"}]}," ",{"t":7,"e":"div","a":{"class":"blog-post__body"},"f":[{"t":3,"r":"post.body"}]}]}]}
-},{}],84:[function(require,module,exports){
+},{}],85:[function(require,module,exports){
 /**
  * @module:   blog-post
  * @scss:     ./source/css/module/blog-post.scss
@@ -24014,6 +24394,10 @@ var _transitionPageCreep = require('../../transition/page-creep');
 
 var _transitionPageCreep2 = _interopRequireDefault(_transitionPageCreep);
 
+var _emojifyJs = require('emojify.js');
+
+var _emojifyJs2 = _interopRequireDefault(_emojifyJs);
+
 exports['default'] = _abstractModule2['default'].extend({
 
   template: _blogPostHtml2['default'],
@@ -24035,14 +24419,20 @@ exports['default'] = _abstractModule2['default'].extend({
 
     // scroll to top
     window.scroll(0, 0);
+
+    // emojify bitches
+    _emojifyJs2['default'].setConfig({
+      img_dir: '/img/emoji'
+    });
+    _emojifyJs2['default'].run();
   }
 
 });
 module.exports = exports['default'];
 
-},{"../../transition/page-creep":106,"../abstract-module":82,"./blog-post.html":83}],85:[function(require,module,exports){
+},{"../../transition/page-creep":107,"../abstract-module":83,"./blog-post.html":84,"emojify.js":10}],86:[function(require,module,exports){
 module.exports={"v":3,"t":[{"t":7,"e":"div","a":{"class":"blog-preview"},"t1":"creep","f":[{"t":7,"e":"h2","a":{"class":"blog-preview__title"},"f":["Some Thoughts"]}," ",{"t":7,"e":"div","a":{"class":"layout--flush"},"f":[{"t":4,"f":[{"t":4,"f":[{"t":7,"e":"ui-card","a":{"content":[{"t":2,"r":"."}],"preview":0,"post":0}}],"n":50,"x":{"r":["@index","limit"],"s":"_0<_1"}}],"i":"post","r":"posts"}]}]}]}
-},{}],86:[function(require,module,exports){
+},{}],87:[function(require,module,exports){
 /**
  * @module:   blog-preview
  * @scss:     ./source/css/module/blog-preview.scss
@@ -24080,9 +24470,9 @@ exports['default'] = _abstractModule2['default'].extend({
 });
 module.exports = exports['default'];
 
-},{"../../transition/page-creep":106,"../abstract-module":82,"./blog-preview.html":85}],87:[function(require,module,exports){
+},{"../../transition/page-creep":107,"../abstract-module":83,"./blog-preview.html":86}],88:[function(require,module,exports){
 module.exports={"v":3,"t":[{"t":7,"e":"div","a":{"class":"blog"},"t1":"creep","f":[{"t":4,"f":[{"t":7,"e":"ui-blog-post","a":{"post":[{"t":2,"r":"post"}]}}],"n":50,"r":"slug"},{"t":4,"n":51,"f":[{"t":7,"e":"h2","a":{"class":"blog__heading"},"f":["Thoughts and shit"]}," ",{"t":7,"e":"h5","a":{"class":"blog__tagline"},"f":["Odd musings about web development and beer"]}," ",{"t":7,"e":"div","a":{"class":"layout layout--flush"}}," ",{"t":4,"f":[{"t":4,"f":[{"t":7,"e":"ui-card","a":{"content":[{"t":2,"r":"."}],"single":0,"post":0}}],"n":50,"x":{"r":["status","draftsEnabled"],"s":"_0!=\"draft\"||_1"}}],"i":"post","r":"posts"}],"r":"slug"}]}]}
-},{}],88:[function(require,module,exports){
+},{}],89:[function(require,module,exports){
 /**
  * @module:   blog
  * @scss:     ./source/css/module/blog.scss
@@ -24155,9 +24545,9 @@ exports['default'] = _abstractModule2['default'].extend({
 });
 module.exports = exports['default'];
 
-},{"../../transition/page-creep":106,"../abstract-module":82,"./blog.html":87}],89:[function(require,module,exports){
+},{"../../transition/page-creep":107,"../abstract-module":83,"./blog.html":88}],90:[function(require,module,exports){
 module.exports={"v":3,"t":[{"t":7,"e":"div","a":{"class":["card layout__item ",{"t":4,"f":["u-1/2-lap u-1/4-desk"],"n":50,"r":"standard"}," ",{"t":4,"f":["u-1/2-lap-and-up"],"n":50,"r":"preview"}," ",{"t":4,"f":["card--single"],"n":50,"r":"single"}]},"v":{"tap":{"n":"toLink","d":[{"t":2,"r":"content.slug"}]}},"f":[{"t":7,"e":"div","a":{"class":["block ",{"t":4,"f":["block--single"],"n":50,"r":"single"}]},"f":[{"t":7,"e":"div","a":{"class":["block__overlay ",{"t":4,"f":["block__overlay--preview"],"n":50,"r":"preview"}]}}," ",{"t":7,"e":"img","a":{"class":["block__img ",{"t":4,"f":["block__img--preview"],"n":50,"r":"preview"}],"src":["/img/",{"t":2,"r":"content.shot"}],"alt":[{"t":2,"r":"content.project"}]}}," ",{"t":7,"e":"div","a":{"class":"block__body"},"f":[{"t":4,"f":[{"t":7,"e":"span","a":{"class":"card__owner"},"f":[{"t":2,"r":"content.co"}]}],"r":"project"}," ",{"t":7,"e":"h3","a":{"class":"card__title"},"f":[{"t":2,"r":"content.title"}]}," ",{"t":7,"e":"p","a":{"class":["card__detail ",{"t":4,"f":["card__detail--preview"],"n":50,"r":"preview"}]},"f":[{"t":2,"r":"content.detail"}]}," ",{"t":7,"e":"span","a":{"class":"card__cta"},"f":[{"t":4,"f":["read on →"],"n":50,"r":"post"}," ",{"t":4,"f":["explore project →"],"n":50,"r":"project"}]}]}]}]}]}
-},{}],90:[function(require,module,exports){
+},{}],91:[function(require,module,exports){
 /**
  * @module:   card
  * @scss:     ./source/css/module/card.scss
@@ -24200,9 +24590,9 @@ exports['default'] = _abstractModule2['default'].extend({
 });
 module.exports = exports['default'];
 
-},{"../abstract-module":82,"./card.html":89}],91:[function(require,module,exports){
+},{"../abstract-module":83,"./card.html":90}],92:[function(require,module,exports){
 module.exports={"v":3,"t":[{"t":7,"e":"div","a":{"class":"error"},"f":[{"t":7,"e":"h4","a":{"class":"error__heading"},"f":["WTF?"]}," ",{"t":7,"e":"img","a":{"class":"error__img","src":"/img/404.gif","alt":"Not Found"}}]}]}
-},{}],92:[function(require,module,exports){
+},{}],93:[function(require,module,exports){
 /**
  * @module:   error
  * @scss:     ./source/css/module/error.scss
@@ -24232,9 +24622,9 @@ exports['default'] = _abstractModule2['default'].extend({
 });
 module.exports = exports['default'];
 
-},{"../abstract-module":82,"./error.html":91}],93:[function(require,module,exports){
+},{"../abstract-module":83,"./error.html":92}],94:[function(require,module,exports){
 module.exports={"v":3,"t":[{"t":7,"e":"div","a":{"class":"footer"},"f":[{"t":7,"e":"ui-logo"}," ",{"t":7,"e":"p","a":{"class":"footer__tagline"},"f":["Level Out is the guise of Luke Hedger.",{"t":7,"e":"br"}," It's his equivalent of a cape."]}]}]}
-},{}],94:[function(require,module,exports){
+},{}],95:[function(require,module,exports){
 /**
  * @module:   footer
  * @scss:     ./source/css/module/footer.scss
@@ -24264,9 +24654,9 @@ exports['default'] = _abstractModule2['default'].extend({
 });
 module.exports = exports['default'];
 
-},{"../abstract-module":82,"./footer.html":93}],95:[function(require,module,exports){
+},{"../abstract-module":83,"./footer.html":94}],96:[function(require,module,exports){
 module.exports={"v":3,"t":[{"t":7,"e":"div","a":{"class":"header"},"f":[{"t":7,"e":"ui-logo","a":{"special":0}}," "]}]}
-},{}],96:[function(require,module,exports){
+},{}],97:[function(require,module,exports){
 /**
  * @module:   header
  * @scss:     ./source/css/module/header.scss
@@ -24296,7 +24686,7 @@ exports['default'] = _abstractModule2['default'].extend({
 });
 module.exports = exports['default'];
 
-},{"../abstract-module":82,"./header.html":95}],97:[function(require,module,exports){
+},{"../abstract-module":83,"./header.html":96}],98:[function(require,module,exports){
 /*auto-generated*/
 'use strict';
 
@@ -24369,9 +24759,9 @@ _ractive2['default'].components['ui-work'] = _workWorkJs2['default'];
 exports['default'] = _ractive2['default'];
 module.exports = exports['default'];
 
-},{"./blog-post/blog-post.js":84,"./blog-preview/blog-preview.js":86,"./blog/blog.js":88,"./card/card.js":90,"./error/error.js":92,"./footer/footer.js":94,"./header/header.js":96,"./logo/logo.js":99,"./nav/nav.js":101,"./tag/tag.js":103,"./work/work.js":105,"ractive":80}],98:[function(require,module,exports){
+},{"./blog-post/blog-post.js":85,"./blog-preview/blog-preview.js":87,"./blog/blog.js":89,"./card/card.js":91,"./error/error.js":93,"./footer/footer.js":95,"./header/header.js":97,"./logo/logo.js":100,"./nav/nav.js":102,"./tag/tag.js":104,"./work/work.js":106,"ractive":81}],99:[function(require,module,exports){
 module.exports={"v":3,"t":[{"t":7,"e":"div","a":{"class":["logo ",{"t":4,"f":["logo--special"],"n":50,"r":"special"}]},"f":[{"t":7,"e":"div","a":{"class":["logo__wrap ",{"t":4,"f":["logo__wrap--scaled"],"n":50,"r":"scaled"}]},"v":{"tap":{"n":[{"t":4,"f":["toHome"],"n":50,"r":"special"}],"d":[]}},"f":[{"t":7,"e":"svg","a":{"version":"1.1","xmlns":"http://www.w3.org/2000/svg","xmlns:xlink":"http://www.w3.org/1999/xlink","x":"0px","y":"0px","viewBox":"0 0 80 80","style":"enable-background:new 0 0 80 80;","xml:space":"preserve"},"f":[{"t":7,"e":"g","a":{"class":"logo__path"},"f":[{"t":7,"e":"path","a":{"d":"M18.6,50.1c-0.3,0.6-0.5,1.2-0.8,2c-0.3,0.7-0.4,1.4-0.4,2c0,0.4,0.1,0.7,0.2,0.9s0.4,0.3,0.8,0.3c0.5,0,1.2-0.2,1.9-0.5\n      \t\tc0.8-0.3,1.6-0.7,2.5-1.2c0.9-0.5,1.8-1.1,2.8-1.7c1-0.6,1.9-1.3,2.9-2c1-0.7,1.9-1.4,2.7-2.1c0.9-0.7,1.6-1.3,2.3-1.9\n      \t\tc0.2-0.2,0.4-0.3,0.7-0.4c0.3-0.1,0.5-0.1,0.7-0.1c0.5,0,0.9,0.2,1.2,0.5c0.3,0.3,0.5,0.8,0.5,1.4c0,0.5-0.2,1.1-0.5,1.7\n      \t\tc-0.3,0.6-0.9,1.3-1.8,1.9c-1.6,1.4-3.1,2.8-4.7,4.1c-1.6,1.3-3.2,2.4-4.7,3.4c-1.6,1-3.1,1.8-4.7,2.4s-3.1,0.9-4.5,0.9\n      \t\tc-1,0-1.8-0.1-2.5-0.4s-1.2-0.6-1.6-1.1c-0.4-0.5-0.7-1-0.9-1.6c-0.2-0.6-0.3-1.3-0.3-2c0-1.2,0.2-2.4,0.5-3.7\n      \t\tc0.4-1.3,0.8-2.4,1.3-3.5c0.9-1.9,1.7-3.8,2.6-5.7c0.9-1.9,1.7-3.6,2.4-5.2l11.1-23.6c0.4-1,1-1.6,1.8-2c0.7-0.4,1.5-0.6,2.3-0.6\n      \t\tc0.8,0,1.4,0.2,2.1,0.6c0.6,0.4,0.9,1.1,0.9,2c0,0.4-0.1,0.9-0.3,1.4c-0.2,0.5-0.5,1-0.8,1.6c-0.6,1.1-1.3,2.6-2.2,4.2\n      \t\tc-0.8,1.7-1.7,3.5-2.7,5.4c-1,2-2,4-3,6.1c-1,2.1-2,4.2-3,6.2c-1,2-1.9,3.9-2.7,5.7C19.9,47.3,19.2,48.8,18.6,50.1z","stroke":"#FFF","stroke-width":"1"}}," ",{"t":7,"e":"path","a":{"d":"M47.7,34.1c0.9,0,1.9,0.1,3,0.4c1.1,0.2,2,0.7,2.9,1.2c0.9,0.6,1.7,1.4,2.3,2.3c0.6,1,0.9,2.2,0.9,3.6\n      \t\tc0,0.7-0.1,1.6-0.3,2.5C56.3,45,56,46,55.6,47c0.2,0.3,0.5,0.5,0.8,0.6c0.3,0.1,0.7,0.2,1,0.2c0.5,0,1.1-0.1,1.7-0.4\n      \t\tc0.6-0.3,1.3-0.7,1.9-1.1c0.7-0.5,1.3-1,2-1.6c0.7-0.6,1.3-1.2,1.9-1.8s1.1-1.1,1.6-1.7c0.5-0.5,0.9-1,1.2-1.3\n      \t\tc0.2-0.2,0.4-0.3,0.6-0.3c0.3,0,0.6,0.2,0.9,0.5c0.3,0.4,0.4,0.8,0.4,1.5s-0.2,1.4-0.6,2.2c-0.4,0.8-1.1,1.7-2.1,2.6\n      \t\tc-0.6,0.6-1.3,1.4-2,2.2c-0.8,0.8-1.6,1.6-2.4,2.3c-0.9,0.7-1.7,1.4-2.7,1.9s-1.9,0.8-2.8,0.8c-0.6,0-1.3-0.1-1.8-0.3\n      \t\tc-0.6-0.2-1.2-0.5-1.8-1c-0.9,1.4-1.9,2.6-3,3.7c-1.1,1.1-2.4,2.1-3.8,2.9c-1.4,0.8-2.9,1.4-4.5,1.9c-1.6,0.5-3.3,0.7-5.1,0.7\n      \t\tc-0.7,0-1.5-0.1-2.4-0.4c-0.9-0.3-1.8-0.7-2.6-1.3c-0.8-0.6-1.5-1.4-2.1-2.4c-0.6-1-0.8-2.2-0.8-3.7c0-1,0.2-2.1,0.5-3.5\n      \t\tc0.3-1.4,0.8-2.8,1.4-4.2c0.6-1.5,1.5-2.9,2.5-4.3c1-1.4,2.2-2.7,3.5-3.8c1.4-1.1,2.9-2.1,4.7-2.7C43.6,34.4,45.5,34.1,47.7,34.1z\n      \t\t M45.8,40.5c-1.1,0-2.3,0.3-3.3,0.9c-1.1,0.6-2,1.3-2.8,2.3c-0.8,0.9-1.5,2-2,3.2c-0.5,1.2-0.7,2.4-0.7,3.6c0,0.5,0,1,0.1,1.5\n      \t\tc0.1,0.5,0.2,1.1,0.5,1.5c0.2,0.5,0.6,0.9,1,1.2s1,0.5,1.8,0.5c1.1,0,2.2-0.3,3.3-0.9c1.1-0.6,2-1.4,2.8-2.3c0.8-1,1.5-2.1,2-3.3\n      \t\tc0.5-1.2,0.7-2.5,0.7-3.7c0-0.5,0-1-0.1-1.5c-0.1-0.5-0.2-1-0.4-1.4c-0.2-0.4-0.6-0.8-1-1.1C47.1,40.7,46.5,40.5,45.8,40.5z","stroke":"#FFF","stroke-width":"1"}}]}]}]}]}]}
-},{}],99:[function(require,module,exports){
+},{}],100:[function(require,module,exports){
 /**
  * @module:   logo
  * @scss:     ./source/css/module/logo.scss
@@ -24424,9 +24814,9 @@ exports['default'] = _abstractModule2['default'].extend({
 });
 module.exports = exports['default'];
 
-},{"../abstract-module":82,"./logo.html":98}],100:[function(require,module,exports){
+},{"../abstract-module":83,"./logo.html":99}],101:[function(require,module,exports){
 module.exports={"v":3,"t":[{"t":7,"e":"div","a":{"class":"nav layout layout--auto layout--tiny layout--right"},"f":[{"t":7,"e":"div","a":{"class":"layout__item"},"f":[{"t":7,"e":"a","a":{"class":["nav__item nav__item--text ",{"t":4,"f":["nav__item--active"],"n":50,"x":{"r":["view"],"s":"_0==\"index\""}}]},"v":{"tap":"toHome"},"f":["work"]}]}," ",{"t":7,"e":"div","a":{"class":"layout__item"},"f":[{"t":7,"e":"a","a":{"class":["nav__item nav__item--text ",{"t":4,"f":["nav__item--active"],"n":50,"x":{"r":["view"],"s":"_0==\"blog\""}}]},"v":{"tap":"toBlog"},"f":["blog"]}]}," ",{"t":7,"e":"div","a":{"class":"layout__item"},"f":[{"t":7,"e":"a","a":{"class":"nav__item icon icon--github","href":"https://github.com/lukehedger","target":"_blank"}}]}," ",{"t":7,"e":"div","a":{"class":"layout__item"},"f":[{"t":7,"e":"a","a":{"class":"nav__item icon icon--twitter","href":"https://twitter.com/level_out","target":"_blank"}}]}]}]}
-},{}],101:[function(require,module,exports){
+},{}],102:[function(require,module,exports){
 /**
  * @module:   nav
  * @scss:     ./source/css/module/nav.scss
@@ -24469,9 +24859,9 @@ exports['default'] = _abstractModule2['default'].extend({
 });
 module.exports = exports['default'];
 
-},{"../abstract-module":82,"./nav.html":100}],102:[function(require,module,exports){
+},{"../abstract-module":83,"./nav.html":101}],103:[function(require,module,exports){
 module.exports={"v":3,"t":[{"t":7,"e":"div","a":{"class":"tag"},"f":[{"t":4,"f":[{"t":4,"f":[{"t":4,"f":[{"t":7,"e":"h3","v":{"tap":{"n":"goPost","d":[{"t":2,"r":"slug"}]}},"f":[{"t":2,"r":"title"}]}],"n":50,"x":{"r":["status","draftsEnabled"],"s":"_0!=\"draft\"||_1"}}],"i":"post","r":"taggedPosts"}],"n":50,"r":"search"},{"t":4,"n":51,"f":[{"t":4,"f":[{"t":7,"e":"h3","v":{"tap":{"n":"goTag","d":[{"t":2,"r":"tag"}]}},"f":[{"t":2,"r":"tag"}]}],"i":"tag","r":"tags"}],"r":"search"}]}]}
-},{}],103:[function(require,module,exports){
+},{}],104:[function(require,module,exports){
 /**
  * @module:   tag
  * @scss:     ./source/css/module/tag.scss
@@ -24539,9 +24929,9 @@ exports['default'] = _abstractModule2['default'].extend({
 });
 module.exports = exports['default'];
 
-},{"../abstract-module":82,"./tag.html":102}],104:[function(require,module,exports){
+},{"../abstract-module":83,"./tag.html":103}],105:[function(require,module,exports){
 module.exports={"v":3,"t":[{"t":7,"e":"div","a":{"class":"work"},"t1":"creep","f":[{"t":7,"e":"h2","a":{"class":"work__title"},"f":["Featured Work"]}," ",{"t":7,"e":"div","a":{"class":"layout"},"f":[{"t":4,"f":[{"t":7,"e":"ui-card","a":{"content":[{"t":2,"r":"."}],"standard":0,"project":0}}],"r":"work"}]}]}]}
-},{}],105:[function(require,module,exports){
+},{}],106:[function(require,module,exports){
 /**
  * @module:   work
  * @scss:     ./source/css/module/work.scss
@@ -24579,7 +24969,7 @@ exports['default'] = _abstractModule2['default'].extend({
 });
 module.exports = exports['default'];
 
-},{"../../transition/page-creep":106,"../abstract-module":82,"./work.html":104}],106:[function(require,module,exports){
+},{"../../transition/page-creep":107,"../abstract-module":83,"./work.html":105}],107:[function(require,module,exports){
 'use strict';
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
@@ -24643,9 +25033,9 @@ function pageCreep(t, params) {
 
 module.exports = pageCreep;
 
-},{"component-raf":3,"component-tween":4}],107:[function(require,module,exports){
+},{"component-raf":3,"component-tween":4}],108:[function(require,module,exports){
 module.exports={"v":3,"t":[{"t":4,"f":[{"t":7,"e":"ui-nav","a":{"view":[{"t":2,"r":"view"}]}}," ",{"t":7,"e":"ui-header"}," ",{"t":4,"f":[{"t":7,"e":"ui-work","a":{"work":[{"t":2,"r":"work"}]}}," ",{"t":7,"e":"ui-blog-preview","a":{"posts":[{"t":2,"r":"posts"}],"limit":[{"t":2,"r":"blogPreviewLimit"}]}}],"x":{"r":["view"],"s":"_0==\"index\""}},{"t":4,"f":[{"t":7,"e":"ui-blog","a":{"posts":[{"t":2,"r":"posts"}],"slug":[{"t":2,"r":"slug"}],"draftsEnabled":[{"t":2,"r":"config.drafts"}]}}],"x":{"r":["view"],"s":"_0==\"blog\""}},{"t":4,"f":[{"t":7,"e":"ui-tag","a":{"tags":[{"t":2,"r":"tags"}],"search":[{"t":2,"r":"tagSearch"}],"draftsEnabled":[{"t":2,"r":"config.drafts"}]}}],"x":{"r":["view"],"s":"_0==\"tag\""}},{"t":4,"f":[{"t":7,"e":"ui-error"}],"x":{"r":["view"],"s":"_0==\"notfound\""}},{"t":7,"e":"ui-footer"}],"r":"isReady"}]}
-},{}],108:[function(require,module,exports){
+},{}],109:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -24900,7 +25290,7 @@ exports['default'] = _module3['default'].extend({
 });
 module.exports = exports['default'];
 
-},{"../module":97,"./main.html":107,"moment":10,"mout/array":11,"page":76,"ractive-events-tap":79,"reqwest":81}]},{},[1])
+},{"../module":98,"./main.html":108,"moment":11,"mout/array":12,"page":77,"ractive-events-tap":80,"reqwest":82}]},{},[1])
 
 
 //# sourceMappingURL=app.js.map

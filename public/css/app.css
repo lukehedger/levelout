@@ -975,6 +975,10 @@ pre code {
     cursor: pointer; }
     .blog-post__meta-tag:last-of-type {
       margin-right: 0; }
+  .blog-post .emoji {
+    width: 1em;
+    height: 1em;
+    display: inline-block; }
 
 /**
  * @module:   blog-preview
