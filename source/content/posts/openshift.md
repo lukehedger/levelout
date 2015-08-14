@@ -5,6 +5,7 @@ read: 15
 tags: node hosting
 comments: true
 slug: openshift
+shot: placeholder.jpg
 status: published
 date: 01-06-2015
 ---

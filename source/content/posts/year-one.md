@@ -5,6 +5,7 @@ read: 3
 tags: blog
 comments: true
 slug: year-one
+shot: placeholder.jpg
 status: draft
 date: 20-08-2015
 ---

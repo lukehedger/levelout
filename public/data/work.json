@@ -4,21 +4,21 @@
       "title": "Countr",
       "co": "Level Out",
       "link": "https://countr.divshot.io/",
-      "shot": "",
+      "shot": "placeholder.jpg",
       "detail": "The app that counts against you"
     },
     {
       "title": "Accessories Matcher",
       "co": "Land Rover",
       "link": "https://accessoriesmatcher.landrover.co.uk/",
-      "shot": "",
+      "shot": "placeholder.jpg",
       "detail": ""
     },
     {
       "title": "Hen Hunt",
       "co": "Level Out",
       "link": "https://henhunt.divshot.io/",
-      "shot": "",
+      "shot": "placeholder.jpg",
       "detail": "London treasure hunt with Twilio-powered clues"
     },
     {

@@ -1049,7 +1049,7 @@ pre code {
     font-size: 22px;
     font-size: 1.375rem;
     line-height: 1.4; }
-  .card__detail--preview:after {
+  .card__detail--post:after {
     content: '...'; }
   .card__cta {
     font-size: 10px;

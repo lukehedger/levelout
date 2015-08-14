@@ -5,6 +5,7 @@ read: 3
 tags: hosting
 comments: true
 slug: divshot
+shot: placeholder.jpg
 status: published
 date: 04-09-2014
 ---
