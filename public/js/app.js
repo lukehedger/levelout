@@ -34,7 +34,7 @@ var app = {
   app.render();
 });
 
-},{"./view/main":106,"domready":9}],2:[function(require,module,exports){
+},{"./view/main":108,"domready":9}],2:[function(require,module,exports){
 // shim for using process in browser
 
 var process = module.exports = {};
@@ -24040,7 +24040,7 @@ exports['default'] = _abstractModule2['default'].extend({
 });
 module.exports = exports['default'];
 
-},{"../../transition/page-creep":104,"../abstract-module":82,"./blog-post.html":83}],85:[function(require,module,exports){
+},{"../../transition/page-creep":106,"../abstract-module":82,"./blog-post.html":83}],85:[function(require,module,exports){
 module.exports={"v":3,"t":[{"t":7,"e":"div","a":{"class":"blog-preview"},"t1":"creep","f":[{"t":7,"e":"h2","a":{"class":"blog-preview__title"},"f":["Some Thoughts"]}," ",{"t":7,"e":"div","a":{"class":"layout--flush"},"f":[{"t":4,"f":[{"t":4,"f":[{"t":7,"e":"ui-card","a":{"content":[{"t":2,"r":"."}],"preview":0,"post":0}}],"n":50,"x":{"r":["@index","limit"],"s":"_0<_1"}}],"i":"post","r":"posts"}]}]}]}
 },{}],86:[function(require,module,exports){
 /**
@@ -24080,7 +24080,7 @@ exports['default'] = _abstractModule2['default'].extend({
 });
 module.exports = exports['default'];
 
-},{"../../transition/page-creep":104,"../abstract-module":82,"./blog-preview.html":85}],87:[function(require,module,exports){
+},{"../../transition/page-creep":106,"../abstract-module":82,"./blog-preview.html":85}],87:[function(require,module,exports){
 module.exports={"v":3,"t":[{"t":7,"e":"div","a":{"class":"blog"},"t1":"creep","f":[{"t":4,"f":[{"t":7,"e":"ui-blog-post","a":{"post":[{"t":2,"r":"post"}]}}],"n":50,"r":"slug"},{"t":4,"n":51,"f":[{"t":7,"e":"h2","a":{"class":"blog__heading"},"f":["Thoughts and shit"]}," ",{"t":7,"e":"h5","a":{"class":"blog__tagline"},"f":["Odd musings about web development and beer"]}," ",{"t":7,"e":"div","a":{"class":"layout layout--flush"}}," ",{"t":4,"f":[{"t":4,"f":[{"t":7,"e":"ui-card","a":{"content":[{"t":2,"r":"."}],"single":0,"post":0}}],"n":50,"x":{"r":["status","draftsEnabled"],"s":"_0!=\"draft\"||_1"}}],"i":"post","r":"posts"}],"r":"slug"}]}]}
 },{}],88:[function(require,module,exports){
 /**
@@ -24155,7 +24155,7 @@ exports['default'] = _abstractModule2['default'].extend({
 });
 module.exports = exports['default'];
 
-},{"../../transition/page-creep":104,"../abstract-module":82,"./blog.html":87}],89:[function(require,module,exports){
+},{"../../transition/page-creep":106,"../abstract-module":82,"./blog.html":87}],89:[function(require,module,exports){
 module.exports={"v":3,"t":[{"t":7,"e":"div","a":{"class":["card layout__item ",{"t":4,"f":["u-1/2-lap u-1/4-desk"],"n":50,"r":"standard"}," ",{"t":4,"f":["u-1/2-lap-and-up"],"n":50,"r":"preview"}," ",{"t":4,"f":["card--single"],"n":50,"r":"single"}]},"v":{"tap":{"n":"toLink","d":[{"t":2,"r":"content.slug"}]}},"f":[{"t":7,"e":"div","a":{"class":["block ",{"t":4,"f":["block--single"],"n":50,"r":"single"}]},"f":[{"t":7,"e":"img","a":{"class":["block__img ",{"t":4,"f":["block__img--preview"],"n":50,"r":"preview"}],"src":["/img/",{"t":2,"r":"content.shot"}],"alt":[{"t":2,"r":"content.project"}]}}," ",{"t":7,"e":"div","a":{"class":"block__body"},"f":[{"t":4,"f":[{"t":7,"e":"span","a":{"class":"card__owner"},"f":[{"t":2,"r":"content.co"}]}],"r":"project"}," ",{"t":7,"e":"h3","a":{"class":"card__title"},"f":[{"t":2,"r":"content.title"}]}," ",{"t":7,"e":"p","a":{"class":["card__detail ",{"t":4,"f":["card__detail--preview"],"n":50,"r":"preview"}]},"f":[{"t":2,"r":"content.detail"}]}," ",{"t":7,"e":"span","a":{"class":"card__cta"},"f":[{"t":4,"f":["read on →"],"n":50,"r":"post"}," ",{"t":4,"f":["explore project →"],"n":50,"r":"project"}]}]}]}]}]}
 },{}],90:[function(require,module,exports){
 /**
@@ -24201,8 +24201,40 @@ exports['default'] = _abstractModule2['default'].extend({
 module.exports = exports['default'];
 
 },{"../abstract-module":82,"./card.html":89}],91:[function(require,module,exports){
-module.exports={"v":3,"t":[{"t":7,"e":"div","a":{"class":"footer"},"f":[{"t":7,"e":"ui-logo"}," ",{"t":7,"e":"p","a":{"class":"footer__tagline"},"f":["Level Out is the guise of Luke Hedger.",{"t":7,"e":"br"}," It's his equivalent of a cape."]}]}]}
+module.exports={"v":3,"t":[{"t":7,"e":"div","a":{"class":"error"},"f":[{"t":7,"e":"h4","a":{"class":"error__heading"},"f":["WTF?"]}," ",{"t":7,"e":"img","a":{"class":"error__img","src":"/img/404.gif","alt":"Not Found"}}]}]}
 },{}],92:[function(require,module,exports){
+/**
+ * @module:   error
+ * @scss:     ./source/css/module/error.scss
+ * @html:     ./source/js/module/error/error.html
+ */
+
+'use strict';
+
+Object.defineProperty(exports, '__esModule', {
+  value: true
+});
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+var _abstractModule = require('../abstract-module');
+
+var _abstractModule2 = _interopRequireDefault(_abstractModule);
+
+var _errorHtml = require('./error.html');
+
+var _errorHtml2 = _interopRequireDefault(_errorHtml);
+
+exports['default'] = _abstractModule2['default'].extend({
+
+  template: _errorHtml2['default']
+
+});
+module.exports = exports['default'];
+
+},{"../abstract-module":82,"./error.html":91}],93:[function(require,module,exports){
+module.exports={"v":3,"t":[{"t":7,"e":"div","a":{"class":"footer"},"f":[{"t":7,"e":"ui-logo"}," ",{"t":7,"e":"p","a":{"class":"footer__tagline"},"f":["Level Out is the guise of Luke Hedger.",{"t":7,"e":"br"}," It's his equivalent of a cape."]}]}]}
+},{}],94:[function(require,module,exports){
 /**
  * @module:   footer
  * @scss:     ./source/css/module/footer.scss
@@ -24232,9 +24264,9 @@ exports['default'] = _abstractModule2['default'].extend({
 });
 module.exports = exports['default'];
 
-},{"../abstract-module":82,"./footer.html":91}],93:[function(require,module,exports){
+},{"../abstract-module":82,"./footer.html":93}],95:[function(require,module,exports){
 module.exports={"v":3,"t":[{"t":7,"e":"div","a":{"class":"header"},"f":[{"t":7,"e":"ui-logo","a":{"special":0}}," "]}]}
-},{}],94:[function(require,module,exports){
+},{}],96:[function(require,module,exports){
 /**
  * @module:   header
  * @scss:     ./source/css/module/header.scss
@@ -24264,7 +24296,7 @@ exports['default'] = _abstractModule2['default'].extend({
 });
 module.exports = exports['default'];
 
-},{"../abstract-module":82,"./header.html":93}],95:[function(require,module,exports){
+},{"../abstract-module":82,"./header.html":95}],97:[function(require,module,exports){
 /*auto-generated*/
 'use strict';
 
@@ -24294,6 +24326,10 @@ var _cardCardJs = require('./card/card.js');
 
 var _cardCardJs2 = _interopRequireDefault(_cardCardJs);
 
+var _errorErrorJs = require('./error/error.js');
+
+var _errorErrorJs2 = _interopRequireDefault(_errorErrorJs);
+
 var _footerFooterJs = require('./footer/footer.js');
 
 var _footerFooterJs2 = _interopRequireDefault(_footerFooterJs);
@@ -24322,6 +24358,7 @@ _ractive2['default'].components['ui-blog-post'] = _blogPostBlogPostJs2['default'
 _ractive2['default'].components['ui-blog-preview'] = _blogPreviewBlogPreviewJs2['default'];
 _ractive2['default'].components['ui-blog'] = _blogBlogJs2['default'];
 _ractive2['default'].components['ui-card'] = _cardCardJs2['default'];
+_ractive2['default'].components['ui-error'] = _errorErrorJs2['default'];
 _ractive2['default'].components['ui-footer'] = _footerFooterJs2['default'];
 _ractive2['default'].components['ui-header'] = _headerHeaderJs2['default'];
 _ractive2['default'].components['ui-logo'] = _logoLogoJs2['default'];
@@ -24332,9 +24369,9 @@ _ractive2['default'].components['ui-work'] = _workWorkJs2['default'];
 exports['default'] = _ractive2['default'];
 module.exports = exports['default'];
 
-},{"./blog-post/blog-post.js":84,"./blog-preview/blog-preview.js":86,"./blog/blog.js":88,"./card/card.js":90,"./footer/footer.js":92,"./header/header.js":94,"./logo/logo.js":97,"./nav/nav.js":99,"./tag/tag.js":101,"./work/work.js":103,"ractive":80}],96:[function(require,module,exports){
+},{"./blog-post/blog-post.js":84,"./blog-preview/blog-preview.js":86,"./blog/blog.js":88,"./card/card.js":90,"./error/error.js":92,"./footer/footer.js":94,"./header/header.js":96,"./logo/logo.js":99,"./nav/nav.js":101,"./tag/tag.js":103,"./work/work.js":105,"ractive":80}],98:[function(require,module,exports){
 module.exports={"v":3,"t":[{"t":7,"e":"div","a":{"class":["logo ",{"t":4,"f":["logo--special"],"n":50,"r":"special"}]},"f":[{"t":7,"e":"div","a":{"class":["logo__wrap ",{"t":4,"f":["logo__wrap--scaled"],"n":50,"r":"scaled"}]},"v":{"tap":{"n":[{"t":4,"f":["toHome"],"n":50,"r":"special"}],"d":[]}},"f":[{"t":7,"e":"svg","a":{"version":"1.1","xmlns":"http://www.w3.org/2000/svg","xmlns:xlink":"http://www.w3.org/1999/xlink","x":"0px","y":"0px","viewBox":"0 0 80 80","style":"enable-background:new 0 0 80 80;","xml:space":"preserve"},"f":[{"t":7,"e":"g","a":{"class":"logo__path"},"f":[{"t":7,"e":"path","a":{"d":"M18.6,50.1c-0.3,0.6-0.5,1.2-0.8,2c-0.3,0.7-0.4,1.4-0.4,2c0,0.4,0.1,0.7,0.2,0.9s0.4,0.3,0.8,0.3c0.5,0,1.2-0.2,1.9-0.5\n      \t\tc0.8-0.3,1.6-0.7,2.5-1.2c0.9-0.5,1.8-1.1,2.8-1.7c1-0.6,1.9-1.3,2.9-2c1-0.7,1.9-1.4,2.7-2.1c0.9-0.7,1.6-1.3,2.3-1.9\n      \t\tc0.2-0.2,0.4-0.3,0.7-0.4c0.3-0.1,0.5-0.1,0.7-0.1c0.5,0,0.9,0.2,1.2,0.5c0.3,0.3,0.5,0.8,0.5,1.4c0,0.5-0.2,1.1-0.5,1.7\n      \t\tc-0.3,0.6-0.9,1.3-1.8,1.9c-1.6,1.4-3.1,2.8-4.7,4.1c-1.6,1.3-3.2,2.4-4.7,3.4c-1.6,1-3.1,1.8-4.7,2.4s-3.1,0.9-4.5,0.9\n      \t\tc-1,0-1.8-0.1-2.5-0.4s-1.2-0.6-1.6-1.1c-0.4-0.5-0.7-1-0.9-1.6c-0.2-0.6-0.3-1.3-0.3-2c0-1.2,0.2-2.4,0.5-3.7\n      \t\tc0.4-1.3,0.8-2.4,1.3-3.5c0.9-1.9,1.7-3.8,2.6-5.7c0.9-1.9,1.7-3.6,2.4-5.2l11.1-23.6c0.4-1,1-1.6,1.8-2c0.7-0.4,1.5-0.6,2.3-0.6\n      \t\tc0.8,0,1.4,0.2,2.1,0.6c0.6,0.4,0.9,1.1,0.9,2c0,0.4-0.1,0.9-0.3,1.4c-0.2,0.5-0.5,1-0.8,1.6c-0.6,1.1-1.3,2.6-2.2,4.2\n      \t\tc-0.8,1.7-1.7,3.5-2.7,5.4c-1,2-2,4-3,6.1c-1,2.1-2,4.2-3,6.2c-1,2-1.9,3.9-2.7,5.7C19.9,47.3,19.2,48.8,18.6,50.1z","stroke":"#FFF","stroke-width":"1"}}," ",{"t":7,"e":"path","a":{"d":"M47.7,34.1c0.9,0,1.9,0.1,3,0.4c1.1,0.2,2,0.7,2.9,1.2c0.9,0.6,1.7,1.4,2.3,2.3c0.6,1,0.9,2.2,0.9,3.6\n      \t\tc0,0.7-0.1,1.6-0.3,2.5C56.3,45,56,46,55.6,47c0.2,0.3,0.5,0.5,0.8,0.6c0.3,0.1,0.7,0.2,1,0.2c0.5,0,1.1-0.1,1.7-0.4\n      \t\tc0.6-0.3,1.3-0.7,1.9-1.1c0.7-0.5,1.3-1,2-1.6c0.7-0.6,1.3-1.2,1.9-1.8s1.1-1.1,1.6-1.7c0.5-0.5,0.9-1,1.2-1.3\n      \t\tc0.2-0.2,0.4-0.3,0.6-0.3c0.3,0,0.6,0.2,0.9,0.5c0.3,0.4,0.4,0.8,0.4,1.5s-0.2,1.4-0.6,2.2c-0.4,0.8-1.1,1.7-2.1,2.6\n      \t\tc-0.6,0.6-1.3,1.4-2,2.2c-0.8,0.8-1.6,1.6-2.4,2.3c-0.9,0.7-1.7,1.4-2.7,1.9s-1.9,0.8-2.8,0.8c-0.6,0-1.3-0.1-1.8-0.3\n      \t\tc-0.6-0.2-1.2-0.5-1.8-1c-0.9,1.4-1.9,2.6-3,3.7c-1.1,1.1-2.4,2.1-3.8,2.9c-1.4,0.8-2.9,1.4-4.5,1.9c-1.6,0.5-3.3,0.7-5.1,0.7\n      \t\tc-0.7,0-1.5-0.1-2.4-0.4c-0.9-0.3-1.8-0.7-2.6-1.3c-0.8-0.6-1.5-1.4-2.1-2.4c-0.6-1-0.8-2.2-0.8-3.7c0-1,0.2-2.1,0.5-3.5\n      \t\tc0.3-1.4,0.8-2.8,1.4-4.2c0.6-1.5,1.5-2.9,2.5-4.3c1-1.4,2.2-2.7,3.5-3.8c1.4-1.1,2.9-2.1,4.7-2.7C43.6,34.4,45.5,34.1,47.7,34.1z\n      \t\t M45.8,40.5c-1.1,0-2.3,0.3-3.3,0.9c-1.1,0.6-2,1.3-2.8,2.3c-0.8,0.9-1.5,2-2,3.2c-0.5,1.2-0.7,2.4-0.7,3.6c0,0.5,0,1,0.1,1.5\n      \t\tc0.1,0.5,0.2,1.1,0.5,1.5c0.2,0.5,0.6,0.9,1,1.2s1,0.5,1.8,0.5c1.1,0,2.2-0.3,3.3-0.9c1.1-0.6,2-1.4,2.8-2.3c0.8-1,1.5-2.1,2-3.3\n      \t\tc0.5-1.2,0.7-2.5,0.7-3.7c0-0.5,0-1-0.1-1.5c-0.1-0.5-0.2-1-0.4-1.4c-0.2-0.4-0.6-0.8-1-1.1C47.1,40.7,46.5,40.5,45.8,40.5z","stroke":"#FFF","stroke-width":"1"}}]}]}]}]}]}
-},{}],97:[function(require,module,exports){
+},{}],99:[function(require,module,exports){
 /**
  * @module:   logo
  * @scss:     ./source/css/module/logo.scss
@@ -24387,9 +24424,9 @@ exports['default'] = _abstractModule2['default'].extend({
 });
 module.exports = exports['default'];
 
-},{"../abstract-module":82,"./logo.html":96}],98:[function(require,module,exports){
+},{"../abstract-module":82,"./logo.html":98}],100:[function(require,module,exports){
 module.exports={"v":3,"t":[{"t":7,"e":"div","a":{"class":"nav layout layout--auto layout--tiny layout--right"},"f":[{"t":7,"e":"div","a":{"class":"layout__item"},"f":[{"t":7,"e":"a","a":{"class":["nav__item nav__item--text ",{"t":4,"f":["nav__item--active"],"n":50,"x":{"r":["view"],"s":"_0==\"index\""}}]},"v":{"tap":"toHome"},"f":["work"]}]}," ",{"t":7,"e":"div","a":{"class":"layout__item"},"f":[{"t":7,"e":"a","a":{"class":["nav__item nav__item--text ",{"t":4,"f":["nav__item--active"],"n":50,"x":{"r":["view"],"s":"_0==\"blog\""}}]},"v":{"tap":"toBlog"},"f":["blog"]}]}," ",{"t":7,"e":"div","a":{"class":"layout__item"},"f":[{"t":7,"e":"a","a":{"class":"nav__item icon icon--github","href":"https://github.com/lukehedger","target":"_blank"}}]}," ",{"t":7,"e":"div","a":{"class":"layout__item"},"f":[{"t":7,"e":"a","a":{"class":"nav__item icon icon--twitter","href":"https://twitter.com/level_out","target":"_blank"}}]}]}]}
-},{}],99:[function(require,module,exports){
+},{}],101:[function(require,module,exports){
 /**
  * @module:   nav
  * @scss:     ./source/css/module/nav.scss
@@ -24432,9 +24469,9 @@ exports['default'] = _abstractModule2['default'].extend({
 });
 module.exports = exports['default'];
 
-},{"../abstract-module":82,"./nav.html":98}],100:[function(require,module,exports){
+},{"../abstract-module":82,"./nav.html":100}],102:[function(require,module,exports){
 module.exports={"v":3,"t":[{"t":7,"e":"div","a":{"class":"tag"},"f":[{"t":4,"f":[{"t":4,"f":[{"t":4,"f":[{"t":7,"e":"h3","v":{"tap":{"n":"goPost","d":[{"t":2,"r":"slug"}]}},"f":[{"t":2,"r":"title"}]}],"n":50,"x":{"r":["status","draftsEnabled"],"s":"_0!=\"draft\"||_1"}}],"i":"post","r":"taggedPosts"}],"n":50,"r":"search"},{"t":4,"n":51,"f":[{"t":4,"f":[{"t":7,"e":"h3","v":{"tap":{"n":"goTag","d":[{"t":2,"r":"tag"}]}},"f":[{"t":2,"r":"tag"}]}],"i":"tag","r":"tags"}],"r":"search"}]}]}
-},{}],101:[function(require,module,exports){
+},{}],103:[function(require,module,exports){
 /**
  * @module:   tag
  * @scss:     ./source/css/module/tag.scss
@@ -24502,9 +24539,9 @@ exports['default'] = _abstractModule2['default'].extend({
 });
 module.exports = exports['default'];
 
-},{"../abstract-module":82,"./tag.html":100}],102:[function(require,module,exports){
+},{"../abstract-module":82,"./tag.html":102}],104:[function(require,module,exports){
 module.exports={"v":3,"t":[{"t":7,"e":"div","a":{"class":"work"},"t1":"creep","f":[{"t":7,"e":"h2","a":{"class":"work__title"},"f":["Featured Work"]}," ",{"t":7,"e":"div","a":{"class":"layout"},"f":[{"t":4,"f":[{"t":7,"e":"ui-card","a":{"content":[{"t":2,"r":"."}],"standard":0,"project":0}}],"r":"work"}]}]}]}
-},{}],103:[function(require,module,exports){
+},{}],105:[function(require,module,exports){
 /**
  * @module:   work
  * @scss:     ./source/css/module/work.scss
@@ -24542,7 +24579,7 @@ exports['default'] = _abstractModule2['default'].extend({
 });
 module.exports = exports['default'];
 
-},{"../../transition/page-creep":104,"../abstract-module":82,"./work.html":102}],104:[function(require,module,exports){
+},{"../../transition/page-creep":106,"../abstract-module":82,"./work.html":104}],106:[function(require,module,exports){
 'use strict';
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
@@ -24606,9 +24643,9 @@ function pageCreep(t, params) {
 
 module.exports = pageCreep;
 
-},{"component-raf":3,"component-tween":4}],105:[function(require,module,exports){
-module.exports={"v":3,"t":[{"t":4,"f":[{"t":7,"e":"ui-nav","a":{"view":[{"t":2,"r":"view"}]}}," ",{"t":7,"e":"ui-header"}," ",{"t":4,"f":[{"t":7,"e":"ui-work","a":{"work":[{"t":2,"r":"work"}]}}," ",{"t":7,"e":"ui-blog-preview","a":{"posts":[{"t":2,"r":"posts"}],"limit":[{"t":2,"r":"blogPreviewLimit"}]}}],"x":{"r":["view"],"s":"_0==\"index\""}},{"t":4,"f":[{"t":7,"e":"ui-blog","a":{"posts":[{"t":2,"r":"posts"}],"slug":[{"t":2,"r":"slug"}],"draftsEnabled":[{"t":2,"r":"config.drafts"}]}}],"x":{"r":["view"],"s":"_0==\"blog\""}},{"t":4,"f":[{"t":7,"e":"ui-tag","a":{"tags":[{"t":2,"r":"tags"}],"search":[{"t":2,"r":"tagSearch"}],"draftsEnabled":[{"t":2,"r":"config.drafts"}]}}],"x":{"r":["view"],"s":"_0==\"tag\""}},{"t":7,"e":"ui-footer"}],"r":"isReady"}]}
-},{}],106:[function(require,module,exports){
+},{"component-raf":3,"component-tween":4}],107:[function(require,module,exports){
+module.exports={"v":3,"t":[{"t":4,"f":[{"t":7,"e":"ui-nav","a":{"view":[{"t":2,"r":"view"}]}}," ",{"t":7,"e":"ui-header"}," ",{"t":4,"f":[{"t":7,"e":"ui-work","a":{"work":[{"t":2,"r":"work"}]}}," ",{"t":7,"e":"ui-blog-preview","a":{"posts":[{"t":2,"r":"posts"}],"limit":[{"t":2,"r":"blogPreviewLimit"}]}}],"x":{"r":["view"],"s":"_0==\"index\""}},{"t":4,"f":[{"t":7,"e":"ui-blog","a":{"posts":[{"t":2,"r":"posts"}],"slug":[{"t":2,"r":"slug"}],"draftsEnabled":[{"t":2,"r":"config.drafts"}]}}],"x":{"r":["view"],"s":"_0==\"blog\""}},{"t":4,"f":[{"t":7,"e":"ui-tag","a":{"tags":[{"t":2,"r":"tags"}],"search":[{"t":2,"r":"tagSearch"}],"draftsEnabled":[{"t":2,"r":"config.drafts"}]}}],"x":{"r":["view"],"s":"_0==\"tag\""}},{"t":4,"f":[{"t":7,"e":"ui-error"}],"x":{"r":["view"],"s":"_0==\"notfound\""}},{"t":7,"e":"ui-footer"}],"r":"isReady"}]}
+},{}],108:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -24849,6 +24886,10 @@ exports['default'] = _module3['default'].extend({
       });
     });
 
+    (0, _page2['default'])('*', function () {
+      _this2.set('view', 'notfound');
+    });
+
     (0, _page2['default'])({
       click: false,
       dispatch: true,
@@ -24859,7 +24900,7 @@ exports['default'] = _module3['default'].extend({
 });
 module.exports = exports['default'];
 
-},{"../module":95,"./main.html":105,"moment":10,"mout/array":11,"page":76,"ractive-events-tap":79,"reqwest":81}]},{},[1])
+},{"../module":97,"./main.html":107,"moment":10,"mout/array":11,"page":76,"ractive-events-tap":79,"reqwest":81}]},{},[1])
 
 
 //# sourceMappingURL=app.js.map

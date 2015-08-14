@@ -1040,6 +1040,21 @@ pre code {
     text-transform: uppercase; }
 
 /**
+ * @module:   error
+ * @js:       ./source/js/module/error/error.js
+ * @html:     ./source/js/module/error/error.html
+ */
+.error {
+  text-align: center; }
+  .error__heading {
+    margin-top: 40px;
+    font-size: 32px;
+    font-size: 2rem;
+    line-height: 1.5; }
+  .error__img {
+    margin-bottom: 40px; }
+
+/**
  * @module:   footer
  * @js:       ./source/js/module/footer/footer.js
  * @html:     ./source/js/module/footer/footer.html

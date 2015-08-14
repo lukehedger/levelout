@@ -16,6 +16,10 @@
 <ui-tag tags="{{tags}}" search="{{tagSearch}}" draftsEnabled="{{config.drafts}}" />
 {{/}}
 
+{{#view == 'notfound'}}
+<ui-error />
+{{/}}
+
 <ui-footer />
 
 {{/isReady}}

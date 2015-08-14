@@ -1,7 +1,3 @@
-Build:
-  ☐ set next/prev posts in main.js
-  ☐ 404 route (page('*', notfound))
-
 Style:
   ☐ card hover state (image effect)
   ☐ tag indexes

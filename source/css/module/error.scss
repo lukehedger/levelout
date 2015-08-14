@@ -1,0 +1,21 @@
+/**
+ * @module:   error
+ * @js:       ./source/js/module/error/error.js
+ * @html:     ./source/js/module/error/error.html
+ */
+
+
+@include module("error") {
+
+  text-align: center;
+
+  &__heading {
+    margin-top: 40px;
+    @include inuit-font-size(32px);
+  }
+
+  &__img {
+    margin-bottom: 40px;
+  }
+
+}

@@ -204,6 +204,10 @@ export default Ractive.extend({
       });
     });
 
+    page('*', () => {
+      this.set('view', 'notfound');
+    });
+
     page({
       click: false,
       dispatch: true,
