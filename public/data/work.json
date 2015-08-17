@@ -5,34 +5,34 @@
       "co": "Level Out",
       "link": "https://countr.divshot.io/",
       "shot": "placeholder.jpg",
-      "detail": "The app that counts against you"
+      "detail": "The app that counts against you. COMING SOON!"
     },
     {
       "title": "Accessories Matcher",
       "co": "Land Rover",
       "link": "https://accessoriesmatcher.landrover.co.uk/",
-      "shot": "placeholder.jpg",
-      "detail": ""
+      "shot": "shots/lr-abmatcher.png",
+      "detail": "Let your instincts choose your accessories"
     },
     {
       "title": "Hen Hunt",
       "co": "Level Out",
       "link": "https://henhunt.divshot.io/",
-      "shot": "placeholder.jpg",
+      "shot": "shots/lo-henhunt.png",
       "detail": "London treasure hunt with Twilio-powered clues"
     },
     {
       "title": "Rubber Tracks",
       "co": "Converse",
-      "link": "MARVEL",
+      "link": "https://marvelapp.com/5g9hcd",
       "shot": "shots/converse-rubber-tracks.png",
       "detail": "Showcasing emerging London bands and their stories"
     },
     {
       "title": "Google Match",
       "co": "Google",
-      "link": "MARVEL",
-      "shot": "shots/google-match.jpg",
+      "link": "https://marvelapp.com/2c89fbg",
+      "shot": "shots/google-match.png",
       "detail": "Real-time multiplayer game prototyped for Google Play"
     },
     {
@@ -59,21 +59,20 @@
     {
       "title": "Interactive Diamond",
       "co": "Forevermark",
-      "link": "DIVSHOT",
       "shot": "shots/fm-diamond.jpg",
       "detail": "Interactive diamond with eye and motion detection"
     },
     {
       "title": "Analytics Dashboard",
       "co": "Land Rover",
-      "link": "MARVEL",
+      "link": "https://marvelapp.com/1645jc4",
       "shot": "shots/lr-dashboard.png",
-      "detail": "Realtime analytics dashboard"
+      "detail": "Realtime social analytics dashboard"
     },
     {
       "title": "MixM&chine",
       "co": "M&C Saatchi",
-      "link": "MARVEL",
+      "link": "https://marvelapp.com/8efc36",
       "shot": "shots/mcsaatchi-mixmachine.png",
       "detail": "DIY corporate video"
     },

@@ -15,6 +15,8 @@ export default Module.extend({
 
     this.on({
       toLink(e, slug) {
+        if (typeof this.get('content.link') === 'undefined' && typeof slug === 'undefined') return;
+
         if (this.get('post')) {
           this.fire('nav', `/blog/${slug}`);
         } else {

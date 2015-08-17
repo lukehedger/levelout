@@ -10,6 +10,10 @@
   margin-bottom: $inuit-base-spacing-unit;
   cursor: pointer;
 
+  &--no-link {
+    cursor: default;
+  }
+
   &--single {
     max-width: 520px;
     margin: auto;

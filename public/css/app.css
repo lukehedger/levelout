@@ -785,6 +785,9 @@ a {
     opacity: 0.6; }
   .block:hover .block__img {
     opacity: 0.4; }
+  .block__img {
+    background: no-repeat center center;
+    background-size: cover; }
   .block__img, .block__overlay {
     width: 100%;
     height: 160px;
@@ -1033,6 +1036,8 @@ pre code {
 .card {
   margin-bottom: 24px;
   cursor: pointer; }
+  .card--no-link {
+    cursor: default; }
   .card--single {
     max-width: 520px;
     margin: auto;
