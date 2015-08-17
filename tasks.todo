@@ -3,7 +3,7 @@ Content:
 
 Live:
   ✔ cull posts @done(2015-08-10 11:16) @project(Live)
-  ☐ migrate comments -> https://levelout.disqus.com/admin/discussions/migrate/
+  ✔ migrate comments @done(2015-08-17 14:41) @project(Live)
   ☐ removed unrequired .js/.css files
   ☐ rename repo to level out
   ☐ move to Divshot
