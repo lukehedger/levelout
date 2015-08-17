@@ -4,9 +4,9 @@ Content:
 Live:
   ✔ cull posts @done(2015-08-10 11:16) @project(Live)
   ✔ migrate comments @done(2015-08-17 14:41) @project(Live)
-  ☐ removed unrequired .js/.css files
-  ☐ rename repo to level out
-  ☐ move to Divshot
+  ✔ removed unrequired .js/.css files @done(2015-08-17 14:44) @project(Live)
+  ✔ rename repo to level out @done(2015-08-17 15:26) @project(Live)
+  ✔ move to Divshot @done(2015-08-17 15:26) @project(Live)
   ☐ cull github repos
   ☐ replace dead links (rubber tracks, gmatch) with Marvel -> https://marvelapp.com/
   ☐ Will Code for Beer pen (add to featured work) -> http://codepen.io/ajerez/pen/dPmGZr / http://codepen.io/jay-bee-why/pen/KEdjD/ (allow PRs as way of hiring eg. * is buying Luke's next beer)

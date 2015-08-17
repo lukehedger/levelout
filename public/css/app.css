@@ -1063,11 +1063,6 @@ pre code {
     text-transform: uppercase; }
 
 /**
- * @module:   comments
- * @js:       ./source/js/module/comments/comments.js
- * @html:     ./source/js/module/comments/comments.html
- */
-/**
  * @module:   error
  * @js:       ./source/js/module/error/error.js
  * @html:     ./source/js/module/error/error.html

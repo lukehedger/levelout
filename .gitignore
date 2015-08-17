@@ -21,3 +21,4 @@ Thumbs.db
 node_modules/
 vendor/
 *.map
+.divshot*
