@@ -5,7 +5,7 @@
 
 {{#view == 'index'}}
 <ui-work work="{{work}}" />
-<ui-blog-preview posts="{{posts}}" limit="{{blogPreviewLimit}}" />
+<ui-blog-preview posts="{{posts}}" limit="{{blogPreviewLimit}}" draftsEnabled="{{config.drafts}}" />
 {{/}}
 
 {{#view == 'blog'}}

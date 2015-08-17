@@ -7,6 +7,7 @@
 import Module from '../abstract-module';
 import template from './blog-preview.html';
 import creep from '../../transition/page-creep';
+import { unset } from 'mout/object';
 
 export default Module.extend({
 
@@ -14,6 +15,31 @@ export default Module.extend({
 
   transitions: {
     creep: creep
+  },
+
+  onrender() {
+
+    // remove drafts from posts
+    this.removeDrafts();
+
+  },
+
+  removeDrafts() {
+
+    if (!this.get('draftsEnabled')) {
+
+      let posts = this.get('posts');
+
+      for (let post in posts) {
+        if (posts.hasOwnProperty(post) && posts[post].status === 'draft') {
+          unset(posts, post);
+        }
+      }
+
+      this.set('posts', posts);
+
+    }
+
   }
 
 });
