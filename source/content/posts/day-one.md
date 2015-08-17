@@ -5,7 +5,7 @@ read: 3
 tags: blog
 comments: true
 slug: day-one
-shot: placeholder.jpg
+shot: posts/day-one.jpg
 status: published
 date: 20-08-2014
 ---

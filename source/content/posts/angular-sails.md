@@ -5,7 +5,7 @@ read: 10
 tags: sails angular node
 comments: true
 slug: angular-sails
-shot: placeholder.jpg
+shot: posts/angular-sails.jpg
 status: published
 date: 02-12-2014
 ---

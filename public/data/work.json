@@ -3,7 +3,6 @@
     {
       "title": "Countr",
       "co": "Level Out",
-      "link": "https://countr.divshot.io/",
       "shot": "placeholder.jpg",
       "detail": "The app that counts against you. COMING SOON!"
     },
@@ -29,13 +28,6 @@
       "detail": "Showcasing emerging London bands and their stories"
     },
     {
-      "title": "Google Match",
-      "co": "Google",
-      "link": "https://marvelapp.com/2c89fbg",
-      "shot": "shots/google-match.png",
-      "detail": "Real-time multiplayer game prototyped for Google Play"
-    },
-    {
       "title": "caniuseonmysite",
       "co": "Lean Mean Fighting Machine",
       "link": "http://caniuseonmysite.com/",
@@ -57,10 +49,11 @@
       "detail": "Home of the MHF charity with NHS API search and GP chat"
     },
     {
-      "title": "Interactive Diamond",
-      "co": "Forevermark",
-      "shot": "shots/fm-diamond.jpg",
-      "detail": "Interactive diamond with eye and motion detection"
+      "title": "Google Match",
+      "co": "Google",
+      "link": "https://marvelapp.com/2c89fbg",
+      "shot": "shots/google-match.png",
+      "detail": "Real-time multiplayer game prototyped for Google Play"
     },
     {
       "title": "Analytics Dashboard",
@@ -82,6 +75,12 @@
       "link": "http://liveson.org/",
       "shot": "shots/lmfm-liveson.png",
       "detail": "When your heart stops beating you'll keep tweeting"
+    },
+    {
+      "title": "Interactive Diamond",
+      "co": "Forevermark",
+      "shot": "shots/fm-diamond.jpg",
+      "detail": "Interactive diamond with eye and motion detection"
     }
   ]
 }

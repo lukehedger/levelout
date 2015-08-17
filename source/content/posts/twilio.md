@@ -5,7 +5,7 @@ read: 10
 tags: node
 comments: true
 slug: twilio
-shot: placeholder.jpg
+shot: posts/twilio.jpg
 status: draft
 date: 21-08-2015
 ---

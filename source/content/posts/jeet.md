@@ -5,7 +5,7 @@ read: 10
 tags: css
 comments: true
 slug: jeet-whizz
-shot: placeholder.jpg
+shot: posts/jeet.jpg
 status: published
 date: 04-02-2015
 ---

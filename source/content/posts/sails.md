@@ -5,7 +5,7 @@ read: 10
 tags: sails node
 comments: true
 slug: sails
-shot: placeholder.jpg
+shot: posts/sails.jpg
 status: published
 date: 28-08-2014
 ---
