@@ -5,7 +5,7 @@
 -->
 
 <div class="layout__item {{#if standard}}u-1/2-lap u-1/4-desk{{/if}} {{#if preview}}u-1/2-lap-and-up{{/if}}">
-  <div class="card {{#if single}}card--single{{/if}} {{#if !content.link}}card--no-link{{/if}}" on-tap="toLink:{{content.slug}}">
+  <div class="card {{#if single}}card--single{{/if}} {{#if !content.link && !content.slug}}card--no-link{{/if}}" on-tap="toLink:{{content.slug}}">
 
     <div class="block">
 

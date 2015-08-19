@@ -1,3 +1,8 @@
-Live:
+Post-Live:
+  ☐ CSS bugs -> mobile /blog index spacing, mobile homepage spacing blog-preview top
+  ☐ DNS redirect issue -> test DH redirect, else transfer to https://iwantmyname.com/
+  ☐ Year One post
+
+Features:
   ☐ Will Code for Beer pen (add to featured work) -> http://codepen.io/ajerez/pen/dPmGZr / http://codepen.io/jay-bee-why/pen/KEdjD/ (allow PRs as way of hiring eg. * is buying Luke's next beer)
   ☐ add GH-style code split to head border
