@@ -25347,7 +25347,7 @@ exports['default'] = _abstractModule2['default'].extend({
 module.exports = exports['default'];
 
 },{"../../transition/page-creep":147,"../abstract-module":121,"./blog-post.html":122,"emojify.js":10}],124:[function(require,module,exports){
-module.exports={"v":3,"t":[{"t":7,"e":"div","a":{"class":"blog-preview"},"t1":"creep","f":[{"t":7,"e":"h2","a":{"class":"blog-preview__title"},"f":["Some Thoughts"]}," ",{"t":7,"e":"div","a":{"class":"layout--flush"},"f":[{"t":4,"f":[{"t":4,"f":[{"t":7,"e":"ui-card","a":{"content":[{"t":2,"r":"."}],"preview":0,"post":0}}],"n":50,"x":{"r":["@index","limit"],"s":"_0<_1"}}],"i":"post","r":"posts"}]}]}]}
+module.exports={"v":3,"t":[{"t":7,"e":"div","a":{"class":"blog-preview"},"t1":"creep","f":[{"t":7,"e":"h2","a":{"class":"blog-preview__title"},"f":["Some Thoughts"]}," ",{"t":7,"e":"div","a":{"class":"layout layout--flush"},"f":[{"t":4,"f":[{"t":4,"f":[{"t":7,"e":"ui-card","a":{"content":[{"t":2,"r":"."}],"preview":0,"post":0}}],"n":50,"x":{"r":["@index","limit"],"s":"_0<_1"}}],"i":"post","r":"posts"}]}]}]}
 },{}],125:[function(require,module,exports){
 /**
  * @module:   blog-preview
@@ -25411,7 +25411,7 @@ exports['default'] = _abstractModule2['default'].extend({
 module.exports = exports['default'];
 
 },{"../../transition/page-creep":147,"../abstract-module":121,"./blog-preview.html":124,"mout/object":76}],126:[function(require,module,exports){
-module.exports={"v":3,"t":[{"t":7,"e":"div","a":{"class":"blog"},"t1":"creep","f":[{"t":4,"f":[{"t":7,"e":"ui-blog-post","a":{"post":[{"t":2,"r":"post"}]}}],"n":50,"r":"slug"},{"t":4,"n":51,"f":[{"t":7,"e":"h2","a":{"class":"blog__heading"},"f":["Thoughts and shit"]}," ",{"t":7,"e":"h5","a":{"class":"blog__tagline"},"f":["Odd musings about web development and beer"]}," ",{"t":7,"e":"div","a":{"class":"layout layout--flush"}}," ",{"t":4,"f":[{"t":4,"f":[{"t":7,"e":"ui-card","a":{"content":[{"t":2,"r":"."}],"single":0,"post":0}}],"n":50,"x":{"r":["status","draftsEnabled"],"s":"_0!=\"draft\"||_1"}}],"i":"post","r":"posts"}],"r":"slug"}]}]}
+module.exports={"v":3,"t":[{"t":7,"e":"div","a":{"class":"blog"},"t1":"creep","f":[{"t":4,"f":[{"t":7,"e":"ui-blog-post","a":{"post":[{"t":2,"r":"post"}]}}],"n":50,"r":"slug"},{"t":4,"n":51,"f":[{"t":7,"e":"h2","a":{"class":"blog__heading"},"f":["Thoughts and shit"]}," ",{"t":7,"e":"h5","a":{"class":"blog__tagline"},"f":["Odd musings about web development and beer"]}," ",{"t":7,"e":"div","a":{"class":"layout"},"f":[{"t":4,"f":[{"t":4,"f":[{"t":7,"e":"ui-card","a":{"content":[{"t":2,"r":"."}],"single":0,"post":0}}],"n":50,"x":{"r":["status","draftsEnabled"],"s":"_0!=\"draft\"||_1"}}],"i":"post","r":"posts"}]}],"r":"slug"}]}]}
 },{}],127:[function(require,module,exports){
 /**
  * @module:   blog

@@ -8,8 +8,12 @@
 @include module("work") {
 
   margin-top: 40px;
-  padding: 40px 40px 60px;
+  padding: 40px;
   background-image: linear-gradient(135deg, lighten($color-lopink, 40), lighten($color-loblue, 50));
+
+  @include break(not-small) {
+    padding-bottom: 60px;
+  }
 
   &__title {
     @include sectionTitle($color-dkgrey);

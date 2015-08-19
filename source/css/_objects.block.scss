@@ -1,7 +1,10 @@
 .block {
-  min-height: 400px;
   background-color: #FFFFFF;
   position: relative;
+
+  @include break(not-small) {
+    min-height: 400px;
+  }
 
   &:hover {
 
@@ -18,6 +21,10 @@
   &__img {
     background: no-repeat center center;
     background-size: cover;
+
+    @include break(small) {
+      margin-bottom: 0;
+    }
   }
 
   &__img, &__overlay {
