@@ -25461,6 +25461,9 @@ exports['default'] = _abstractModule2['default'].extend({
       var posts = this.get('posts');
       var slug = this.get('slug');
 
+      // exit if no slug
+      if (!slug) return;
+
       for (var post in posts) {
         if (posts.hasOwnProperty(post) && posts[post].slug === slug) {
           return posts[post];

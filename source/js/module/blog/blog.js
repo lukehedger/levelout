@@ -30,6 +30,9 @@ export default Module.extend({
       let posts = this.get('posts');
       let slug = this.get('slug');
 
+      // exit if no slug
+      if (!slug) return;
+
       for (let post in posts) {
         if (posts.hasOwnProperty(post) && posts[post].slug === slug) {
           return posts[post];
