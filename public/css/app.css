@@ -782,7 +782,7 @@ a {
   position: relative; }
   @media only screen and (min-width: 641px) {
     .block {
-      min-height: 400px; } }
+      min-height: 450px; } }
   .block:hover .block__overlay {
     opacity: 0.6; }
   .block:hover .block__img {

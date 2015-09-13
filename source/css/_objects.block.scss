@@ -3,7 +3,7 @@
   position: relative;
 
   @include break(not-small) {
-    min-height: 400px;
+    min-height: 450px;
   }
 
   &:hover {
