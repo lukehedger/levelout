@@ -26048,7 +26048,7 @@ var _moutArray = require('mout/array');
 // register global Ractive plugins
 _module3['default'].events.tap = require('ractive-events-tap');
 
-var DATE_FORMAT = 'DD-MM-YYYY';
+var DATE_FORMAT = "DD-MM-YYYY";
 
 exports['default'] = _module3['default'].extend({
 
