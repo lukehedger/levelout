@@ -787,9 +787,13 @@ a {
     opacity: 0.6; }
   .block:hover .block__img {
     opacity: 0.4; }
+  .block--single {
+    min-height: 350px; }
   .block__img {
     background: no-repeat center center;
     background-size: cover; }
+    .block__img--single {
+      margin-bottom: 0; }
     @media only screen and (max-width: 640px) {
       .block__img {
         margin-bottom: 0; } }

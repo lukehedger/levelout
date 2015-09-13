@@ -18,9 +18,17 @@
 
   }
 
+  &--single {
+    min-height: 350px;
+  }
+
   &__img {
     background: no-repeat center center;
     background-size: cover;
+
+    &--single {
+      margin-bottom: 0;
+    }
 
     @include break(small) {
       margin-bottom: 0;

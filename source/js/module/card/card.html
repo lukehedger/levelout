@@ -7,11 +7,11 @@
 <div class="layout__item {{#if standard}}u-1/2-lap u-1/4-desk{{/if}} {{#if preview}}u-1/2-lap-and-up{{/if}}">
   <div class="card {{#if single}}card--single{{/if}} {{#if !content.link && !content.slug}}card--no-link{{/if}}" on-tap="toLink:{{content.slug}}">
 
-    <div class="block">
+    <div class="block {{#if single}}block--single{{/if}}">
 
       <div class="block__overlay {{#if preview}}block__overlay--preview{{/if}}"></div>
 
-      <div class="block__img {{#if preview}}block__img--preview{{/if}}" style="background-image: url('/img/{{content.shot}}')"></div>
+      <div class="block__img {{#if single}}block__img--single{{/if}} {{#if preview}}block__img--preview{{/if}}" style="background-image: url('/img/{{content.shot}}')"></div>
 
       <div class="block__body">
 
