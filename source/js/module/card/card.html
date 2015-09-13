@@ -24,10 +24,10 @@
         <p class="card__detail {{#if post}}card__detail--post{{/if}}">{{content.detail}}</p>
 
         <span class="card__cta">
-          {{#if post && content.link}}
+          {{#if post && content.slug}}
           read on &rarr;
           {{/if}}
-          {{#if project && content.link}}
+          {{elseif project && content.link}}
           explore project &rarr;
           {{/if}}
         </span>

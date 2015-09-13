@@ -1049,7 +1049,7 @@ pre code {
     cursor: default; }
   .card--single {
     max-width: 520px;
-    margin: auto; }
+    margin: auto auto 40px; }
     @media only screen and (min-width: 641px) {
       .card--single {
         padding-right: 24px; } }

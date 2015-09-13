@@ -16,7 +16,7 @@
 
   &--single {
     max-width: 520px;
-    margin: auto;
+    margin: auto auto 40px;
 
     @include break(not-small) {
       padding-right: $inuit-base-spacing-unit;
