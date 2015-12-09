@@ -10,6 +10,8 @@ status: published
 date: 25-11-2015
 ---
 
+*Update (09-12-2015) - I've realised what I was rambling on about are actually [Higher Order Components](https://medium.com/@dan_abramov/mixins-are-dead-long-live-higher-order-components-94a0d2f9e750#.iigxo4oyt) and can/should be built as [pure functions](https://github.com/reactjs/react-future/blob/master/01%20-%20Core/03%20-%20Stateless%20Functions.js) (rather than classes) in React.*
+
 When I first came across [`this.props.children`](https://facebook.github.io/react/tips/children-props-type.html) I couldn't fathom a use for it. I (un)ashamedly used it [cargo-style](https://en.wikipedia.org/wiki/Cargo_cult_programming) when setting up [ReactRouter](https://github.com/rackt/react-router#whats-it-look-like) - the router has children that are rendered dynamically based on the route. Sure, that made sense but when else could I use that? Why would a component have children that weren't DOM nodes?
 
 One of the most important approaches to take when using React is to abandon the old way of thinking - React is as much about [methodologies](https://facebook.github.io/react/docs/thinking-in-react.html) as it is about utilities. Once you realise this things start making a lot more sense. My discovery of the `this.props.children` magic seemed to manifest suddenly; after a Five Guys lunch and some table-tennis.
