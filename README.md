@@ -21,3 +21,9 @@ To read more about creating/deleting modules, please refer to [wiki/modules](wik
 
 ## Tech Spec
 To read more about the technical specifications of this project, please refer to [wiki/tech-spec](wiki/tech-spec.md).
+
+## Deployment
+Deploy to [surge](https://surge.sh/):
+```
+sh surge.sh
+```
