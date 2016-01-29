@@ -1,10 +1,18 @@
 {
   "work": [
     {
-      "title": "Countr",
-      "co": "Level Out",
-      "shot": "placeholder.jpg",
-      "detail": "The app that counts against you. COMING SOON!"
+      "title": "Saatchi Institute",
+      "co": "M&C Saatchi",
+      "link": "http://saatchi-institute.com/",
+      "shot": "shots/mcsaatchi-institute.png",
+      "detail": "Built with React/Redux and CSS Modules"
+    },
+    {
+      "title": "Meerkat Movies",
+      "co": "Compare the Market",
+      "link": "http://www.comparethemarket.com/meerkat/your-movie-trailer/?u=ZHFs1jzmxqJrOdnih8o0x%2B8ykMp88FknIENCTgiEoWs%3D",
+      "shot": "shots/ctm-movies.png",
+      "detail": "Animation built with PIXI. Simples."
     },
     {
       "title": "Accessories Matcher",
@@ -75,12 +83,6 @@
       "link": "http://liveson.org/",
       "shot": "shots/lmfm-liveson.png",
       "detail": "When your heart stops beating you'll keep tweeting"
-    },
-    {
-      "title": "Interactive Diamond",
-      "co": "Forevermark",
-      "shot": "shots/fm-diamond.jpg",
-      "detail": "Interactive diamond with eye and motion detection"
     }
   ]
 }
