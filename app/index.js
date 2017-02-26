@@ -1,22 +1,8 @@
-import Inferno from 'inferno';
-import Component from 'inferno-component';
+import { render } from 'inferno';
 
-import Text from '~/shared/components/text';
+import routes from './routes';
+import { isDevelopment } from '~/shared/util';
 
-class App extends Component {
-  componentDidMount() {
-    console.log('🕹 L E V E L  O U T');
-  }
+if (isDevelopment) require('inferno-devtools');
 
-  render() {
-    return (
-      <div>
-
-        <Text>Level Out</Text>
-
-      </div>
-    );
-  }
-}
-
-Inferno.render(<App />, document.getElementById('Root'));
+render(routes, document.getElementById('Root'));
