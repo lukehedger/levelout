@@ -4,7 +4,6 @@ import Component from 'inferno-component';
 import { work } from '~/shared/data';
 
 import Anchor from '~/shared/components/anchor';
-import Hr from '~/shared/components/hr';
 import Image from '~/shared/components/image';
 import Section from '~/shared/components/section';
 import Text from '~/shared/components/text';
@@ -24,9 +23,7 @@ class Start extends Component {
           <Anchor href="https://medium.com/@level_out/">Writing</Anchor>
         </Text>
 
-        <Hr width={100} />
-
-        <Text fontWeight="bold" fontStyle="italic">Projects:</Text>
+        <Text fontWeight="bold" marginTop={44}>Projects:</Text>
 
         {work.map(w => (
           <div>

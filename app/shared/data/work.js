@@ -1,7 +1,7 @@
 const work = [
   {
     title: 'Shandy Club',
-    co: 'ditto',
+    co: 'Level Out',
     link: 'https://shandy.club/',
     detail: 'Curated pubs for curious people. Built with Express, MongoDB, React, Redux, styled-components and Leaflet maps.',
     year: '2017',
