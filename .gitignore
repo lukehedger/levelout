@@ -9,16 +9,16 @@ Icon?
 ehthumbs.db
 Thumbs.db
 
-# IDE files #
+# Logs #
 ######################
-.idea
+*.log
 
-# Project files #
+# Dependencies #
 ######################
-*.sublime-project
-*.sublime-workspace
-
 node_modules/
-vendor/
-*.map
-.divshot*
+
+# Release #
+######################
+.fusebox
+public/**/*.js
+public/**/*.map
