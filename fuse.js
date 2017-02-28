@@ -11,6 +11,8 @@ const fuseBox = new fsbx.FuseBox({
   },
   outFile: './public/app.js',
   plugins: [fsbx.BabelPlugin(), fsbx.JSONPlugin()],
+  debug: false,
+  log: !isDevelopment,
 });
 
 if (isDevelopment) {

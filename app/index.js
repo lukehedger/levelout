@@ -1,7 +1,7 @@
 import { render } from 'inferno';
 
 import routes from './routes';
-import { isDevelopment } from '~/shared/util';
+import { isDevelopment } from './shared/util';
 
 // if ( isDevelopment() ) require('inferno-devtools');
 

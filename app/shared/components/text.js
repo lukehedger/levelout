@@ -7,9 +7,12 @@ const Text = ({ children, ...props }) => (
   <p
     className={cxs({
       ...typography.ff(),
-      margin: '0 0 16px 0',
+      marginTop: props.marginTop || Text.default.marginTop,
+      marginBottom: props.marginBottom || Text.default.marginBottom,
       color: (props.color && colours[props.color]) || Text.default.color,
       fontSize: props.fontSize || Text.default.fontSize,
+      fontStyle: props.fontStyle || Text.default.fontStyle,
+      fontWeight: props.fontWeight || Text.default.fontWeight,
       letterSpacing: props.letterSpacing || Text.default.letterSpacing,
     })}
   >
@@ -18,8 +21,12 @@ const Text = ({ children, ...props }) => (
 );
 
 Text.default = {
+  marginTop: 0,
+  marginBottom: 16,
   color: colours.dark,
   fontSize: '16px',
+  fontStyle: 'normal',
+  fontWeight: 'normal',
   letterSpacing: 'normal',
 };
 

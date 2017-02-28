@@ -3,8 +3,8 @@ import { Router, Route } from 'inferno-router';
 import createBrowserHistory from 'history/createBrowserHistory';
 
 // containers
-import App from '~/shared/containers/App';
-import * as Start from '~/start';
+import App from './shared/containers/App';
+import * as Start from './start';
 
 const browserHistory = createBrowserHistory();
 

@@ -23,7 +23,7 @@
     "lint:staged": "lint-staged",
     "start": "NODE_ENV=development node fuse.js",
     "build": "NODE_ENV=production node fuse.js",
-    "deploy": "surge public/ level-out.com"
+    "deploy": "yarn build && surge public/ level-out.com"
   },
   "devDependencies": {
     "babel-core": "^6.23.1",

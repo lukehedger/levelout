@@ -4,7 +4,7 @@ import Component from 'inferno-component';
 import Text from '~/shared/components/text';
 
 class App extends Component {
-  componentDidMount() {
+  componentWillMount() {
     console.log('🕹 L E V E L  O U T');
   }
 

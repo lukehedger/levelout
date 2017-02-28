@@ -6,7 +6,7 @@ import { colours } from '../style';
 const Anchor = ({ children, href, ...props }) => (
   <a
     className={cxs({
-      borderBottom: `2px solid ${colours.dark}`,
+      borderBottom: props.borderBottom || Anchor.default.borderBottom,
       paddingBottom: 4,
       display: 'inline-block',
       textDecoration: 'none',
@@ -18,6 +18,8 @@ const Anchor = ({ children, href, ...props }) => (
   </a>
 );
 
-Anchor.default = {};
+Anchor.default = {
+  borderBottom: `2px solid ${colours.dark}`,
+};
 
 export default Anchor;
