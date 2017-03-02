@@ -10,7 +10,7 @@ const fuseBox = new fsbx.FuseBox({
     outFile: './public/sourcemaps.js.map',
   },
   outFile: './public/app.js',
-  plugins: [fsbx.BabelPlugin(), fsbx.JSONPlugin()],
+  plugins: [fsbx.BabelPlugin()],
   debug: false,
   log: !isDevelopment,
 });
