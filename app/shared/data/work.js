@@ -3,7 +3,7 @@ const work = [
     title: 'JAAK',
     co: 'JAAK Music',
     link: 'https://jaak.io/',
-    detail: 'Headed up development of the JAAK platform, providing content infrastructure to innovative music platforms and independent artists, with features including user authentication, content delivery and payments. Worked across the entire stack to build scalable APIs and performant applications that aggregated rights data and assets for millions of musical works and recordings. Also lead research projects around programmatic licensing, modelling decentralised identity and reputation in an open network and developing a rules engine for verifiable claims using JSON Schema and Lua.',
+    detail: 'Headed up development of the JAAK platform, providing content infrastructure to innovative music platforms and independent artists, with features including user authentication, content delivery and payments. Worked across the entire stack to build scalable APIs in Go and performant React applications that aggregated rights data and assets for millions of musical works and recordings. Also lead research projects around programmatic licensing, modelling decentralised identity and reputation in an open network and developing a rules engine for verifiable claims using JSON Schema and Lua.',
     year: '2017-19',
   },
   {
