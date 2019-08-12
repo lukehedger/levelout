@@ -170,7 +170,7 @@ accepting any such warranty or additional liability.
 _END OF TERMS AND CONDITIONS_
 
 ```
-Copyright 2017 Luke Hedger
+Copyright 2019 Luke Hedger
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
