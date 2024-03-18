@@ -7,6 +7,59 @@ import { getAllPosts, sortMDByDate } from "@/utils";
 const MAX_POSTS = 10;
 const allPosts = await getAllPosts();
 const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS);
+
+const talks: { desc: string; href: string; title: string }[] = [
+	{
+		desc: "Serverless London, May 2023",
+		href: "https://www.aleios.com/talks/a-serverless-user-journey-on-lego-com",
+		title: "A Serverless User Journey",
+	},
+	{
+		desc: "Serverless Architecture Conf London, Apr 2023",
+		href: "https://serverless-architecture.io/serverless-architecture-design/serverless-user-journey/",
+		title: "A Serverless User Journey",
+	},
+	{
+		desc: "AsyncAPI Conference, Nov 2022",
+		href: "https://www.youtube.com/watch?v=qjarcJQVLOg",
+		title: "Cross-Domain Events with AsyncAPI and AWS",
+	},
+	{
+		desc: "Serverless Architecture Conf Berlin, Oct 2022",
+		href: "https://slides.com/lh4/pioneering-serverless",
+		title: "Pioneering Serverless Payments",
+	},
+	{
+		desc: "Serverless Days Student Edition, Aug 2022",
+		href: "https://www.youtube.com/live/ktTPSC4uEqw?si=zYiSXFMnHZlmqsW2&t=11316",
+		title: "How To Write Node.js Lambda Functions",
+	},
+	{
+		desc: "Serverless Days Student Edition, Aug 2022",
+		href: "https://www.youtube.com/live/h1v2xfaEWc8?si=Dw5PbAyxil9uw-u2&t=13731",
+		title: "Serverless: Ship on Day 1",
+	},
+	{
+		desc: "Brick by Brick, Aug 2022",
+		href: "https://slides.com/lh4/serverless-payments",
+		title: "Pioneering Serverless Payments",
+	},
+	{
+		desc: "SST 1.0 Conf, May 2022",
+		href: "https://www.youtube.com/watch?v=6FzLjpMYcu8&t=8052s",
+		title: "Continuous Serverless Delivery",
+	},
+	{
+		desc: "AWS Summit London, Apr 2022",
+		href: "https://slides.com/lh4/sensitive-data-detection-pipelines-06fc75",
+		title: "Sensitive Data Detection Pipelines",
+	},
+	{
+		desc: "Serverless London, May 2020",
+		href: "https://www.youtube.com/watch?v=s0nX_MDSDag&t=742s",
+		title: "Serverless at Cancer Research UK",
+	},
+];
 ---
 
 <PageLayout meta={{ title: "Home" }}>
@@ -16,7 +69,7 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS);
 			Hello! I'm Luke, a software engineer currently specialising in <b>serverless applications</b> and <b>event-driven architectures</b>. I'm the co-author of <a class="cactus-link" href="/book">The Serverless Book</a>, and I've <a class="cactus-link" href="#talks">spoken</a> at various conferences and meetups.
 		</p>
 		<p class="mb-4">
-			Previously I have worked at Cancer Research UK, JAAK Music, Unlease, M&C Saatchi and Lean Mean Fighting Machine.
+			Previously I have worked at Cancer Research UK, JAAK Music, Unlease, M&C Saatchi and Lean Mean Fighting Machine. Since 2019 I have been leading serverless engineering teams and using AWS Step Functions a lot.
 		</p>
 		<SocialList />
 	</section>
@@ -32,5 +85,26 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS);
 				))
 			}
 		</ul>
+	</section>
+
+	<section class="mt-16" id="talks">
+		<h2 class="title mb-4 text-xl">Talks</h2>
+		<dl class="space-y-4">
+			{
+				talks.map(({ desc, href, title }) => (
+					<div class="flex flex-col gap-2 md:flex-row">
+						<dt>
+							<span class="flex">
+								<a class="cactus-link" href={href} rel="noopener noreferrer" target="_blank">
+									{title}
+								</a>
+								:
+							</span>
+						</dt>
+						<dd>{desc}</dd>
+					</div>
+				))
+			}
+		</dl>
 	</section>
 </PageLayout>
