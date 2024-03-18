@@ -7,66 +7,13 @@ import { getAllPosts, sortMDByDate } from "@/utils";
 const MAX_POSTS = 10;
 const allPosts = await getAllPosts();
 const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS);
-
-const talks: { desc: string; href: string; title: string }[] = [
-	{
-		desc: "Serverless Days Student Edition, Aug 2022",
-		href: "https://www.youtube.com/live/ktTPSC4uEqw?si=zYiSXFMnHZlmqsW2&t=11316",
-		title: "How To Write Node.js Lambda Functions",
-	},
-	{
-		desc: "Serverless Days Student Edition, Aug 2022",
-		href: "https://www.youtube.com/live/h1v2xfaEWc8?si=Dw5PbAyxil9uw-u2&t=13731",
-		title: "Serverless: Ship on Day 1",
-	},
-	{
-		desc: "Serverless Architecture Conf Berlin",
-		href: "TODO - slides",
-		title: "...",
-	},
-	{
-		desc: "Serverless Architecture Conf London",
-		href: "TODO - slides or tweet",
-		title: "...",
-	},
-	{
-		desc: "Serverless London",
-		href: "https://www.aleios.com/talks/a-serverless-user-journey-on-lego-com",
-		title: "...",
-	},
-	{
-		desc: "AsyncAPI Conf",
-		href: "https://www.youtube.com/watch?v=qjarcJQVLOg",
-		title: "...",
-	},
-	{
-		desc: "AWS Summit London",
-		href: "TODO - slides",
-		title: "...",
-	},
-	{
-		desc: "SST 1.0 Conf",
-		href: "https://www.youtube.com/watch?v=6FzLjpMYcu8&t=8052s",
-		title: "...",
-	},
-	{
-		desc: "Serverless London",
-		href: "https://www.youtube.com/watch?v=s0nX_MDSDag&t=742s",
-		title: "...",
-	},
-	{
-		desc: "Brick by Brick",
-		href: "TODO - slides",
-		title: "...",
-	},
-];
 ---
 
 <PageLayout meta={{ title: "Home" }}>
 	<section id="hello">
 		<h1 class="title mb-6">Luke Hedger ~ Software Engineer</h1>
 		<p class="mb-4">
-			Hello! I'm Luke, a software engineer currently specialising in <b>serverless applications</b> and <b>event-driven architectures</b>. I'm the co-author of <a class="cactus-link" href="/book">The Serverless Book</a>, and I've spoken at various conferences and meetups.
+			Hello! I'm Luke, a software engineer currently specialising in <b>serverless applications</b> and <b>event-driven architectures</b>. I'm the co-author of <a class="cactus-link" href="/book">The Serverless Book</a>, and I've <a class="cactus-link" href="#talks">spoken</a> at various conferences and meetups.
 		</p>
 		<p class="mb-4">
 			Previously I have worked at Cancer Research UK, JAAK Music, Unlease, M&C Saatchi and Lean Mean Fighting Machine.
