@@ -5,9 +5,9 @@ export const siteConfig: SiteConfig = {
 	// Used as both a meta property (src/components/BaseHead.astro L:31 + L:49) & the generated satori png (src/pages/og-image/[slug].png.ts)
 	author: "Luke Hedger",
 	// Meta property used to construct the meta title property, found in src/components/BaseHead.astro L:11
-	title: "Luke Hedger",
+	title: "Level Out",
 	// Meta property used as the default description meta property
-	description: "An opinionated starter theme for Astro",
+	description: "Luke Hedger Software Engineer",
 	// HTML lang property, found in src/layouts/Base.astro L:18
 	lang: "en-GB",
 	// Meta property, found in src/components/BaseHead.astro L:42
@@ -22,7 +22,7 @@ export const siteConfig: SiteConfig = {
 		},
 	},
 	webmentions: {
-		link: "https://webmention.io/astro-cactus.chriswilliams.dev/webmention",
+		link: "https://webmention.io/level-out.com/webmention",
 	},
 };
 
@@ -33,11 +33,11 @@ export const menuLinks: Array<{ title: string; path: string }> = [
 		path: "/",
 	},
 	{
-		title: "About",
-		path: "/about/",
+		title: "Book",
+		path: "/book/",
 	},
 	{
-		title: "Blog",
+		title: "Posts",
 		path: "/posts/",
 	},
 ];

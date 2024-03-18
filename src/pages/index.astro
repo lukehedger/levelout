@@ -8,59 +8,73 @@ const MAX_POSTS = 10;
 const allPosts = await getAllPosts();
 const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS);
 
-const cactusTech: { desc: string; href: string; title: string }[] = [
+const talks: { desc: string; href: string; title: string }[] = [
 	{
-		desc: "Build fast websites, faster.",
-		href: "https://astro.build",
-		title: "Astro",
+		desc: "Serverless Days Student Edition, Aug 2022",
+		href: "https://www.youtube.com/live/ktTPSC4uEqw?si=zYiSXFMnHZlmqsW2&t=11316",
+		title: "How To Write Node.js Lambda Functions",
 	},
 	{
-		desc: "Rapidly build modern websites without ever leaving your HTML.",
-		href: "https://tailwindcss.com",
-		title: "Tailwind CSS",
+		desc: "Serverless Days Student Edition, Aug 2022",
+		href: "https://www.youtube.com/live/h1v2xfaEWc8?si=Dw5PbAyxil9uw-u2&t=13731",
+		title: "Serverless: Ship on Day 1",
 	},
 	{
-		desc: "Simple and easy-to-use markup language.",
-		href: "https://www.markdownguide.org/",
-		title: "Markdown",
+		desc: "Serverless Architecture Conf Berlin",
+		href: "TODO - slides",
+		title: "...",
 	},
 	{
-		desc: "Markdown for the component era.",
-		href: "https://mdxjs.com/",
-		title: "MDX",
+		desc: "Serverless Architecture Conf London",
+		href: "TODO - slides or tweet",
+		title: "...",
 	},
 	{
-		desc: "Generating png Open Graph images for blog posts.",
-		href: "https://github.com/vercel/satori",
-		title: "Satori",
+		desc: "Serverless London",
+		href: "https://www.aleios.com/talks/a-serverless-user-journey-on-lego-com",
+		title: "...",
 	},
 	{
-		desc: "A fully static search library.",
-		href: "https://pagefind.app/",
-		title: "Pagefind",
+		desc: "AsyncAPI Conf",
+		href: "https://www.youtube.com/watch?v=qjarcJQVLOg",
+		title: "...",
 	},
 	{
-		desc: "An easy to use Icon component for Astro.",
-		href: "https://github.com/natemoo-re/astro-icon#readme",
-		title: "Astro Icon",
+		desc: "AWS Summit London",
+		href: "TODO - slides",
+		title: "...",
 	},
 	{
-		desc: "Highly customisable source code & syntax highlighter",
-		href: "https://expressive-code.com/",
-		title: "Expressive Code",
+		desc: "SST 1.0 Conf",
+		href: "https://www.youtube.com/watch?v=6FzLjpMYcu8&t=8052s",
+		title: "...",
+	},
+	{
+		desc: "Serverless London",
+		href: "https://www.youtube.com/watch?v=s0nX_MDSDag&t=742s",
+		title: "...",
+	},
+	{
+		desc: "Brick by Brick",
+		href: "TODO - slides",
+		title: "...",
 	},
 ];
 ---
 
 <PageLayout meta={{ title: "Home" }}>
-	<section>
-		<h1 class="title mb-6">Coming Soon!</h1>
+	<section id="hello">
+		<h1 class="title mb-6">Luke Hedger ~ Software Engineer</h1>
 		<p class="mb-4">
-			...
+			Hello! I'm Luke, a software engineer currently specialising in <b>serverless applications</b> and <b>event-driven architectures</b>. I'm the co-author of <a class="cactus-link" href="/book">The Serverless Book</a>, and I've spoken at various conferences and meetups.
+		</p>
+		<p class="mb-4">
+			Previously I have worked at Cancer Research UK, JAAK Music, Unlease, M&C Saatchi and Lean Mean Fighting Machine.
 		</p>
 		<SocialList />
 	</section>
-	<section aria-label="Blog post list" class="mt-16">
+
+	<section aria-label="Blog post list" class="mt-16" id="posts">
 		<h2 class="title mb-4 text-xl">Posts</h2>
 		<ul class="space-y-4">
 			{
@@ -71,25 +85,5 @@ const cactusTech: { desc: string; href: string; title: string }[] = [
 				))
 			}
 		</ul>
-	</section>
-	<section class="mt-16">
-		<h2 class="title mb-4 text-xl">Technologies</h2>
-		<dl class="space-y-4">
-			{
-				cactusTech.map(({ desc, href, title }) => (
-					<div class="flex flex-col gap-2 md:flex-row">
-						<dt>
-							<span class="flex">
-								<a class="cactus-link" href={href} rel="noopener noreferrer" target="_blank">
-									{title}
-								</a>
-								:
-							</span>
-						</dt>
-						<dd>{desc}</dd>
-					</div>
-				))
-			}
-		</dl>
 	</section>
 </PageLayout>

@@ -1,0 +1,120 @@
+---
+import aboutImg from "@/assets/serverless-book.jpg";
+import PageLayout from "@/layouts/Base.astro";
+import { Image } from "astro:assets";
+
+const meta = {
+	description: "Serverless Development on AWS (O'Reilly, 2024)",
+	title: "The Serverless Book",
+};
+---
+
+<PageLayout meta={meta}>
+	<div class="space-y-6">
+		<h1 class="title">Serverless Development on AWS</h1>
+		<p>
+			<a
+				aria-label="Bookshop.org book"
+				class="cactus-link inline-block"
+				href="https://bookshop.org/a/13481/9781098141936"
+				rel="noopener noreferrer"
+				target="_blank">Buy at Bookshop.org</a> | <a
+				aria-label="Amazon.com book"
+				class="cactus-link inline-block"
+				href="https://www.amazon.com/Serverless-Development-AWS-Enterprise-Scale-Solutions/dp/1098141938/"
+				rel="noopener noreferrer"
+				target="_blank">Buy at Amazon.com</a>
+		</p>
+		<p>
+			The adoption of serverless is on the rise, but until now, little guidance has been available for development teams that want to apply this technology on AWS. This definitive guide is packed with architectural, security, and data best practices and patterns for architects and engineers who want to build reliable enterprise-scale serverless solutions.
+		</p>
+		<div class="flex justify-center">
+			<Image
+				alt="A cartoon cactus looking at the 'Astro.build' logo"
+				fetchpriority="high"
+				loading="eager"
+				src={aboutImg}
+			/>
+		</div>
+		<p>
+			<a
+				aria-label="Medium profile"
+				class="cactus-link inline-block"
+				href="https://sbrisals.medium.com/"
+				rel="noopener noreferrer"
+				target="_blank">Sheen Brisals</a>, an AWS Serverless Hero, and <a
+				aria-label="X profile"
+				class="cactus-link inline-block"
+				href="https://x.com/level_out"
+				rel="noopener noreferrer"
+				target="_blank">Luke Hedger</a>, an AWS Community Builder, outline the serverless adoption requirements for an enterprise, examine the development tools your team needs, and explain in depth the nuances of testing event-driven and distributed serverless services. You'll gain practical guidance for keeping up with change and learn how to build serverless solutions with sustainability in mind.
+		</p>
+		<ul class="list-inside list-disc">
+			<li>Examine the serverless technology ecosystem and AWS services needed to develop serverless applications</li>
+			<li>Learn the approach and preparation required for a successful serverless adoption in an enterprise</li>
+			<li>Learn serverless architectures and implementation patterns</li>
+			<li>Design, develop, and test distributed serverless microservices on AWS cloud</li>
+			<li>Apply security best practices while building serverless solutions</li>
+			<li>Identify and adapt the implementation patterns for your particular use case</li>
+			<li>Incorporate the necessary measures for observable serverless applications</li>
+			<li>Implement sustainable serverless applications in the cloud</li>
+		</ul>
+
+		<div class="prose prose-cactus prose-sm">
+			<h3>Praise for Serverless Development on AWS</h3>
+
+			<blockquote>
+				<p>This book is truly a gift to the serverless community</p>
+			</blockquote>
+			<p>— <cite><a
+				aria-label="X tweet"
+				class="cactus-link inline-block"
+				href="https://twitter.com/jeremy_daly/status/1766535440067187044"
+				rel="noopener noreferrer"
+				target="_blank">Jeremy Daly</a
+			> ~ CEO Ampt and AWS Serverless Hero</cite></p>
+
+			<blockquote>
+				<p>This book will be huge</p>
+			</blockquote>
+			<p>— <cite><a
+				aria-label="X tweet"
+				class="cactus-link inline-block"
+				href="https://twitter.com/davidand393/status/1767693649171591578"
+				rel="noopener noreferrer"
+				target="_blank">David Anderson</a
+			> ~ Author of The Value Flywheel Effect</cite></p>
+
+			<blockquote>
+				<p>Look what the cat dragged in</p>
+			</blockquote>
+			<p>— <cite><a
+				aria-label="X tweet"
+				class="cactus-link inline-block"
+				href="https://twitter.com/theburningmonk/status/1769436104044773851"
+				rel="noopener noreferrer"
+				target="_blank">Yan Cui</a
+			> ~ AWS Serverless Hero</cite></p>
+
+			<blockquote>
+				<p>Don't start your serverless journey without this book—it's your roadmap for production success</p>
+			</blockquote>
+			<p>— <cite><a
+				aria-label="Amazon product page"
+				class="cactus-link inline-block"
+				href="https://www.amazon.com/Serverless-Development-AWS-Enterprise-Scale-Solutions/dp/1098141938#editorialReviews_feature_div"
+				rel="noopener noreferrer"
+				target="_blank">Luca Mezzalira</a> ~ Principal Serverless Specialist at AWS</cite></p>
+
+			<blockquote>
+				<p>A must-read guide that blends insight and expertise with real-world applications. I wish I had this during my serverless learning journey</p>
+			</blockquote>
+			<p>— <cite><a
+				aria-label="Amazon product page"
+				class="cactus-link inline-block"
+				href="https://www.amazon.com/Serverless-Development-AWS-Enterprise-Scale-Solutions/dp/1098141938#editorialReviews_feature_div"
+				rel="noopener noreferrer"
+				target="_blank">Ben Smith</a> ~ Principal Developer Advocate, Serverless at AWS</cite></p>
+		</div>
+	</div>
+</PageLayout>
