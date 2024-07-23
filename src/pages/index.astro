@@ -8,6 +8,29 @@ const MAX_POSTS = 10;
 const allPosts = await getAllPosts();
 const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS);
 
+const experiments: { desc: string; href: string; title: string }[] = [
+	{
+		desc: "Run Bloblang mappings in AWS Lambda",
+		href: "https://github.com/lukehedger/bloblang-lambda",
+		title: "Bloblang Lambda",
+	},
+	{
+		desc: "Custom Step Functions intrinsic functions powered by LLRT",
+		href: "https://github.com/lukehedger/custom-intrinsics",
+		title: "Custom Intrinsics",
+	},
+	{
+		desc: "Write Lambda functions as a fluent interface",
+		href: "https://github.com/lukehedger/fluent-lambda",
+		title: "Fluent Lambda Functions",
+	},
+	{
+		desc: "Wide logging and wide tracing for AWS Lambda and Step Functions",
+		href: "https://github.com/lukehedger/wide-telemetry",
+		title: "Wide Telemetry",
+	},
+];
+
 const talks: { desc: string; href: string; title: string }[] = [
 	{
 		desc: "ServerlessDays Belfast, May 2024",
@@ -79,7 +102,28 @@ const talks: { desc: string; href: string; title: string }[] = [
 		<SocialList />
 	</section>
 
-	<section aria-label="Blog post list" class="mt-16" id="posts">
+	<section aria-label="Experiments list" class="mt-16" id="experiments">
+		<h2 class="title mb-4 text-xl">Experiments</h2>
+		<dl class="space-y-4">
+			{
+				experiments.map(({ desc, href, title }) => (
+					<div class="flex flex-col gap-2 md:flex-row">
+						<dt>
+							<span class="flex">
+								<a class="cactus-link" href={href} rel="noopener noreferrer" target="_blank">
+									{title}
+								</a>
+								:
+							</span>
+						</dt>
+						<dd>{desc}</dd>
+					</div>
+				))
+			}
+		</dl>
+	</section>
+
+	<!-- <section aria-label="Blog post list" class="mt-16" id="posts">
 		<h2 class="title mb-4 text-xl">Posts</h2>
 		<ul class="space-y-4">
 			{
@@ -90,7 +134,7 @@ const talks: { desc: string; href: string; title: string }[] = [
 				))
 			}
 		</ul>
-	</section>
+	</section> -->
 
 	<section class="mt-16" id="talks">
 		<h2 class="title mb-4 text-xl">Talks</h2>
