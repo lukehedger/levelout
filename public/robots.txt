@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://level-out.com/sitemap-index.xml
+Sitemap: https://lukehedger.dev/sitemap-index.xml

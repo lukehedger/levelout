@@ -2,10 +2,10 @@
 	"name": "levelout",
 	"version": "4.0.0",
 	"private": true,
-	"description": "Level Out",
+	"description": "lukehedger.dev",
 	"repository": "git@github.com:lukehedger/levelout.git",
 	"author": "Luke Hedger",
-	"homepage": "https://level-out.com/",
+	"homepage": "https://lukehedger.dev/",
 	"scripts": {
 		"dev": "astro dev",
 		"start": "astro dev",
