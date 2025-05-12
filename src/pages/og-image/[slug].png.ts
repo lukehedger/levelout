@@ -34,7 +34,7 @@ const markup = (title: string, pubDate: string) =>
 			<p tw="text-2xl mb-6">${pubDate}</p>
 			<h1 tw="text-6xl font-bold leading-snug text-white">${title}</h1>
 		</div>
-		<div tw="flex items-center justify-between w-full p-10 border-t border-[#2bbc89] text-xl">
+		<div tw="flex items-center justify-between w-full p-10 border-t border-[#d482ab] text-xl">
 			<div tw="flex items-center">
 				<p tw="ml-3 font-semibold">${siteConfig.title}</p>
 			</div>
