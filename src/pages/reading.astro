@@ -1,0 +1,35 @@
+---
+import aboutImg from "@/assets/serverless-book.jpg";
+import PageLayout from "@/layouts/Base.astro";
+import { Image } from "astro:assets";
+
+const meta = {
+	description: "Recommendations for books and whitepapers to read",
+	title: "Reading",
+};
+---
+
+<PageLayout meta={meta}>
+	<div class="space-y-6">
+	    <h1 class="title">Reading</h1>
+
+		<p>Recommendations for books and whitepapers to read</p>
+
+		<div class="prose prose-cactus prose-sm">
+			<h3>Books</h3>
+
+			<ul class="list-inside list-disc">
+				<li>Close to the Machine - Ellen Ullman</li>
+				<li>Practical Process Automation - </li>
+			</ul>
+
+			<h3>Papers</h3>
+
+			<ul class="list-inside list-disc">
+				<li>Autonomous Computing - Pat Helland</li>
+				<li>Dynamo - Amazon</li>
+				<li>Firecracker - Amazon</li>
+			</ul>
+		</div>
+	</div>
+</PageLayout>
