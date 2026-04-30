@@ -112,6 +112,19 @@ const talks: { desc: string; href: string; title: string }[] = [
 		<SocialList />
 	</section>
 
+	<section aria-label="Blog post list" class="mt-16" id="posts">
+		<h2 class="title mb-4 text-xl">Posts</h2>
+		<ul class="space-y-4">
+			{
+				allPostsByDate.map((p) => (
+					<li class="flex flex-col gap-x-2 sm:flex-row">
+						<PostPreview as="h2" post={p} />
+					</li>
+				))
+			}
+		</ul>
+	</section>
+
 	<section aria-label="Experiments list" class="mt-16" id="experiments">
 		<h2 class="title mb-4 text-xl">Experiments</h2>
 		<dl class="space-y-4">
@@ -131,19 +144,6 @@ const talks: { desc: string; href: string; title: string }[] = [
 				))
 			}
 		</dl>
-	</section>
-
-	<section aria-label="Blog post list" class="mt-16" id="posts">
-		<h2 class="title mb-4 text-xl">Posts</h2>
-		<ul class="space-y-4">
-			{
-				allPostsByDate.map((p) => (
-					<li class="flex flex-col gap-x-2 sm:flex-row">
-						<PostPreview as="h2" post={p} />
-					</li>
-				))
-			}
-		</ul>
 	</section>
 
 	<section class="mt-16" id="talks">
