@@ -1,12 +1,12 @@
 ---
 import SocialList from "@/components/SocialList.astro";
-// import PostPreview from "@/components/blog/PostPreview.astro";
+import PostPreview from "@/components/blog/PostPreview.astro";
 import PageLayout from "@/layouts/Base.astro";
-// import { getAllPosts, sortMDByDate } from "@/utils";
+import { getAllPosts, sortMDByDate } from "@/utils";
 
-// const MAX_POSTS = 10;
-// const allPosts = await getAllPosts();
-// const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS);
+const MAX_POSTS = 10;
+const allPosts = await getAllPosts();
+const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS);
 
 const experiments: { desc: string; href: string; title: string }[] = [
 	{
@@ -133,18 +133,18 @@ const talks: { desc: string; href: string; title: string }[] = [
 		</dl>
 	</section>
 
-	<!-- <section aria-label="Blog post list" class="mt-16" id="posts">
+	<section aria-label="Blog post list" class="mt-16" id="posts">
 		<h2 class="title mb-4 text-xl">Posts</h2>
 		<ul class="space-y-4">
 			{
 				allPostsByDate.map((p) => (
 					<li class="flex flex-col gap-x-2 sm:flex-row">
-						<PostPreview post={p} />
+						<PostPreview as="h2" post={p} />
 					</li>
 				))
 			}
 		</ul>
-	</section> -->
+	</section>
 
 	<section class="mt-16" id="talks">
 		<h2 class="title mb-4 text-xl">Talks</h2>
