@@ -25,10 +25,12 @@ export const social: ReadonlyArray<{ name: string; href: string; icon: "bluesky"
 ];
 
 export const intro = {
-	heading: "Luke Hedger ~ Software Engineer",
-	paragraphs: [
-		`Hello! I'm Luke, a software engineer currently working on distributed systems, serverless, event sourcing, durable execution and software factories. I'm the co-author of <a class="cactus-link" href="/book">The Serverless Book</a> and I've <a class="cactus-link" href="#talks">spoken</a> at various conferences and meetups.`,
-		`I have worked at the LEGO Group, Cancer Research UK, JAAK Music, Unlease, M&C Saatchi and Lean Mean Fighting Machine. Since 2019 I have been leading serverless engineering teams.`,
+	heading: "Luke Hedger",
+	roles: [
+		`software engineer working on distributed systems, serverless, event sourcing, durable execution and continuous ai`,
+		`co-author of <a class="cactus-link" href="/book">The Serverless Book</a>`,
+		`<a class="cactus-link" href="#talks">speaker</a> at ServerlessDays, GOTO and AWS Summit`,
+		`engineering lead at the LEGO Group since 2021. Previously at Cancer Research UK, JAAK Music, Unlease, M&C Saatchi and Lean Mean Fighting Machine`,
 	],
 } as const;
 

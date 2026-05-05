@@ -6,7 +6,7 @@ export function renderFooter(): Html {
 	return html`
 		<footer class="site-footer">
 			<div>
-				&copy; ${site.author} ${year}. <span>🚀 ${site.title}</span>
+				&copy; ${site.author} ${year}. ${site.title}
 			</div>
 			<nav aria-label="More on this site" class="site-footer-nav">
 				${menu.map(

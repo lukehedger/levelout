@@ -10,7 +10,9 @@ export function renderHome(posts: Post[]): Html {
 	const content = html`
 		<section id="hello">
 			<h1 class="title">${intro.heading}</h1>
-			${intro.paragraphs.map((p) => html`<p>${raw(p)}</p>`)}
+			<ul class="hero-roles">
+				${intro.roles.map((r) => html`<li>${raw(r)}</li>`)}
+			</ul>
 			${renderSocialList()}
 		</section>
 
@@ -30,7 +32,7 @@ export function renderHome(posts: Post[]): Html {
 					(e) => html`
 						<div class="link-list-item">
 							<dt>
-								<a class="cactus-link" href="${e.href}" rel="noopener noreferrer" target="_blank">${e.title}</a>:
+								<a class="cactus-link" href="${e.href}" rel="noopener noreferrer" target="_blank">${e.title}</a>
 							</dt>
 							<dd>${e.desc}</dd>
 						</div>
@@ -46,7 +48,7 @@ export function renderHome(posts: Post[]): Html {
 					(t) => html`
 						<div class="link-list-item">
 							<dt>
-								<a class="cactus-link" href="${t.href}" rel="noopener noreferrer" target="_blank">${t.title}</a>:
+								<a class="cactus-link" href="${t.href}" rel="noopener noreferrer" target="_blank">${t.title}</a>
 							</dt>
 							<dd>${t.desc}</dd>
 						</div>

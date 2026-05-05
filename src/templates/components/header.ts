@@ -20,7 +20,7 @@ const CROSS_ICON = raw(
 export function renderHeader(currentPath: string): Html {
 	return html`
 		<header class="site-header" id="main-header">
-			<div class="site-header-brand">
+			<div class="site-header-top">
 				<a ${attrs({ "aria-current": currentPath === "/" ? "page" : false, class: "brand-link", href: "/" })}>
 					<img
 						alt="A gif of a nice warm matcha latte"
@@ -30,6 +30,18 @@ export function renderHeader(currentPath: string): Html {
 					/>
 					<span class="brand-name">${site.title}</span>
 				</a>
+				<button
+					aria-expanded="false"
+					aria-haspopup="menu"
+					aria-label="Open main menu"
+					class="mobile-menu-button"
+					id="toggle-navigation-menu"
+					type="button"
+				>
+					${HAMBURGER_ICON}${CROSS_ICON}
+				</button>
+			</div>
+			<div class="site-header-bottom">
 				<nav aria-label="Main menu" class="main-menu" id="navigation-menu">
 					${menu.map(
 						(link) => html`
@@ -45,39 +57,31 @@ export function renderHeader(currentPath: string): Html {
 						`,
 					)}
 				</nav>
-			</div>
-			<div class="site-search" id="search">
-				<button aria-label="Search" class="icon-button" data-open-modal disabled type="button">
-					${SEARCH_ICON}
-				</button>
-				<dialog aria-label="Search" class="search-dialog">
-					<div class="search-dialog-frame">
-						<button class="search-close" data-close-modal type="button">Close</button>
-						<input
-							autocomplete="off"
-							class="search-input"
-							id="search-input"
-							placeholder="Search posts"
-							type="search"
-						/>
-						<ul class="search-results" id="search-results"></ul>
+				<div class="site-header-actions">
+					<div class="site-search" id="search">
+						<button aria-label="Search" class="icon-button" data-open-modal disabled type="button">
+							${SEARCH_ICON}
+						</button>
+						<dialog aria-label="Search" class="search-dialog">
+							<div class="search-dialog-frame">
+								<button class="search-close" data-close-modal type="button">Close</button>
+								<input
+									autocomplete="off"
+									class="search-input"
+									id="search-input"
+									placeholder="Search posts"
+									type="search"
+								/>
+								<ul class="search-results" id="search-results"></ul>
+							</div>
+						</dialog>
 					</div>
-				</dialog>
+					<button aria-label="Toggle theme" class="icon-button theme-toggle" id="theme-toggle" role="switch" type="button">
+						<span class="sr-only">Toggle theme</span>
+						${SUN_ICON}${MOON_ICON}
+					</button>
+				</div>
 			</div>
-			<button aria-label="Toggle theme" class="icon-button theme-toggle" id="theme-toggle" role="switch" type="button">
-				<span class="sr-only">Toggle theme</span>
-				${SUN_ICON}${MOON_ICON}
-			</button>
-			<button
-				aria-expanded="false"
-				aria-haspopup="menu"
-				aria-label="Open main menu"
-				class="mobile-menu-button"
-				id="toggle-navigation-menu"
-				type="button"
-			>
-				${HAMBURGER_ICON}${CROSS_ICON}
-			</button>
 		</header>
 	`;
 }
