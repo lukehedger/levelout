@@ -65,7 +65,7 @@ export function renderLayout(opts: LayoutOpts): Html {
 		<script defer src="/assets/main.js"></script>
 	</head>
 	<body>
-		<a class="skip-link sr-only" href="#main">Skip to content</a>
+		<a class="skip-link" href="#main">Skip to content</a>
 		${renderHeader(path)}
 		<main id="main">${content}</main>
 		${renderFooter()}

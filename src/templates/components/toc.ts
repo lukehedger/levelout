@@ -3,7 +3,7 @@ import type { TocItem } from "~/lib/toc.ts";
 
 function renderItem(item: TocItem): Html {
 	return html`
-		<li class="${item.depth > 2 ? "toc-deep" : "toc-shallow"}">
+		<li>
 			<a href="#${item.slug}">${item.text}</a>
 			${item.children.length > 0
 				? html`<ul>${item.children.map(renderItem)}</ul>`

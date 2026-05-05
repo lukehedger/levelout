@@ -194,11 +194,6 @@ a:hover {
 	}
 }
 
-/* Kept for template compatibility; links are now styled globally. */
-.cactus-link {
-	/* inherits all link styling */
-}
-
 /* -- header -------------------------------------------------------------- */
 .site-header {
 	padding-bottom: 1rem;
@@ -549,10 +544,11 @@ main {
 	border-bottom: 1px solid hsl(var(--theme-rule));
 }
 
-/* Hero accent rule (under h1.title on home / book / reading / tag / posts index) */
+/* Hero accent rule (under h1.title on home, book, reading, and post pages) */
 #hello > .title::after,
 .book-page > .title::after,
-.reading-page > .title::after {
+.reading-page > .title::after,
+.post-article > #blog-hero > .title::after {
 	content: "";
 	display: block;
 	width: 3rem;
@@ -562,15 +558,8 @@ main {
 }
 
 #hello > .title {
-	font-size: 2rem;
 	letter-spacing: -0.02em;
 	margin-bottom: 1.25rem;
-}
-
-@media (min-width: 640px) {
-	#hello > .title {
-		font-size: 2.5rem;
-	}
 }
 
 .hero-roles {
@@ -765,15 +754,6 @@ main > p + .post-list {
 	margin-bottom: 0.25rem;
 }
 
-.post-article > #blog-hero > .title::after {
-	content: "";
-	display: block;
-	width: 3rem;
-	height: 2px;
-	margin-top: 0.75rem;
-	background: hsl(var(--theme-link));
-}
-
 @media (min-width: 1024px) {
 	.post-container {
 		display: flex;
@@ -886,11 +866,6 @@ main > p + .post-list {
 	color: hsl(var(--theme-link));
 	text-decoration: underline;
 	text-underline-offset: 3px;
-}
-
-.toc-deep,
-.toc-shallow {
-	/* structural hooks for future use */
 }
 
 @media (min-width: 1024px) {
