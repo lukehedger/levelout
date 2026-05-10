@@ -74,7 +74,7 @@ export async function loadPosts(dir: string): Promise<Post[]> {
 		const raw = await Bun.file(file).text();
 		const parsed = matter(raw);
 		const fm = parseFrontmatter(parsed.data as Record<string, unknown>, file);
-		if (fm.draft) continue;
+		if (fm.draft && process.env.INCLUDE_DRAFTS !== "1") continue;
 		const slug = basename(file, ".md");
 		const { html, headings, readingMinutes, plainText } = await renderMarkdown(parsed.content);
 		posts.push({ slug, frontmatter: fm, html, headings, readingMinutes, plainText });

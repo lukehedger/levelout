@@ -69,6 +69,7 @@ async function watchDir(dir: string): Promise<void> {
 }
 
 async function main(): Promise<void> {
+	process.env.INCLUDE_DRAFTS = "1";
 	await build();
 
 	const server = Bun.serve({ port: PORT, fetch: handle });
