@@ -23,7 +23,7 @@ Same information. ~75% fewer tokens. Same diff at the end of the turn.
 
 ## How to trigger it
 
-Grab the [SKILL.md](https://github.com/JuliusBrussee/caveman/blob/main/caveman/SKILL.md) from Julius Brussee's repo and drop it into `~/.claude/skills/caveman/`.
+Grab the [SKILL.md](https://github.com/JuliusBrussee/caveman/blob/main/skills/caveman/SKILL.md) from Julius Brussee's repo and drop it into `~/.claude/skills/caveman/`.
 
 Once loaded, invoke it with any of these:
 
