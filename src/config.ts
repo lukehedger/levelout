@@ -36,6 +36,21 @@ export const intro = {
 
 export const experiments: ReadonlyArray<{ title: string; href: string; desc: string }> = [
 	{
+		title: "ao",
+		href: "https://github.com/lukehedger/ao",
+		desc: "Agent orchestrator",
+	},
+	{
+		title: "ao-jj",
+		href: "https://github.com/lukehedger/ao-jj",
+		desc: "Agent orchestrator with Jujutsu VCS",
+	},
+	{
+		title: "ao-chat",
+		href: "https://github.com/lukehedger/ao-chat",
+		desc: "Agent orchestrator with inter-agent chat via iroh-gossip mesh",
+	},
+	{
 		title: "giants",
 		href: "https://github.com/lukehedger/giants",
 		desc: "Serverless development framework",
