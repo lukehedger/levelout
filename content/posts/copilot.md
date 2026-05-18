@@ -25,6 +25,23 @@ The rule: **layer in tooling when a task demands it, not before**. If you have n
 
 The good default is: built-in tools only, no MCP, no skills, no plugins. Add the first MCP server the day you actually need it. Remove it the week after the task is done.
 
+## Tune the status line to what you actually look at
+
+The status line is the strip at the bottom of the session. Configure it:
+
+```
+/statusline
+```
+
+You get a checklist of nine fields. The default is close to right. I turn off the two that are noise for me:
+
+- `quota` - off. I am on a paid plan with headroom. A remaining-usage number I never act on is a number not worth a glance.
+- `username` - off. One account, one machine. The login is not information.
+
+Everything else stays on: `directory`, `branch`, `effort`, `context-used`, `agent`, `changes` and `custom`. The two I look at every session are `context-used` (tells me when to `/compact`) and `changes` (added/removed line counts - a constant reminder of the size of the diff the agent is building while you are not looking).
+
+![Copilot CLI status line showing working directory, git branch with +17 -1 line counts, autopilot agent, Claude Opus 4.7 model on medium effort with 13% context used](/images/copilot-cli-status-line.png)
+
 ## Default to autopilot, lock down the destructive commands
 
 Copilot CLI's `autopilot` is its equivalent of Claude Code's auto mode - the agent runs without prompting on each action, with a classifier soft-denying the irreversible ones. It is the right default for the same reasons auto mode is the right default in Claude Code: most actions are reversible, the prompt-on-everything model wastes attention and the classifier is good enough to catch the things that matter.
@@ -53,5 +70,6 @@ Without those constraints, expect to read the assumptions list at the end and fi
 
 - Same `CLAUDE.md`, no fork.
 - `/env` first, MCP and skills only when a task demands them.
+- `/statusline`: keep `context-used` and `changes`, drop `quota` and `username`.
 - `co` alias: autopilot on, `sudo` and `rm` denied.
 - Name your stop points up front - autopilot will not guess them for you.
