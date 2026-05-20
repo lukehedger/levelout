@@ -14,6 +14,7 @@
 	--theme-accent: 151deg 45% 34%;
 	--theme-accent-2: 0deg 0% 4%;
 	--theme-quote: 151deg 45% 34%;
+	--theme-heading-accent: 336deg 73% 45%;
 }
 
 :root[data-theme="dark"] {
@@ -27,6 +28,7 @@
 	--theme-accent: 330deg 88% 70%;
 	--theme-accent-2: 0deg 0% 96%;
 	--theme-quote: 154deg 56% 63%;
+	--theme-heading-accent: 154deg 56% 63%;
 }
 
 @font-face {
@@ -1184,6 +1186,10 @@ main > p + .post-list {
 
 .prose h1 { font-size: 1.875rem; }
 .prose h2 { font-size: 1.5rem; }
+
+.post-article .prose h2 {
+	color: hsl(var(--theme-heading-accent));
+}
 .prose h3 { font-size: 1.25rem; }
 .prose h4 { font-size: 1.0625rem; }
 
