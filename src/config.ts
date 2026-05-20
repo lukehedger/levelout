@@ -19,8 +19,16 @@ export const menu: ReadonlyArray<{ title: string; path: string }> = [
 	{ title: "Posts", path: "/posts/" },
 ];
 
-export const social: ReadonlyArray<{ name: string; href: string; icon: "bluesky" | "github" }> = [
-	{ name: "Bluesky", href: "https://bsky.app/profile/lukehedger.dev", icon: "bluesky" },
+export const social: ReadonlyArray<{
+	name: string;
+	href: string;
+	icon: "bluesky" | "github";
+}> = [
+	{
+		name: "Bluesky",
+		href: "https://bsky.app/profile/lukehedger.dev",
+		icon: "bluesky",
+	},
 	{ name: "GitHub", href: "https://github.com/lukehedger", icon: "github" },
 ];
 
@@ -34,7 +42,11 @@ export const intro = {
 	],
 } as const;
 
-export const experiments: ReadonlyArray<{ title: string; href: string; desc: string }> = [
+export const experiments: ReadonlyArray<{
+	title: string;
+	href: string;
+	desc: string;
+}> = [
 	{
 		title: "ao",
 		href: "https://github.com/lukehedger/ao",
@@ -71,12 +83,12 @@ export const experiments: ReadonlyArray<{ title: string; href: string; desc: str
 		desc: "Wrapper around Docker Sandboxes",
 	},
 	{
-		title: "Decider",
+		title: "decider",
 		href: "https://github.com/lukehedger/decider",
 		desc: "Functional event sourcing decider pattern in TypeScript",
 	},
 	{
-		title: "LSM",
+		title: "lsm-ts",
 		href: "https://github.com/lukehedger/lsm-ts",
 		desc: "Toy LSM tree-based database in TypeScript",
 	},
@@ -117,7 +129,11 @@ export const experiments: ReadonlyArray<{ title: string; href: string; desc: str
 	},
 ];
 
-export const talks: ReadonlyArray<{ title: string; href: string; desc: string }> = [
+export const talks: ReadonlyArray<{
+	title: string;
+	href: string;
+	desc: string;
+}> = [
 	{
 		title: "What are you waiting for?",
 		href: "https://youtu.be/6ssC8590c70",
