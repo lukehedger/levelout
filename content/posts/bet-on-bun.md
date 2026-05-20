@@ -2,7 +2,7 @@
 title: "Bet on Bun"
 description: "Why I'm betting on Bun"
 publishDate: "20 May 2026"
-tags: ["ai"]
+tags: ["ai", "dx"]
 ---
 
 Why am I betting on [Bun](https://bun.sh/) for dev tooling?
